@@ -1,0 +1,210 @@
+<html>
+<head>
+<title>COOL数字钟</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0" onLoad="show3()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="05.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="05c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><br>
+            <b>COOL数字钟</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="40" valign="top">提示：</td>
+                <td>看下面的数字钟，如果你喜欢的话你可以自己设计外观。<br>
+                  <br>
+                  <script language="javascript1.1">
+
+<!--
+
+/*
+
+Live clock script credit: Website Abstraction (www.wsabstract.com). 
+
+Your free JavaScripts archieve, with over 200+ free JavaScripts. 
+
+This script may be freely used as long as credit remains intact.
+
+*/
+
+var dn
+
+c1=new Image(); c1.src="../pic/c1.gif"
+
+c2=new Image(); c2.src="../pic/c2.gif"
+
+c3=new Image(); c3.src="../pic/c3.gif"
+
+c4=new Image(); c4.src="../pic/c4.gif"
+
+c5=new Image(); c5.src="../pic/c5.gif"
+
+c6=new Image(); c6.src="../pic/c6.gif"
+
+c7=new Image(); c7.src="../pic/c7.gif"
+
+c8=new Image(); c8.src="../pic/c8.gif"
+
+c9=new Image(); c9.src="../pic/c9.gif"
+
+c0=new Image(); c0.src="../pic/c0.gif"
+
+cb=new Image(); cb.src="../pic/cb.gif"
+
+cam=new Image(); cam.src="../pic/cam.gif"
+
+cpm=new Image(); cpm.src="../pic/cpm.gif"
+
+function extract(h,m,s,type){
+
+if (!document.images)
+
+return
+
+if (h<=9){
+
+document.images.a.src=cb.src
+
+document.images.b.src=eval("c"+h+".src")
+
+}
+
+else {
+
+document.images.a.src=eval("c"+Math.floor(h/10)+/10)+.html".src")
+
+document.images.b.src=eval("c"+(h%10)+".src")
+
+}
+
+if (m<=9){
+
+document.images.d.src=c0.src
+
+document.images.e.src=eval("c"+m+".src")
+
+}
+
+else {
+
+document.images.d.src=eval("c"+Math.floor(m/10)+/10)+.html".src")
+
+document.images.e.src=eval("c"+(m%10)+".src")
+
+}
+
+if (s<=9){
+
+document.g.src=c0.src
+
+document.images.h.src=eval("c"+s+".src")
+
+}
+
+else {
+
+document.images.g.src=eval("c"+Math.floor(s/10)+/10)+.html".src")
+
+document.images.h.src=eval("c"+(s%10)+".src")
+
+}
+
+if (dn=="AM") document.j.src=cam.src
+
+else document.images.j.src=cpm.src
+
+}
+
+function show3(){
+
+if (!document.images)
+
+return
+
+var Digital=new Date()
+
+var hours=Digital.getHours()
+
+var minutes=Digital.getMinutes()
+
+var seconds=Digital.getSeconds()
+
+dn="AM" 
+
+if ((hours>=12)&&(minutes>=1)||(hours>=13)){
+
+dn="PM"
+
+hours=hours-12
+
+}
+
+if (hours==0)
+
+hours=12
+
+extract(hours,minutes,seconds,dn)
+
+setTimeout("show3()",1000)
+
+}
+
+//-->
+
+</script>
+                  <img src="../pic/cb.gif" name="a"><img src="../pic/cb.gif" name="b" width="16" height="21"><img src="../pic/colon.gif" name="c"><img src="../pic/cb.gif" name="d" width="16" height="21"><img src="../pic/cb.gif" name="e" width="16" height="21"><img src="../pic/colon.gif" name="f" width="9" height="21"><img src="../pic/cb.gif" name="g" width="16" height="21"><img src="../pic/cb.gif" name="h" width="16" height="21"><img src="../pic/cam.gif" name="j" width="16" height="21"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

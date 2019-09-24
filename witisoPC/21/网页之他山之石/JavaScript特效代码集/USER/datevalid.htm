@@ -1,0 +1,190 @@
+  <html>
+<head>
+<script Language="JavaScript">
+<!--
+function testKey(e){
+   chars= "0123456789/0123456789.html";
+   e    = window.event;
+   if(chars.indexOf(String.fromCharCode(e.keyCode))==-1) window.event.keyCode=0;
+};
+
+function valDate(M, D, Y){
+  Months= new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+  Leap  = false;
+
+  if((Y % 4 == 0) && ((Y % 100 != 0) || (Y %400 == 0)))
+    Leap = true;
+  if((D < 1) || (D > 31) || (M < 1) || (M > 12) || (Y < 0))
+    return(false);
+  if((D > Months[M-1]) && !((M == 2) && (D > 28)))
+    return(false);
+  if(!(Leap) && (M == 2) && (D > 28))
+    return(false);    
+  if((Leap)  && (M == 2) && (D > 29))
+    return(false);    
+};
+
+function formatDate(dateForm){
+   cDate = dateForm.value;
+   dSize = cDate.length;
+   sCount= 0;
+ 
+   if (document.Form1.Date.value == ""){
+     alert("请输入日期！");
+      return false ;
+      }
+   if(cDate=='') return;
+
+
+   for(var i=0; i < dSize; i++)
+      (cDate.substr(i,1) == "/") ? sCount++ : sCount;
+   if (sCount != 2){
+      alert("输入的日期格式必须是\n ''月/日/年''");
+      dateForm.select();
+      return(false);
+   };
+   //检测输入的年份是2位数还是4位数；
+   ySize = cDate.substring(cDate.lastIndexOf("/")+1,dSize).length
+   if(ySize<2 || ySize>4 || ySize == 3){
+     alert('您输入的日期错误 !');
+     dateForm.select();
+     return false;
+   };
+   //将输入的日期字符串分隔成3部分 (Month, Day & Year)
+   idxBarI = cDate.indexOf("/");
+   idxBarII= cDate.lastIndexOf("/");
+   strM    = cDate.substring(0,idxBarI);
+   strD    = cDate.substring(idxBarI+1,idxBarII);
+   strY    = cDate.substring(idxBarII+1,dSize);
+
+   strM = (strM.length < 2 ? '0'+strM : strM);   
+   strD = (strD.length < 2 ? '0'+strD : strD);
+   if(strY.length == 2)
+      strY = (strY > 50  ? '19'+strY : '20'+strY);
+   dateForm.value = strM+'/'+strD+'/'+strY;
+ 
+   ok = valDate(strM, strD, strY);
+    if(ok==false){ 
+      alert("您输入的日期错误 !");
+      dateForm.select();
+      return false;
+   };
+};
+
+
+-->
+</script>
+<title>日期合法性检测</title>
+<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="valid, validation, check, date, form, submit, 合法性, 合法, 检测, 日期, 递交, 表单, 表单递交">
+</head>
+<body onLoad="javascript:document.Form1.Date.focus()" bgcolor="#000066" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+<form>
+</form>
+<form name="Form1" method="post" onSubmit="return testKey(event)" action="">
+  <div align="center">输入正确的日期(月/日/年)： 
+    <input type=text maxlength =10 name="Date" size=10 onBlur="formatDate(this)" value="">
+  </div>
+</form>
+<div align="center">
+  <p>（测试：输入错误格式的日期看看，鼠标在外面随便点点。）</p>
+  <table width="75%" border="0">
+    <tr> 
+      <td> &lt;html&gt;<br>
+        &lt;head&gt;<br>
+        &lt;script Language=&quot;JavaScript&quot;&gt;<br>
+        &lt;!--<br>
+        function testKey(e){<br>
+        chars= &quot;0123456789/&quot;;<br>
+        e = window.event;<br>
+        if(chars.indexOf(String.fromCharCode(e.keyCode))==-1) window.event.keyCode=0;<br>
+        };
+        <p>function valDate(M, D, Y){<br>
+          Months= new Array(31,28,31,30,31,30,31,31,30,31,30,31);<br>
+          Leap = false;</p>
+        <p> if((Y % 4 == 0) &amp;&amp; ((Y % 100 != 0) || (Y %400 == 0)))<br>
+          Leap = true;<br>
+          if((D &lt; 1) || (D &gt; 31) || (M &lt; 1) || (M &gt; 12) || (Y &lt; 
+          0))<br>
+          return(false);<br>
+          if((D &gt; Months[M-1]) &amp;&amp; !((M == 2) &amp;&amp; (D &gt; 28)))<br>
+          return(false);<br>
+          if(!(Leap) &amp;&amp; (M == 2) &amp;&amp; (D &gt; 28))<br>
+          return(false); <br>
+          if((Leap) &amp;&amp; (M == 2) &amp;&amp; (D &gt; 29))<br>
+          return(false); <br>
+          };</p>
+        <p>function formatDate(dateForm){<br>
+          cDate = dateForm.value;<br>
+          dSize = cDate.length;<br>
+          sCount= 0;<br>
+          <br>
+          if (document.Form1.Date.value == &quot;&quot;){<br>
+          alert(&quot;请输入日期！&quot;);<br>
+          return false ;<br>
+          }</p>
+        <p> if(cDate=='') return;</p>
+        <p> for(var i=0; i &lt; dSize; i++)<br>
+          (cDate.substr(i,1) == &quot;/&quot;) ? sCount++ : sCount;<br>
+          if (sCount != 2){<br>
+          alert(&quot;输入的日期格式必须是\n ''月/日/年''&quot;);<br>
+          dateForm.select();<br>
+          return(false);<br>
+          };<br>
+          //检测输入的年份是2位数还是4位数；<br>
+          ySize = cDate.substring(cDate.lastIndexOf(&quot;/&quot;)+1,dSize).length<br>
+          if(ySize&lt;2 || ySize&gt;4 || ySize == 3){<br>
+          alert('您输入的日期错误 !');<br>
+          dateForm.select();<br>
+          return false;<br>
+          };<br>
+          //将输入的日期字符串分隔成3部分 (Month, Day &amp; Year)<br>
+          idxBarI = cDate.indexOf(&quot;/&quot;);<br>
+          idxBarII= cDate.lastIndexOf(&quot;/&quot;);<br>
+          strM = cDate.substring(0,idxBarI);<br>
+          strD = cDate.substring(idxBarI+1,idxBarII);<br>
+          strY = cDate.substring(idxBarII+1,dSize);</p>
+        <p> strM = (strM.length &lt; 2 ? '0'+strM : strM); <br>
+          strD = (strD.length &lt; 2 ? '0'+strD : strD);<br>
+          if(strY.length == 2)<br>
+          strY = (strY &gt; 50 ? '19'+strY : '20'+strY);<br>
+          dateForm.value = strM+'/'+strD+'/'+strY;<br>
+          <br>
+          ok = valDate(strM, strD, strY);<br>
+          if(ok==false){ <br>
+          alert(&quot;您输入的日期错误 !&quot;);<br>
+          dateForm.select();<br>
+          return false;<br>
+          };<br>
+          };</p>
+        <p><br>
+          --&gt;<br>
+          &lt;/script&gt;</p>
+        <p>&lt;title&gt;日期合法性检测&lt;/title&gt;<br>
+          &lt;/head&gt;<br>
+          &lt;body onLoad=&quot;<font color="#FFFF99">javascript:document.Form1.Date.focus()</font>&quot; 
+          bgcolor=&quot;#FFFFFF&quot;&gt;<br>
+        </p>
+        <p>&lt;form name=&quot;<font color="#FF9966"><b>Form1</b></font>&quot; 
+          method=&quot;post&quot; <font color="#66FF66">onSubmit=&quot;return 
+          testKey(event)&quot;</font> action=&quot;&quot;&gt;<br>
+          输入正确的日期(月/日/年)： <br>
+          &lt;input type=text maxlength =10 name=&quot;<font color="#FF9933"><b>Date</b></font>&quot; 
+          size=10 <font color="#66FF66">onBlur=&quot;formatDate(this)&quot;</font> 
+          value=&quot;&quot;&gt;<br>
+          <br>
+          &lt;/form&gt;<br>
+          &lt;/body&gt;<br>
+          &lt;/html&gt;</p>
+        <p>说明：此脚本的用途是比较全面地检测输入日期的合法性，除了做非空检测外，还有效地检测了不同年月日期的合法性问题。比如在不是闰年的2月输入了29日等。黄色代码与脚本的检测无关，作用是页面读出页面后光标停留在日期文本框内。可以不要。</p>
+        <p>注意：（1）&lt;Form&gt;标签中表单的名字Form1和日期文本框的名字Data（加重字体）与脚本是有关的，也就是说你如果改动了它们的名字，凡是在脚本中引用From1和Data的部分都要修改。切切！！！</p>
+        <p>（2）Javascript是大小写敏感的，所以注意大小写的区别和一致性原则。</p>
+        <p>（3）此脚本应该与CGI/ASP等服务器端的递交处理程序配合使用，用于客户端的合法性检测。本例没有将submit按钮作上去，你所处理的表单中可能包括更多的内容。</p>
+        <p>这里仅仅提供了一个脚本思路，你不一顶非要全部照搬脚本，可以仅仅取脚本的一部分使用（主要是算法）。</p>
+      </td>
+    </tr>
+  </table>
+<p>&nbsp;</p></div>
+<p>&nbsp;</p>
+</body>
+</html>

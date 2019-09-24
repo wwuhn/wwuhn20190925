@@ -1,0 +1,93 @@
+A:link {
+	BEHAVIOR: url(../../9.20/css/blue.htc); COLOR: #495740; TEXT-DECORATION: none
+}
+A:hover {
+	BEHAVIOR: url(../../9.20/css/blue.htc); COLOR: #495740; TEXT-DECORATION: none
+}
+A:visited {
+	BEHAVIOR: url(../../9.20/css/blue.htc); COLOR: #495740; TEXT-DECORATION: none
+}
+A.a:link {
+	BEHAVIOR: url(../../9.20/css/blue.htc); COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.a:hover {
+	BEHAVIOR: url(../../9.20/css/blue.htc); COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.a:visited {
+	BEHAVIOR: url(../../9.20/css/blue.htc); COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.b:link {
+	BEHAVIOR: url(../../9.20/css/blue.htc); COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.b:hover {
+	RIGHT: 0px; BEHAVIOR: url(../../9.20/css/blue.htc); COLOR: #ffffff; POSITION: relative; TOP: 1px; TEXT-DECORATION: none
+}
+A.b:visited {
+	BEHAVIOR: url(../../9.20/css/blue.htc); COLOR: #ffffff; TEXT-DECORATION: none
+}
+TD {
+	FONT-SIZE: 12px; COLOR: #495740; LINE-HEIGHT: 20px
+}
+TEXTAREA {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; FONT-SIZE: 12px; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+SELECT.a {
+	FONT-SIZE: 12px; BACKGROUND: #fffde7; HEIGHT: 15px
+}
+INPUT.button1 {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #eeeeee 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #eeeeee 1px solid; BORDER-BOTTOM: #000000 1px solid; HEIGHT: 22px; BACKGROUND-COLOR: #eeeeee
+}
+INPUT.a {
+	BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; FONT-SIZE: 9pt; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid; HEIGHT: 17px
+}
+INPUT.b {
+	BORDER-RIGHT: #000000 0px solid; BORDER-TOP: #666666 0px solid; FONT-SIZE: 9pt; BORDER-LEFT: #666666 0px solid; COLOR: green; BORDER-BOTTOM: #000000 1px solid; BACKGROUND-COLOR: transparent
+}
+INPUT.c {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BACKGROUND: #fffde7; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid
+}
+INPUT.d {
+	BORDER-RIGHT: #000000 0px solid; BORDER-TOP: #eeeeee 0px solid; FONT-SIZE: 9pt; BORDER-LEFT: #eeeeee 0px solid; COLOR: green; BORDER-BOTTOM: #000000 1px solid; BACKGROUND-COLOR: transparent
+}
+TD.bga {
+	BACKGROUND-POSITION: center bottom; BACKGROUND-REPEAT: no-repeat
+}
+TD.bgb {
+	BACKGROUND-POSITION: right bottom; BACKGROUND-REPEAT: no-repeat
+}
+TD.bgc {
+	BACKGROUND-POSITION: 50% top; BACKGROUND-REPEAT: repeat-x
+}
+.lettera {
+	LETTER-SPACING: 1px
+}
+.letterb {
+	LETTER-SPACING: 2px
+}
+.line1 {
+	LINE-HEIGHT: 16px
+}
+.line2 {
+	LINE-HEIGHT: 18px
+}
+.line3 {
+	LINE-HEIGHT: 20px
+}
+.line4 {
+	LINE-HEIGHT: 22px
+}
+.line5 {
+	COLOR: #565e48; LINE-HEIGHT: 24px
+}
+.font {
+	FILTER: dropshadow(color=#FFFFFF,offx=1,offy=1,positive=1)
+}
+TD.newfont {
+	FONT-SIZE: 7pt; FILTER: Glow(Color=000000, Strength=1); COLOR: #ffffff; FONT-FAMILY: "ËÎÌו"
+}
+.yingwen {
+	FONT-SIZE: 12px; COLOR: #495740; LINE-HEIGHT: 20px; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"
+}
+.smallcontent {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; OVERFLOW-Y: visible; FONT-SIZE: 12px; OVERFLOW: visible; BORDER-LEFT: 0px; WIDTH: auto; COLOR: #565e48; LINE-HEIGHT: normal; BORDER-BOTTOM: 0px; FONT-FAMILY: "ËÎÌו Fixedsys"; HEIGHT: auto; BACKGROUND-COLOR: transparent
+}

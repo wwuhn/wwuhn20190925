@@ -1,0 +1,138 @@
+<html>
+<head>
+<title>邮件地址检测脚本－增强功能</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+body {  font-family: "宋体"; font-size: 9pt; margin-top: 0px}
+td {  font-family: "宋体"; font-size: 9pt}
+.yk9 { font-family: "宋体"; font-size: 9pt }
+-->
+</style>
+<meta name="keywords" content="date 日期　日历　特殊节日">
+<meta name="description" content="一个显示特殊节日的日期脚本">
+<meta name="keywords" content="mail e-mail check 表单　邮件地址　合法性　检测">
+<meta name="description" content="一个增强功能的邮件地址的合法性检测脚本，可以屏蔽指定的邮箱。">
+</head>
+
+<body bgcolor="#fff7f7">
+<br>
+<form>
+  <div align="center"> <font color="#FF0000" size="4"> 邮件地址检测脚本－增强功能（NS 4.x or 
+    IE 4.x ）</font></div>
+</form>
+<form name="validation" onSubmit="return checkbae()" action="mailto:yourmail@mail.com">
+  <input type="text" size=25 name="emailcheck" class="yk9">
+  <input type="submit" value="递交" name="submit" class="yk9">
+</form>
+<script language="JavaScript1.2">
+
+var invalidaddress=new Array()
+invalidaddress[0]="hotmail"
+invalidaddress[1]="usa"
+invalidaddress[2]="yahoo"
+invalidaddress[3]="263"
+invalidaddress[4]="188"
+invalidaddress[5]="990"
+invalidaddress[6]="163"
+invalidaddress[7]="371"
+
+//extend or shorten this list if neccessary
+
+var testresults
+function checkemail(){
+var invalidcheck=0;
+var str=document.validation.emailcheck.value
+var filter=/^.+@.+\..{2,3}$/
+if (filter.test(str)){
+var tempstring=str.split("@")
+tempstring=tempstring[1].split(".")
+for (i=0;i<invalidaddress.length;i++){
+if (tempstring[0]==invalidaddress[i])
+invalidcheck=1
+}
+if (invalidcheck!=1)
+testresults=true
+else{
+alert("我们不接受免费邮箱申请，请填写符合要求的邮件地址！")
+testresults=false
+}
+}
+else{
+alert("请填写合法的邮件地址！")
+testresults=false
+}
+return (testresults)
+}
+</script>
+<script>
+function checkbae(){
+if (document.layers||document.all)
+return checkemail()
+else
+return true
+}
+</script>
+<table width="75%" border="0" align="center">
+  <tr>
+    <td>
+      <p>增强功能所在：除了检测正常的邮箱地址为“非空”，必须包括“@”及圆点分隔符外，这个脚本还可以禁止一些特殊邮箱登陆，例如免费邮箱“<font color="#0000FF">263,163,188,990,371,yahoo,hotmail,usa</font>”等。</p>
+      <p><font color="#FF0000">试着输入含有这些字符的邮箱看看。</font></p>
+      <p>以下代码加入ＨＴＭＬ的&lt;body&gt;区：</p>
+      <p>&lt;form name=&quot;validation&quot; onSubmit=&quot;return checkbae()&quot; 
+        action=&quot;<font color="#FF0000">mailto:yourmail@mail.com</font>&quot;&gt;<br>
+        &lt;input type=&quot;text&quot; size=18 name=&quot;emailcheck&quot; class=&quot;yk9&quot;&gt;<br>
+        &lt;input type=&quot;submit&quot; value=&quot;递交&quot; name=&quot;submit&quot; 
+        class=&quot;yk9&quot;&gt;<br>
+        &lt;/form&gt;<br>
+        &lt;script language=&quot;JavaScript1.2&quot;&gt; </p>
+      <p>var invalidaddress=new Array()<br>
+        invalidaddress[0]=&quot;hotmail&quot;<br>
+        invalidaddress[1]=&quot;usa&quot;<br>
+        invalidaddress[2]=&quot;yahoo&quot;<br>
+        invalidaddress[3]=&quot;263&quot;<br>
+        invalidaddress[4]=&quot;188&quot;<br>
+        invalidaddress[5]=&quot;990&quot;<br>
+        invalidaddress[6]=&quot;163&quot;<br>
+        invalidaddress[7]=&quot;371&quot;</p>
+      <p><font color="#FF0000">//将你不允许的邮箱全部包括进去。</font></p>
+      <p>var testresults<br>
+        function checkemail(){<br>
+        var invalidcheck=0;<br>
+        var str=document.validation.emailcheck.value<br>
+        var filter=/^.+@.+\..{2,3}$/<br>
+        if (filter.test(str)){<br>
+        var tempstring=str.split(&quot;@&quot;)<br>
+        tempstring=tempstring[1].split(&quot;.&quot;)<br>
+        for (i=0;i&lt;invalidaddress.length;i++){<br>
+        if (tempstring[0]==invalidaddress[i])<br>
+        invalidcheck=1<br>
+        }<br>
+        if (invalidcheck!=1)<br>
+        testresults=true<br>
+        else{<br>
+        alert(&quot;我们不接受免费邮箱申请，请填写符合要求的邮件地址！&quot;)<br>
+        testresults=false<br>
+        }<br>
+        }<br>
+        else{<br>
+        alert(&quot;请填写合法的邮件地址！&quot;)<br>
+        testresults=false<br>
+        }<br>
+        return (testresults)<br>
+        }<br>
+        &lt;/script&gt;<br>
+        &lt;script&gt;<br>
+        function checkbae(){<br>
+        if (document.layers||document.all)<br>
+        return checkemail()<br>
+        else<br>
+        return true<br>
+        }<br>
+        &lt;/script&gt;</p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

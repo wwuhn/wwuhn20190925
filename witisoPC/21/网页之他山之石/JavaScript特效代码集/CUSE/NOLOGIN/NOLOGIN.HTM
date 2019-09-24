@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>免登陆脚本</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+body {  font-family: "宋体"; font-size: 9pt; margin-top: 0px}
+.font { font-family: "宋体"; font-size: 9pt}
+td { font-family: "宋体"; font-size: 9pt }
+-->
+</style>
+<meta name="keywords" content="nopassword 直接登陆 免登陆">
+<meta name="description" content="不用再要输入注册名和密码就能进入站点的脚本。">
+</head>
+
+<body bgcolor="#F5F5F5">
+<p align="center">&nbsp; </p>
+
+<form>
+  <div align="center"> <font color="#FF0000" size="3">免登陆脚本-不仅仅适用于网易虚拟社会啊。</font></div>
+</form>
+<table width="75%" border="0" align="center" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="199">
+      <p><font color="#0000FF">以下是网易虚拟社会北京站代码：</font></p>
+      <p>&lt;html&gt;<br>
+        &lt;head&gt;<br>
+        &lt;title&gt;&lt;/title&gt;<br>
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; 
+        charset=gb2312&quot;&gt;<br>
+        &lt;/head&gt; </p>
+      <p>&lt;body onLoad=&quot;document.nopassword.submit();&quot;&gt;</p>
+      <p>&lt;form name=&quot;nopassword&quot; method=&quot;post&quot; action=&quot;http://bj.netease.com/cgi-bin/login&quot;&gt;<br>
+        &lt;input type=&quot;hidden&quot; name=&quot;city&quot; value=&quot;beijing&quot;&gt;<br>
+        &lt;input type=&quot;hidden&quot; name=&quot;user&quot; value=&quot;<font color="#FF0000">你在北京站用户名</font>&quot;&gt;<br>
+        &lt;input type=&quot;hidden&quot; name=&quot;pass&quot; value=&quot;<font color="#FF0033">你在北京站的密码</font>&quot;&gt; 
+      </p>
+      <p>&lt;/form&gt;<br>
+        &lt;/body&gt;<br>
+        &lt;/html&gt;</p>
+      <p><font color="#0000FF">以下是网易虚拟社会广州站代码：</font></p>
+      <p>&lt;html&gt;<br>
+        &lt;head&gt;<br>
+        &lt;title&gt;&lt;/title&gt;<br>
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; 
+        charset=gb2312&quot;&gt;<br>
+        &lt;/head&gt;</p>
+      <p>&lt;body onLoad=&quot;document.nopassword.submit();&quot;&gt;<br>
+      </p>
+      <p> &lt;form name=&quot;nopassword&quot; method=&quot;post&quot; action=&quot;http://club.netease.com/cgi-bin/login&quot;&gt;<br>
+        &lt;input type=&quot;hidden&quot; name=&quot;city&quot; value=&quot;guangzhou&quot;&gt;<br>
+        &lt;input type=&quot;hidden&quot; name=&quot;user&quot; value=&quot;<font color="#FF0000">你在广州站用户名</font>&quot;&gt;<br>
+        &lt;input type=&quot;hidden&quot; name=&quot;pass&quot; value=&quot;<font color="#FF0033">你在广州站的密码</font>&quot;&gt;<br>
+      </p>
+      <p>&lt;/form&gt;<br>
+        &lt;/body&gt;<br>
+        &lt;/html&gt;</p>
+      <p>说明：分别将以上两段代码作为2个文件wy_beijing.htm和wy_guangzhou.htm，运行后直接进入网易虚拟社会北京站和广州站。</p>
+      <p>原理：<font color="#CC00CC">本例具有通性，适用于web邮箱（Hotmail），论坛，留言板等。</font></p>
+      <p>凡是类似的登陆脚本，都通过用户输入或选择一些项目，然后通过“action”来交给服务器响应处理。你需要做的就是：</p>
+      <p>（1）首先，将登陆页面保存下来，查看源代码，找到执行的cgi命令，即“action=...”，将它记录下来。</p>
+      <p>（2）查看源代码看看递交需要哪些项目（例如：用户名ID，密码，E-mail等），将他们的“name”记录下来。</p>
+      <p>（3）按照上面的格式写代码，填加所有的递交需要的项目，</p>
+      <p>&lt;input type=&quot;hidden&quot; name=&quot;<font color="#FF0000">name</font>&quot; 
+        value=&quot;<font color="#FF0033">你的注册值</font>&quot;&gt; ，<font color="#FF0000">name</font>指“（2）中记录的name，<font color="#FF0033">你的注册值</font>指对应的值”。关键是name一定要与登陆页面中需要的一样，不要随便起。</p>
+      <p>（4）用“（1）中记录的”action 项代替上面代码中的“action=...”即可。</p>
+      <p>以上的例子是自动运行进入，另一种方法是去掉&lt;body&gt;中的onload，在&lt;form&gt;...&lt;/form&gt;中填加一行：</p>
+      <p>&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;递交&quot;&gt; 
+        即可。先填好内容再连线递交。 </p>
+      <p>现在你就可以轻松地做任何事情了。尤其适用于你经常进入的登陆页面。</p>
+      <p align="center">&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p></body>
+</html>

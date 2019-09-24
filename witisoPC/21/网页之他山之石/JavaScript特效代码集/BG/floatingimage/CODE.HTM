@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>漂浮的图片</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="keywords" content="floating, image, images, 漂浮, 浮动, 图象, 图片, 漂动">
+<meta name="description" content="飘动的图片脚本，每个图片都可以有自己的连接。">
+<link rel="stylesheet" href="../style.css"></head>
+
+<body bgcolor="#004080" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF">
+<div align="center">
+<p> <font size="5">漂浮的图片-支持超级连接</font><font size="3">(IE4 &amp; NS4)</font></p> 
+</div> 
+<form> 
+  <div align="center"> 
+<input type="button" name="Button" value="下载全部文件" class="pt9" onclick="javascript:location='floatingimage.zip'"> 
+  </div> 
+</form> 
+<div align="center"> 
+  <table width="75%" border="0"> 
+    <tr>  
+      <td> 
+        <p>（第一步）加入&lt;head&gt;区的代码：</p> 
+        <p>&lt;script language=&quot;JavaScript&quot; SRC=&quot;moveobj.js&quot;&gt;  
+          &lt;/script&gt;<br> 
+        </p> 
+        <p>&lt;script&gt; <br> 
+          <br> 
+          var chip1;<br> 
+          var chip2;<br> 
+          var chip3;<br> 
+          //根据使用的图片的多少增加或减少上面相应代码；</p> 
+        <p>function pagestart()<br> 
+          {checkbrOK(); <br> 
+          chip1=new Chip(&quot;chip1&quot;,60,80);<br> 
+          chip2=new Chip(&quot;chip2&quot;,60,80);<br> 
+          chip3=new Chip(&quot;chip3&quot;,60,80);<br> 
+          //根据使用的图片的多少增加或减少上面的相应代码<br> 
+          if(brOK) <br> 
+          { movechip(&quot;chip1&quot;);<br> 
+          movechip(&quot;chip2&quot;);<br> 
+          movechip(&quot;chip3&quot;);<br> 
+          //根据使用的图片的多少增加或减少上面的相应代码<br> 
+          }<br> 
+          }<br> 
+          &lt;/script&gt;</p> 
+        <p>（第二步）加入&lt;body&gt;区的代码：</p> 
+        <p>（第三步）特别注意：将&lt;body&gt;替换成：</p> 
+        <p><font face="Times New Roman, Times, serif"><b>&lt;body onLoad=&quot;pagestart();&quot;  
+          onUnload=&quot;if(brOK) {stopme('chip1'); stopme('chip2'); stopme('chip3');}&quot;&gt;</b></font></p> 
+        <p><b>其它说明：</b></p> 
+        <p><b>（1）moveobj.js文件在下载包中可以得到，与HTML文件放在同一个目录下。不必有任何改动。</b></p> 
+        <p><b>（2）注意：本例使用了3个图片，你可以根据自己的需要增加和减少图片，但是要修改相应的代码。</b></p> 
+        <p><b>仔细看看源代码，每个图片都对应一个参数chip1,chip2,chip3...，如果有第四个就加上chip4。但是不要忘记，在各个代码段都要加上chip4的代码，仿照格式写即可。</b></p> 
+        <p><b>最后，在&lt;body...&gt;中也要增加stopme('chip4')，减少的情况一样。</b></p> 
+        <p><b>（3）脚本支持URL，即你可以为每个漂浮的图片设置URL，使用相对连接和绝对连接都可以。</b></p> 
+      </td> 
+    </tr> 
+  </table> 
+  <p><!--- BEGIN CLICK2NET CODE ---> </p> 
+</div> 
+<p>&nbsp;</p> 
+</body> 
+</html> 

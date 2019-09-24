@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>等待信息显示后再连接到指定页面的脚本源代码</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body bgcolor="#000000" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+<br>
+<div align="center">
+<p><font size="3" face="Times New Roman, Times, serif">Wait and Redirection</font> 
+    脚本源代码</p>
+  <table width="72%" border="0">
+    <tr> 
+      <td height="953"><font face="Times New Roman, Times, serif">&lt;HTML&gt;<br>
+        &lt;HEAD&gt;<br>
+        &lt;TITLE&gt;Text Script Example&lt;/TITLE&gt;<br>
+        &lt;SCRIPT LANGUAGE = &quot;JavaScript&quot;&gt; </font> 
+        <p><font face="Times New Roman, Times, serif"> function makeArray() {<br>
+          this.length = makeArray.arguments.length;<br>
+          for (var i = 0; i &lt; this.length; i++)<br>
+          this[i + 1] = makeArray.arguments[i];<br>
+          }</font></p>
+        <p><font face="Times New Roman, Times, serif"> function makeSlideShow 
+          (obj, wait, pre, url) {<br>
+          this.curText = '';<br>
+          this.posit = 1; <br>
+          this.word = obj; <br>
+          this.length = obj.length;<br>
+          this.pre = pre;<br>
+          this.wait = wait;<br>
+          this.url = url;<br>
+          this.display = displaySlideShow;<br>
+          }</font></p>
+        <p><font face="Times New Roman, Times, serif"> function displaySlideShow() 
+          {<br>
+          if (this.posit &lt;= this.length) {<br>
+          this.curText = this.word[this.posit]<br>
+          outStringWord = blankFrameTop + this.pre + this.curText + blankFrameBottom;<br>
+          parent.draw.location = 'javascript:parent.outStringWord';<br>
+          this.posit++;<br>
+          }<br>
+          else {<br>
+          doneLoop = true;<br>
+          top.location = this.url;<br>
+          }<br>
+          }</font></p>
+        <p><font face="Times New Roman, Times, serif"> function displayLoop() 
+          {<br>
+          if (!doneLoop) reDraw = setTimeout('displayLoop()', wordIntro.wait);<br>
+          wordIntro.display();<br>
+          }</font></p>
+        <p><font face="Times New Roman, Times, serif"> var words = new makeArray 
+          ('<font color="#FFFFCC">Loading...... ', '此脚本会先显示一些必要的信息 ', '然后再连接到指定的页面 
+          ', '你喜欢这里吗？常来常惊喜... ', '去看看源代码 '</font>);<br>
+          var wordIntro = new makeSlideShow (words, <font color="#66FF66">3500</font>, 
+          '&lt;CENTER&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;FONT 
+          SIZE = 3&gt;', '<font color="#66FF66">code.htm</font>');<br>
+          var blankFrameTop = '&lt;HTML&gt;&lt;BODY BGCOLOR = &quot;#000000&quot; 
+          TEXT = &quot;#FFFFFF&quot;&gt;';<br>
+          var blankFrameBottom = '&lt;/BODY&gt;&lt;/HTML&gt;';<br>
+          var blankFrame = blankFrameTop + blankFrameBottom;<br>
+          var doneLoop = false;<br>
+          </font></p>
+        <p><font face="Times New Roman, Times, serif">&lt;/SCRIPT&gt;<br>
+          &lt;FRAMESET onLoad = &quot;displayLoop()&quot; ROWS = &quot;100%, *&quot; 
+          FRAMEBORDER = NO BORDER = 0&gt;</font></p>
+        <p> <font face="Times New Roman, Times, serif">&lt;FRAME <br>
+          SCROLLING=AUTO<br>
+          SRC = &quot;javascript:parent.blankFrame&quot;<br>
+          NAME = &quot;draw&quot; <br>
+          MARGINWIDTH = 2 <br>
+          MARGINHEIGHT = 2&gt;<br>
+          &lt;frame src=&quot;UntitledFrame-7&quot;&gt;&lt;/FRAMESET&gt;&lt;noframes&gt;&lt;/noframes&gt; 
+          &lt;/HEAD&gt;<br>
+          &lt;/HTML&gt;</font></p>
+        <p>说明：你只需要改变有颜色的部分。黄色代码是轮流显示的字符，随便写一些东西，数量不限。改变绿色的3500可以控制信息显示的时间。code.htm就是信息显示完毕后连接的指定页面。其余的不要改变即可。 
+        </p>
+      </td>
+    </tr>
+  </table>
+<p>&nbsp;</p></div>
+</body>
+</html>

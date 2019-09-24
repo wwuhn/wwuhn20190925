@@ -1,0 +1,69 @@
+A:visited {
+	COLOR: #993333; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #cc3333; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #cc3333; TEXT-DECORATION: underline
+}
+A:link {
+	COLOR: #003399; TEXT-DECORATION: none
+}
+.t {
+	LINE-HEIGHT: 1
+}
+BODY {
+	LIST-STYLE-POSITION: outside; FONT: 9pt/20px "宋体"; SCROLLBAR-HIGHLIGHT-COLOR: buttonface; SCROLLBAR-SHADOW-COLOR: buttonface; COLOR: #0066cc; SCROLLBAR-3DLIGHT-COLOR: buttonhighlight; SCROLLBAR-TRACK-COLOR: #eeeeee; SCROLLBAR-DARKSHADOW-COLOR: buttonshadow; LIST-STYLE-TYPE: decimal
+}
+TD {
+	FONT-SIZE: 9pt; LINE-HEIGHT: 20px; FONT-FAMILY: "宋体"
+}
+DIV {
+	FONT-SIZE: 9pt; FONT-FAMILY: 宋体
+}
+FORM {
+	FONT-SIZE: 9pt; FONT-FAMILY: 宋体
+}
+OPTION {
+	FONT-SIZE: 9pt; FONT-FAMILY: "宋体"
+}
+P {
+	FONT-SIZE: 9pt; LINE-HEIGHT: 20px; FONT-FAMILY: "宋体"
+}
+BR {
+	FONT-SIZE: 9pt; FONT-FAMILY: 宋体
+}
+INPUT {
+	BORDER-TOP-WIDTH: 1px; PADDING-RIGHT: 1px; PADDING-LEFT: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 9pt; BORDER-LEFT-COLOR: #cccccc; BORDER-BOTTOM-WIDTH: 1px; BORDER-BOTTOM-COLOR: #cccccc; PADDING-BOTTOM: 1px; BORDER-TOP-COLOR: #cccccc; PADDING-TOP: 1px; HEIGHT: 18px; BORDER-RIGHT-WIDTH: 1px; BORDER-RIGHT-COLOR: #cccccc
+}
+TEXTAREA {
+	BORDER-RIGHT: 1px inset; BORDER-TOP: 1px inset; FONT-SIZE: 9pt; BORDER-LEFT: 1px inset; BORDER-BOTTOM: 2px inset; FONT-STYLE: normal; FONT-FAMILY: "宋体"
+}
+SELECT {
+	BORDER-RIGHT: 1px; BORDER-TOP: 1px; FONT-SIZE: 9pt; BORDER-LEFT: 1px; COLOR: #0066cc; BORDER-BOTTOM: 1px; FONT-STYLE: normal; FONT-FAMILY: "宋体"
+}
+.font1 {
+	FONT-SIZE: 9pt; COLOR: #000000; LINE-HEIGHT: 20px; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.font2 {
+	FONT-SIZE: 9pt; COLOR: #cccccc; LINE-HEIGHT: 20px; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.img1 {
+	FILTER: alpha(opacity=20,finishopacity=100,style=1,startx=0,starty=0,finishx=80,finishy=100)
+}
+.mp {
+	LINE-HEIGHT: 20px
+}
+A.menu:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.menu:active {
+	TEXT-DECORATION: none
+}
+A.menu:hover {
+	TEXT-DECORATION: underline
+}
+A.menu:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}

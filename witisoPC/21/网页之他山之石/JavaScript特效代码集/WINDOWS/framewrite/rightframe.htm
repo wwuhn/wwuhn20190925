@@ -1,0 +1,37 @@
+<html>
+<head>
+<script language="javascript">
+function changeword() {
+parent.leftFrame.document.leftForm.newMagicWord.value=document.rightForm.newMagicWord.value
+}
+</script>
+<title>
+</title>
+<link rel="stylesheet" href="../style.css"></head>
+<body bgcolor="#FFFFFF" text="#FFFFFF">
+<div align="center"> 
+  <center>
+  </center>
+</div>
+<font size="5" face="Arial, Helvetica, sans-serif" color="#000000"> right frame 
+page</font> 
+<form name="rightForm">
+  <p><font color="#000000">这里写入的信息来自左侧的文本框：<br>
+    <input type="text" size="20" name="textField" onclick="this.blur()">
+    <br>
+    </font></p>
+  <p><font color="#000000">随便输入一些信息在里面： <br>
+    <input type="text" name="newMagicWord" size="20">
+    <br>
+    <input type="button" value="写到左侧的Frame" onclick="changeword()" class="pt9">
+    </font></p>
+</form>
+<p><font color="#000000">注意：</font></p>
+<p><font color="#000000">parent.leftFrame.document.leftForm.newMagicWord.value=<br>
+  document.rightForm.newMagicWord.value</font></p>
+<p><font color="#000000">的含义是：将名为rightForm的表中名为newMagicWord的文本框内的值（value）写入名为leftFrame帧内名为leftForm的表内名为newMagicWord的文本框内。</font></p>
+</body>
+
+</html>
+
+

@@ -1,0 +1,139 @@
+<html>
+<head>
+<title>图形淡出淡隐</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+a:active {font-style:normal;text-decoration:none;color:yellow;}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="#009900" topmargin="0" leftmargin="0">
+<form name="form">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr bgcolor="#009900"> 
+      <td colspan="3" height="18">&nbsp; </td>
+    </tr>
+    <tr> 
+      <td bgcolor="#009900" width="18"></td>
+      <td align="center" bgcolor="#FFFFFF" valign="top"> <br>
+        <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+          <tr> 
+            <td rowspan="2" width="16" valign="top"> 
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+                <tr bgcolor="#336699" bordercolor="#336699"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="01.htm">演<br>
+                    <br>
+                    示</a></strong></td>
+                </tr>
+                <tr bordercolor="#009900" bgcolor="#009900"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="01c.htm">源<br>
+                    代<br>
+                    码</a></strong></td>
+                </tr>
+              </table>
+            </td>
+            <td rowspan="2" width="8" bgcolor="#009900">&nbsp;</td>
+            <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#009900" valign="top"> 
+              <script language="JavaScript">
+<!--hide
+
+function CodeOut(form){
+var     
+txt=""+form.a.value+""+form.b.value+""+form.c.value+"";
+	
+form.Code.value=txt;
+
+}
+
+<!-->
+</script>
+              <div id="Layer1" style="position:absolute; width:207px; height:173px; z-index:1; visibility: hidden"> 
+                <textarea name="a" cols="40" rows="0" wrap="VIRTUAL">&lt;img src=&quot;</textarea>
+                <textarea name="c" cols="40" rows="0" wrap="VIRTUAL">&quot; name=&quot;u&quot; border=0
+alt=&quot;Image&quot; style=&quot;filter:alpha(opacity=0)&quot;&gt; 
+&lt;script language=&quot;JavaScript&quot;&gt;
+
+var b = 1;
+var c = true;
+
+function fade(){
+if(document.all);
+
+if(c == true) {
+b++;
+}
+if(b==100) {
+b--;
+c = false
+}
+
+if(b==10) {
+b++;
+c = true;
+}
+
+if(c == false) {
+b--;
+}
+u.filters.alpha.opacity=0 + b;
+setTimeout(&quot;fade()&quot;,50);
+}
+&lt;/script&gt;</textarea>
+              </div>
+              <br>
+              <b>图形淡出淡隐</b> 
+              <hr width="92%" size="1" align="center">
+              <table  cellspacing="0" cellpadding="0" width="81%">
+                <tr> 
+                  <td colspan="2" height="30">图形的文件名： 
+                    <input type=text name="b" onFocus="this.select()" onMouseOver="this.focus()" class="pt9" size="35">
+                  </td>
+                </tr>
+                <tr> 
+                  <td colspan="2" align="center" height="30"> 
+                    <input type="button" value="产生源代码" onClick="CodeOut(this.form);" name="button">
+                  </td>
+                </tr>
+                <tr> 
+                  <td colspan="2" height="25">注释：放在&lt;body****&gt;里</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <input type="text" name="1" onFocus="this.select()" onMouseOver="this.focus()" size="52" style="BACKGROUND-COLOR: #009900;" class="pt9" value="onLoad=&quot;fade()&quot;">
+                  </td>
+                </tr>
+                <tr> 
+                  <td height="25" colspan="2">注释：放在&lt;body&gt;与&lt;/body&gt;之间</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <textarea name="Code" onFocus="this.select()" onMouseOver="this.focus()" cols="50" rows="8" wrap="VIRTUAL" style="BACKGROUND-COLOR: #009900;" class="pt9"></textarea>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr> 
+            <td height="20" class="white" bgcolor="#009900">&nbsp;</td>
+          </tr>
+        </table>
+        <br>
+      </td>
+      <td bgcolor="#009900" width="18"></td>
+    </tr>
+    <tr bgcolor="#009900"> 
+      <td></td>
+      <td align="center" height="35">&nbsp; </td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

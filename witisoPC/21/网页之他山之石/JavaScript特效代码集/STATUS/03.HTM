@@ -1,0 +1,136 @@
+<html>
+<head>
+<title>文字从右弹出</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="03.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="03c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><br>
+            <b>文字从右弹出</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="40" valign="top">提示：</td>
+                <td>文字会下面状态栏右边快速弹出。
+                  <script language="JavaScript">
+<!--
+function statusMessageObject(p,d) {
+  this.msg = MESSAGE
+  this.out = " "
+  this.pos = POSITION
+  this.delay = DELAY
+  this.i     = 0
+  this.reset = clearMessage
+}
+function clearMessage() {
+  this.pos = POSITION
+}
+var POSITION = 100
+var DELAY    = 4
+ var MESSAGE  = "状态栏文字快速的一个一个弹出！！！    " 
+var scroll = new statusMessageObject()
+function scroller() {
+  for (scroll.i = 0; scroll.i < scroll.pos; scroll.i++) {
+    scroll.out += " "
+  }
+  if (scroll.pos >= 0)
+   scroll.out += scroll.msg
+  else scroll.out = scroll.msg.substring(-scroll.pos,scroll.msg.length)
+  window.status = scroll.out
+  scroll.out = " "
+  scroll.pos--
+  if (scroll.pos < -(scroll.msg.length)) {
+   scroll.reset()
+  }
+  setTimeout ('scroller()',scroll.delay)
+}
+function snapIn(jumpSpaces,position) {
+  var msg = scroll.msg
+  var out = ""
+  for (var i=0; i<position; i++) 
+    {out += msg.charAt(i)}
+  for (i=1;i<jumpSpaces;i++) 
+    {out += " "}
+  out += msg.charAt(position)
+  window.status = out
+  if (jumpSpaces <= 1) {
+    position++
+    if (msg.charAt(position) == ' ') 
+      {position++ }
+    jumpSpaces = 100-position
+  } else if (jumpSpaces >  3)
+       {jumpSpaces *= .75}
+  else
+    {jumpSpaces--}
+  if (position != msg.length) {
+    var cmd = "snapIn(" + jumpSpaces + "," + position + ")";
+    scrollID = window.setTimeout(cmd,scroll.delay);
+  } else {
+    window.status=""
+    jumpSpaces=0
+    position=0
+    cmd = "snapIn(" + jumpSpaces + "," + position + ")";
+    scrollID = window.setTimeout(cmd,scroll.delay);
+    return false 
+  }
+  return true
+}
+snapIn(100,0);
+// -->
+</script>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

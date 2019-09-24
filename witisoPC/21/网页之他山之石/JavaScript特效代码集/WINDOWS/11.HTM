@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>显示隐藏层</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="11.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="11c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><br>
+            <b>显示隐藏层</b><br>
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="40" valign="top">提示：</td>
+                <td><br>
+                  <script language=javascript>
+ie4=(document.all)?true:false;
+ns4=(document.layers)?true:false;
+
+function toExit(){
+var args=toExit.arguments;
+var visible=args[0];
+if(ns4){
+		theObj=eval("document.layers[\'"+args[1]+"\']");
+		if(theObj)theObj.visibility=visible;
+		}
+else if(ie4){
+		if(visible=='show')visible='visible';
+		if(visible=='hide')visible='hidden';
+		theObj=eval("document.all[\'"+args[1]+"\']");
+		if(theObj)theObj.style.visibility=visible;
+		}
+
+}
+     
+
+</script>
+                  <div id=boysoft 
+style="HEIGHT: 80px; LEFT: 309px; POSITION: absolute; TOP: 150px; VISIBILITY: hidden; WIDTH: 180px; Z-INDEX: 1"> 
+                    <table bgcolor=#666666 border=1 cellpadding=0 cellspacing=0 height=80 
+  width=180>
+                      <tbody> 
+                      <tr> 
+                        <td height=65 width="100%"> 
+                          <table border=0 cellpadding=0 cellspacing=0 height=80 width="99%">
+                            <tbody> 
+                            <tr> 
+                              <td height=57>&nbsp;<font 
+            color=#ffffff>你看，这是一个隐藏的层，不过现在你可以看到了。<b></b></font></td>
+                            </tr>
+                            <tr align="center"> 
+                              <td height=23 width="100%"><a 
+            href="javascript:parent.close();"> &nbsp;&nbsp;&nbsp; </a><a 
+            href="javascript:toExit('hide','boysoft')">关闭此窗口</a></td>
+                            </tr>
+                            </tbody> 
+                          </table>
+                        </td>
+                      </tr>
+                      </tbody> 
+                    </table>
+                  </div>
+                  <a href="javascript:toExit('show','boysoft')"><font color="#0000FF">打开隐藏层</font></a><br>
+                  <br>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

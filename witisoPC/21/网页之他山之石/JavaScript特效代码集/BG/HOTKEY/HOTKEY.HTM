@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>主页热键</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript1.2">
+
+var hotkey=97
+var destination="page.htm"
+if (document.layers)
+document.captureEvents(Event.KEYPRESS)
+function backhome(e){
+if (document.layers){
+if (e.which==hotkey)
+window.location=destination
+}
+else if (document.all){
+if (event.keyCode==hotkey)
+window.location=destination
+}
+}
+document.onkeypress=backhome
+
+</script>
+<style type="text/css">
+<!--
+.yk9 {  font-family: "宋体"; font-size: 9pt; text-decoration: none}
+body { font-family: "宋体"; font-size: 9pt; text-decoration: none ; margin-top: 0px}
+a { font-family: "宋体"; font-size: 9pt; text-decoration: none }
+-->
+</style>
+<meta name="keywords" content="热键 hotkey">
+<meta name="description" content="给页面加一个热键">
+</head>
+
+<body bgcolor="#FFFFFF">
+<form>
+  <div align="center"> <font size="5" color="#FF0000">给你的页面加一个“热键”（IE和NS）<br>
+    </font><font size="5"> <font size="3">注意：保存页面无用，在线生成代码后再修改</font></font></div>
+</form>
+<p align="center"><font size="3">测试：按“<font color="#FF0000" face="Arial, Helvetica, sans-serif"><b>a</b></font>”回哈哈页 
+  </font> </p>
+<form method="post" action="">
+  <div align="center">
+    <textarea name="textfield" cols="50" rows="8" class="yk9">以下代码加入&lt;head&gt;区即可：
+
+&lt;script language=&quot;JavaScript1.2&quot;&gt;
+
+var hotkey=97
+var destination=&quot;page.htm&quot;
+if (document.layers)
+document.captureEvents(Event.KEYPRESS)
+function backhome(e){
+if (document.layers){
+if (e.which==hotkey)
+window.location=destination
+}
+else if (document.all){
+if (event.keyCode==hotkey)
+window.location=destination
+}
+}
+document.onkeypress=backhome
+
+&lt;/script&gt;</textarea>
+  </div>
+</form>
+<p align="center"> <br>
+  <font color="#FF0000" size="3">以上“97”是“a”的ASCII码</font></p>
+<hr noshade width="70%">
+<p align="center"><font color="#FF0000" size="3"> </font><font size="3">参考：A-Z的ASCII码65-90 
+  a-z的ASCII码97-122 0-9的ASCII码48-57</font></p>
+<hr noshade width="70%">
+<div align="center"> 
+  <form method="POST" name="key1">
+    <p>在线生成代码： 
+      <input type="text" name="key2" size="8" onFocus="travel=false" onBlur="travel=true" class="yk9">
+      <input type="button" value="立即生成代码" name="B1" onClick="generatecode()" class="yk9">
+      <font face="Verdana"> 
+      <script language="JavaScript1.2" src="hotkey.js">
+
+
+</script>
+      <br>
+      </font>输入一个热键“不要再输入‘a’了”<br>
+      将如下代码加入HTML的&lt;HEAD&gt; 区：</p>
+  </form>
+  <form method="POST" action="hotkey.htm" name="final1" webbot-action="--WEBBOT-SELF--">
+    <p> 
+      <textarea rows="8" name="final2" cols="45" wrap="virtual" class="yk9"></textarea>
+    </p>
+  </form>
+  <p>&nbsp; </p>
+</div>
+</body>
+</html>

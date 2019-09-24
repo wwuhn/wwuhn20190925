@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>加入收藏夹 </title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript1.2">
+
+//定制下面的信息适应你的页面。
+var bookmarkurl="http://www.sina.com"
+var bookmarktitle="一千个经典网页特效"
+
+function addbookmark(){
+if (document.all)
+window.external.AddFavorite(bookmarkurl,bookmarktitle)
+}
+
+</script>
+<style type="text/css">
+<!--
+.unnamed1 {  font-family: "宋体"; font-size: 9pt; text-decoration: none}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" link="#990099" topmargin="0">
+<div></div>
+<form name="">
+  <div align="center"> <font size="5" color="#FF3300">加入收藏夹脚本（IE）</font> 
+    <hr noshade width="75%">
+  </div>
+</form>
+<p align="center">
+  <script>
+//if the user is using IE 4+
+if (document.all)
+document.write('<font face="arial" size="3"><strong><a href="javascript:addbookmark()">Bookmark this site!</a></strong></font>')
+</script>
+  <br>
+  <br>
+  <textarea name="textfield" cols="50" rows="8" class="unnamed1">以下代码加入&lt;HEAD&gt;区：
+&lt;script language=&quot;JavaScript1.2&quot;&gt;
+
+//定制下面的信息适应你的页面。
+var bookmarkurl=&quot;http://www.sina.com&quot;
+var bookmarktitle=&quot;一千个经典网页特效&quot;
+
+function addbookmark(){
+if (document.all)
+window.external.AddFavorite(bookmarkurl,bookmarktitle)
+}
+
+&lt;/script&gt;</textarea>
+</p>
+<p align="center">
+  <textarea name="textfield2" cols="50" rows="6" class="unnamed1">如下代码加入&lt;BODY&gt;区：
+&lt;script&gt;
+//if the user is using IE 4+
+if (document.all)
+document.write('&lt;a href=&quot;javascript:addbookmark()&quot;&gt;Bookmark this site!&lt;/a&gt;')
+&lt;/script&gt;
+/*该脚本只适用于IE浏览器，为了屏蔽其它浏览器，使用document.all 对象。然后使用document.write() 就可以了。*/</textarea>
+</p>
+</body>
+</html>

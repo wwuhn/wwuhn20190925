@@ -1,0 +1,72 @@
+
+<HTML>
+<HEAD>
+<TITLE>状态栏跑马灯 </TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+//如下是显示的信息
+var msge = "最酷的JAVA脚本资源站，本站为制作交互的动态主页提供分类齐全的JS脚本资源和主页制作技巧。                        ";
+//message position
+var pos = 0;
+	
+function Scrollit(){		
+//display scrolling message in the status bar
+	window.status = msge.substring(pos,msge.length) + msge.substring(0,pos);
+//increase message position by one
+	pos++;
+	//if pos value is equal to the message length + 5  then set pos to 0
+	if(pos == msge.length + 5) pos = 0;
+	//set the Timeout on the Scrollit function
+	window.setTimeout("Scrollit()",100);
+	}
+//-->
+</SCRIPT>
+<style type="text/css">
+<!--
+.unnamed1 {  font-family: "宋体"; font-size: 9pt; text-decoration: none}
+-->
+</style></HEAD>
+<BODY>
+<form>
+  <div align="center"> <font size="5" color="#FF0000">状态栏跑马灯脚本</font> 
+    <hr noshade width="70%">
+  </div>
+</form>
+<p align="center"> 
+  <SCRIPT LANGUAGE="JavaScript">
+<!--
+Scrollit();
+//-->
+</SCRIPT>
+  <textarea name="textfield" cols="60" rows="10" class="unnamed1">将如下的代码加入HTML的&lt;HEAD&gt;区：
+
+&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;
+&lt;!--
+//如下是显示的信息
+var msge = &quot;最酷的JAVA脚本资源站，本站为制作交互的动态主页提供分类齐全的JS脚本资源和主页制作技巧。                        &quot;;
+var pos = 0;
+	
+function Scrollit(){		
+
+	window.status = msge.substring(pos,msge.length) + msge.substring(0,pos);
+
+	pos++;
+	
+	if(pos == msge.length + 5) pos = 0;
+	
+	window.setTimeout(&quot;Scrollit()&quot;,100);
+	}
+//--&gt;
+&lt;/SCRIPT&gt;
+
+最后在&lt;BODY&gt;区加入下面代码；
+
+&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;
+&lt;!--
+Scrollit();
+//--&gt;
+&lt;/SCRIPT&gt;</textarea>
+</p>
+</BODY>
+</HTML>
+

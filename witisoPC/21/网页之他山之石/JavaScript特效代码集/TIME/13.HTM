@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>From日历带时钟</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0" onLoad="startclock();">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="13.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="13c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><br>
+            <b>From日期带时钟</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="40" valign="top">提示：</td>
+                <td>看下面From时钟，是不是很全，什么星期、日期、时钟全部包括。
+                  <script language="JavaScript">
+<!-- Hide
+  var timerID = null
+  var timerRunning = false
+  function MakeArray(size) 
+  {
+  this.length = size;
+  for(var i = 1; i <= size; i++)
+  {
+  this[i] = "";
+  }
+  return this;
+  }
+  function stopclock (){
+  if(timerRunning)
+  clearTimeout(timerID);
+  timerRunning = false
+  }
+  function showtime () {
+  var now = new Date();
+  var year = now.getYear();
+  var month = now.getMonth() + 1;
+  var date = now.getDate();
+  var hours = now.getHours();
+  var minutes = now.getMinutes();
+  var seconds = now.getSeconds();
+  var day = now.getDay();
+  Day = new MakeArray(7);
+  Day[0]="星期天";
+  Day[1]="星期一";
+  Day[2]="星期二";
+  Day[3]="星期三";
+  Day[4]="星期四";
+  Day[5]="星期五";
+  Day[6]="星期六";
+  var timeValue = "";
+  timeValue += year + "年";
+  timeValue += ((month < 10) ? "0" : "") + month + "月";
+  timeValue += date + "日  ";
+  timeValue += (Day[day]) + "  ";
+  timeValue += ((hours <= 12) ? hours : hours - 12);
+  timeValue += ((minutes < 10) ? ":0" : ":") + minutes;
+  timeValue += ((seconds < 10) ? ":0" : ":") + seconds;
+  timeValue += (hours < 12) ? "上午" : "下午";
+  document.jsfrm.face.value = timeValue;
+  timerID = setTimeout("showtime()",1000);
+  timerRunning = true
+  }
+  function startclock () {
+  stopclock();
+  showtime()
+  }
+  //-->
+
+</script>
+                  <br>
+                  <form name='jsfrm'>
+                    <input type=text name='face' size=34 value=''>
+                  </form>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

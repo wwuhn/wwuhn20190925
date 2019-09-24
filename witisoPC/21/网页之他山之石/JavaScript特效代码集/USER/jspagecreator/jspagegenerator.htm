@@ -1,0 +1,115 @@
+<HTML>
+<HEAD>
+<TITLE>使用javascript生成表单递交结果页面</TITLE>
+<style type="text/css">
+<!--
+body {  font-family: "宋体"; font-size: 9pt; margin-top: 0px}
+.pt9 {  font-size: 9pt; font-family: "宋体"}
+-->
+</style>
+<meta name="keywords" content="form, submit, 表单, 递交, 表单递交">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<center>
+  <p><font size="3">如何使用Javascript生成表单递交结果页面</font></p>
+  <form>
+    <div align="center"> 
+      <input type="button" value="返回" onClick="history.go(-1)" name="button" class="pt9">
+      <input type="button" name="Button2" value="回到首页" onClick="javascript:top.location='../../../index.html'" class="pt9">
+      <input type="button" name="Button2" value="最新更新" onClick="javascript:top.location='../../navigation/newscript.htm'" class="pt9">
+    </div>
+  </form>
+  </center>
+<FORM NAME="maker">
+ 
+  <CENTER>
+    <TABLE CELLSPACING="0" CELLPADDING="2" ALIGN="Center" width="422">
+      <TR>
+	<TD>窗口标题:
+<INPUT TYPE="text" NAME="title" VALUE="恭喜发财，恭喜发财！" class="pt9">
+        </TD>
+      </TR>
+      <TR>
+	<TD>页面标题:
+<INPUT TYPE="text" NAME="heading" VALUE="恭喜发财，恭喜发财！" class="pt9">
+        </TD>
+      </TR>
+      <TR>
+	<TD>标题字号: 
+          <select name="headfont">
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5" selected>5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
+        </TD>
+      </TR>
+      <TR>
+	<TD>标题颜色:
+          <INPUT TYPE="text" NAME="tcolor" VALUE="red" class="pt9">
+        </TD>
+      </TR>
+      <TR>
+	<TD>背景颜色:
+<INPUT TYPE="text" NAME="bgcolor" VALUE="white" class="pt9">
+        </TD>
+      </TR>
+      <TR>
+	<TD>图片路径:
+<INPUT TYPE="text" NAME="pic" VALUE="picture.gif" SIZE="25" class="pt9">
+        </TD>
+      </TR>
+      <TR>
+	<TD>信息内容:
+<TEXTAREA NAME="message" ROWS="3" COLS="35" class="pt9" wrap="VIRTUAL">这个例子演示了如何通过收集表单里的数据。用javascript生成一个页面。当用户填完表单后，你可以显示他们已经填写的数据，并祝贺他们已经成功地递交了。总之充分发挥您的想象力。
+</TEXTAREA>
+        </TD>
+      </TR>
+      <TR>
+	<TD>信息字号: 
+          <select name="MessFontSize">
+            <option value="2">2</option>
+            <option value="3" selected>3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <P>信息颜色:
+<INPUT TYPE="text" NAME="mfcolor" VALUE="black"
+	      SIZE="30" class="pt9">
+          </TD>
+      </TR>
+      <TR>
+	<TD>
+	  <INPUT TYPE=submit onClick="makeCard()" VALUE="Click to make " class="pt9">
+          <input type="button" name="Button" value="下载代码" class="pt9" onclick="javascript:location.href='jc.zip'"><br>
+          内容已经填好了，按递交即可。 </TD>
+      </TR>
+    </TABLE>
+  </CENTER>
+</FORM>
+<P>
+<SCRIPT>
+<!--
+
+function makeCard()  {
+var abc = document.maker.title.value;
+var abd = document.maker.heading.value;
+var abe = document.maker.headfont.options[document.maker.headfont.selectedIndex].value;
+var abf = document.maker.tcolor.value;
+var abg = document.maker.bgcolor.value;
+var abh = document.maker.pic.value;
+var abi = document.maker.message.value;
+var abj = document.maker.MessFontSize.options[document.maker.MessFontSize.selectedIndex].value;
+var abk = document.maker.mfcolor.value;
+
+document.write("<html><head><title>"+abc+"</title></head>");
+document.write("<body bgcolor="+abg+">");
+document.write("<center><font size="+abe+" color="+abf+">"+abd+"</font></center><p><p>");
+document.write("<center><img src="+abh+"></center><p><p><P>");
+document.write("<center><table border=0 width=60%><tr><td><font size="+abj+" color="+abk+">"+abi+"</font></td></tr></table></center>");
+document.write("</body></html>");
+}
+//--></SCRIPT>
+<P>
+</BODY></HTML>

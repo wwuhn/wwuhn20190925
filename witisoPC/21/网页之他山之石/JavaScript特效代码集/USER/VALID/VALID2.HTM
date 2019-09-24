@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>邮箱地址检测脚本</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="javascript">
+ /* 检测邮件地址是否为空，是否含有"@"，是否有足够的字符，以及是否有 .net, .gov, .org 或者.com?如果非法提出警告 */
+ function emailCheck() {
+  txt=document.myform.email.value;
+  if (txt.indexOf("@")<3){
+
+   alert("邮件地址有问题。请检测是否有'@'");
+   return false;
+    }
+
+  if ((txt.indexOf(".com")<5)&&(txt.indexOf(".org")<5)
+  &&(txt.indexOf(".gov")<5)&&(txt.indexOf(".net")<5)
+  &&(txt.indexOf(".mil")<5)){
+
+   alert("邮件地址有问题。"
+   +"请检查是否含有"
+   +".com,.net,.org,.gov或.mil");
+   return false;
+  }
+
+ }
+</script>
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="邮箱地址合法性检测">
+<meta name="keywords" content="mail email 邮箱 地址 检测 check valid 合法性 电子邮件">
+</head>
+
+<body bgcolor="#FFFFFF">
+<div align="center">
+<p>
+    <font size="3" color="#FF0033">邮箱地址合法性检测</font></div>
+
+<form name="myform" action="mailto:yourmail@mailserver.com" enctype="text/plain" method="post" onsubmit="return emailCheck()">
+  <div align="center">填一个非法的邮件看看 
+    <input type="text" name="email" size=40 value="" class="pt9">
+    <input type="submit" name="email1" value="开始递交" class="pt9">
+  </div>
+</form>
+<table width="75%" border="0" align="center">
+  <tr>
+    <td>
+      <p>如下代码加入HTML的&lt;HEAD&gt;区：</p>
+      <p>&lt;script language=&quot;javascript&quot;&gt;<br>
+        <br>
+        /* 检测邮件地址是否为空，是否含有&quot;@&quot;，是否有足够的字符，以及是否有 .net, .gov, .org 或者.com?如果非法提出警告 
+        */<br>
+        function emailCheck() {<br>
+        txt=document.myform.email.value;<br>
+        if (txt.indexOf(&quot;@&quot;)&lt;3){ </p>
+      <p> alert(&quot;邮件地址有问题。请检测是否有'@'&quot;);<br>
+        return false;<br>
+        }</p>
+      <p> if ((txt.indexOf(&quot;.com&quot;)&lt;5)&amp;&amp;(txt.indexOf(&quot;.org&quot;)&lt;5)<br>
+        &amp;&amp;(txt.indexOf(&quot;.gov&quot;)&lt;5)&amp;&amp;(txt.indexOf(&quot;.net&quot;)&lt;5)<br>
+        &amp;&amp;(txt.indexOf(&quot;.mil&quot;)&lt;5)){</p>
+      <p> alert(&quot;邮件地址有问题。&quot;<br>
+        +&quot;请检查是否含有&quot;<br>
+        +&quot;.com,.net,.org,.gov或.mil&quot;);<br>
+        return false;<br>
+        }</p>
+      <p> }<br>
+        &lt;/script&gt;</p>
+      <p>如下代码加入HTML的&lt;BODY&gt;区，生成表单：</p>
+      <p>&lt;form name=&quot;myform&quot; action=&quot;mailto:yourmail@mailserver.com&quot; 
+        enctype=&quot;text/plain&quot; method=&quot;post&quot; onsubmit=&quot;return 
+        emailCheck()&quot;&gt;<br>
+        <br>
+        &lt;input type=&quot;text&quot; name=&quot;email&quot; size=40&gt;<br>
+        &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;开始递交&quot;&gt;<br>
+        &lt;/form&gt;</p>
+      <p>注意：表单的名字和文本框的名字要保持前后一样。</p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp; </p>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<HTML>
+<HEAD>
+<SCRIPT LANGUAGE="JavaScript1.1">
+<!-- 
+var number	= new Array(10);
+var am, pm, now, hour;
+
+//	数字图片的尺寸大小； 
+//	COLWIDTH是分隔图片的大小（即冒号）；
+var WIDTH		= 16;	
+var HEIGHT		= 21;
+var COLWIDTH	=  9;
+
+function init() {	// 预先下载所有的图片，加快显示速度。
+	for (i=0;i<10;i++) {
+		number[i] 		= new Image(WIDTH,HEIGHT);
+		number[i].src	= 'img/' + 'n' + i + '.gif';
+	}
+//	am	= new Image();
+//	pm	= new Image();
+//	am.src = 'img/am.gif';
+//	pm.src = 'img/pm.gif';
+}
+
+function Clock(length) {
+	this.length		= length;
+	this.digit		= new Array(length);
+	this.curTime	= new Array(length);
+	this.timeStr	= "";
+	for (i=0;i<length;i++) {
+		this.digit[i]	= new NumberImg(WIDTH,HEIGHT,'n0.gif');
+		this.curTime[i]	= 0;
+		this.timerStr 	+= '0' ;		
+		if ( i%2 == 1 && i!=(length-1) ) // Odd number and not last
+			new NumberImg(COLWIDTH,HEIGHT,'col.gif');
+	}
+//	this.amPm		= new NumberImg(WIDTH,HEIGHT,'am.gif');
+	this.update		= clockUpdate;
+	this.repaint	= clockRepaint;
+}
+
+function clockUpdate() {  // method of Clock
+	now 		= new Date();
+	hour		= now.getHours();
+//	amPm		= hour<12 ? 'am' : 'pm';
+//	hour		= hour == 0 || hour == 12 ? 12 : hour % 12 ;
+//		uncomment the above for a 12 hour clock
+	this.timeStr	=  ((hour - (-100))+'').substring(1);
+	this.timeStr 	+= ((now.getMinutes() - (-100))+'').substring(1);
+	this.timeStr 	+= ((now.getSeconds() - (-100))+'').substring(1);
+}
+
+function clockRepaint() {  // method of Clock
+	for (i=0;i<this.length;i++) {
+		var num = parseInt(this.timeStr.substring(i,i+1));
+		if ( num != this.curTime[i] ) {
+			this.curTime[i]			= num;
+			this.digit[i].image.src	= number[num].src;
+		}
+	}
+//	this.amPm.image.src = eval(amPm + '.src');
+}
+
+function NumberImg(x,y,img) {
+	document.write('<IMG SRC="img/'+img+'" WIDTH="'+x+'" HEIGHT="'+y+'" BORDER="0">') ;
+	this.image		= document.images[document.images.length-1];
+}
+
+function updateAllClocks() {
+	setTimeout('updateAllClocks()',1000);
+	clock.update();
+	clock.repaint();
+}
+
+init();
+window.onload 	= updateAllClocks;
+
+
+//-->
+</SCRIPT>
+<TITLE>JavaScript Clock</TITLE>
+<meta name="keywords" content="数字时钟 clock timer">
+<meta name="description" content="用javascript实现的数字时钟">
+<style type="text/css">
+<!--
+.pt9 {  font-family: "宋体"; font-size: 9pt}
+body { font-family: "宋体"; font-size: 9pt ; margin-top: 0px}
+td {  font-size: 9pt}
+-->
+</style>
+</HEAD>
+<BODY bgcolor="#000000" text="#FFFFFF" link="#FFFFCC" vlink="#CCCCFF" alink="#CCFFCC">
+<DIV ALIGN=LEFT>
+	
+	<CENTER>
+    <p align=CENTER>&nbsp;</p>
+    
+  </CENTER>
+
+	
+  <form>
+    <div align="center"> <font size="5">数字时钟脚本</font></div>
+  </form>
+  <div align=LEFT> 
+    <center>
+      <img src="one.gif" width="1" height="1" border="0"><br>
+      <!-- Why is there a 1x1 image here?
+
+Some browsers (MSIE) can't deal with using the image array
+in this manner unless there is already at least one image
+on the page. Call it a hack. --> 
+      <script language="JavaScript1.1">
+clock = new Clock(6);
+</script>
+    </center>
+  </div>
+  <table width="75%" border="0" align="center">
+    <tr> 
+      <td height="1142"> 
+        <p><a href="timer.zip">下载全部数字图片和代码</a></p>
+        <p>如下代码加入HTML的&lt;HEAD&gt;区：</p>
+        <p>&lt;SCRIPT LANGUAGE=&quot;JavaScript1.1&quot;&gt;<br>
+          &lt;!-- <br>
+          var number = new Array(10);<br>
+          var am, pm, now, hour; </p>
+        <p>// 数字图片的尺寸大小； <br>
+          // COLWIDTH是分隔图片的大小（即冒号）；<br>
+          var WIDTH = 16; <br>
+          var HEIGHT = 21;<br>
+          var COLWIDTH = 9;</p>
+        <p>function init() { // 预先下载所有的图片，加快显示速度。<br>
+          for (i=0;i&lt;10;i++) {<br>
+          number[i] = new Image(WIDTH,HEIGHT);<br>
+          number[i].src = 'img/' + 'n' + i + '.gif';<br>
+          }<br>
+          // am = new Image();<br>
+          // pm = new Image();<br>
+          // am.src = 'img/am.gif';<br>
+          // pm.src = 'img/pm.gif';<br>
+          }</p>
+        <p>function Clock(length) {<br>
+          this.length = length;<br>
+          this.digit = new Array(length);<br>
+          this.curTime = new Array(length);<br>
+          this.timeStr = &quot;&quot;;<br>
+          for (i=0;i&lt;length;i++) {<br>
+          this.digit[i] = new NumberImg(WIDTH,HEIGHT,'n0.gif');<br>
+          this.curTime[i] = 0;<br>
+          this.timerStr += '0' ; <br>
+          if ( i%2 == 1 &amp;&amp; i!=(length-1) ) // Odd number and not last<br>
+          new NumberImg(COLWIDTH,HEIGHT,'col.gif');<br>
+          }<br>
+          // this.amPm = new NumberImg(WIDTH,HEIGHT,'am.gif');<br>
+          this.update = clockUpdate;<br>
+          this.repaint = clockRepaint;<br>
+          }</p>
+        <p>function clockUpdate() { // method of Clock<br>
+          now = new Date();<br>
+          hour = now.getHours();<br>
+          // amPm = hour&lt;12 ? 'am' : 'pm';<br>
+          // hour = hour == 0 || hour == 12 ? 12 : hour % 12 ;<br>
+          // uncomment the above for a 12 hour clock<br>
+          this.timeStr = ((hour - (-100))+'').substring(1);<br>
+          this.timeStr += ((now.getMinutes() - (-100))+'').substring(1);<br>
+          this.timeStr += ((now.getSeconds() - (-100))+'').substring(1);<br>
+          }</p>
+        <p>function clockRepaint() { // method of Clock<br>
+          for (i=0;i&lt;this.length;i++) {<br>
+          var num = parseInt(this.timeStr.substring(i,i+1));<br>
+          if ( num != this.curTime[i] ) {<br>
+          this.curTime[i] = num;<br>
+          this.digit[i].image.src = number[num].src;<br>
+          }<br>
+          }<br>
+          // this.amPm.image.src = eval(amPm + '.src');<br>
+          }</p>
+        <p>function NumberImg(x,y,img) {<br>
+          document.write('&lt;IMG SRC=&quot;img/'+img+'&quot; WIDTH=&quot;'+x+'&quot; 
+          HEIGHT=&quot;'+y+'&quot; BORDER=&quot;0&quot;&gt;') ;<br>
+          this.image = document.images[document.images.length-1];<br>
+          }</p>
+        <p>function updateAllClocks() {<br>
+          setTimeout('updateAllClocks()',1000);<br>
+          clock.update();<br>
+          clock.repaint();<br>
+          }</p>
+        <p>init();<br>
+          window.onload = updateAllClocks;</p>
+        <p><br>
+          //--&gt;<br>
+          &lt;/SCRIPT&gt;</p>
+        <p>如下代码加入HTML的&lt;BODY&gt;区：</p>
+        <p>&lt;DIV ALIGN=LEFT&gt;<br>
+          <br>
+          &lt;CENTER&gt;&lt;BR&gt;&lt;IMG SRC=&quot;one.gif&quot; WIDTH=&quot;1&quot; 
+          HEIGHT=&quot;1&quot; BORDER=&quot;0&quot;&gt;&lt;BR&gt;</p>
+        <p>&lt;SCRIPT LANGUAGE=&quot;JavaScript1.1&quot;&gt;<br>
+          clock = new Clock(6);<br>
+          &lt;/SCRIPT&gt;<br>
+          &lt;BR&gt;&lt;/CENTER&gt;<br>
+          &lt;/DIV&gt;</p>
+        <p>注意：所有的数字图片是放在img目录中的。</p>
+        </td>
+    </tr>
+  </table>
+  <P>&nbsp; </P>
+</DIV>
+
+</BODY>
+</HTML>

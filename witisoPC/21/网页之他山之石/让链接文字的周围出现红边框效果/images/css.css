@@ -1,0 +1,48 @@
+A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ffffcc; TEXT-DECORATION: underline
+}
+A.top:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.top:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.top:active {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.top:hover {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+A.menu:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.menu:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.menu:active {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.menu:hover {
+	COLOR: #cc0000; TEXT-DECORATION: underline
+}
+.c12 {
+	FONT-SIZE: 12pt; LINE-HEIGHT: 170%
+}
+.c10 {
+	FONT-SIZE: 10pt; LINE-HEIGHT: 170%
+}
+.c9 {
+	FONT-SIZE: 9pt; LINE-HEIGHT: 170%
+}
+.c8 {
+	FONT-SIZE: 8pt; LINE-HEIGHT: 170%
+}

@@ -1,0 +1,198 @@
+<html>
+<head>
+<title>Live Digital Clock </title>
+<script language="JavaScript">
+<!--//
+img = new Array()
+for(var i=0; i <= 14; i++) {
+	img[i] = new Image()
+}
+img[1].src = "dg0.gif"
+img[2].src = "dg1.gif"
+img[3].src = "dg2.gif"
+img[4].src = "dg3.gif"
+img[5].src = "dg4.gif"
+img[6].src = "dg5.gif"
+img[7].src = "dg6.gif"
+img[8].src = "dg7.gif"
+img[9].src = "dg8.gif"
+img[10].src = "dg9.gif"
+img[11].src = "dgon.gif"
+img[12].src = "dgoff.gif"
+img[13].src = "dgam.gif"
+img[14].src = "dgpm.gif"
+var base = "dg"
+var space = "space.gif"
+
+var per = false
+function stop() {
+	document.one.src = space
+	document.two.src = space
+	document.three.src = space
+	document.four.src = space
+	document.five.src = space
+	document.six.src = space
+	per = false
+}
+function pause() {
+	per = false
+}
+
+function go() {
+	per = true
+	start()
+}
+function start() {
+	if(per == true) {
+		var now = new Date()
+		var hours = now.getHours();
+	      var ampm = (hours < 12) ? "am" : "pm"
+		hours = (hours > 12) ? (hours - 12) + "" : hours + ""
+		hours = (hours == "0") ? "12" : hours
+		hours = (hours < 10) ? "0" + hours : hours + ""
+		var minutes = now.getMinutes();
+		minutes = (minutes < 10) ? "0" + minutes : minutes + ""
+		var seconds = now.getSeconds();
+		seconds = (seconds < 10) ? "0" + seconds : seconds + ""
+		document.one.src = (hours.charAt(0)=="0") ? space : add(hours.charAt(0))
+		document.two.src = add(hours.charAt(1))
+		document.three.src = (now.getSeconds() % 2) ? add("on") : add("off")
+		document.four.src = add(minutes.charAt(0))
+		document.five.src = add(minutes.charAt(1))
+		document.six.src = add(ampm)
+		setTimeout("start()",1000)
+	}
+}
+
+function add(it) {
+	return "dg" + it + ".gif"
+}
+
+//-->
+</script>
+<link rel="stylesheet" href="../style.css">
+<meta name="description" content="活动数字时钟脚本。">
+<meta name="keywords" content="digital clock, clock, time, timer, digital, 时钟, 时间, 数字, 数字时钟">
+</head>
+<body onLoad="go()" bgcolor="#000000" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+<div align="center">
+<p><font size="3" face="Times New Roman, Times, serif">Digital Clock</font></p>
+  <form>
+    <div align="center">
+<input type="button" name="Button" value="下载全部文件" class="pt9" onclick="javascript:location.href='dgclock.zip'">
+    </div>
+  </form>
+  <p><img src="space.gif" width=16 height=21 alt="clock" name="one"><img src="space.gif" width=16 height=21 alt="clock" name="two"><img src="space.gif" width=14 height=21 alt="clock" name="three"><img src="space.gif" width=16 height=21 alt="clock" name="four"><img src="space.gif" width=16 height=21 alt="clock" name="five"><img src="space.gif" width=16 height=21 alt="clock" name="six"> 
+    <br>
+    <a href="javascript:go()"><font face="Arial, Helvetica, sans-serif">start</font></a><font face="Arial, Helvetica, sans-serif"> 
+    | <a href="javascript:pause()">pause</a> | <a href="javascript:stop()">stop</a> 
+    </font></p>
+  <table width="69%" border="0">
+    <tr>
+      <td>&lt;html&gt;<br>
+        &lt;head&gt;<br>
+        &lt;title&gt;Live Digital Clock &lt;/title&gt;<br>
+        &lt;script language=&quot;JavaScript&quot;&gt;<br>
+        &lt;!--//<br>
+        img = new Array()<br>
+        for(var i=0; i &lt;= 14; i++) {<br>
+        img[i] = new Image()<br>
+        }<br>
+        img[1].src = &quot;dg0.gif&quot;<br>
+        img[2].src = &quot;dg1.gif&quot;<br>
+        img[3].src = &quot;dg2.gif&quot;<br>
+        img[4].src = &quot;dg3.gif&quot;<br>
+        img[5].src = &quot;dg4.gif&quot;<br>
+        img[6].src = &quot;dg5.gif&quot;<br>
+        img[7].src = &quot;dg6.gif&quot;<br>
+        img[8].src = &quot;dg7.gif&quot;<br>
+        img[9].src = &quot;dg8.gif&quot;<br>
+        img[10].src = &quot;dg9.gif&quot;<br>
+        img[11].src = &quot;dgon.gif&quot;<br>
+        img[12].src = &quot;dgoff.gif&quot;<br>
+        img[13].src = &quot;dgam.gif&quot;<br>
+        img[14].src = &quot;dgpm.gif&quot;<br>
+        var base = &quot;dg&quot;<br>
+        var space = &quot;space.gif&quot;
+        <p>var per = false<br>
+          function stop() {<br>
+          document.one.src = space<br>
+          document.two.src = space<br>
+          document.three.src = space<br>
+          document.four.src = space<br>
+          document.five.src = space<br>
+          document.six.src = space<br>
+          per = false<br>
+          }<br>
+          function pause() {<br>
+          per = false<br>
+          }</p>
+        <p>function go() {<br>
+          per = true<br>
+          start()<br>
+          }<br>
+          function start() {<br>
+          if(per == true) {<br>
+          var now = new Date()<br>
+          var hours = now.getHours();<br>
+          var ampm = (hours &lt; 12) ? &quot;am&quot; : &quot;pm&quot;<br>
+          hours = (hours &gt; 12) ? (hours - 12) + &quot;&quot; : hours + &quot;&quot;<br>
+          hours = (hours == &quot;0&quot;) ? &quot;12&quot; : hours<br>
+          hours = (hours &lt; 10) ? &quot;0&quot; + hours : hours + &quot;&quot;<br>
+          var minutes = now.getMinutes();<br>
+          minutes = (minutes &lt; 10) ? &quot;0&quot; + minutes : minutes + &quot;&quot;<br>
+          var seconds = now.getSeconds();<br>
+          seconds = (seconds &lt; 10) ? &quot;0&quot; + seconds : seconds + &quot;&quot;<br>
+          document.one.src = (hours.charAt(0)==&quot;0&quot;) ? space : add(hours.charAt(0))<br>
+          document.two.src = add(hours.charAt(1))<br>
+          document.three.src = (now.getSeconds() % 2) ? add(&quot;on&quot;) : 
+          add(&quot;off&quot;)<br>
+          document.four.src = add(minutes.charAt(0))<br>
+          document.five.src = add(minutes.charAt(1))<br>
+          document.six.src = add(ampm)<br>
+          setTimeout(&quot;start()&quot;,1000)<br>
+          }<br>
+          }</p>
+        <p>function add(it) {<br>
+          return &quot;dg&quot; + it + &quot;.gif&quot;<br>
+          }</p>
+        <p>//--&gt;<br>
+          &lt;/script&gt;<br>
+          <br>
+          &lt;/head&gt;<br>
+          &lt;body <font color="#66FF66">onLoad=&quot;go()&quot;</font> bgcolor=&quot;#000000&quot; 
+          text=&quot;#FFFFFF&quot; link=&quot;#FFFFFF&quot; vlink=&quot;#FFFFFF&quot; 
+          alink=&quot;#FFFFFF&quot;&gt;<br>
+        </p>
+        <p> <font color="#FFFFCC">&lt;img src=&quot;space.gif&quot; width=16 height=21 
+          alt=&quot;clock&quot; name=&quot;one&quot;&gt;&lt;img src=&quot;space.gif&quot; 
+          width=16 height=21 alt=&quot;clock&quot; name=&quot;two&quot;&gt;&lt;img 
+          src=&quot;space.gif&quot; width=14 height=21 alt=&quot;clock&quot; name=&quot;three&quot;&gt;&lt;img 
+          src=&quot;space.gif&quot; width=16 height=21 alt=&quot;clock&quot; name=&quot;four&quot;&gt;&lt;img 
+          src=&quot;space.gif&quot; width=16 height=21 alt=&quot;clock&quot; name=&quot;five&quot;&gt;&lt;img 
+          src=&quot;space.gif&quot; width=16 height=21 alt=&quot;clock&quot; name=&quot;six&quot;&gt; 
+          </font><br>
+          &lt;br&gt;<br>
+        </p>
+        <p>&lt;a href=&quot;javascript:go()&quot;&gt;&lt;font face=&quot;Arial, 
+          Helvetica, sans-serif&quot;&gt;start&lt;/font&gt;&lt;/a&gt;&lt;font 
+          face=&quot;Arial, Helvetica, sans-serif&quot;&gt; <br>
+          | &lt;a href=&quot;javascript:pause()&quot;&gt;pause&lt;/a&gt; | &lt;a 
+          href=&quot;javascript:stop()&quot;&gt;stop&lt;/a&gt; <br>
+          &lt;/font&gt;<br>
+          <br>
+          &lt;/body&gt;<br>
+          &lt;/html&gt;</p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p>说明：图片文件名应该是dg0.gif,dg1.gif...，你可以用自己的图片替换它们。&lt;BODY&gt;标签中的<font color="#66FF66">onLoad=&quot;go()&quot;</font>千万不要少，否则不会运行的。</p>
+        <p>黄色部分代码是时钟初始设置，写成一行，这样数字之间不会留空格。</p>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>
+

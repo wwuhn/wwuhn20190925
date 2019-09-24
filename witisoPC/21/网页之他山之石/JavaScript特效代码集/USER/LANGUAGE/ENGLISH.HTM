@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>浏览器语言类型识别脚本</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="browser, language, 浏览器, 语言, redirection, redirect">
+<meta name="description" content="该脚本检测浏览器支持的语言版本然后导向相应的页面。">
+</head>
+
+<body bgcolor="#000066" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+
+
+
+<!-- Spidersoft WebZIP Banner Ad Insert -->
+<!-- For removal instructions see:  http://www.spidersoft.com/webzip/help/noads.asp  -->
+
+<SCRIPT FOR=window EVENT=onload LANGUAGE="JScript">
+  initAd();
+</SCRIPT>
+
+<script language="JScript">
+<!--
+
+function initAd() {
+  document.all.AdLayer.style.posTop = -200;
+  document.all.AdLayer.style.visibility = 'visible'
+  MoveLayer('AdLayer');
+}
+
+function MoveLayer(layerName) {
+  var x = 10;
+  var y = 10;
+  var diff = (document.body.scrollTop + y - document.all.AdLayer.style.posTop)*.40;
+  var y = document.body.scrollTop + y - diff;
+  eval("document.all." + layerName + ".style.posTop =  y");
+  eval("document.all." + layerName + ".style.posLeft = x");
+  setTimeout("MoveLayer('AdLayer');", 60);
+}
+
+if (navigator.onLine){
+  document.write("<div bgcolor=#000000 style='height=70px;'></div>");
+  document.write("<div id=AdLayer style='position:absolute; width:100%; height:80px; z-index:20; visibility:hidden;'>");
+  document.write("<IFRAME SRC='http://www.spidersoft.com/ads/bwz468_60.asp' width=100% height=60 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></IFRAME>");
+  document.write("</div>");
+}
+ //-->
+</script>
+
+<!-- /Spidersoft WebZIP Banner Ad Insert -->
+
+
+
+<div align="center"> 
+  <p><script src="http://ads.8848.net/show.asp?userid=java2000"></script><br>
+  </p>
+  <p><font size="3">浏览器语言类型识别脚本</font></p>
+  <p>您来到这里是因为浏览器语言版本检测为：EN</p>
+  <form method="post" name="bform">
+    <input type=button value="选择代码" onClick="javascript:this.form.text.focus();this.form.text.select();" class="pt9">
+    <br>
+    <textarea name="text" cols="80" rows="8" wrap="VIRTUAL" class="pt9">
+&lt;SCRIPT LANGUAGE=&quot;JavaScript1.2&quot;&gt;
+&lt;!--//
+if (navigator.appName == 'Netscape')
+var language = navigator.language;
+else
+var language = navigator.browserLanguage;
+
+
+if (language.indexOf('en') &gt; -1) document.location.href = 'english.htm';
+else if (language.indexOf('nl') &gt; -1) document.location.href = 'dutch.htm';
+else if (language.indexOf('fr') &gt; -1) document.location.href = 'french.htm';
+else if (language.indexOf('de') &gt; -1) document.location.href = 'german.htm';
+else if (language.indexOf('ja') &gt; -1) document.location.href = 'japanese.htm';
+else if (language.indexOf('it') &gt; -1) document.location.href = 'italian.htm';
+else if (language.indexOf('pt') &gt; -1) document.location.href = 'portuguese.htm';
+else if (language.indexOf('es') &gt; -1) document.location.href = 'Spanish.htm';
+else if (language.indexOf('sv') &gt; -1) document.location.href = 'swedish.htm';
+else if (language.indexOf('zh') &gt; -1) document.location.href = 'chinese.htm';
+else 
+document.location.href = 'english.htm';
+// End --&gt;
+&lt;/script&gt;</textarea>
+  </form>
+  <table width="62%" border="0">
+    <tr>
+      <td>
+        <p>如果您的网站面向世界各地的冲浪者或者对外开展商贸活动，检测来访者的浏览器语言类型就非常现实了。这里提供的脚本可以检测流露；浏览器的语言类型，一般中文可以识别为“ZH”，英文版本的可以识别为“EN”,然后根据判断的浏览器语言类型导向不同语言版本的页面。当然你可以通过服务器端去解决这个问题，在客户端用这个脚本就可以了。</p>
+        <p>你需要将如上代码放在HTML的&lt;head&gt;区。然后做不同语言版本的页面即可。</p>
+        </td>
+    </tr>
+  </table>
+  <form>
+    <div align="center"> 
+      <input type="button" value="返回" onClick="history.go(-1)" name="button" class="pt9">
+      <input type="button" name="Button" value="回到首页" onClick="javascript:top.location='../../../index.html'" class="pt9">
+      <input type="button" name="Button2" value="最新更新" onClick="javascript:top.location='../../navigation/newscript.htm'" class="pt9">
+    </div>
+  </form>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

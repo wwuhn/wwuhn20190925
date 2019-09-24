@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>直接的页面打印按钮</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.unnamed1 {  font-family: "宋体"; font-size: 9pt; text-decoration: none}
+-->
+</style>
+<meta name="keywords" content="页面打印, printweb, print, webpage, page, 打印, 打印页面">
+<meta name="description" content="可以打印页面的脚本">
+</head>
+
+<body bgcolor="#FFFFFF" background="../../../images/bg011.gif" topmargin="0">
+<center>
+  <form name="">
+  <div align="center"> 
+    <font size="4" color="#FF0000">直接的页面打印按钮</font><font color="#FF0000" face="Arial, Helvetica, sans-serif">（All 
+    Browser）</font><font size="5" color="#FF0000"><br>
+    </font>使用该脚本使访问者轻松地通过打印按钮实现页面的打印 </div>
+</form>
+<p align="center"> 
+  <script language="Javascript">
+function printit(){  
+if (NS) {
+    window.print() ;  
+} else {
+    var WebBrowser = '<OBJECT ID="WebBrowser1" WIDTH=0 HEIGHT=0 CLASSID="CLSID:8856F961-340A-11D0-A96B-00C04FD705A2"></OBJECT>';
+document.body.insertAdjacentHTML('beforeEnd', WebBrowser);
+    WebBrowser1.ExecWB(6, 2);//Use a 1 vs. a 2 for a prompting dialog box    WebBrowser1.outerHTML = "";  
+}
+}
+</script>
+  <script language="Javascript">  
+var NS = (navigator.appName == "Netscape");
+var VERSION = parseInt(navigator.appVersion);
+if (VERSION > 3) {
+    document.write('<form><input class="unnamed" type=button value="打印本页" name="Print" onClick="printit()"></form>');        
+}
+</script>
+</p>
+<form method="post" action="">
+  <div align="center">
+    <textarea name="textfield" cols="60" rows="10" class="unnamed1">&lt;script language=&quot;Javascript&quot;&gt;
+function printit(){  
+if (NS) {
+    window.print() ;  
+} else {
+    var WebBrowser = '&lt;OBJECT ID=&quot;WebBrowser1&quot; WIDTH=0 HEIGHT=0 CLASSID=&quot;CLSID:8856F961-340A-11D0-A96B-00C04FD705A2&quot;&gt;&lt;/OBJECT&gt;';
+document.body.insertAdjacentHTML('beforeEnd', WebBrowser);
+    WebBrowser1.ExecWB(6, 2);//Use a 1 vs. a 2 for a prompting dialog box 
+WebBrowser1.outerHTML = &quot;&quot;;  
+}
+}
+&lt;/script&gt;
+  &lt;script language=&quot;Javascript&quot;&gt;  
+var NS = (navigator.appName == &quot;Netscape&quot;);
+var VERSION = parseInt(navigator.appVersion);
+if (VERSION &gt; 3) {
+    document.write('&lt;form&gt;&lt;input type=button value=&quot;打印本页&quot; name=&quot;Print&quot; onClick=&quot;printit()&quot;&gt;&lt;/form&gt;');        
+}
+&lt;/script&gt;</textarea>
+  </div>
+</form>
+</center></body>
+</html>

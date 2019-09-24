@@ -1,0 +1,24 @@
+A {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #000000; TEXT-DECORATION: underline overline
+}
+BODY {
+	SCROLLBAR-FACE-COLOR: #007d10; FONT-SIZE: 9pt; SCROLLBAR-HIGHLIGHT-COLOR: #007d10; SCROLLBAR-SHADOW-COLOR: #333333; COLOR: #333333; SCROLLBAR-3DLIGHT-COLOR: #333333; LINE-HEIGHT: 12pt; SCROLLBAR-ARROW-COLOR: #007d10; SCROLLBAR-TRACK-COLOR: #94db52; SCROLLBAR-DARKSHADOW-COLOR: #007d10
+}
+INPUT {
+	BORDER-RIGHT: buttonhighlight 1px outset; BORDER-TOP: buttonhighlight 1px outset; FONT-SIZE: 9pt; BORDER-LEFT: buttonhighlight 1px outset; BORDER-BOTTOM: buttonhighlight 1px outset; FONT-FAMILY: "ËÎÌו"; HEIGHT: 19px
+}
+TD {
+	FONT-SIZE: 9pt
+}
+A.daohang:link {
+	FONT-SIZE: 10pt; FILTER: dropshadow(color=000000, offx=2, offy=2, positive=2); COLOR: #ffffff; POSITION: relative; HEIGHT: 16px; TEXT-DECORATION: none
+}
+A.daohang:visited {
+	FONT-SIZE: 10pt; FILTER: dropshadow(color=000000, offx=2, offy=2, positive=2); COLOR: #ffffff; POSITION: relative; HEIGHT: 16px; TEXT-DECORATION: none
+}
+A.daohang:hover {
+	FONT-SIZE: 10pt; COLOR: #fdee02; TEXT-DECORATION: underline
+}

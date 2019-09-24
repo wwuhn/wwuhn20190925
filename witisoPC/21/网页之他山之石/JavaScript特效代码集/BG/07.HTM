@@ -1,0 +1,238 @@
+<html>
+<head>
+<title>调色板四</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+</head>
+
+<body topmargin="0" leftmargin="0" bgcolor="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center"> <br>
+      <table width="68%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="07.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="07c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335" class="white"><br>
+            <b>调色板四</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr class="white"> 
+                <td colspan="2" valign="top">提示： 点击下面的加减号来调和声彩，最下面有调出色彩的数值。 
+                  <script language="JavaScript">
+<!-- Hiding
+
+var red=0;
+var green=0;
+var blue=0;
+var value=0;
+var convert = new Array()
+var hexbase= new Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F");
+
+for (x=0; x<16; x++){
+for (y=0; y<16; y++){
+convert[value]= hexbase[x] + hexbase[y];
+value++;
+}
+}
+
+function clear(){
+document.color.bl.value= blue;
+document.color.rd.value= red;
+document.color.gr.value= green;
+}
+
+function display(){
+redx = convert[red]
+greenx = convert[green]
+bluex = convert[blue]
+var rgb = "#"+redx+greenx+bluex;
+document.color.rgbdspl.value= rgb;
+document.bgColor =rgb;
+}
+
+function upred(x){
+if ((red+x)<=255)
+red+=x
+document.color.rd.value= red;
+display()
+}
+
+function downred(x){
+if ((red-x)>=0)
+red-=x
+document.color.rd.value= red;
+display()
+}
+
+function upgreen(x){
+if ((green+x)<=255)
+green+=x
+document.color.gr.value= green;
+display()
+}
+
+function downgreen(x){
+if ((green-x)>=0)
+green-=x
+document.color.gr.value= green;
+display()
+}
+
+function upblue(x){
+if ((blue+x)<=255)
+blue+=x
+document.color.bl.value= blue;
+display()
+}
+
+function downblue(x){
+if ((blue-x)>=0)
+blue-=x
+document.color.bl.value= blue;
+display()
+}
+
+// done hiding -->
+</script>
+                </td>
+              </tr>
+              <tr align="center"> 
+                <td colspan="2" valign="top"> <br>
+                  <br>
+                  <form name="color">
+                    <table>
+                      <tr align="Center"> 
+                        <td> 
+                          <input name="red" type="button" value=" +50 " onClick="upred(50)">
+                        </td>
+                        <td> 
+                          <input name="red2" type="button" value=" + 10 " onClick="upred(10)">
+                        </td>
+                        <td> 
+                          <input name="red2" type="button" value=" + 1" onClick="upred(1)">
+                        </td>
+                        <td width="50"><font color="#FF0000" size=+3><b><font color="#FA0000">红</font></b></font></td>
+                        <td> 
+                          <input name="red-" type="button" value=" - 1" onClick="downred(1)">
+                        </td>
+                        <td> 
+                          <input name="red-" type="button" value=" - 10 " onClick="downred(10)">
+                        </td>
+                        <td> 
+                          <input name="red-" type="button" value=" -50 " onClick="downred(50)">
+                        </td>
+                        <td> 
+                          <input type="text" name="rd" size=3>
+                        </td>
+                      </tr>
+                      <tr align="Center"> 
+                        <td> 
+                          <input name="green" type="button" value=" +50 " onClick="upgreen(50)">
+                        </td>
+                        <td> 
+                          <input name="green" type="button" value=" + 10 " onClick="upgreen(10)">
+                        </td>
+                        <td> 
+                          <input name="green" type="button" value=" + 1" onClick="upgreen(1)">
+                        </td>
+                        <td width="50"><font color="#00FF00" size=+3><b><font color="#00FA00">绿</font></b></font></td>
+                        <td> 
+                          <input name="green-" type="button" value=" - 1" onClick="downgreen(1)">
+                        </td>
+                        <td> 
+                          <input name="green-" type="button" value=" - 10 " onClick="downgreen(10)">
+                        </td>
+                        <td> 
+                          <input name="green-" type="button" value=" -50 " onClick="downgreen(50)">
+                        </td>
+                        <td> 
+                          <input type="text" name="gr" size=3>
+                        </td>
+                      </tr>
+                      <tr align="Center"> 
+                        <td> 
+                          <input name="blue" type="button" value=" +50 " onClick="upblue(50)">
+                        </td>
+                        <td> 
+                          <input name="blue" type="button" value=" + 10 " onClick="upblue(10)">
+                        </td>
+                        <td> 
+                          <input name="blue" type="button" value=" + 1" onClick="upblue(1)">
+                        </td>
+                        <td width="50"><font color="#0000FF" size=+3><b><font color="#0000FA">蓝</font></b></font></td>
+                        <td> 
+                          <input name="blue-" type="button" value=" - 1" onClick="downblue(1)">
+                        </td>
+                        <td> 
+                          <input name="blue-" type="button" value=" - 10 " onClick="downblue(10)">
+                        </td>
+                        <td> 
+                          <input name="blue-" type="button" value=" -50 " onClick="downblue(50)">
+                        </td>
+                        <td> 
+                          <input type="text" name="bl" size=3>
+                        </td>
+                      </tr>
+                      <tr align="Center"> 
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td width="50"> 
+                          <input type="text" name="rgbdspl" size=7>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                      </tr>
+                    </table>
+                  </form>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>页面打印脚本</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+<meta name="keywords" content="print, printweb, page, webpage, 打印, 页面打印, 打印页面">
+<meta name="description" content="页面打印脚本。">
+<link rel="stylesheet" href="../style.css"></head>
+
+<body bgcolor="#004080" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+<p align="center"><font size="5">手动页面打印脚本</font></p>
+<p align="center">
+  <SCRIPT LANGUAGE="JavaScript">
+<!--//
+if (window.print) {
+document.write('<form>'+ '<input type=button name=print value="打印页面" '
++ 'onClick="javascript:window.print()"></form>');
+}
+//-->
+</script>
+</p>
+<div align="center">
+  <table width="73%" border="0">
+    <tr> 
+      <td>
+        <p>代码加入HTML的&lt;BODY&gt;区的任意位置：</p>
+        <p>&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;<br>
+          &lt;!-- Begin<br>
+          if (window.print) {<br>
+          document.write('&lt;form&gt;'+ '&lt;input type=button name=print value=&quot;打印页面&quot; 
+          '<br>
+          + 'onClick=&quot;javascript:window.print()&quot;&gt;&lt;/form&gt;'); 
+          <br>
+          }<br>
+          // End --&gt;<br>
+          &lt;/script&gt;</p>
+        <p>说明：document.write一句请写在一行，不要回车断行。</p>
+        <p> 其它请参考： 
+          <input type="button" name="Button3" value="自动打印页面脚本" class="pt9" onClick="javascript:top.location='autoprint.htm'">
+          <input type="button" name="Button3" value="另一个脚本" class="pt9" onClick="javascript:window.open('printweb1.htm','new','width=600,height=400,menubar=yes,toolbar=yes,scroller=yes')">
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>
+<p align="center">&nbsp;</p>
+</body>
+</html>

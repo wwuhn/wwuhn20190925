@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>dragable images </title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+body {  font-family: "宋体"; font-size: 9pt; text-decoration: none; margin-top: 0px}
+td {  font-family: "宋体"; font-size: 9pt; text-decoration: none}
+.unnamed1 { font-family: "宋体"; font-size: 9pt; text-decoration: none }
+.drag{position:relative;cursor:hand}
+-->
+</style>
+<script language="JavaScript1.2">
+<!--
+
+var dragapproved=false
+var z,x,y
+function move(){
+if (event.button==1&&dragapproved){
+z.style.pixelLeft=temp1+event.clientX-x
+z.style.pixelTop=temp2+event.clientY-y
+return false
+}
+}
+function drags(){
+if (!document.all)
+return
+if (event.srcElement.className=="drag"){
+dragapproved=true
+z=event.srcElement
+temp1=z.style.pixelLeft
+temp2=z.style.pixelTop
+x=event.clientX
+y=event.clientY
+document.onmousemove=move
+}
+}
+document.onmousedown=drags
+document.onmouseup=new Function("dragapproved=false")
+//-->
+</script>
+<meta name="keywords" content="拖动 dragable drag images pictures dragme">
+<meta name="description" content="用鼠标可以将页面上的图形拖动到任意的位置。">
+</head>
+
+<body bgcolor="#fffff2">
+<center>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  <form>
+    <div align="center"> <font size="4" color="#FF0000">可以随处拖动的图片和文字（Dragable 
+      images）适用于IE</font></div>
+  </form>
+  <p>以下的文字和图片可以任意拖动啊！</p>
+  <p><font color="#990099"><b><font size="5" face="Arial, Helvetica, sans-serif" class="drag">Dragme 
+    ! 　　　</font></b></font><img src="bond.gif" width="120" height="127" class="drag"></p>
+  <form method="post" action="">
+    <textarea name="textfield" cols="45" rows="12" class="unnamed1">如下脚本加入&lt;HEAD&gt;区：
+&lt;style&gt;
+&lt;!--
+.drag{position:relative;cursor:hand}
+--&gt;
+&lt;/style&gt;
+&lt;script language=&quot;JavaScript1.2&quot;&gt;
+&lt;!--
+var dragapproved=false
+var z,x,y
+function move(){
+if (event.button==1&amp;&amp;dragapproved){
+z.style.pixelLeft=temp1+event.clientX-x
+z.style.pixelTop=temp2+event.clientY-y
+return false
+}
+}
+function drags(){
+if (!document.all)
+return
+if (event.srcElement.className==&quot;drag&quot;){
+dragapproved=true
+z=event.srcElement
+temp1=z.style.pixelLeft
+temp2=z.style.pixelTop
+x=event.clientX
+y=event.clientY
+document.onmousemove=move
+}
+}
+document.onmousedown=drags
+document.onmouseup=new Function(&quot;dragapproved=false&quot;)
+//--&gt;
+&lt;/script&gt;</textarea>
+    <textarea name="textfield2" cols="45" rows="12" class="unnamed1">最后这样做，文字和图片就可以随意拖动了。：
+
+&lt;html&gt;
+&lt;body&gt;
+&lt;img src=&quot;test.gif&quot; class=&quot;drag&quot;&gt;&lt;br&gt;
+&lt;h1&gt;&lt;b class=&quot;drag&quot;&gt;Dragme!&lt;/b&gt;&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+  </form>
+  <p>&nbsp; </p>
+</center>
+</body>
+</html>

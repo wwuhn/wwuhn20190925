@@ -1,0 +1,168 @@
+<html>
+<head>
+<title>记录来宾姓名</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+<script language="JavaScript">
+<!-- Begin
+var expDays = 30;
+var exp = new Date(); 
+exp.setTime(exp.getTime() + (expDays*24*60*60*1000));
+function Who(info){
+var VisitorName = GetCookie('VisitorName')
+if (VisitorName == null) {
+VisitorName = prompt("您的尊姓大名：");
+SetCookie ('VisitorName', VisitorName, exp);
+}
+return VisitorName;
+}
+function When(info){
+var rightNow = new Date()
+var WWHTime = 0;
+WWHTime = GetCookie('WWhenH')
+WWHTime = WWHTime * 1
+var lastHereFormatting = new Date(WWHTime);
+var intLastVisit = (lastHereFormatting.getYear() * 10000)+(lastHereFormatting.getMonth() * 100) + lastHereFormatting.getDate()
+var lastHereInDateFormat = "" + lastHereFormatting;
+var dayOfWeek = lastHereInDateFormat.substring(0,3)
+var dateMonth = lastHereInDateFormat.substring(4,11)
+var timeOfDay = lastHereInDateFormat.substring(11,16)
+var year = lastHereInDateFormat.substring(23,25)
+var WWHText = dayOfWeek + ", " + dateMonth + " at " + timeOfDay
+SetCookie ("WWhenH", rightNow.getTime(), exp)
+return WWHText
+}
+function Count(info){
+var WWHCount = GetCookie('WWHCount')
+if (WWHCount == null) {
+WWHCount = 0;
+}
+else{
+WWHCount++;
+}
+SetCookie ('WWHCount', WWHCount, exp);
+return WWHCount;
+}
+function set(){
+VisitorName = prompt("Who are you?");
+SetCookie ('VisitorName', VisitorName, exp);
+SetCookie ('WWHCount', 0, exp);
+SetCookie ('WWhenH', 0, exp);
+}
+function getCookieVal (offset) {  
+var endstr = document.cookie.indexOf (";", offset);  
+if (endstr == -1)    
+endstr = document.cookie.length;  
+return unescape(document.cookie.substring(offset, endstr));
+}
+function GetCookie (name) {  
+var arg = name + "=";  
+var alen = arg.length;  
+var clen = document.cookie.length;  
+var i = 0;  
+while (i < clen) {    
+var j = i + alen;    
+if (document.cookie.substring(i, j) == arg)      
+return getCookieVal (j);    
+i = document.cookie.indexOf(" ", i) + 1;    
+if (i == 0) break;   
+}  
+return null;
+}
+function SetCookie (name, value) {  
+var argv = SetCookie.arguments;  
+var argc = SetCookie.arguments.length;  
+var expires = (argc > 2) ? argv[2] : null;  
+var path = (argc > 3) ? argv[3] : null;  
+var domain = (argc > 4) ? argv[4] : null;  
+var secure = (argc > 5) ? argv[5] : false;  
+document.cookie = name + "=" + escape (value) + 
+((expires == null) ? "" : ("; expires=" + expires.toGMTString())) + 
+((path == null) ? "" : ("; path=" + path)) +  
+((domain == null) ? "" : ("; domain=" + domain)) +    
+((secure == true) ? "; secure" : "");
+}
+function DeleteCookie (name) {  
+var exp = new Date();  
+exp.setTime (exp.getTime() - 1);  
+var cval = GetCookie (name);  
+document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
+}
+//  End -->
+</script>
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="05.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="05c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><br>
+            <b>记录来宾姓名</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="40" valign="top">提示：</td>
+                <td> 在第一次来到本页时提醒你输入你的姓名，以后就不用了，它会每次在你来时告诉你是第多少次来，并且注明上次来本页的时间<br>
+                  <br>
+                  <script language="JavaScript">
+if (Count()==0)
+{
+document.write("您好!" + Who() + ". 您首次来这儿,请多提宝贵意见.");
+}
+else
+{
+document.write("您好!" + Who() + ". 您已来这儿 " + Count() + "次了，最后一次在 " + When() +".");
+}
+</script>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<html>
+<head>
+<title>霓虹灯文字</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../19991225/style.css">
+<meta name="keywords" content="text, color,color text, 文字特效, 彩色, 颜色">
+<meta name="description" content="文字特效--滚动彩色闪烁文字特效。">
+<link rel="stylesheet" href="../../css_style/effect.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<center>
+</center>
+<div align="center">
+  <table width="75%" border="1" cellspacing="0" cellpadding="0" height="11" bordercolor="#0099CC" class="normal">
+    <tr> 
+      <td>
+        <p> 
+          <script language="JavaScript">
+<!-- Begin
+text = "Enjoy in Execllent effect";  //显示的文字
+color1 = "blue";  //文字的颜色
+color2 = "red";  //转换的颜色
+fontsize = "4";   //字体大小
+speed = 200;  //转换速度 (1000 = 1 秒)
+
+i = 0;
+if (navigator.appName == "Netscape") {
+document.write("<layer id=a visibility=show></layer><br><br><br>");
+}
+else {
+document.write("<div id=a></div>");
+}
+function changeCharColor()  {
+if (navigator.appName == "Netscape") {
+document.a.document.write("<center><font face=arial size =" + fontsize + "><font color=" + color1 + ">");
+for (var j = 0; j < text.length; j++) {
+if(j == i) {
+document.a.document.write("<font face=arial color=" + color2 + ">" + text.charAt(i) + "</font>");
+}
+else {
+document.a.document.write(text.charAt(j));
+   }
+}
+document.a.document.write('</font></font></center>');
+document.a.document.close();
+}
+if (navigator.appName == "Microsoft Internet Explorer") {
+str = "<center><font face=arial size=" + fontsize + "><font color=" + color1 + ">";
+for (var j = 0; j < text.length; j++) {
+if( j == i) {
+str += "<font face=arial color=" + color2 + ">" + text.charAt(i) + "</font>";
+}
+else {
+str += text.charAt(j);
+   }
+}
+str += "</font></font></center>";
+a.innerHTML = str;
+}
+(i == text.length) ? i=0 : i++;
+}
+setInterval("changeCharColor()", speed);
+//  End -->
+</script>
+        </p>
+        <p>以下代码放在HTML的&lt;BODY&gt; 区即可：</p>
+        <p><font face="Arial, Helvetica, sans-serif">&lt;script language=&quot;JavaScript&quot;&gt;<br>
+          &lt;!-- Begin<br>
+          text = &quot;Enjoy in Execllent effect&quot;; //显示的文字<br>
+          color1 = &quot;blue&quot;; //文字的颜色<br>
+          color2 = &quot;red&quot;; //转换的颜色<br>
+          fontsize = &quot;8&quot;; //字体大小<br>
+          speed = 200; //转换速度 (1000 = 1 秒) </font></p>
+        <p><font face="Arial, Helvetica, sans-serif">i = 0;<br>
+          if (navigator.appName == &quot;Netscape&quot;) {<br>
+          document.write(&quot;&lt;layer id=a visibility=show&gt;&lt;/layer&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&quot;);<br>
+          }<br>
+          else {<br>
+          document.write(&quot;&lt;div id=a&gt;&lt;/div&gt;&quot;);<br>
+          }<br>
+          function changeCharColor() {<br>
+          if (navigator.appName == &quot;Netscape&quot;) {<br>
+          document.a.document.write(&quot;&lt;center&gt;&lt;font face=arial size 
+          =&quot; + fontsize + &quot;&gt;&lt;font color=&quot; + color1 + &quot;&gt;&quot;);<br>
+          for (var j = 0; j &lt; text.length; j++) {<br>
+          if(j == i) {<br>
+          document.a.document.write(&quot;&lt;font face=arial color=&quot; + color2 
+          + &quot;&gt;&quot; + text.charAt(i) + &quot;&lt;/font&gt;&quot;);<br>
+          }<br>
+          else {<br>
+          document.a.document.write(text.charAt(j));<br>
+          }<br>
+          }<br>
+          document.a.document.write('&lt;/font&gt;&lt;/font&gt;&lt;/center&gt;');<br>
+          document.a.document.close();<br>
+          }<br>
+          if (navigator.appName == &quot;Microsoft Internet Explorer&quot;) {<br>
+          str = &quot;&lt;center&gt;&lt;font face=arial size=&quot; + fontsize 
+          + &quot;&gt;&lt;font color=&quot; + color1 + &quot;&gt;&quot;;<br>
+          for (var j = 0; j &lt; text.length; j++) {<br>
+          if( j == i) {<br>
+          str += &quot;&lt;font face=arial color=&quot; + color2 + &quot;&gt;&quot; 
+          + text.charAt(i) + &quot;&lt;/font&gt;&quot;;<br>
+          }<br>
+          else {<br>
+          str += text.charAt(j);<br>
+          }<br>
+          }<br>
+          str += &quot;&lt;/font&gt;&lt;/font&gt;&lt;/center&gt;&quot;;<br>
+          a.innerHTML = str;<br>
+          }<br>
+          (i == text.length) ? i=0 : i++;<br>
+          }<br>
+          setInterval(&quot;changeCharColor()&quot;, speed);<br>
+          // End --&gt;<br>
+          &lt;/script&gt;</font></p>
+              </td>
+    </tr>
+  </table>
+</div>
+<p>&nbsp;</p>
+</body>
+</html>

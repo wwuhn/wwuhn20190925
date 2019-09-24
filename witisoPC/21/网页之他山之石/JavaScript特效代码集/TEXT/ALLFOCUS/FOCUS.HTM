@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<TITLE>聚焦脚本-Focus</TITLE>
+<link rel="stylesheet" href="style.css">
+<meta name="keywords" content="focus,highlight,聚焦">
+<meta name="description" content="这里是聚焦脚本的集合。">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#FF0000" VLINK="#000080" ALINK="#000080" onLoad="document.form1.b.focus();">
+<form>
+  <div align="center"> <font size="3" color="#FF0033">聚焦系列脚本-<b><font face="Arial, Helvetica, sans-serif" color="#000000">Focus</font></b></font></div>
+</form>
+<form name=form1>
+  <div align="center">
+    <input type="text" size=40 name="a" value="">
+    <br>
+    <input type="text" size=40 name="b" value="http://">
+    <br>
+    看看光标在哪个文本框里？你可以指定光标的位置。 </div>
+</form>
+<table width="59%" border="0" align="center">
+  <tr bgcolor="#F4F3F2"> 
+    <td><font color="purple">在<font face="Arial, Helvetica, sans-serif">&lt;body&gt;</font>区加上如下代码：<br>
+      <font face="Arial, Helvetica, sans-serif">&lt;body onLoad="this.document.form1.a.focus();"&gt;</font></font><font face="Arial, Helvetica, sans-serif"><br>
+      &lt;form name=form1&gt;<br>
+      &lt;input type="text" size=40 name="a" value=""&gt;<br>
+      &lt;input type="text" size=40 name="b" value="http://"&gt;<br>
+      &lt;/form&gt;</font><br>
+      说明：form1是表单的名字， a是文本框a的名字，b是文本框b的名字。</td>
+  </tr>
+</table>
+<p><br>
+</p>
+</BODY></HTML>

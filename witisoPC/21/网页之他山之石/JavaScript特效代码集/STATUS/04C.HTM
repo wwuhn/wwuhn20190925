@@ -1,0 +1,209 @@
+<html>
+<head>
+<title>状态栏变化信息</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+a:active {font-style:normal;text-decoration:none;color:yellow;}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="#009900" topmargin="0" leftmargin="0">
+<form name="form" >
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr bgcolor="#009900"> 
+      <td colspan="3" height="18">&nbsp; </td>
+    </tr>
+    <tr> 
+      <td bgcolor="#009900" width="18"></td>
+      <td align="center" bgcolor="#FFFFFF" valign="top">&nbsp;</td>
+      <td bgcolor="#009900" width="18"></td>
+    </tr>
+    <tr> 
+      <td bgcolor="#009900" width="18"></td>
+      <td align="center" bgcolor="#FFFFFF" valign="top"> 
+        <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+          <tr> 
+            <td rowspan="2" width="16" valign="top"> 
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+                <tr bgcolor="#336699" bordercolor="#336699"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="04.htm">演<br>
+                    <br>
+                    示</a></strong></td>
+                </tr>
+                <tr bordercolor="#009900" bgcolor="#009900"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="04c.htm">源<br>
+                    代<br>
+                    码</a></strong></td>
+                </tr>
+              </table>
+            </td>
+            <td rowspan="2" width="8" bgcolor="#009900">&nbsp;</td>
+            <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#009900" valign="top" width="404"> 
+              <input type="hidden" name="code2">
+              <script language="JavaScript">
+<!--hide
+
+function view(form){
+msg=open("","DisplayWindow","status=1,left=0,top=0,height=320,width=790,");msg.document.write(form.code2.value);
+}
+function CodeOut(form){
+var     
+txt1="<html><title>效果演示</title><head></head><body "+form.body.value+" onblur=window.close()  onmouseover=javascript:close()>";
+txt=""+form.a.value+""+form.b.value+""+form.c.value+"";
+txt+=""+form.d.value+""+form.e.value+""+form.f.value+"";
+txt+=""+form.g.value+"";
+txt2="</body></html>";
+	
+form.Code.value=txt;
+form.code2.value=txt1 + txt + txt2;
+}
+
+<!-->
+</script>
+              <div id="Layer1" style="position:absolute; width:207px; height:173px; z-index:1; visibility: hidden; top: 17px"> 
+                <textarea name="a" cols="40" rows="0" wrap="VIRTUAL">&lt;script language=&quot;JavaScript&quot;&gt;
+&lt;!-- Hide this script from old browsers --
+var speed = 10 
+var pause = 1500 
+var timerID = null
+var bannerRunning = false
+var ar = new Array()
+
+ar[0] = &quot;</textarea>
+                <textarea name="c" cols="40" rows="0" wrap="VIRTUAL">    &quot;
+ar[1] = &quot;</textarea>
+                <textarea name="e" cols="40" rows="0" wrap="VIRTUAL">    &quot;
+ar[2] = &quot;</textarea>
+                <textarea name="g" cols="40" rows="0" wrap="VIRTUAL">    &quot;
+
+var message = 0
+var state = &quot;&quot;
+clearState()
+function stopBanner() {
+        if (bannerRunning)
+                clearTimeout(timerID)
+        bannerRunning = false
+}
+
+function startBanner() {
+        stopBanner()
+        showBanner()
+}
+function clearState() {
+        state = &quot;&quot;
+        for (var i = 0; i &lt; ar[message].length; ++i) {
+                state += &quot;0&quot;
+        }
+}
+function showBanner() {
+        if (getString()) {
+                message++
+                if (ar.length &lt;= message)
+                        message = 0
+                clearState()
+                timerID = setTimeout(&quot;showBanner()&quot;, pause)
+                bannerRunning = true
+        } else {
+                var str = &quot;&quot;
+                for (var j = 0; j &lt; state.length; ++j) {
+                        str += (state.charAt(j) == &quot;1&quot;) ? ar[message].charAt(j) : &quot;     &quot;
+                }
+                window.status = str
+                timerID = setTimeout(&quot;showBanner()&quot;, speed)
+                bannerRunning = true
+        }
+}
+function getString() {
+        var full = true
+        for (var j = 0; j &lt; state.length; ++j) {
+                if (state.charAt(j) == 0)
+                        full = false
+        }
+        if (full)
+                return true
+        while (1) {
+                var num = getRandom(ar[message].length)
+                if (state.charAt(num) == &quot;0&quot;)
+                        break
+        }
+        state = state.substring(0, num) + &quot;1&quot; + state.substring(num + 1, state.length)
+        return false
+}
+function getRandom(max) {
+        return Math.round((max - 1) * Math.random())
+}
+// -- End Hiding Here --&gt;
+&lt;/script&gt;</textarea>
+              </div>
+              <br>
+              <b> 状态栏变化信息</b> 
+              <hr width="92%" size="1" align="center">
+              <table  cellspacing="0" cellpadding="0" width="81%">
+                <tr> 
+                  <td colspan="2" height="25">文字内容一： 
+                    <input type=text name="b" onFocus="this.select()" onMouseOver="this.focus()" class="pt9" size="35">
+                  </td>
+                </tr>
+                <tr> 
+                  <td colspan="2" height="25">文字内容二： 
+                    <input type=text name="d" onFocus="this.select()" onMouseOver="this.focus()" class="pt9" size="35">
+                  </td>
+                </tr>
+                <tr> 
+                  <td colspan="2" height="25">文字内容三： 
+                    <input type=text name="f" onFocus="this.select()" onMouseOver="this.focus()" class="pt9" size="35">
+                  </td>
+                </tr>
+                <tr> 
+                  <td colspan="2" align="center" height="25"> 
+                    <input type="button" value="产生代码" onClick="CodeOut(this.form);" name="button">
+                    <input type="button" value="效果演示" onClick="view(this.form);" name="button2">
+                  </td>
+                </tr>
+                <tr> 
+                  <td colspan="2" height="25">注释：放在&lt;body****&gt;里</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <input type="text" name="body" onFocus="this.select()" onMouseOver="this.focus()" size="52" style="BACKGROUND-COLOR: #009900;" class="pt9" value="onLoad=&quot;startBanner()&quot;">
+                  </td>
+                </tr>
+                <tr> 
+                  <td height="25" colspan="2">注释：放在&lt;body&gt;与&lt;/body&gt;之间</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <textarea name="Code" onFocus="this.select()" onMouseOver="this.focus()" cols="50" wrap="VIRTUAL" style="BACKGROUND-COLOR: #009900;" class="pt9" rows="6"></textarea>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr> 
+            <td height="20" class="white" bgcolor="#009900" width="404">&nbsp;</td>
+          </tr>
+        </table>
+      </td>
+      <td bgcolor="#009900" width="18"></td>
+    </tr>
+    <tr bgcolor="#009900">
+      <td width="18"></td>
+      <td align="center" bgcolor="#FFFFFF">&nbsp;</td>
+      <td width="18">&nbsp;</td>
+    </tr>
+    <tr bgcolor="#009900"> 
+      <td width="18"></td>
+      <td align="center" height="35">&nbsp; </td>
+      <td width="18">&nbsp;</td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

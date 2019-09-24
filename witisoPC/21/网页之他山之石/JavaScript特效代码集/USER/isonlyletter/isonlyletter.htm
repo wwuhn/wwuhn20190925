@@ -1,0 +1,83 @@
+<html>
+<head>
+<script language="JavaScript">
+<!--
+function CheckForm()
+    {
+    if (document.form.yourname.value == "" )
+       {
+	alert ("请输入姓名！");
+       return false;
+       }
+      
+
+   var Letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+   for (i=0; i < document.form.yourname.value.length; i++)
+       {
+       var CheckChar = document.form.yourname.value.charAt(i);
+       CheckChar = CheckChar.toUpperCase();
+       if (Letters.indexOf(CheckChar) == -1)
+          {
+	alert ("请输入英文姓名！");
+          return false;
+          }
+      	}
+
+    }
+
+ 
+// -->
+</Script>
+<title>表单合法性检测－仅要求字母</title>
+<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="form, submit, only letter, letter, valid, validation, check, 合法性,表单, 递交, 合法性, 合法, 检测, 字母">
+</head>
+<body bgcolor="#FFFFFF">
+<form action="" name="form" method="post" onSubmit="return CheckForm()">
+  <div align="center">
+    <input type="text" name="yourname">
+    <input type="submit" name="submit" value="submit">
+  </div>
+</form>
+<div align="center">
+  <table width="64%" border="1" cellpadding="2" cellspacing="0" bordercolor="#004080">
+    <tr> 
+      <td>&lt;script language=&quot;JavaScript&quot;&gt;<br>
+        &lt;!--<br>
+        function CheckForm()<br>
+        {<br>
+        if (document.form.yourname.value == &quot;&quot; )<br>
+        {<br>
+        alert (&quot;请输入姓名！&quot;);<br>
+        return false;<br>
+        }<br>
+        <p> var Letters = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;<br>
+          for (i=0; i &lt; document.form.yourname.value.length; i++)<br>
+          {<br>
+          var CheckChar = document.form.yourname.value.charAt(i);<br>
+          CheckChar = CheckChar.toUpperCase();<br>
+          if (Letters.indexOf(CheckChar) == -1)<br>
+          {<br>
+          alert (&quot;请输入英文姓名！&quot;);<br>
+          return false;<br>
+          }<br>
+          }</p>
+        <p> }</p>
+        <p> <br>
+          // --&gt;<br>
+          &lt;/Script&gt;</p>
+        <p>&lt;form action=&quot;&quot; name=&quot;form&quot; method=&quot;post&quot; 
+          <font size="3" color="#FF0033"><b><font face="Times New Roman, Times, serif">onSubmit=&quot;return 
+          CheckForm()&quot;</font></b></font>&gt;<br>
+          &lt;div align=&quot;center&quot;&gt;<br>
+          &lt;input type=&quot;text&quot; name=&quot;yourname&quot;&gt;<br>
+          &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;submit&quot;&gt;<br>
+          &lt;/div&gt;<br>
+          &lt;/form&gt;</p>
+      </td>
+    </tr>
+  </table>
+<p>&nbsp;</p></div>
+<p>&nbsp;</p>
+</body>
+</html>

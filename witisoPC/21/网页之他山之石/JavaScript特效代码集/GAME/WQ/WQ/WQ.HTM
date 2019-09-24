@@ -1,0 +1,382 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>博软 黑白世界</title>
+<style type="text/css">
+A {text-decoration:none; color:#ffffff}
+A:visited {text-decoration:none; color:#ff0000}
+A:hover {text-decoration:underline; color:#ff0000}
+IMG {width:25px;height:25px}
+.bansize {width:200px;height:60px}
+TD {font-size:9pt;font-family:宋体}
+</style>
+<script language="javascript">
+var err=0;
+var NoA=1;
+var NoB=1;
+var NoC=1;
+var NoD=1;
+var NoE=1;
+var total=0;
+var x=new Array();
+var y=new Array();
+var c=new Array();
+x[0]=2;x[1]=6;x[2]=4;x[3]=5;x[4]=6;x[5]=2;x[6]=3;x[7]=4;x[8]=5;x[9]=6;
+y[0]=1;y[1]=1;y[2]=2;y[3]=2;y[4]=2;y[5]=3;y[6]=3;y[7]=3;y[8]=3;y[9]=3;
+c[0]=2;c[1]=1;c[2]=2;c[3]=2;c[4]=1;c[5]=2;c[6]=2;c[7]=2;c[8]=1;c[9]=1;
+
+x[10]=1;x[11]=2;x[12]=3;x[13]=4; x[14]=18;x[15]=16;x[16]=15;x[17]=14;x[18]=17;x[19]=17;
+y[10]=4;y[11]=4;y[12]=4;y[13]=4; y[14]=2;y[15]=2;y[16]=2;y[17]=2;y[18]=3;y[19]=4;
+c[10]=1;c[11]=1;c[12]=1;c[13]=1; c[14]=1;c[15]=1;c[16]=2;c[17]=2;c[18]=1;c[19]=1;
+
+x[20]=16;x[21]=15;x[22]=18;x[23]=17;x[24]=16; x[25]=18;x[26]=17;x[27]=16;x[28]=15;x[29]=14;
+y[20]=4;y[21]=4;y[22]=6;y[23]=6;y[24]=6;      y[25]=16;y[26]=16;y[27]=16;y[28]=16;y[29]=16;
+c[20]=2;c[21]=2;c[22]=2;c[23]=2;c[24]=2;      c[25]=2;c[26]=2;c[27]=2;c[28]=2;c[29]=2;
+
+x[30]=13;x[31]=13;x[32]=13;x[33]=13;x[34]=16;x[35]=18;x[36]=18;x[37]=14;x[38]=14;x[39]=14;
+y[30]=16;y[31]=17;y[32]=18;y[33]=19;y[34]=19;y[35]=17;y[36]=18;y[37]=19;y[38]=18;y[39]=17;
+c[30]=2;c[31]=2;c[32]=2;c[33]=2;c[34]=2;c[35]=2;c[36]=1;c[37]=1;c[38]=1;c[39]=1;
+
+x[40]=17;x[41]=16;x[42]=15; x[43]=1;x[44]=2;x[45]=3;x[46]=4;x[47]=1;x[48]=1;x[49]=1;
+y[40]=17;y[41]=17;y[42]=17; y[43]=14;y[44]=14;y[45]=14;y[46]=14;y[47]=17;y[48]=16;y[49]=15;
+c[40]=1;c[41]=1;c[42]=1;    c[43]=1;c[44]=1;c[45]=1;c[46]=1;c[47]=2;c[48]=1;c[49]=1;
+
+x[50]=2;x[51]=2;x[52]=3;x[53]=3;x[54]=3;x[55]=4;x[56]=4;x[57]=4;x[58]=4;x[59]=5;x[60]=5;
+y[50]=16;y[51]=15;y[52]=15;y[53]=17;y[54]=18;y[55]=18;y[56]=15;y[57]=16;y[58]=17;y[59]=18;y[60]=17;
+c[50]=2;c[51]=2;c[52]=2;c[53]=2;c[54]=2;c[55]=2;c[56]=1;c[57]=1;c[58]=1;c[59]=1;c[60]=1;
+
+x[61]=7;x[62]=8;x[63]=8;x[64]=7;x[65]=9;x[66]=9;x[67]=9;x[68]=8;x[69]=8;
+y[61]=7;y[62]=7;y[63]=8;y[64]=9;y[65]=9;y[66]=10;y[67]=11;y[68]=12;y[69]=13;
+c[61]=2;c[62]=2;c[63]=2;c[64]=2;c[65]=2;c[66]=2;c[67]=2;c[68]=2;c[69]=2;
+
+x[70]=8;x[71]=8;x[72]=11;x[73]=13;x[74]=12;x[75]=13;x[76]=14;x[77]=9;x[78]=10;x[79]=11;
+y[70]=14;y[71]=15;y[72]=11;y[73]=11;y[74]=10;y[75]=9;y[76]=9;y[77]=8;y[78]=8;y[79]=8;
+c[70]=2;c[71]=2;c[72]=2;c[73]=2;c[74]=2;c[75]=2;c[76]=2;c[77]=1;c[78]=1;c[79]=1;
+
+x[80]=12;x[81]=14;x[82]=14;x[83]=8;x[84]=9;x[85]=10;x[86]=11;x[87]=12;x[88]=8;x[89]=8;
+y[80]=8;y[81]=7;y[82]=10;y[83]=10;y[84]=12;y[85]=12;y[86]=12;y[87]=12;y[88]=9;y[89]=11;
+c[80]=1;c[81]=2;c[82]=1;c[83]=1;c[84]=1;c[85]=1;c[86]=1;c[87]=1;c[88]=1;c[89]=1;
+
+x[90]=7;x[91]=7;x[92]=8;x[93]=6;x[94]=6;x[95]=8;x[96]=4;x[97]=16;x[98]=5;x[99]=17;
+y[90]=11;y[91]=12;y[92]=17;y[93]=8;y[94]=5;y[95]=4;y[96]=9;y[97]=11;y[98]=6;y[99]=9;
+c[90]=1;c[91]=1;c[92]=2;c[93]=2;c[94]=2;c[95]=2;c[96]=1;c[97]=1;c[98]=2;c[99]=1;
+
+function abc(a,b,c){
+var Gogif="c";
+var color;
+if (a==1)  Gogif="l";
+if (a==19) Gogif="r";
+if (b==1)  Gogif="t";
+if (b==19) Gogif="b";
+if (c==1)  color="b";
+	else color="w";
+eval("document.images[\"x" + a + "y" + b + "\"].src=\"" + color + Gogif + ".gif\"");
+}
+function PlaceGo(){
+for (i=0;i<x.length;i++) abc(x[i],y[i],c[i]);
+}
+function trueGo(){
+	alert("恭喜你，完成这一题。")
+	total+=20;
+	document.forms[0].total.value=total;
+	if (total==100) alert("谢谢，你已完成所有测试。")
+}
+function errorGo(){
+	err += 1;	
+	if (err<5) alert("错了，你还有"+(5-err)+"次机会。");
+		else alert("你已没有机会了。");
+}
+function GO(a,b){
+if (a<6&&b<6){
+if (NoA==3)
+if ((a==4||a==5)&&b==1){
+	if (err<5){
+		if (a==4) document.images["x4y1"].src="bt.gif";	
+		if (a==5) document.images["x5y1"].src="bt.gif";	
+		trueGo();
+		}
+	else errorGo();
+	}
+else errorGo();
+if (NoA==2)
+if (a==2&&b==2){
+	if (err<5){
+		document.images["x2y2"].src="bc.gif";
+		document.images["x3y2"].src="wc.gif";
+		NoA=3;
+		}
+	else errorGo();
+	}
+else errorGo();
+if (NoA==1)
+if (a==1&&b==2){
+	if (err<5){
+		document.images["x1y2"].src="bl.gif";
+		document.images["x1y3"].src="wl.gif";
+		NoA=2;
+		}
+	else errorGo();
+	}
+else errorGo();
+}
+
+else if (a>13&&b<7){
+if (NoB==4)
+if (a==19&&b==5){
+	if (err<5){
+		document.images["x19y5"].src="wr.gif";	
+		trueGo();
+		}
+	else errorGo();
+	}
+else errorGo();
+if (NoB==3)
+if (a==18&&b==1){
+	if (err<5){
+		document.images["x18y1"].src="wt.gif";
+		document.images["x18y5"].src="bc.gif";
+		NoB=4;
+		}
+	else errorGo();
+	}
+else errorGo();
+if (NoB==2)
+if (a==17&&b==1){
+	if (err<5){
+		document.images["x17y1"].src="wt.gif";
+		document.images["x16y1"].src="bt.gif";
+		NoB=3;
+		}
+	else errorGo();
+	}
+else errorGo();
+if (NoB==1)
+if (a==19&&b==3){
+	if (err<5){
+		document.images["x19y3"].src="wr.gif";
+		document.images["x19y2"].src="br.gif";
+		NoB=2;
+		}
+	else errorGo();
+	}
+else errorGo();
+}
+
+else if (a>14&&b>16){
+if (NoC==3)
+if (a==17&&b==18){
+	if (err<5){
+		document.images["x17y18"].src="bc.gif";	
+		trueGo();
+		}
+	else errorGo();
+	}
+else errorGo();
+if (NoC==2)
+if (a==15&&b==19){
+	if (err<5){
+		document.images["x15y19"].src="bb.gif";
+		document.images["x19y18"].src="wr.gif";
+		NoC=3;
+		}
+	else errorGo();
+	}
+else errorGo();
+if (NoC==1)
+if (a==16&&b==18){
+	if (err<5){
+		document.images["x16y18"].src="bc.gif";
+		document.images["x18y19"].src="wb.gif";
+		NoC=2;
+		}
+	else errorGo();
+	}
+else errorGo();
+}
+
+else if (a<6&&b>14){
+if (NoD==3)
+if (a==2&&b==16){
+	if (err<5){
+		document.images["x2y16"].src="wc.gif";	
+		document.images["x2y17"].src="c.gif";
+		trueGo();
+		}
+	else errorGo();
+	}
+else errorGo();
+if (NoD==2)
+if (a==1&&b==19){
+	if (err<5){
+		document.images["x1y19"].src="wj3.gif";
+		document.images["x2y17"].src="bc.gif";
+		document.images["x2y16"].src="c.gif";
+		document.images["x2y15"].src="c.gif";
+		document.images["x3y15"].src="c.gif";
+		NoD=3;
+		}
+	else errorGo();
+	}
+else errorGo();
+if (NoD==1)
+if (a==2&&b==18){
+	if (err<5){
+		document.images["x2y18"].src="wc.gif";
+		document.images["x3y16"].src="bc.gif";
+		NoD=2;
+		}
+	else errorGo();
+	}
+else errorGo();
+}
+
+else {
+if (NoE==4)
+if (a==12&&b==11){
+	if (err<5){
+		document.images["x12y11"].src="bc.gif";	
+		trueGo();
+		}
+	else errorGo();
+	}
+else errorGo();
+if (NoE==3)
+if (a==12&&b==9){
+	if (err<5){
+		document.images["x12y9"].src="bc.gif";
+		document.images["x10y11"].src="wc.gif";
+		document.images["x10y10"].src="c.gif";
+		document.images["x11y10"].src="c.gif";
+		NoE=4;
+		}
+	else errorGo();
+	}
+else errorGo();
+if (NoE==2)
+if (a==10&&b==10){
+	if (err<5){
+		document.images["x10y10"].src="bc.gif";
+		document.images["x10y9"].src="wc.gif";
+		NoE=3;
+		}
+	else errorGo();
+	}
+else errorGo();
+if (NoE==1)
+if (a==11&&b==10){
+	if (err<5){
+		document.images["x11y10"].src="bc.gif";
+		document.images["x11y9"].src="wc.gif";
+		NoE=2;
+		}
+	else errorGo();
+	}
+else errorGo();
+}
+}
+</script>
+</head>
+
+<body onload="PlaceGo()" bgcolor="#eeeeee" topmargin="10">
+<div align="center"><center>
+
+<table border="0" cellspacing="0" cellpadding="0" width="738" height="550">
+  <tr>
+    <td width="230" height="500" valign="top"><table bgcolor="#0080ff" border="0" width="200"
+    cellpadding="0" cellspacing="0" height="489">
+      <tr>
+        <td valign="top" height="60" bgcolor="#ff6600"><img src="goban.gif" class="bansize"
+        width="200" height="60"></td>
+      </tr>
+      <tr>
+        <td height="20"><font color="#FFFFFF">1999/</font>09/20</td>
+      </tr>
+      <tr>
+        <td align="right" valign="top" height="50"><br>
+        <strong><font color="#FFFFFF">死活</font>测试</strong> <font color="#FFFFFF">V1.0</font>&nbsp; 
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" align="center" height="370"><form>
+          <table border="1" width="60%">
+            <tr>
+              <td height="50">&nbsp; &nbsp; <font color="#FFFFFF">共五题计100分,每题20分:</font></td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF">A：左上</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF" align="right">净杀白(黑先)</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF">B：右上</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF" align="right">净杀黑(白先)</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF">C：右下</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF" align="right">净活(黑先)</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF">D：左下</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF" align="right">净活(白先)</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF">E：中间</td>
+            </tr>
+            <tr>
+              <td bgcolor="#FFFFFF" align="right">黑连络(黑先)</td>
+            </tr>
+            <tr>
+              <td height="40" align="center"><font color="#FFFFFF">当前得分: </font><input
+              type="text" name="total" size="4" value="0"></td>
+            </tr>
+          </table>
+        </form>
+        </td>
+      </tr>
+    </table>
+    </td>
+    <td bgcolor="#f0f022" width="508" height="500" align="center"><script
+    language="javascript">
+document.write("<table border=0 cellspacing=0 cellpadding=0 width=475 height=475><tr>");
+document.write("<td width=25><a href='javascript:GO(1,1)'><img src='j1.gif' border=0 name='x1y1'></a></td>");
+for (i=2;i<19;i++) 
+	document.write("<td width=25><a href='javascript:GO("+i+",1)'><img src='t.gif' border=0 name=\"x",i,"y1\"></a></td>");
+document.write("<td width=27><a href='javascript:GO(19,1)'><img src='j2.gif' border=0 name='x19y1'></a></td></tr>");
+for (i=2;i<19;i++){
+	document.write("<tr><td><a href='javascript:GO(1,"+i+")'><img src='l.gif' border=0 name=\"x1y",i,"\"></a></td>");
+	for (j=2;j<19;j++){ 
+		if (i%6==4 && j%6==4)
+			document.write("<td><a href='javascript:GO("+j+","+i+")'><img src='x.gif' border=0 name=\"x",j,"y",i,"\"></a></td>");
+		else
+			document.write("<td><a href='javascript:GO("+j+","+i+")'><img src='c.gif' border=0 name=\"x",j,"y",i,"\"></a></td>");
+		}
+	document.write("<td><a href='javascript:GO(19,"+i+")'><img src='r.gif' border=0 name=\"x19y",i,"\"></a></td></tr>");
+	}
+document.write("<tr><td><a href='javascript:GO(1,19)'><img src='j3.gif' border=0 name='x1y19'></a></td>");
+for (j=2;j<19;j++) 
+	document.write("<td><a href='javascript:GO("+j+",19)'><img src='b.gif' border=0 name=\"x",j,"y19\"></a></td>");
+document.write("<td><a href='javascript:GO(19,19)'><img src='j4.gif' border=0 name='x19y19'></a></td>");
+document.write("</tr></table>");
+</script></td>
+  </tr>
+  <tr>
+    <td height="50" bgcolor="#0080ff" rowspan="2" align="center"><a
+    href="mailto:boysoft@netease.com"><font color="#FFFFFF">博软</font></a> <em>最新制作</em></td>
+    <td height="25"></td>
+  </tr>
+  <tr>
+    <td bgcolor="#0080ff" align="right" height="25">★ 黑<font color="#FFFFFF">白</font>世<font
+    color="#FFFFFF">界</font> ★ &nbsp;&copy; <em>Boysoft Workroom, 1999</em> &nbsp; &nbsp;</td>
+  </tr>
+</table>
+</center></div>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<html>
+<head>
+<title>滚动信息《二》</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+</head>
+
+<body topmargin="0" leftmargin="0" bgcolor="#FFFFFF">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center"> <br>
+      <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="11.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="11c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><br>
+            <b>滚动信息《二》</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="40" valign="top">提示：</td>
+                <td> <br>
+                  <table border=0 cellpadding=0 cellspacing=0 
+width="35%" align="center">
+                    <tbody> 
+                    <tr> 
+                      <td align=middle height=77 valign=center 
+                            width="100%"> 
+                        <script language="">
+var scrollerwidth=115
+var scrollerheight=77
+var scrollerbgcolor='#FFCE00'
+//3000 miliseconds=4 seconds
+var pausebetweenimages=3000
+
+var slideimages=new Array()
+slideimages[0]='<a href="http://computer.online.sh.cn/" target="_blank">上海热线</a><br><br><a href="http://home.cnjx.net/~xmxm/" target="_blank">晓风残梦</a><br><br><a href="http://fms.topcool.net/" target="_blank">网虫家园</a><br><br>'
+slideimages[1]='<a href="http://boysoft.126.com/" target="_blank">博软星网</a><br><br><a href="http://sjessie.163.net/" target="_blank">FLASHAGE</a><br><br><a href="http://312.126.com/" target="_blank">福州小子</a><br><br>'
+slideimages[2]='<a href="http://promethues.163.net/" target="_blank">迷雾森林</a><br><br><a href="http://javabar.126.com/" target="_blank">JAVABAR</a><br><br><a href="http://netgolddig.yeah.net/" target="_blank">网际淘金</a><br><br>'
+slideimages[3]='<a href="http://22578.yeah.net/" target="_blank">电脑果园</a><br><br><a href="http://home.cnjx.net/~xmxm/" target="_blank">晓风残梦</a><br><br><a href="http://fms.topcool.net/" target="_blank">网虫家园</a><br><br>'
+slideimages[4]='<a href="http://boysoft.126.com/" target="_blank">博软星网</a><br><br><a href="http://sjessie.163.net/" target="_blank">FLASHAGE</a><br><br><a href="http://312.126.com/" target="_blank">福州小子</a><br><br>'
+slideimages[5]='<a href="http://promethues.163.net/" target="_blank">迷雾森林</a><br><br><a href="http://javabar.126.com/" target="_blank">JAVABAR</a><br><br><a href="http://netgolddig.yeah.net/" target="_blank">网际淘金</a><br><br>'
+
+   
+
+if (slideimages.length>1)
+i=2
+else
+i=0
+
+function move1(whichlayer){
+tlayer=eval(whichlayer)
+if (tlayer.top>0&&tlayer.top<=5){
+tlayer.top=0
+setTimeout("move1(tlayer)",pausebetweenimages)
+setTimeout("move2(document.main.document.second)",pausebetweenimages)
+return
+}
+if (tlayer.top>=tlayer.document.height*-1){
+tlayer.top-=5
+setTimeout("move1(tlayer)",100)
+}
+else{
+tlayer.top=scrollerheight
+tlayer.document.write(slideimages[i])
+tlayer.document.close()
+if (i==slideimages.length-1)
+i=0
+else
+i++
+}
+}
+
+function move2(whichlayer){
+tlayer2=eval(whichlayer)
+if (tlayer2.top>0&&tlayer2.top<=5){
+tlayer2.top=0
+setTimeout("move2(tlayer2)",pausebetweenimages)
+setTimeout("move1(document.main.document.first)",pausebetweenimages)
+return
+}
+if (tlayer2.top>=tlayer2.document.height*-1){
+tlayer2.top-=5
+setTimeout("move2(tlayer2)",100)
+}
+else{
+tlayer2.top=scrollerheight
+tlayer2.document.write(slideimages[i])
+tlayer2.document.close()
+if (i==slideimages.length-1)
+i=0
+else
+i++
+}
+}
+
+function move3(whichdiv){
+tdiv=eval(whichdiv)
+if (tdiv.style.pixelTop>0&&tdiv.style.pixelTop<=5){
+tdiv.style.pixelTop=0
+setTimeout("move3(tdiv)",pausebetweenimages)
+setTimeout("move4(second2)",pausebetweenimages)
+return
+}
+if (tdiv.style.pixelTop>=tdiv.offsetHeight*-1){
+tdiv.style.pixelTop-=5
+setTimeout("move3(tdiv)",100)
+}
+else{
+tdiv.style.pixelTop=scrollerheight
+tdiv.innerHTML=slideimages[i]
+if (i==slideimages.length-1)
+i=0
+else
+i++
+}
+}
+
+function move4(whichdiv){
+tdiv2=eval(whichdiv)
+if (tdiv2.style.pixelTop>0&&tdiv2.style.pixelTop<=5){
+tdiv2.style.pixelTop=0
+setTimeout("move4(tdiv2)",pausebetweenimages)
+setTimeout("move3(first2)",pausebetweenimages)
+return
+}
+if (tdiv2.style.pixelTop>=tdiv2.offsetHeight*-1){
+tdiv2.style.pixelTop-=5
+setTimeout("move4(second2)",100)
+}
+else{
+tdiv2.style.pixelTop=scrollerheight
+tdiv2.innerHTML=slideimages[i]
+if (i==slideimages.length-1)
+i=0
+else
+i++
+}
+}
+
+function startscroll(){
+if (document.all){
+move3(first2)
+second2.style.top=scrollerheight
+}
+else if (document.layers){
+move1(document.main.document.first)
+document.main.document.second.top=scrollerheight+5
+document.main.document.second.visibility='show'
+}
+}
+
+window.onload=startscroll
+
+if (document.layers)
+document.write(slideimages[0])
+
+if (document.layers)
+document.write(slideimages[1])
+
+if (document.layers)
+document.write(slideimages[0])
+
+if (document.all){
+document.writeln('<span id="main2" style="position:relative;width:'+scrollerwidth+';height:'+scrollerheight+';overflow:hiden;background-color:'+scrollerbgcolor+'">')
+document.writeln('<div style="position:absolute;width:'+scrollerwidth+';height:'+scrollerheight+';clip:rect(0 '+scrollerwidth+' '+scrollerheight+' 0);left:0;top:0">')
+document.writeln('<div id="first2" style="position:absolute;width:'+scrollerwidth+';left:0;top:1;">')
+document.write(slideimages[0])
+document.writeln('</div>')
+document.writeln('<div id="second2" style="position:absolute;width:'+scrollerwidth+';left:0;top:0">')
+document.write(slideimages[1])
+document.writeln('</div>')
+document.writeln('</div>')
+document.writeln('</span>')
+}
+</script>
+                        <ilayer id=main bgcolor="&amp;{scrollerbgcolor};" 
+                              height="&amp;{scrollerheight};" 
+                              width="&amp;{scrollerwidth};"> 
+                        <layer id=first 
+                              width="&amp;{scrollerwidth};" top="1" 
+                              left="0"></layer>
+                        <layer id=second 
+                              width="&amp;{scrollerwidth};" top="0" left="0" 
+                              visibility="hide"></layer>
+                        </ilayer>
+                      </td>
+                    </tr>
+                    </tbody> 
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

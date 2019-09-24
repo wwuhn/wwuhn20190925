@@ -1,0 +1,123 @@
+TD {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-STYLE: normal; TEXT-DECORATION: none
+}
+.red12 {
+	FONT-SIZE: 12px; COLOR: #ff0000; LINE-HEIGHT: 18px; FONT-STYLE: normal; TEXT-DECORATION: none
+}
+.font_yellow_14 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #ffff00; LETTER-SPACING: normal
+}
+.font_green_14 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #a7ff00; LETTER-SPACING: normal
+}
+.font_heading16 {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #555555; LETTER-SPACING: normal
+}
+.font_green_12 {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #38ac23; LETTER-SPACING: normal
+}
+.font_daily_head {
+	FONT-WEIGHT: bold; FONT-SIZE: 20px; COLOR: #0f4aac; FONT-FAMILY: ºÚÌå; TEXT-DECORATION: none
+}
+.table_white {
+	BACKGROUND-COLOR: #ffffff
+}
+.table_heading {
+	BACKGROUND-COLOR: #c6ed80
+}
+.table_1 {
+	BACKGROUND-COLOR: #f4fee7
+}
+.table_2 {
+	BACKGROUND-COLOR: #f0f0f0
+}
+.table_green {
+	BACKGROUND-COLOR: #d4f78f
+}
+.table_viridescence {
+	BACKGROUND-COLOR: #effccd
+}
+A {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #3288dc; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #ff9000; TEXT-DECORATION: none
+}
+.awhite {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ff040a; TEXT-DECORATION: none
+}
+.awhite:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ff040a; TEXT-DECORATION: none
+}
+.awhite:active {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ff040a
+}
+.agreen {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #83a403; TEXT-DECORATION: none
+}
+.agreen:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #fe7e01; TEXT-DECORATION: none
+}
+.agreen:active {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #007413
+}
+.agreen1 {
+	FONT-SIZE: 12px; COLOR: #467506; TEXT-DECORATION: none
+}
+.agreen1:hover {
+	FONT-SIZE: 12px; COLOR: #467506; TEXT-DECORATION: none
+}
+.agreen1:active {
+	FONT-SIZE: 12px; COLOR: #467506
+}
+.ablue {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #0f4aac; TEXT-DECORATION: none
+}
+.ablue:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #fe7e01; TEXT-DECORATION: none
+}
+.ablue:active {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #0f4aac
+}
+.aorange {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ff8303; TEXT-DECORATION: none
+}
+.aorange:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ff8303; TEXT-DECORATION: none
+}
+.aorange:active {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ff8303
+}
+.apink {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #f318b8; TEXT-DECORATION: none
+}
+.apink:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #f318b8; TEXT-DECORATION: none
+}
+.apink:active {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #f318b8
+}
+.agreen16 {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #33cc00; TEXT-DECORATION: none
+}
+.agreen:unknown {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #fe7e01; TEXT-DECORATION: none
+}
+.agreen:unknown {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #007413
+}
+.link2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #d7740a; TEXT-DECORATION: underline
+}
+.link2:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #d7740a; TEXT-DECORATION: underline
+}
+.link2:active {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #d7740a; TEXT-DECORATION: underline
+}
+.table_left {
+	BORDER-RIGHT: #ffffff thin solid; BORDER-TOP: #ffffff thin solid; BORDER-LEFT: #ffffff thin solid; BORDER-BOTTOM: #ffffff thin solid; BACKGROUND-COLOR: #eafecf
+}

@@ -1,0 +1,290 @@
+
+<HTML><HEAD><TITLE></TITLE>
+<META content="MSHTML 6.00.2900.2722" name=GENERATOR>
+<style type="text/css">
+<!--
+.w {
+	font-size: 13px;
+	line-height: 200%;
+	color: #000000;
+}
+#Layer1 {
+	position:absolute;
+	left:774px;
+	top:80px;
+	width:92px;
+	height:89px;
+	z-index:1;
+}
+-->
+</style>
+<script type="text/JavaScript">
+<!--
+function MM_timelinePlay(tmLnName, myID) { //v1.2
+  //Copyright 1998, 1999, 2000, 2001, 2002, 2003, 2004 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,propNum,theObj,firstTime=false;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (myID == null) { myID = ++tmLn.ID; firstTime=true;}//if new call, incr ID
+  if (myID == tmLn.ID) { //if Im newest
+    setTimeout('MM_timelinePlay("'+tmLnName+'",'+myID+')',tmLn.delay);
+    fNew = ++tmLn.curFrame;
+    for (i=0; i<tmLn.length; i++) {
+      sprite = tmLn[i];
+      if (sprite.charAt(0) == 's') {
+        if (sprite.obj) {
+          numKeyFr = sprite.keyFrames.length; firstKeyFr = sprite.keyFrames[0];
+          if (fNew >= firstKeyFr && fNew <= sprite.keyFrames[numKeyFr-1]) {//in range
+            keyFrm=1;
+            for (j=0; j<sprite.values.length; j++) {
+              props = sprite.values[j]; 
+              if (numKeyFr != props.length) {
+                if (props.prop2 == null) sprite.obj[props.prop] = props[fNew-firstKeyFr];
+                else        sprite.obj[props.prop2][props.prop] = props[fNew-firstKeyFr];
+              } else {
+                while (keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]) keyFrm++;
+                if (firstTime || fNew==sprite.keyFrames[keyFrm-1]) {
+                  if (props.prop2 == null) sprite.obj[props.prop] = props[keyFrm-1];
+                  else        sprite.obj[props.prop2][props.prop] = props[keyFrm-1];
+        } } } } }
+      } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+      if (fNew > tmLn.lastFrame) tmLn.ID = 0;
+  } }
+}
+
+function MM_timelineGoto(tmLnName, fNew, numGotos) { //v2.0
+  //Copyright 1998, 1999, 2000, 2001, 2002, 2003, 2004 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,lastKeyFr,propNum,theObj;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (numGotos != null)
+    if (tmLn.gotoCount == null) tmLn.gotoCount = 1;
+    else if (tmLn.gotoCount++ >= numGotos) {tmLn.gotoCount=0; return}
+  jmpFwd = (fNew > tmLn.curFrame);
+  for (i = 0; i < tmLn.length; i++) {
+    sprite = (jmpFwd)? tmLn[i] : tmLn[(tmLn.length-1)-i]; //count bkwds if jumping back
+    if (sprite.charAt(0) == "s") {
+      numKeyFr = sprite.keyFrames.length;
+      firstKeyFr = sprite.keyFrames[0];
+      lastKeyFr = sprite.keyFrames[numKeyFr - 1];
+      if ((jmpFwd && fNew<firstKeyFr) || (!jmpFwd && lastKeyFr<fNew)) continue; //skip if untouchd
+      for (keyFrm=1; keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]; keyFrm++);
+      for (j=0; j<sprite.values.length; j++) {
+        props = sprite.values[j];
+        if (numKeyFr == props.length) propNum = keyFrm-1 //keyframes only
+        else propNum = Math.min(Math.max(0,fNew-firstKeyFr),props.length-1); //or keep in legal range
+        if (sprite.obj != null) {
+          if (props.prop2 == null) sprite.obj[props.prop] = props[propNum];
+          else        sprite.obj[props.prop2][props.prop] = props[propNum];
+      } }
+    } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+  }
+  tmLn.curFrame = fNew;
+  if (tmLn.ID == 0) eval('MM_timelinePlay(tmLnName)');
+}
+
+function MM_initTimelines() { //v4.0
+    //MM_initTimelines() Copyright 1997 Macromedia, Inc. All rights reserved.
+    var ns = navigator.appName == "Netscape";
+    var ns4 = (ns && parseInt(navigator.appVersion) == 4);
+    var ns5 = (ns && parseInt(navigator.appVersion) > 4);
+    var macIE5 = (navigator.platform ? (navigator.platform == "MacPPC") : false) && (navigator.appName == "Microsoft Internet Explorer") && (parseInt(navigator.appVersion) >= 4);
+    document.MM_Time = new Array(1);
+    document.MM_Time[0] = new Array(2);
+    document.MM_Time["Timeline1"] = document.MM_Time[0];
+    document.MM_Time[0].MM_Name = "Timeline1";
+    document.MM_Time[0].fps = 15;
+    document.MM_Time[0][0] = new String("sprite");
+    document.MM_Time[0][0].slot = 1;
+    if (ns4)
+        document.MM_Time[0][0].obj = document["Layer1"];
+    else if (ns5)
+        document.MM_Time[0][0].obj = document.getElementById("Layer1");
+    else
+        document.MM_Time[0][0].obj = document.all ? document.all["Layer1"] : null;
+    document.MM_Time[0][0].keyFrames = new Array(1, 21, 46, 71);
+    document.MM_Time[0][0].values = new Array(2);
+    if (ns5 || macIE5)
+        document.MM_Time[0][0].values[0] = new Array("152px", "186px", "221px", "255px", "289px", "324px", "358px", "392px", "426px", "461px", "495px", "528px", "559px", "590px", "619px", "647px", "675px", "701px", "726px", "751px", "774px", "786px", "796px", "807px", "816px", "826px", "834px", "842px", "850px", "857px", "864px", "870px", "876px", "882px", "887px", "893px", "899px", "904px", "909px", "911px", "911px", "907px", "900px", "891px", "882px", "871px", "853px", "834px", "815px", "794px", "773px", "752px", "729px", "706px", "682px", "658px", "632px", "606px", "579px", "552px", "524px", "497px", "469px", "441px", "414px", "386px", "358px", "331px", "303px", "276px", "248px");
+    else
+        document.MM_Time[0][0].values[0] = new Array(152,186,221,255,289,324,358,392,426,461,495,528,559,590,619,647,675,701,726,751,774,786,796,807,816,826,834,842,850,857,864,870,876,882,887,893,899,904,909,911,911,907,900,891,882,871,853,834,815,794,773,752,729,706,682,658,632,606,579,552,524,497,469,441,414,386,358,331,303,276,248);
+    document.MM_Time[0][0].values[0].prop = "left";
+    if (ns5 || macIE5)
+        document.MM_Time[0][0].values[1] = new Array("17px", "20px", "23px", "25px", "28px", "31px", "33px", "36px", "39px", "41px", "44px", "47px", "50px", "53px", "56px", "60px", "63px", "67px", "71px", "75px", "80px", "83px", "86px", "89px", "92px", "95px", "98px", "102px", "105px", "108px", "111px", "114px", "118px", "121px", "125px", "129px", "134px", "140px", "147px", "155px", "164px", "173px", "181px", "187px", "193px", "199px", "206px", "212px", "218px", "224px", "229px", "234px", "239px", "244px", "249px", "254px", "259px", "264px", "269px", "274px", "280px", "285px", "290px", "295px", "300px", "305px", "309px", "314px", "319px", "325px", "330px");
+    else
+        document.MM_Time[0][0].values[1] = new Array(17,20,23,25,28,31,33,36,39,41,44,47,50,53,56,60,63,67,71,75,80,83,86,89,92,95,98,102,105,108,111,114,118,121,125,129,134,140,147,155,164,173,181,187,193,199,206,212,218,224,229,234,239,244,249,254,259,264,269,274,280,285,290,295,300,305,309,314,319,325,330);
+    document.MM_Time[0][0].values[1].prop = "top";
+    if (!ns4) {
+        document.MM_Time[0][0].values[0].prop2 = "style";
+        document.MM_Time[0][0].values[1].prop2 = "style";
+    }
+    document.MM_Time[0][1] = new String("behavior");
+    document.MM_Time[0][1].frame = 72;
+    document.MM_Time[0][1].value = "MM_timelineGoto('Timeline1','1')";
+    document.MM_Time[0].lastFrame = 72;
+    for (i=0; i<document.MM_Time.length; i++) {
+        document.MM_Time[i].ID = null;
+        document.MM_Time[i].curFrame = 0;
+        document.MM_Time[i].delay = 1000/document.MM_Time[i].fps;
+    }
+}
+//-->
+</script>
+</HEAD>
+<BODY leftMargin=0 topMargin=0 rightMargin=0 bottomMargin=0 onLoad="MM_timelinePlay('Timeline1')">
+<div id="Layer1" style="left: 152px; top: 17px;"><img src="images/t6.gif" width="84" height="84"></div>
+<TABLE cellSpacing=0 cellPadding=0 width=768 align=center bgColor=#ffffff 
+border=0>
+  <FORM id=form1 name=form1 action= >
+    <INPUT 
+  type=hidden name=__EVENTTARGET> <INPUT type=hidden name=__EVENTARGUMENT> 
+  <INPUT type=hidden 
+  value=dDw5ODIyMjE2MzE7O2w8X2N0bDA7Pj6vNlfV+yu20xGf9AojScfvTrIXAQ== 
+  name=__VIEWSTATE>
+ 
+   
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD><img src="images/top1.jpg" width="768" height="249"></TD>
+        </TR>
+        <TR>
+          <TD><IMG height=7 src="images/sub_topline_01.jpg" 
+          width=768></TD></TR>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD><IMG height=32 src="images/sub_topline_02.jpg" 
+                  width=336></TD>
+                <TD><IMG 
+                  height=32 src="images/top_but_01.jpg" width=106 
+                  border=0></TD>
+                <TD><IMG 
+                  height=32 src="images/top_but_02.jpg" width=106 
+                  border=0></TD>
+                <TD><IMG 
+                  height=32 src="images/top_but_03.jpg" width=106 
+                  border=0></TD>
+                <TD><IMG 
+                  height=32 src="images/top_but_04.jpg" width=104 
+                  border=0></TD>
+                <TD><IMG height=32 src="images/sub_topline_03.jpg" 
+                  width=10></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD style="WIDTH: 170px" bgColor=#47cf47>
+            <TABLE cellSpacing=0 cellPadding=0 width=144 align=center 
+              border=0><TBODY>
+              <TR>
+                <TD><IMG height=8 src="images/spacer.gif" 
+              width=1></TD></TR>
+              <TR>
+                <TD><IMG height=253 src="images/subleft01.jpg" 
+                  width=144 border=0></TD></TR>
+              <TR>
+                <TD><IMG height=20 src="images/spacer.gif" 
+              width=1></TD></TR>
+              <TR>
+                <TD><IMG height=181 src="images/sub_left02.jpg" 
+                  width=144 border=0></TD>
+              </TR>
+              <TR>
+                <TD><IMG height=20 src="images/spacer.gif" 
+              width=1></TD></TR>
+              <TR>
+                <TD align=middle><IMG height=20 src="images/spacer.gif" 
+              width=1></TD>
+              </TR>
+              
+              </TBODY></TABLE></TD>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width=570 align=center 
+              border=0><TBODY>
+              <TR>
+                <TD><IMG height=15 src="images/spacer.gif" 
+              width=1></TD></TR>
+              <TR>
+                <TD class=sub_maintitle align=right>                当前位置： 首页 
+                  &gt;&gt; 商家推荐 
+</TD>
+              </TR>
+              <TR>
+                <TD><IMG height=5 src="images/spacer.gif" 
+              width=1></TD></TR>
+              <TR>
+                <TD align=middle>
+                  <DIV style="OVERFLOW-X: hidden; WIDTH: 100%; HEIGHT: 350px">
+                  <DIV>
+                  <TABLE cellSpacing=0 cellPadding=0 width=550 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=w 
+                    align=middle>小灵通"夺宝奇兵"短信大赛</TD>
+                    </TR>
+                    <TR>
+                      <TD class=dot_line01center height=10></TD></TR>
+                    <TR>
+                      <TD class=sub_maintitle style="PADDING-TOP: 5px">　<span class="w">“多买点东西，多为印度洋海啸灾区的小朋友献一份爱心！”“献出你的爱心和关怀，收获更多快乐和幸福！”“把最美的微笑留给顾客”一条条广告语跃入人们的眼帘，校园里一片沸腾。这是怎么回事？原来我校“爱心购物”小超市隆重开业了！<BR>
+  　　
+                        要知道这一次我们的爱心购物义卖活动可是为印度洋海啸灾区的小朋友而举办的。活动刚开始，原来冷清的操场一下子变成了一个热闹的集市。课桌成了柜台，摆满了各种物品，这些东西都是校友们从家里捐出来的。有同学们心爱的课外书，有陪伴自己多年的玩具，有的还很新，看样子是刚从商店里买来的。&nbsp;<br> 　　
+                        这套大型农村社区科普知识系列节目共分为十个部分，分别是：一、农村社区气象新；二、设施配套利于民；三、安全常识要牢记；四、节约能源有窍门；五、农业生产讲标准；六、加强治安保太平；七、民间文化风尚好；八、健康饮食一点通；九、有病早来医；十、远亲不如近邻。内容按照“生产发展、生活宽裕、乡风文明、村容整洁、管理民主”的要求，涉及到了农村教育、科技、卫生、文化等社会事业各个方面，范围十分广泛，对农村社区居民的日常活动进行了全方位扫描。节目采用农民朋友耳熟能详、通俗易懂的语言，形象直观、易于接受的方式，向农村社区居民进行了有的放矢的科普知识宣传，形式新颖，效果明显。</span></TD>
+                    </TR>
+                    </TBODY></TABLE></DIV></DIV><!--End--><!--其它文章-->
+                  <TABLE cellSpacing=0 cellPadding=0 width=544 align=center 
+                  border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=14 
+                        src="images/sub_table1_02.jpg" width=544></TD></TR>
+                    <TR>
+                      <TD 
+                      style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px" 
+                      background=images/sub_table1_03.jpg>
+                        <TABLE cellSpacing=0 cellPadding=0 width="95%" 
+                        align=center border=0>
+                          <TBODY>
+                          <TR>
+                            <TD><SPAN 
+class=font12_yellow_b>※其它文章：</SPAN></TD></TR>
+                          <TR>
+                            <TD class=dot_line01center height=5></TD></TR>
+                          <TR>
+                            <TD class=font12_gray>
+                              <DIV style="OVERFLOW-X: hidden; WIDTH: 100%">
+                                <DIV>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR class=font12_dotline vAlign=top>
+                                <TD 
+                                style="PADDING-BOTTOM: 6px; WIDTH: 15px; PADDING-TOP: 6px" 
+                                align=middle><IMG height=5 
+                                src="images/icon03.jpg" width=3></TD>
+                                <TD style="PADDING-TOP: 3px" align=left>买洗衣机                                </TD>
+                                </TR></TBODY></TABLE></DIV>
+                              <DIV>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR class=font12_dotline vAlign=top>
+                                <TD 
+                                style="PADDING-BOTTOM: 6px; WIDTH: 15px; PADDING-TOP: 6px" 
+                                align=middle><IMG height=5 
+                                src="images/icon03.jpg" width=3></TD>
+                                <TD style="PADDING-TOP: 3px" align=left>上海有限公司                                </TD>
+                                </TR></TBODY></TABLE></DIV></DIV></TD></TR></TBODY></TABLE></TD></TR>
+                    <TR>
+                      <TD><IMG height=12 
+                        src="images/sub_table1_04.jpg" 
+                    width=544></TD></TR></TBODY></TABLE><!--End--></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+</TR></FORM></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,59 @@
+<!-- http://java2000.126.com 最酷的javascripts脚本资源站 一克 呕心整理-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+p {  font-family: "宋体"; font-size: 9pt}
+td {font-size: 9pt ; line-height:normal; }
+A{text-transform: none; text-decoration: none;; font-size: 9pt}
+a:hover {text-decoration:underline; color: #FF0000; font-size: 9pt}
+body {  font-size: 9pt}
+-->
+</style>
+
+<title>folder menu tree</title></head>
+<body bgcolor="#F3F3F3" text="000000" link="000000" vlink="000000" alink="000000">
+  <img src="menutop.gif" width="110" height="20">
+  <script language="JavaScript1.2" src="menu.js"></script>
+<!--第一层-->
+<div id="KB1Parent" class="parent"><a href="#" onClick="expandIt('KB1'); return false" onMouseOver="window.status='文件夹1的状态栏信息...';return true;" onMouseOut="window.status='';return true;"><IMG SRC="images/plus.gif" WIDTH=35 HEIGHT=17 BORDER=0>文件夹一</a></div>
+
+<div id="KB1Child" class="child">
+<a href="sample.htm" target="right" onMouseOver="window.status='页面1的状态栏信息...';return true;" onMouseOut="window.status='';return true;"><img src="images/spacer.gif" width=20 height=11 border=0 alt=""><IMG SRC="images/blank.gif" WIDTH=32 HEIGHT=18 BORDER=0>页面一</a><br>
+  <a href="sample1.htm" target="right" onMouseOver="window.status='页面2的状态栏信息...';return true;" onMouseOut="window.status='';return true;"><img src="images/spacer.gif" width=20 height=11 border=0 alt=""><IMG SRC="images/blank.gif" WIDTH=32 HEIGHT=18 BORDER=0>页面二</a><br>
+  <a href="dl.htm" target="right" onMouseOver="window.status='页面3的状态栏信息...';return true;" onMouseOut="window.status='';return true;"><img src="images/spacer.gif" width=20 height=11 border=0 alt=""><IMG SRC="images/blank.gif" WIDTH=32 HEIGHT=18 BORDER=0>下载文件</a></div>
+
+<!--第二层-->
+
+<div id="KB2Parent" class="parent"><a href="#" onClick="expandIt('KB2'); return false" onMouseOver="window.status='文件夹2的状态栏信息...';return true;" onMouseOut="window.status='';return true;"><IMG SRC="images/plus.gif" WIDTH=35 HEIGHT=17 BORDER=0>文件夹二</a></div>
+
+<div id="KB2Child" class="child">
+<a href="sample.htm" target="right" onMouseOver="window.status='页面2的状态栏信息...';return true;" onMouseOut="window.status='';return true;"><img src="images/spacer.gif" width=20 height=11 border=0 alt=""><IMG SRC="images/blank.gif" WIDTH=32 HEIGHT=18 BORDER=0>页面一</a><br>
+<a href="sample.htm" target="right" onMouseOver="window.status='页面2的状态栏信息...';return true;" onMouseOut="window.status='';return true;"><img src="images/spacer.gif" width=20 height=11 border=0 alt=""><IMG SRC="images/blank.gif" WIDTH=32 HEIGHT=18 BORDER=0>页面二</a><br>
+<a href="sample.htm" target="right" onMouseOver="window.status='页面3的状态栏信息...';return true;" onMouseOut="window.status='';return true;"><img src="images/spacer.gif" width=20 height=11 border=0 alt=""><IMG SRC="images/blank.gif" WIDTH=32 HEIGHT=18 BORDER=0>页面三</a></div>
+
+<!--第三层-->
+
+<div id="KB3Parent" class="parent"><a href="#" onClick="expandIt('KB3'); return false" onMouseOver="window.status='文件夹3的状态栏信息...';return true;" onMouseOut="window.status='';return true;"><IMG SRC="images/plus.gif" WIDTH=35 HEIGHT=17 BORDER=0>文件夹三</a></div>
+
+<div id="KB3Child" class="child">
+<a href="sample.htm" target="right" onMouseOver="window.status='页面1的状态栏信息...';return true;" onMouseOut="window.status='';return true;"><img src="images/spacer.gif" width=20 height=11 border=0 alt=""><IMG SRC="images/blank.gif" WIDTH=32 HEIGHT=18 BORDER=0>页面一</a><br>
+<a href="sample.htm" target="right" onMouseOver="window.status='页面2的状态栏信息...';return true;" onMouseOut="window.status='';return true;"><img src="images/spacer.gif" width=20 height=11 border=0 alt=""><IMG SRC="images/blank.gif" WIDTH=32 HEIGHT=18 BORDER=0>页面二</a><br>
+<a href="sample.htm" target="right" onMouseOver="window.status='页面3的状态栏信息...';return true;" onMouseOut="window.status='';return true;"><img src="images/spacer.gif" width=20 height=11 border=0 alt=""><IMG SRC="images/blank.gif" WIDTH=32 HEIGHT=18 BORDER=0>页面三</a></div>
+
+<div id="KB4Parent" class="parent"><br>
+</div>
+
+<script language="JavaScript">
+
+if (NS4) {
+        firstEl = "KB1Parent";
+        firstInd = getIndex(firstEl);
+        arrange();
+}
+
+</script>
+
+</body>
+</html>

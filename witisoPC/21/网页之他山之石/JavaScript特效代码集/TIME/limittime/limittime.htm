@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>页面停留时间限制脚本</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.yk9 {  font-family: "宋体"; font-size: 9pt}
+body { font-family: "宋体"; font-size: 9pt ; margin-top: 0px}
+-->
+</style>
+<meta name="keywords" content="limittime, 时间限制, time, limit, 停留时间">
+<meta name="description" content="一个限制在页面停留时间的脚本。">
+</head>
+
+<body bgcolor="#F7F7F4" onload="begintimer()">
+<p align=center> 
+  <script>
+<!--
+
+//按照"分:秒"的格式设置限制时间。
+var limit="0:30"
+if (document.images){
+var parselimit=limit.split(":")
+parselimit=parselimit[0]*60+parselimit[1]*1
+}
+function begintimer(){
+if (!document.images)
+return
+if (parselimit==1)
+//下面是限制时间到了后去的连接页面。
+window.location="../../../index.html"
+else{ 
+parselimit-=1
+curmin=Math.floor(parselimit/60)
+cursec=parselimit
+if (curmin!=0)
+curtime="你只有"+curmin+"分"+cursec+"秒的时间保存此页。"
+else
+curtime="你只有"+cursec+"秒的时间保存此页。"
+setTimeout("begintimer()",1000)
+document.lefttime.left.value=curtime
+window.status=curtime
+}
+}
+//-->
+</script>
+</p>
+<form>
+  <div align="center"> <font size="5" color="#FF0033">时间限制脚本</font><font color="#0000FF" size="3">--你只有<b><font color="#FF0033">30</font></b>秒的时间来保存此页 
+    </font></div>
+</form>
+<form name="lefttime">
+  <p align="center"> 
+    <input type="text" name="left" size="25" class="yk9">
+    <br>
+    你可以选择在状态栏或者在文本框中显示剩余时间，或干脆去掉。</p>
+</form>
+<form method="post" action="">
+  <div align="center">
+    <textarea name="textfield" cols="50" rows="10" class="yk9">如下的代码加入HTML的&lt;body&gt;区：
+
+&lt;script&gt;
+&lt;!--
+
+//按照&quot;分:秒&quot;的格式设置限制时间。
+var limit=&quot;0:30&quot;
+if (document.images){
+var parselimit=limit.split(&quot;:&quot;)
+parselimit=parselimit[0]*60+parselimit[1]*1
+}
+function begintimer(){
+if (!document.images)
+return
+if (parselimit==1)
+//下面是限制时间到了后去的连接页面,自己修改。
+window.location=&quot;yours.htm&quot;
+else{ 
+parselimit-=1
+curmin=Math.floor(parselimit/60)
+cursec=parselimit
+if (curmin!=0)
+curtime=&quot;你只有&quot;+curmin+&quot;分&quot;+cursec+&quot;秒的时间保存此页。&quot;
+else
+curtime=&quot;你只有&quot;+cursec+&quot;秒的时间保存此页。&quot;
+setTimeout(&quot;begintimer()&quot;,1000)
+//下一句告诉访问者剩余的时间，在文本框中显示，不想要去掉即可。
+document.lefttime.left.value=curtime
+//下一句告诉访问者剩余的时间，在状态栏中显示。
+window.status=curtime
+}
+}
+//--&gt;
+&lt;/script&gt;
+//-------- 文本框显示区域，如果不想在文本框中显示去掉即可。
+&lt;form name=&quot;lefttime&quot;&gt;
+&lt;p&gt;&lt;input type=&quot;text&quot; name=&quot;left&quot; size=&quot;25&quot;&gt;
+&lt;/p&gt;
+&lt;/form&gt;
+//--------文本框结束-----------
+最后别忘记：
+&lt;BODY onload=&quot;begintimer()&quot;&gt;</textarea>
+  </div>
+</form>
+<p>&nbsp;</p>
+</body>
+</html>

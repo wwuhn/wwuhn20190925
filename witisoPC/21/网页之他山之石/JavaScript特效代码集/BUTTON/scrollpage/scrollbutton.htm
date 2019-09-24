@@ -1,0 +1,84 @@
+<html>
+<HEAD>
+<SCRIPT Language="JavaScript">
+
+<!--
+// scroll down的象素数
+n = 800     
+function scrolldown(){ 
+        for (I=1; I<=n; I++){         
+                parent.scroll(1,I);
+        }
+}    
+
+function scrollup(){
+	for (I=n; I>=1; I--){
+		parent.scroll(n,I);
+	}
+}                                                 
+//-->
+</SCRIPT>
+<title>scroll button屏幕滚动脚本</title>
+<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="scroller, scroll, button, screen, 滚动, 按钮, 滚动屏幕, 屏幕滚动 ">
+</head>
+
+<BODY bgcolor="#004080" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+<p align="center"><font size="5">屏幕滚动按钮</font></p>
+<form>
+  <div align="center">
+    <input type=button value="向下滚动" onClick="scrolldown()" class="pt9">
+  </div>
+</form>
+<div align="center">
+  <p>&nbsp;</p>
+  <form>
+    <div align="center"></div>
+  </form>
+  <table width="62%" border="0" height="393">
+    <tr valign="top"> 
+      <td height="138">&lt;html&gt;<br>
+        &lt;HEAD&gt;<br>
+        &lt;SCRIPT Language=&quot;JavaScript&quot;&gt;
+        <p>&lt;!--<br>
+          // scroll down的象素数<br>
+          n = 700 <br>
+          function scrolldown(){ <br>
+          for (I=1; I&lt;=n; I++){ <br>
+          parent.scroll(1,I);<br>
+          }<br>
+          } </p>
+        <p>function scrollup(){<br>
+          for (I=n; I&gt;=1; I--){<br>
+          parent.scroll(n,I);<br>
+          }<br>
+          } <br>
+          //--&gt;<br>
+          &lt;/SCRIPT&gt;<br>
+          &lt;title&gt;&lt;/title&gt;<br>
+          &lt;/head&gt;</p>
+        <p>&lt;BODY&gt;<br>
+          &lt;form&gt;<br>
+          &lt;input type=button value=&quot;向下滚动&quot; onClick=&quot;scrolldown()&quot;&gt;<br>
+          &lt;/form&gt;<br>
+          &lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;<br>
+          <br>
+          &lt;form&gt;<br>
+          &lt;input type=button value=&quot;向上滚动&quot; onClick=&quot;scrollup()&quot;&gt;<br>
+          &lt;/form&gt;<br>
+        </p>
+        <p>&lt;/body&gt;<br>
+          &lt;/html&gt;</p>
+      </td>
+    </tr>
+  </table>
+  <p> <BR>
+  </p>
+  </div>
+<form>
+  <div align="center">
+    <input type=button value="向上滚动" onClick="scrollup()" class="pt9">
+  </div>
+</form>
+</body>
+</html>

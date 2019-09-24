@@ -1,0 +1,234 @@
+<html>
+<head>
+<STYLE type="text/css">
+<!--
+.link {
+
+	color : #000000;
+	text-decoration : none;
+	
+}
+
+A.link:hover {
+	color : red;
+}
+
+A.link:active {
+	color : #000000;
+	text-decoration : none;
+}
+//-->
+</STYLE>
+<STYLE type="text/css">
+<!--
+#slidemenubar2{
+position:absolute;
+left:-110pt;
+width:120pt;
+top:100pt;
+border:1.5pt solid black;
+background-color:#ffffff;
+layer-background-color:#ffffff;
+font: 9pt/20pt "宋体";
+}
+body {  font-size: 9pt; margin: 0pt}
+
+#slidemenubar { position:absolute;
+left:-110pt;
+width:120pt;
+top:100pt;
+border:1.5pt black solid;
+background-color:#F3F3F3;
+layer-background-color:lightyellow;
+font: 9pt/20pt "宋体";
+ } 
+//-->
+</style>
+<title>scroll menu</title>
+<meta name="keywords" content="scroll menu,expand,link,scrolling,menu,navigation,navigator,菜单,展开。">
+<meta name="description" content="可以随意展开的菜单，不占用页面位置。">
+</head>
+<body bgcolor="black" leftmargin="0" text="#FFFFFF">
+<p>
+<script language="JavaScript1.2">
+
+if (document.all)
+document.write('<div id="slidemenubar2" style="left:-100" onMouseover="pull()" onMouseout="draw()">')
+</script>
+  <layer id="slidemenubar" onMouseover="pull()" onMouseout="draw()"> 
+  <script language="JavaScript1.2">
+var sitems=new Array()
+var sitemlinks=new Array()
+
+//以下是菜单内容，自由设置；
+sitems[0]="菜单1"
+sitems[1]="菜单2"
+sitems[2]="菜单3"
+sitems[3]="菜单4"
+sitems[4]="菜单5"
+sitems[5]="菜单6"
+sitems[6]="菜单7"
+sitems[7]="菜单8"
+sitems[8]="菜单9"
+
+
+
+//菜单项目连接
+sitemlinks[0]="#"
+sitemlinks[1]="#"
+sitemlinks[2]="#"
+sitemlinks[3]="#"
+sitemlinks[4]="#"
+sitemlinks[5]="#"
+sitemlinks[6]="#"
+sitemlinks[7]="#"
+sitemlinks[8]="#"
+
+for (i=0;i<=sitems.length-1;i++)
+document.write('<a href='+sitemlinks[i]+'>'+sitems[i]+'</a><br>')
+</script>
+  </layer>
+<script language="JavaScript1.2">
+function regenerate(){
+window.location.reload()
+}
+function regenerate2(){
+if (document.layers)
+setTimeout("window.onresize=regenerate",400)
+}
+window.onload=regenerate2
+if (document.all){
+document.write('</div>')
+themenu=document.all.slidemenubar2.style
+rightboundary=0
+leftboundary=-150
+}
+else{
+themenu=document.layers.slidemenubar
+rightboundary=150
+leftboundary=10
+}
+function pull(){
+if (window.drawit)
+clearInterval(drawit)
+pullit=setInterval("pullengine()",50)
+}
+function draw(){
+clearInterval(pullit)
+drawit=setInterval("drawengine()",50)
+}
+function pullengine(){
+if (document.all&&themenu.pixelLeft<rightboundary)
+themenu.pixelLeft+=5
+else if(document.layers&&themenu.left<rightboundary)
+themenu.left+=5
+else if (window.pullit)
+clearInterval(pullit)
+}
+function drawengine(){
+if (document.all&&themenu.pixelLeft>leftboundary)
+themenu.pixelLeft-=5
+else if(document.layers&&themenu.left>leftboundary)
+themenu.left-=5
+else if (window.drawit)
+clearInterval(drawit)
+}
+</script></p>
+<div align="center">
+  <p>&nbsp;</p>
+  <p><font face="Arial, Helvetica, sans-serif" size="5"><b>Scroll Menu</b></font></p>
+  <p>下载本页看代码，关键在于层的绝对位置的设置，自己好好调调。</p>
+  <p> 你只要改变一下连接的名称和连接即可。<font color="#FFFFFF"> <br>
+    </font></p>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td>
+        <p><font color="#FF0000">以下为代码：</font></p>
+        <p>&lt;script language=&quot;JavaScript1.2&quot;&gt; </p>
+        <p>if (document.all)<br>
+          document.write('&lt;div id=&quot;slidemenubar2&quot; style=&quot;left:-100&quot; 
+          onMouseover=&quot;pull()&quot; onMouseout=&quot;draw()&quot;&gt;')<br>
+          &lt;/script&gt;<br>
+          &lt;layer id=&quot;slidemenubar&quot; onMouseover=&quot;pull()&quot; 
+          onMouseout=&quot;draw()&quot;&gt; <br>
+          &lt;script language=&quot;JavaScript1.2&quot;&gt;<br>
+          var sitems=new Array()<br>
+          var sitemlinks=new Array()</p>
+        <p>//以下是菜单内容，自由设置；<br>
+          sitems[0]=&quot;菜单1&quot;<br>
+          sitems[1]=&quot;菜单2&quot;<br>
+          sitems[2]=&quot;菜单3&quot;<br>
+          sitems[3]=&quot;菜单4&quot;<br>
+          sitems[4]=&quot;菜单5&quot;<br>
+          sitems[5]=&quot;菜单6&quot;<br>
+          sitems[6]=&quot;菜单7&quot;<br>
+          sitems[7]=&quot;菜单8&quot;<br>
+          sitems[8]=&quot;菜单9&quot;</p>
+        <p></p>
+        <p>//菜单项目连接<br>
+          sitemlinks[0]=&quot;#&quot;<br>
+          sitemlinks[1]=&quot;#&quot;<br>
+          sitemlinks[2]=&quot;#&quot;<br>
+          sitemlinks[3]=&quot;#&quot;<br>
+          sitemlinks[4]=&quot;#&quot;<br>
+          sitemlinks[5]=&quot;#&quot;<br>
+          sitemlinks[6]=&quot;#&quot;<br>
+          sitemlinks[7]=&quot;#&quot;<br>
+          sitemlinks[8]=&quot;#&quot;</p>
+        <p>for (i=0;i&lt;=sitems.length-1;i++)<br>
+          document.write('&lt;a href='+sitemlinks[i]+'&gt;'+sitems[i]+'&lt;/a&gt;&lt;br&gt;')<br>
+          &lt;/script&gt;<br>
+          &lt;/layer&gt;<br>
+          &lt;script language=&quot;JavaScript1.2&quot;&gt;<br>
+          function regenerate(){<br>
+          window.location.reload()<br>
+          }<br>
+          function regenerate2(){<br>
+          if (document.layers)<br>
+          setTimeout(&quot;window.onresize=regenerate&quot;,400)<br>
+          }<br>
+          window.onload=regenerate2<br>
+          if (document.all){<br>
+          document.write('&lt;/div&gt;')<br>
+          themenu=document.all.slidemenubar2.style<br>
+          rightboundary=0<br>
+          leftboundary=-150<br>
+          }<br>
+          else{<br>
+          themenu=document.layers.slidemenubar<br>
+          rightboundary=150<br>
+          leftboundary=10<br>
+          }<br>
+          function pull(){<br>
+          if (window.drawit)<br>
+          clearInterval(drawit)<br>
+          pullit=setInterval(&quot;pullengine()&quot;,50)<br>
+          }<br>
+          function draw(){<br>
+          clearInterval(pullit)<br>
+          drawit=setInterval(&quot;drawengine()&quot;,50)<br>
+          }<br>
+          function pullengine(){<br>
+          if (document.all&amp;&amp;themenu.pixelLeft&lt;rightboundary)<br>
+          themenu.pixelLeft+=5<br>
+          else if(document.layers&amp;&amp;themenu.left&lt;rightboundary)<br>
+          themenu.left+=5<br>
+          else if (window.pullit)<br>
+          clearInterval(pullit)<br>
+          }<br>
+          function drawengine(){<br>
+          if (document.all&amp;&amp;themenu.pixelLeft&gt;leftboundary)<br>
+          themenu.pixelLeft-=5<br>
+          else if(document.layers&amp;&amp;themenu.left&gt;leftboundary)<br>
+          themenu.left-=5<br>
+          else if (window.drawit)<br>
+          clearInterval(drawit)<br>
+          }<br>
+          &lt;/script&gt;</p>
+      </td>
+    </tr>
+  </table>
+  <p><font color="#FFFFFF"> </font> </p>
+</div>
+</body>
+</html>

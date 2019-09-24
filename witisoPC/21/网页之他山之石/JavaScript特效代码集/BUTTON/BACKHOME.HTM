@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>Back home 返回浏览器的默认页</title>
+<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="home, browser, 默认页, 浏览器, go home">
+<meta name="description" content="此脚本用于返回浏览器的默认页。">
+</head>
+<body bgcolor="#004080" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+<p align="center"><font size="5">返回浏览器的默认页 <font size="3">（IE4 &amp; NS4）</font></font></p>
+<p>
+<script>
+<!--//
+function gohome(){
+if (document.layers)
+window.home()
+else if (document.all)
+window.location="about:home"
+else
+alert("You need NS 4+ or IE 4+ to go back home!")
+}
+//-->
+</script>
+</p>
+<form>
+  <div align="center">
+    <input type="button" onClick="gohome()" value="Take Me Home!" class="pt9">
+  </div>
+</form>
+<p align="center">&nbsp; 
+<div align="center">
+  <table width="70%" border="0">
+    <tr> 
+      <td>
+        <p><font face="Arial, Helvetica, sans-serif">&lt;script&gt;<br>
+          &lt;!--//<br>
+          function gohome(){<br>
+          if (document.layers)<br>
+          window.home()<br>
+          else if (document.all)<br>
+          window.location=&quot;about:home&quot;<br>
+          else<br>
+          alert(&quot;You need NS 4+ or IE 4+ to go back home!&quot;)<br>
+          }<br>
+          //--&gt;<br>
+          &lt;/script&gt;<br>
+          &lt;/p&gt;<br>
+          &lt;form&gt;<br>
+          &lt;input type=&quot;button&quot; onClick=&quot;gohome()&quot; value=&quot;Take 
+          Me Home!&quot;&gt;<br>
+          &lt;/form&gt;<br>
+          &lt;p&gt;<br>
+          &lt;a href=&quot;javascript:gohome()&quot;&gt;&lt;img src=&quot;home.gif&quot; 
+          border=0&gt;&lt;/a&gt;</font></p>
+        <p>说明：此此脚本用于返回浏览器的默认页。适用于IE4和NS4以上版本。你可以通过按钮或一个logo来实现。</p>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+<p align="center">&nbsp;
+</body>
+</html>

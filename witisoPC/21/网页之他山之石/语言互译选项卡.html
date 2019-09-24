@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>免费在线翻译</title><meta name="keywords" content=", 免费提供翻译功能,在线翻译,等免费翻译功能" />
+<meta name="description" content=" , 各国语言互译,在线翻译,英语翻译,日语翻译、繁体翻译、英文等免费翻译功能" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="115 聚合搜索"/>
+<script type="text/javascript"> 
+var TOOL_URL = 'http://tool.114la.com';
+var CATE_ID ='';
+var MY_TOOLS_COOKIE = 'tools_my';
+</script>
+
+<link type="text/css" rel="stylesheet" href="http://tool.114la.com/static/css/global.css?v=20100531" />
+<script src="http://tool.114la.com/static/js/jquery.js" type="text/javascript"></script>
+<script src="http://tool.114la.com/static/js/common.js?v=20100531" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="http://tool.114la.com/static/tools/translate/translate.css" />
+
+
+
+<script type="text/javascript"> 
+$(document).ready(function() {
+new tab_content(
+    [
+        {TabId:"g",ContentId:"tran_google"},
+        {TabId:"y",ContentId:"tran_yahoo"},
+        {TabId:"i",ContentId:"tran_iciba"},
+        {TabId:"b",ContentId:"tran_baidu"},
+        {TabId:"d",ContentId:"tran_youdao"}],"active"
+    );
+});
+ 
+var changeSelectValue = function(pId1,pId2){
+    var box1 = document.getElementById(pId1);
+    var box2 = document.getElementById(pId2);
+    var v = box2.value;
+    if(checkValue(box2,box1.value)){
+        box2.value = box1.value;
+    }
+    if(checkValue(box1,v)){
+        box1.value = v;
+    }
+}
+ 
+var checkValue = function(box,value){
+    var arr = box.options;
+    for(var i = 0; i < arr.length; i++){
+        if(arr[i].value == value){
+            return true;
+        }
+    }
+    false;
+}
+ 
+var onGoogleSubmitHandler = function() {
+ 
+    var text = document.getElementById('google_text').value;
+    var sl = document.getElementById("old_sl").value;
+    var tl = document.getElementById("old_tl").value;
+ 
+    var request = $.ajax({
+        url:'http://tool.114la.com/?ct=live&ac=fanyi_ajax',
+        data:{sl:sl, tl:tl, text:text},
+        success: function(data){
+            document.getElementById("google_result_box").style.display ="block";
+            document.getElementById("google_result_text").innerHTML = data;
+        },
+        error: function(){
+            document.getElementById("google_result_box").style.display ="block";
+            document.getElementById("google_result_text").innerHTML = '服务器出错';
+        }
+    });
+ 
+}
+/*google.load("language", "1");
+var onGoogleSubmitHandler = function() {
+  var content = document.getElementById('google_text');
+  var text = content.value;
+  google.language.translate(text, document.getElementById("old_sl").value, document.getElementById("old_tl").value, function(result) {
+    document.getElementById("google_result_box").style.display ="block";
+    document.getElementById("google_result_text").innerHTML = result.translation;
+  });
+}*/
+</script></head>
+
+<body>
+<div id="main" class="clearfix">
+    <div class="col-main">
+<div id="info_box" class="box-base">
+<div class="box-hd">
+<h3 class="box-t-l">免费在线翻译</h3>
+<ul id="tran_tab">
+<li id="g" rel="tran_google" class="active">Google</li>
+<li id="y" rel="tran_yahoo">yahoo</li>
+<li id="i" rel="tran_iciba">iciba</li>
+<li id="b" rel="tran_baidu">baidu</li>
+<li id="d" rel="tran_youdao">youdao</li>
+</ul>
+</div>
+<div id="tran_content">
+<div id="tran_google">
+<form action="http://translate.google.com/translate_t" method="post" name="form1" target="_blank" id="text_form" accept-charset="utf-8" onsubmit="document.charset='utf-8'">
+<input type="hidden" value="zh-CN" name="hl">
+<input type="hidden" value="UTF8" name="ie">
+<label for="google_text">使用 Google 翻译文字：</label><br />
+<textarea  name="text" class="text" rows="4" cols="70"></textarea>     
+<br />
+<span class="STYLE4">源语言:</span>
+<select class="sllangdropdown" name="sl" id="old_sl" tabindex="0" style="width:100px">
+<option selected="selected" value="auto">检测语言</option>
+<option value="en">英语</option>
+<option value="separator" disabled="disabled">—</option>                                         
+<option value="separator" disabled="disabled">—</option>
+<option value="zh-CN">中文</option>
+<option value="sq">阿尔巴尼亚语</option>
+<option value="ar">阿拉伯语</option>
+<option value="az">阿塞拜疆语 ALPHA</option>
+<option value="ga">爱尔兰语</option>
+<option value="et">爱沙尼亚语</option>
+<option value="be">白俄罗斯语</option>
+<option value="bg">保加利亚语</option>
+<option value="is">冰岛语</option>
+<option value="pl">波兰语</option>
+<option value="fa">波斯语</option>
+<option value="af">布尔文(南非荷兰语)</option>
+<option value="da">丹麦语</option>
+<option value="de">德语</option>
+<option value="ru">俄语</option>
+<option value="fr">法语</option>
+<option value="tl">菲律宾语</option>
+<option value="fi">芬兰语</option>
+<option value="ka">格鲁吉亚语 ALPHA</option>
+<option value="ht">海地克里奥尔语 ALPHA</option>
+<option value="ko">韩语</option>
+<option value="nl">荷兰语</option>
+<option value="gl">加利西亚语</option>
+<option value="ca">加泰罗尼亚语</option>
+<option value="cs">捷克语</option>
+<option value="hr">克罗地亚语</option>
+<option value="lv">拉脱维亚语</option>
+<option value="lt">立陶宛语</option>
+<option value="ro">罗马尼亚语</option>
+<option value="mt">马耳他语</option>
+<option value="ms">马来语</option>
+<option value="mk">马其顿语</option>
+<option value="no">挪威语</option>
+<option value="pt">葡萄牙语</option>
+<option value="ja">日语</option>
+<option value="sv">瑞典语</option>
+<option value="sr">塞尔维亚语</option>
+<option value="sk">斯洛伐克语</option>
+<option value="sl">斯洛文尼亚语</option>
+<option value="sw">斯瓦希里语</option>
+<option value="th">泰语</option>
+<option value="tr">土耳其语</option>
+<option value="cy">威尔士语</option>
+<option value="uk">乌克兰语</option>
+<option value="eu">西班牙的巴斯克语 ALPHA</option>
+<option value="es">西班牙语</option>
+<option value="iw">希伯来语</option>
+<option value="el">希腊语</option>
+<option value="hu">匈牙利语</option>
+<option value="hy">亚美尼亚语 ALPHA</option>
+<option value="it">意大利语</option>
+<option value="yi">意第绪语</option>
+<option value="hi">印地语</option>
+<option value="ur">印度乌尔都语 ALPHA</option>
+<option value="id">印尼语</option>
+<option value="en">英语</option>
+<option value="vi">越南语</option>
+</select>
+<span class="STYLE5">目标语言:</span> <span class="langselect" id="sl_select"></span>
+<select class="tllangdropdown" name="tl" id="old_tl" tabindex="0" style="width:100px">
+<option selected="selected" value="zh-CN">中文(简体)</option>
+<option value="separator" disabled="disabled">—</option>
+<option value="en">英语</option>
+<option value="sq">阿尔巴尼亚语</option>
+<option value="ar">阿拉伯语</option>
+<option value="az">阿塞拜疆语 ALPHA</option>
+<option value="ga">爱尔兰语</option>
+<option value="et">爱沙尼亚语</option>
+<option value="be">白俄罗斯语</option>
+<option value="bg">保加利亚语</option>
+<option value="is">冰岛语</option>
+<option value="pl">波兰语</option>
+<option value="fa">波斯语</option>
+<option value="af">布尔文(南非荷兰语)</option>
+<option value="da">丹麦语</option>
+<option value="de">德语</option>
+<option value="ru">俄语</option>
+<option value="fr">法语</option>
+<option value="tl">菲律宾语</option>
+<option value="fi">芬兰语</option>
+<option value="ka">格鲁吉亚语 ALPHA</option>
+<option value="ht">海地克里奥尔语 ALPHA</option>
+<option value="ko">韩语</option>
+<option value="nl">荷兰语</option>
+<option value="gl">加利西亚语</option>
+<option value="ca">加泰罗尼亚语</option>
+<option value="cs">捷克语</option>
+<option value="hr">克罗地亚语</option>
+<option value="lv">拉脱维亚语</option>
+<option value="lt">立陶宛语</option>
+<option value="ro">罗马尼亚语</option>
+<option value="mt">马耳他语</option>
+<option value="ms">马来语</option>
+<option value="mk">马其顿语</option>
+<option value="no">挪威语</option>
+<option value="pt">葡萄牙语</option>
+<option value="ja">日语</option>
+<option value="sv">瑞典语</option>
+<option value="sr">塞尔维亚语</option>
+<option value="sk">斯洛伐克语</option>
+<option value="sl">斯洛文尼亚语</option>
+<option value="sw">斯瓦希里语</option>
+<option value="th">泰语</option>
+<option value="tr">土耳其语</option>
+<option value="cy">威尔士语</option>
+<option value="uk">乌克兰语</option>
+<option value="eu">西班牙的巴斯克语 ALPHA</option>
+<option value="es">西班牙语</option>
+<option value="iw">希伯来语</option>
+<option value="el">希腊语</option>
+<option value="hu">匈牙利语</option>
+<option value="hy">亚美尼亚语 ALPHA</option>
+<option value="it">意大利语</option>
+<option value="yi">意第绪语</option>
+<option value="hi">印地语</option>
+<option value="ur">印度乌尔都语 ALPHA</option>
+<option value="id">印尼语</option>
+<option value="vi">越南语</option>
+<option value="zh-TW">中文(繁体)</option>
+<option value="zh-CN">中文(简体)</option>
+</select>
+<input type="submit" value=" 翻  译 " name="submit2">
+</form>
+<form target="_blank" action="http://translate.google.cn/translate">
+<label for="google_site">使用 Google 翻译网页：</label>
+<input type="text" value="http://" id="url" name="u" class="text" style="width:95%"/>
+<div>
+<select id="sel_s1" name="sl"><option value="sq">阿尔巴尼亚文</option><option value="ar">阿拉伯文</option><option value="et">爱沙尼亚语</option><option value="bg">保加利亚文</option><option value="pl">波兰语</option><option value="ko">朝鲜语</option><option value="da">丹麦语</option><option value="de">德语</option><option value="ru">俄语</option><option value="fr">法语</option><option value="tl">菲律宾文</option><option value="fi">芬兰语</option><option value="gl">盖尔文(爱尔兰)</option><option value="nl">荷兰语</option><option value="ca">加泰罗尼亚文(西班牙)</option><option value="cs">捷克语</option><option value="hr">克罗地亚文</option><option value="lv">拉脱维亚语</option><option value="lt">立陶宛语</option><option value="ro">罗马尼亚语</option><option value="mt">马耳他文</option><option value="no">挪威语</option><option value="pt">葡萄牙语</option><option value="ja">日语</option><option value="sv">瑞典语</option><option value="sr">塞尔维亚文</option><option value="sl">斯拉维尼亚文</option><option value="sk">斯洛伐克文</option><option value="th">泰文</option><option value="tr">土耳其文</option><option value="uk">乌克兰文</option><option value="es">西班牙语</option><option value="iw">希伯来语</option><option value="el">希腊语</option><option value="hu">匈牙利语</option><option value="it">意大利语</option><option value="hi">印度文</option><option value="id">印尼文</option><option selected="" value="en">英语</option><option value="vi">越南文</option><option value="zh-CN">中文</option></select>
+<span>»</span>
+<input type="hidden" value="zh-CN" name="hl"/>
+<input type="hidden" value="UTF-8" name="ie"/>
+<select id="sel_t1" style="width: auto;" name="tl"><option value="sq">阿尔巴尼亚文</option><option value="ar">阿拉伯文</option><option value="et">爱沙尼亚语</option><option value="bg">保加利亚文</option><option value="pl">波兰语</option><option value="ko">朝鲜语</option><option value="da">丹麦语</option><option value="de">德语</option><option value="ru">俄语</option><option value="fr">法语</option><option value="tl">菲律宾文</option><option value="fi">芬兰语</option><option value="gl">盖尔文(爱尔兰)</option><option value="nl">荷兰语</option><option value="ca">加泰罗尼亚文(西班牙)</option><option value="cs">捷克语</option><option value="hr">克罗地亚文</option><option value="lv">拉脱维亚语</option><option value="lt">立陶宛语</option><option value="ro">罗马尼亚语</option><option value="mt">马耳他文</option><option value="no">挪威语</option><option value="pt">葡萄牙语</option><option value="ja">日语</option><option value="sv">瑞典语</option><option value="sr">塞尔维亚文</option><option value="sl">斯拉维尼亚文</option><option value="sk">斯洛伐克文</option><option value="th">泰文</option><option value="tr">土耳其文</option><option value="uk">乌克兰文</option><option value="es">西班牙语</option><option value="iw">希伯来语</option><option value="el">希腊语</option><option value="hu">匈牙利语</option><option value="it">意大利语</option><option value="hi">印度文</option><option value="id">印尼文</option><option value="en">英语</option><option value="vi">越南文</option><option value="zh-TW">中文(繁体)</option><option selected="" value="zh-CN">中文(简体)</option></select>
+<input type="submit" value="翻译"  />
+</div>
+</form>
+</div>
+<div id="tran_yahoo" class="hide">
+<form target="_blank" name="frmTrText" ;=""  onsubmit="return verifyTrText();" method="post" action="http://fanyi.cn.yahoo.com/translate_txt">
+<input type="hidden" value="utf-8" name="ei"/>        
+<input type="hidden" value="bf-res" name="fr"/>
+<label for="yahoo_text">使用雅虎翻译文字：</label>
+<textarea onfocus="if(this.value=='[请输入或粘贴您想翻译的文字并控制在150词以内]'){this.value='';}" onblur="if(this.value==''){this.value='[请输入或粘贴您想翻译的文字并控制在150词以内]';}" class="text" name="trtext" id="trtext">[请输入或粘贴您想翻译的文字并控制在150词以内]</textarea>
+<div>
+<select name="lp"><option value="en_zh">英语 → 中文(简体)</option><option selected="" value="zh_en">中文(简体) → 英语</option><option value="zh_zt">中文(简体) → 中文(繁体)</option><option value="">- - - - - - - - - - - - - -</option><option value="en_zt">英语 → 中文(繁体)</option><option value="zt_en">中文(繁体) → 英语</option><option value="zt_zh">中文(繁体) → 中文(简体)</option><option value="en_ja">英语 → 日语</option><option value="ja_en">日语 → 英语</option><option value="en_ko">英语 → 韩国语</option><option value="ko_en">韩国语 → 英语</option><option value="en_ru">英语 → 俄语</option><option value="en_nl">英语 → 荷兰语</option><option value="en_fr">英语 → 法语</option><option value="en_de">英语 → 德语</option><option value="en_el">英语 → 希腊语</option><option value="en_it">英语 → 意大利语</option><option value="en_pt">英语 → 葡萄牙语</option><option value="en_es">英语 → 西班牙语</option><option value="ru_en">俄语 → 英语</option><option value="fr_nl">法语 → 荷兰语</option><option value="fr_en">法语 → 英语</option><option value="fr_de">法语 → 德语</option><option value="fr_el">法语 → 希腊语</option><option value="fr_it">法语 → 意大利语</option><option value="fr_pt">法语 → 葡萄牙语</option><option value="fr_es">法语 → 西班牙语</option><option value="de_en">德语 → 英语</option><option value="de_fr">德语 → 法语</option><option value="es_en">西班牙语 → 英语</option><option value="es_fr">西班牙语 → 法语</option><option value="it_en">意大利语 → 英语</option><option value="it_fr">意大利语 → 法语</option><option value="pt_en">葡萄牙语 → 英语</option><option value="pt_fr">葡萄牙语 → 法语</option><option value="nl_en">荷兰语 → 英语</option><option value="nl_fr">荷兰语 → 法语</option><option value="el_en">希腊语 → 英语</option><option value="el_fr">希腊语 → 法语</option>              </select>
+<input type="submit" value="翻译"  />
+<input type="button" onclick="frmTrText.lp.value='en_zh';frmTrText.submit();" value="英语->中文(简体)" />
+</div>
+</form>
+<form target="_blank" name="frmTrURL" onsubmit="return verifyTrURL()" method="get" action="http://rds.cn.yahoo.com/_ylt=A8qlaIMqGSJGahoA.QflWAx./SIG=11rvdlu9g/EXP=1176726186/*-http%3A//fanyi.cn.yahoo.com/translate_url"> 
+<input type="hidden" value="done" name="doit"/>
+<input type="hidden" value="url" name="tt"/>
+<input type="hidden" value="1" name="intl"/>
+<input type="hidden" value="bf-res" name="fr"/>
+<label for="yahoo_site">使用雅虎翻译网页：</label>
+<input type="text" id="yahoo_url" value="http://" class="text" style="width:98%"  name="trurl"/>
+<div>
+<select name="lp"><option value="en_zh">英语 → 中文(简体)</option><option selected="" value="zh_en">中文(简体) → 英语</option><option value="zh_zt">中文(简体) → 中文(繁体)</option><option value="">- - - - - - - - - - - - - -</option><option value="en_zt">英语 → 中文(繁体)</option><option value="zt_en">中文(繁体) → 英语</option><option value="zt_zh">中文(繁体) → 中文(简体)</option><option value="en_ja">英语 → 日语</option><option value="ja_en">日语 → 英语</option><option value="en_ko">英语 → 韩国语</option><option value="ko_en">韩国语 → 英语</option><option value="en_ru">英语 → 俄语</option><option value="en_nl">英语 → 荷兰语</option><option value="en_fr">英语 → 法语</option><option value="en_de">英语 → 德语</option><option value="en_el">英语 → 希腊语</option><option value="en_it">英语 → 意大利语</option><option value="en_pt">英语 → 葡萄牙语</option><option value="en_es">英语 → 西班牙语</option><option value="ru_en">俄语 → 英语</option><option value="fr_nl">法语 → 荷兰语</option><option value="fr_en">法语 → 英语</option><option value="fr_de">法语 → 德语</option><option value="fr_el">法语 → 希腊语</option><option value="fr_it">法语 → 意大利语</option><option value="fr_pt">法语 → 葡萄牙语</option><option value="fr_es">法语 → 西班牙语</option><option value="de_en">德语 → 英语</option><option value="de_fr">德语 → 法语</option><option value="es_en">西班牙语 → 英语</option><option value="es_fr">西班牙语 → 法语</option><option value="it_en">意大利语 → 英语</option><option value="it_fr">意大利语 → 法语</option><option value="pt_en">葡萄牙语 → 英语</option><option value="pt_fr">葡萄牙语 → 法语</option><option value="nl_en">荷兰语 → 英语</option><option value="nl_fr">荷兰语 → 法语</option><option value="el_en">希腊语 → 英语</option><option value="el_fr">希腊语 → 法语</option>              </select>
+<input type="submit" value="翻译"  />
+</div>
+</form>
+</div>
+<div id="tran_iciba" class="hide">
+<form class="iciba-form" onsubmit="if(this.s.value == '') return false;else {window.open('http://dict.iciba.com/'+encodeURIComponent(this.s.value)+'/','','');return false;}" action="http://dict.iciba.com/search" method="get" target="_blank">
+<input type="text" dir="ltr" id="iciba_kw" class="text" name="s"/>
+<input id="iciba_goSearch" type="submit" value="词霸查词" class="search_submit" />
+</form>
+<form class="iciba-form"  style="padding-top:5px;" action="http://dj.iciba.com/search" method="get" target="_blank">
+<input type="hidden" name="t" value="sentence"/>
+<label for="iciba_kws"> </label>
+<input type="text" dir="ltr" id="iciba_kws" class="text" name="s"/>
+<input  type="submit" value="短句搜索" class="search_submit" />
+</form>
+</div>
+<div id="tran_baidu" class="hide">
+<form method="get"  class="baidu-form"  action="http://www.baidu.com/baidu" target="_blank" name="form1">
+<label for="word"> </label>
+<input type="hidden" name="ie" value="utf-8"/>        <input type="hidden" name="bs"/>        <input type="hidden" name="sr"/>        <input type="hidden" name="z"/>        <input type="hidden" name="ct" value="1048576"/>                 <input type="hidden" name="cl2" value="3"/>        <input type="hidden" name="f" value="8"/>            
+<input type="text" dir="ltr" id="word"  class="text"  name="word"/>
+<input type="submit" name="submit" class="search_submit" value="搜索"/>
+</form>
+</div>
+<div id="tran_youdao" class="hide">
+<form target="_blank" id="text_form" method="post" target="_blank" action="http://fanyi.youdao.com/translate">
+<input type="hidden" value="UTF-8" name="ue"/>
+<input type="hidden" value="fanyi.web" name="keyfrom"/>
+<input type="hidden" value="dict" name="smartresult"/>
+<input type="hidden" value="rule" name="smartresult"/>
+<label for="youdao_text">翻译文字：</label><br />
+<textarea id="youdao_text" class="text" wrap="PHYSICAL" rows="7" name="i"></textarea>
+<div>
+<select name="type">
+<option selected="" value="AUTO">自动检测</option>
+<option value="EN2ZH_CN">英语　»　中文</option>
+<option value="ZH_CN2EN">中文　»　英语</option>
+<option value="JA2ZH_CN">日语　»　中文</option>
+<option value="ZH_CN2JA">中文　»　日语</option>
+<option value="KR2ZH_CN">韩语　»　中文</option>
+<option value="ZH_CN2KR">中文　»　韩语</option>
+<option value="FR2ZH_CN">法语　»　中文</option>
+<option value="ZH_CN2FR">中文　»　法语</option>
+</select>
+<input type="submit" class="button" name="action" value="翻译" />
+</div>
+</form>
+<form target="_blank" action="http://fanyi.youdao.com//WebpageTranslate">
+<label for="google_site">翻译网页：</label>
+<input type="text" value="http://" id="youdao_url" name="url" class="text" style="width:95%"/>
+<div>
+<select name="type">
+<option selected="" value="AUTO">自动检测</option>
+<option value="EN2ZH_CN">英语　»　中文</option>
+<option value="ZH_CN2EN">中文　»　英语</option>
+<option value="JA2ZH_CN">日语　»　中文</option>
+<option value="ZH_CN2JA">中文　»　日语</option>
+<option value="KR2ZH_CN">韩语　»　中文</option>
+<option value="ZH_CN2KR">中文　»　韩语</option>
+<option value="FR2ZH_CN">法语　»　中文</option>
+<option value="ZH_CN2FR">中文　»　法语</option>
+</select>
+<input type="submit"  class="button" name="action" value="翻译" />
+</div>
+</form>
+</div>
+</div>
+</div><div id="tool_nav_box" class="box-base"><script>Public.Nav();</script></div></div>
+</div>
+<div style="display:none">
+
+<script type="text/javascript" src="http://tool.114la.com/static/js/global.js"></script>
+</div>
+</body>
+</html>

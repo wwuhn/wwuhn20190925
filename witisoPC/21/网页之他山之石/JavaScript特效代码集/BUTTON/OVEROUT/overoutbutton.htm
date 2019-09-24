@@ -1,0 +1,130 @@
+<html>
+<head>
+<title>动态按钮脚本-Mouse over/out</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<SCRIPT language="JavaScript"> 
+<!-- 
+browserName=navigator.appName; 
+browserVer=parseInt(navigator.appVersion); 
+if ((browserName=="Netscape" && browserVer>=3) || (browserName=="Microsoft Internet Explorer" && browserVer>=4)) 
+version="n3"; 
+else 
+version="n2"; 
+if (version=="n3") 
+{ 
+pic1on= new Image(84,19); 
+pic1on.src="1_1.gif"; 
+pic2on= new Image(84,19); 
+pic2on.src="2_1.gif"; 
+pic3on= new Image(84,19); 
+pic3on.src="3_1.gif"; 
+
+pic1off= new Image(84,19); 
+pic1off.src="1_2.gif"; 
+pic2off= new Image(84,19); 
+pic2off.src="2_2.gif"; 
+pic3off= new Image(84,19); 
+pic3off.src="3_2.gif"; 
+
+
+} 
+
+function lightup(imgName) 
+{ 
+if (version=="n3") 
+{ 
+imgOn=eval(imgName + "on.src"); 
+document[imgName].src= imgOn; 
+} 
+} 
+
+function turnoff(imgName) 
+{ 
+if (version=="n3") 
+{ 
+imgOff=eval(imgName + "off.src"); 
+document[imgName].src= imgOff; 
+} 
+} 
+//-->
+</SCRIPT>
+<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="mouse,over,out,button,动态按钮,mouse over,mouse out,mouseover,mouseout">
+<meta name="description" content="动态按钮脚本(mouse over/out)。">
+</head>
+
+<body bgcolor="#FFFFFF" text="#CCCCCC" link="#66FF33" vlink="#66FF66">
+<div align="center">
+  <center>
+    <center>
+    </center>
+  </center>
+</div>
+<form>
+  <div align="center"> <font size="3" color="#000000">动态按钮脚本-<b><font face="Arial, Helvetica, sans-serif">Mouse 
+    over/out</font></b></font></div>
+</form>
+<p align="center"><A HREF="../../../index.htm" onMouseover="lightup('pic1')" onMouseout="turnoff('pic1')" target="_blank"><IMG SRC="1_2.gif" name="pic1" width="84" height="19" border="0"><br>
+  </a> <A HREF="../../navigation/newscript.htm" onMouseover="lightup('pic2')" onMouseout="turnoff('pic2')"><br>
+  </a></p>
+<p align="center"><font color="#000000">实际上用到了这些图片 </font><br>
+  <img src="1_2.gif" width="84" height="19"><img src="1_1.gif" width="84" height="19"><br>
+  <br>
+  <font color="#000000">★★★你自己可以填加更多的图片，记得在两个区域都要填加相应的代码啊。★★★ </font></p>
+<form method="post" action="">
+  <div align="center">
+    <textarea name="textfield" class="pt9" wrap="VIRTUAL" cols="70" rows="10">以下代码加入html的&lt;head&gt;区：
+&lt;SCRIPT language=&quot;JavaScript&quot;&gt; 
+&lt;!-- 
+browserName=navigator.appName; 
+browserVer=parseInt(navigator.appVersion); 
+if ((browserName==&quot;Netscape&quot; &amp;&amp; browserVer&gt;=3) || (browserName==&quot;Microsoft Internet Explorer&quot; &amp;&amp; browserVer&gt;=4)) 
+version=&quot;n3&quot;; 
+else 
+version=&quot;n2&quot;; 
+if (version==&quot;n3&quot;) 
+{ 
+pic1on= new Image(84,19); 
+pic1on.src=&quot;1_1.gif&quot;; 
+pic2on= new Image(84,19); 
+pic2on.src=&quot;2_1.gif&quot;; 
+pic3on= new Image(84,19); 
+pic3on.src=&quot;3_1.gif&quot;; 
+
+pic1off= new Image(84,19); 
+pic1off.src=&quot;1_2.gif&quot;; 
+pic2off= new Image(84,19); 
+pic2off.src=&quot;2_2.gif&quot;; 
+pic3off= new Image(84,19); 
+pic3off.src=&quot;3_2.gif&quot;; 
+
+
+} 
+
+function lightup(imgName) 
+{ 
+if (version==&quot;n3&quot;) 
+{ 
+imgOn=eval(imgName + &quot;on.src&quot;); 
+document[imgName].src= imgOn; 
+} 
+} 
+
+function turnoff(imgName) 
+{ 
+if (version==&quot;n3&quot;) 
+{ 
+imgOff=eval(imgName + &quot;off.src&quot;); 
+document[imgName].src= imgOff; 
+} 
+} 
+//--&gt;
+&lt;/SCRIPT&gt;
+以下代码加入&lt;body&gt;区：
+&lt;A HREF=&quot;index1.htm&quot; onMouseover=&quot;lightup('pic1')&quot; onMouseout=&quot;turnoff('pic1')&quot;&gt;&lt;IMG SRC=&quot;1_2.gif&quot; name=&quot;pic1&quot; width=&quot;84&quot; height=&quot;19&quot; border=&quot;0&quot;&gt;&lt;br&gt; &lt;/a&gt;
+&lt;A HREF=&quot;index2.htm&quot; onMouseover=&quot;lightup('pic2')&quot; onMouseout=&quot;turnoff('pic2')&quot;&gt;&lt;IMG SRC=&quot;2_2.gif&quot; name=&quot;pic2&quot; width=&quot;84&quot; height=&quot;19&quot; border=&quot;0&quot;&gt;&lt;br&gt; &lt;/a&gt;
+&lt;A HREF=&quot;index3.htm&quot; onMouseover=&quot;lightup('pic3')&quot; onMouseout=&quot;turnoff('pic3')&quot;&gt;&lt;IMG SRC=&quot;3_2.gif&quot; name=&quot;pic3&quot; width=&quot;84&quot; height=&quot;19&quot; border=&quot;0&quot;&gt;&lt;/a&gt;
+***按照格式添加更多的图片即可。</textarea>
+  </div>
+</form>
+<br>

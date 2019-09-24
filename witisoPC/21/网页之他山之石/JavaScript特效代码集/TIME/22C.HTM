@@ -1,0 +1,164 @@
+<html>
+<head>
+<title>随时间变化提示</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+a:active {font-style:normal;text-decoration:none;color:yellow;}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="#009900" topmargin="0" leftmargin="0">
+<form name="form">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr bgcolor="#009900"> 
+      <td colspan="3" height="18">&nbsp; </td>
+    </tr>
+    <tr> 
+      <td bgcolor="#009900" width="18"></td>
+      <td align="center" bgcolor="#FFFFFF"> <br>
+        <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+          <tr> 
+            <td rowspan="2" width="16" valign="top"> 
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+                <tr bgcolor="#336699" bordercolor="#336699"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="22.htm">演<br>
+                    <br>
+                    示</a></strong></td>
+                </tr>
+                <tr bordercolor="#009900" bgcolor="#009900"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="22c.htm">源<br>
+                    代<br>
+                    码</a></strong></td>
+                </tr>
+              </table>
+            </td>
+            <td rowspan="2" width="8" bgcolor="#009900">&nbsp;</td>
+            <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#009900" valign="top"> 
+              <script language="JavaScript">
+<!--hide
+
+function view(form){
+msg=open("","DisplayWindow","status=1,left=0,top=0,height=320,width=790,");msg.document.write(form.code2.value);
+}
+function CodeOut(form){
+var     
+txt1="<html><title>效果演示</title><head></head><body onblur=window.close()  onmouseover=javascript:close()><font color=red>提醒：按F5刷新本页看下面效果。</font><br><br>";
+txt=""+form.a.value+""+form.b.value+""+form.c.value+"";
+txt+=""+form.d.value+""+form.e.value+""+form.f.value+"";
+txt+=""+form.g.value+""+form.h.value+""+form.i.value+"";
+txt2="</body></html>";
+	
+form.Code.value=txt;
+form.code2.value=txt1 + txt + txt2;
+}
+
+<!-->
+</script>
+              <input type="hidden" name="code2">
+              <div id="Layer1" style="position:absolute; width:207px; height:173px; z-index:1; visibility: hidden"> 
+                <textarea name="a" cols="40" rows="0" wrap="VIRTUAL"></textarea>
+                <textarea name="c" cols="40" rows="0" wrap="VIRTUAL"></textarea>
+                <textarea name="e" cols="40" rows="0" wrap="VIRTUAL"></textarea>
+                <textarea name="g" cols="40" rows="0" wrap="VIRTUAL"></textarea>
+                <textarea name="i" cols="40" rows="0" wrap="VIRTUAL"></textarea>
+              </div>
+              <br>
+              <b>随时间变化提示</b> 
+              <hr width="92%" size="1" align="center">
+              <table  cellspacing="0" cellpadding="0" width="81%">
+                <tr> 
+                  <td colspan="2" height="20">注释：放在&lt;body&gt;与&lt;/body&gt;之间</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <p> 
+                      <textarea name="Code" onFocus="this.select()" onMouseOver="this.focus()" cols="50" style="BACKGROUND-COLOR: #009900;" wrap="VIRTUAL" rows="16" class="pt9">&lt;script language=&quot;JavaScript&quot;&gt;
+&lt;!-----------
+   var enabled = 0;   today = new Date();
+   var day;   var date;
+   if(today.getDay()==0)     day = &quot;星期日&quot;
+   if(today.getDay()==1)     day = &quot;星期一&quot;
+   if(today.getDay()==2)     day = &quot;星期二&quot;
+   if(today.getDay()==3)     day = &quot;星期三&quot;
+   if(today.getDay()==4)     day = &quot;星期四&quot;
+   if(today.getDay()==5)     day = &quot;星期五&quot;
+   if(today.getDay()==6)     day = &quot;星期六&quot;
+   document.fgColor = &quot; FF0072&quot;;
+   date1 = &quot;&lt;font size=2 color=red&gt;&quot; + (today.getYear())  + &quot;年&quot; + (today.getMonth() + 1 ) + &quot;月&quot; + today.getDate() + &quot;日  &quot; + &quot;&lt;/font&gt;&quot;;
+   date2 = &quot;&lt;font size=2 color=red&gt;&quot; +  day + &quot;&lt;/font&gt;&quot;;
+   document.write(&quot;&lt;center&gt;&quot; + date1.fontsize(3) + date2.fontsize(3) + &quot;&lt;/center&gt;&quot;);
+   
+//-----&gt;
+&lt;/script&gt;
+                  &lt;script language=&quot;JavaScript&quot;&gt;
+
+&lt;!--
+document.write(&quot;&lt;center&gt;&lt;font color=#0066ff size=+1&gt; &quot;)
+day = new Date()
+hr = day.getHours()
+if (hr ==1)
+document.write(&quot;凌晨一点已过，别忘了休息喔！&quot;)
+if (hr ==2)
+document.write(&quot;该休息了，身体可是革命的本钱啊！&quot;)
+if (hr ==3)
+document.write(&quot;夜深人静，只有你敲击鼠标的声音...&quot;)
+if (hr ==4)
+document.write(&quot;四点过了，你明天不上班？？？&quot;)
+if (hr ==5)
+document.write(&quot;该去晨运了！！！&quot;)
+if (hr ==6)
+document.write(&quot;你知道吗，此时是国内网络速度最快的时候！&quot;)
+if (hr ==7)
+document.write(&quot;新的一天又开始了，祝你过得快乐！&quot;)
+if ((hr ==8) || (hr == 9) || (hr ==10))
+document.write(&quot;上午好！今天你看上去好精神哦！&quot;)
+if (hr ==11)
+document.write(&quot;十一点过了，快下班了吧？&quot;)
+if (hr ==12)
+document.write(&quot;十二点过了，还不下班？&quot;)
+if ((hr==13) || (hr==14))
+document.write(&quot;你不睡午觉？&quot;)
+if ((hr==15) || (hr==16) || (hr==17))
+document.write(&quot;下午好！&quot;)
+if ((hr==18) || (hr==19))
+document.write(&quot;吃晚饭了吧？&quot;)
+if ((hr==20) || (hr==21) || (hr==22))
+document.write(&quot;今晚又在这玩电脑了，没节目？&quot;)
+if (hr==23)
+document.write(&quot;真是越玩越精神，不打算睡了？&quot;)
+if (hr==0)
+document.write(&quot;凌晨了，还不睡？&quot;)
+document.write(&quot;&lt;/font&gt;&lt;/center&gt;&quot;)
+//---&gt;
+
+&lt;/script&gt;</textarea>
+                    
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr> 
+            <td height="20" class="white" bgcolor="#009900">&nbsp;</td>
+          </tr>
+        </table>
+        <br>
+      </td>
+      <td bgcolor="#009900" width="18"></td>
+    </tr>
+    <tr bgcolor="#009900"> 
+      <td></td>
+      <td align="center" height="35">&nbsp; </td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<html>
+<head>
+<title>email合法性检测</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../style.css">
+<meta name="description" content="表单电子邮件地址合法性检测脚本。">
+<meta name="keywords" content="form, submit, mail, email, e-mail, mailer, 邮件, 电子邮件, 合法性, 合法, 表单, 递交, 表单递交,valid, invalid, check">
+</head>
+
+<body bgcolor="#000066" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+<p align="center"><font size="3" face="Times New Roman, Times, serif">E-mail</font><font size="3">地址合法性检测</font></p>
+<script language="javascript">
+<!-- Begin
+function chk(email)
+{
+invalid = "";
+
+if (!email)
+invalid = "请输入您的Email地址。";
+
+else {
+
+if ( (email.indexOf("@") == -1) || (email.indexOf(".") == -1) ) 
+invalid += "\n\nEmail地址不合法。应当包含'@'和'.'；例如('.com')。请检查后再递交。";
+
+if (email.indexOf("your email here") > -1)
+invalid += "\n\nEmail地址不合法，请检测您的Email地址，在域名内应当包含'@'和'.'；例如('.com')。";
+
+if (email.indexOf("\\") > -1) 
+invalid += "\n\nEmail地址不合法，含有非法字符(\\)。";
+
+if (email.indexOf("/") > -1) 
+invalid += "\n\nEmail地址不合法，含有非法字符(/)。";
+
+if (email.indexOf("'") > -1) 
+invalid += "\n\nEmail地址不合法，含有非法字符(')。";
+
+if (email.indexOf("!") > -1) 
+invalid += "\n\nEmail地址不合法，含有非法字符(!)。";
+
+if ( (email.indexOf(",") > -1) || (email.indexOf(";") > -1) )
+invalid += "\n\n只输入一个Email地址，不要含有分号和逗号。";
+
+if (email.indexOf("?subject") > -1) 
+invalid += "\n\n不要加入'?subject=...'。";
+
+}
+if (invalid == "")
+   {
+   return true;
+}
+else 
+   { 
+   alert("输入的Email可能包含错误：" + invalid);
+   return false;
+   }
+
+}
+// End -->
+</script>
+<form method="post" name="myform" action="" onSubmit="return chk(document.myform.email.value)">
+  <div align="center">
+    <input type="text" name="email" value="your email here" class="pt9">
+    <input type="submit" name="Submit" value="Submit" class="pt9">
+    （演示没有真正递交）</div>
+</form>
+<div align="center">
+  <table width="83%" border="0">
+    <tr> 
+      <td>
+        <p>以下代码加入HTML的&lt;body&gt;区：</p>
+        <p>&lt;script language=&quot;javascript&quot;&gt;<br>
+          &lt;!-- Begin<br>
+          function chk(email, formname)<br>
+          {<br>
+          invalid = &quot;&quot;; </p>
+        <p>if (!email)<br>
+          invalid = &quot;请输入您的Email地址。&quot;;</p>
+        <p>else {</p>
+        <p>if ( (email.indexOf(&quot;@&quot;) == -1) || (email.indexOf(&quot;.&quot;) 
+          == -1) ) <br>
+          invalid += &quot;\n\nEmail地址不合法。应当包含'@'和'.'；例如('.com')。请检查后再递交。&quot;;</p>
+        <p>if (email.indexOf(&quot;<font color="#66FF66">your email here</font>&quot;) 
+          &gt; -1)<br>
+          invalid += &quot;\n\nEmail地址不合法，请检测您的Email地址，在域名内应当包含'@'和'.'；例如('.com')。&quot;;</p>
+        <p>if (email.indexOf(&quot;<font color="#66FF66">\\</font>&quot;) &gt; 
+          -1) <br>
+          invalid += &quot;\n\nEmail地址不合法，含有非法字符(<font color="#66FF66">\\</font>)。&quot;;</p>
+        <p>if (email.indexOf(&quot;/&quot;) &gt; -1) <br>
+          invalid += &quot;\n\nEmail地址不合法，含有非法字符(/)。&quot;;</p>
+        <p>if (email.indexOf(&quot;'&quot;) &gt; -1) <br>
+          invalid += &quot;\n\nEmail地址不合法，含有非法字符(')。&quot;;</p>
+        <p>if (email.indexOf(&quot;!&quot;) &gt; -1) <br>
+          invalid += &quot;\n\nEmail地址不合法，含有非法字符(!)。&quot;;</p>
+        <p>if ( (email.indexOf(&quot;,&quot;) &gt; -1) || (email.indexOf(&quot;;&quot;) 
+          &gt; -1) )<br>
+          invalid += &quot;\n\n只输入一个Email地址，不要含有分号和逗号。&quot;;</p>
+        <p>if (email.indexOf(&quot;?subject&quot;) &gt; -1) <br>
+          invalid += &quot;\n\n不要加入'?subject=...'。&quot;;</p>
+        <p>}<br>
+          if (invalid == &quot;&quot;)<br>
+          {<br>
+          return true;<br>
+          }<br>
+          else <br>
+          { <br>
+          alert(&quot;输入的Email可能包含错误：&quot; + invalid);<br>
+          return false;<br>
+          }</p>
+        <p>}<br>
+          // End --&gt;<br>
+          &lt;/script&gt;</p>
+        <p><br>
+          &lt;form method=&quot;post&quot; name=&quot;myform&quot; action=&quot;submit.cgi&quot; 
+          onSubmit=&quot;return chk(document.myform.email.value)&quot;&gt;<br>
+          &lt;div align=&quot;center&quot;&gt;<br>
+          &lt;input type=&quot;text&quot; name=&quot;email&quot; value=&quot;<font color="#66FF66">your 
+          email here</font>&quot;&gt;<br>
+          &lt;input type=&quot;submit&quot; name=&quot;Submit&quot; value=&quot;Submit&quot;&gt;<br>
+          &lt;/div&gt;<br>
+          &lt;/form&gt;</p>
+        <p>说明：应该引起注意的地方我已经用绿色标记出来了。除了做Email的非空检测外，还应该检测某些非法字符的填写，你可以仿照上面的方法将你所要禁止的字符全部加上。检测斜杠“\”稍微有一点复杂，因为“\”有其特殊的含义-转意符号，它的作用将它后面字符的原来的含义屏蔽起来，所以检测它本身我们使用2个斜杠“\\”。此外，我们经常再表单区事先填写“your 
+          mail here”等提示性的话，为了防止访问者直接按递交，将“your mail here”作为合法的邮件地址发送，所以禁止递交这些提示也是必须的。</p>
+      </td>
+    </tr>
+  </table>
+<p>&nbsp;</p></div>
+<p>&nbsp;</p>
+</body>
+</html>

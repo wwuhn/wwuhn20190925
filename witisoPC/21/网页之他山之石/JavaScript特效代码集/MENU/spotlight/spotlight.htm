@@ -1,0 +1,283 @@
+<HTML><HEAD>
+<TITLE>消隐logo--黑客味道</TITLE>
+<STYLE>#spotlight {
+	FILTER: light
+}
+body {  margin: 0px; font-size: 9pt}
+.pt9 {  font: 9pt "宋体"}
+td { font: 9pt "宋体" }
+</STYLE>
+<SCRIPT language=JavaScript1.2>
+
+function high(which2){
+theobject=which2
+highlighting=setInterval("highlightit(theobject)",50)
+}
+function low(which2){
+clearInterval(highlighting)
+which2.filters.alpha.opacity=40
+}
+
+
+
+function highlightit(cur2){
+if (cur2.filters.alpha.opacity<100)
+cur2.filters.alpha.opacity+=5
+else if (window.highlighting)
+clearInterval(highlighting)
+}
+
+</SCRIPT>
+<meta name="description" content="黑客味道的消隐显示的logo。">
+<meta name="keywords" content="logo,highlight,filter,spotlight,聚光灯,消隐">
+</HEAD>
+<BODY bgColor=#000000 text="#FFFFFF" link="#66FF33" vlink="#66FF33" alink="#99FF33">
+<form>
+  <div align="center"> 
+    <p><font size="5">聚光灯<b><font face="Arial, Helvetica, sans-serif">LOGO</font></b>脚本</font><font size="3"><br>
+      </font> </p>
+    </div>
+</form>
+<table border=0 cellpadding=1 cellspacing=1 width="750">
+  <tr> 
+    <td width="141" rowspan="7" valign="top"> 
+      <div align=center><a 
+            href="#"><img border=0 
+            height=21 name=Image1 onMouseOut=low(this) onMouseOver=high(this) 
+            src="home.gif" 
+            style="FILTER: alpha(opacity=40)" width=105></a></div>
+      <div align=center><a 
+            href="#"><img 
+            border=0 height=21 name=Image2 onMouseOut=low(this) 
+            onMouseOver=high(this) 
+            src="new.gif" 
+            style="FILTER: alpha(opacity=40)" width=105></a></div>
+      <div align=center><a 
+            href="#"><img border=0 
+            height=21 name=Image3 onMouseOut=low(this) onMouseOver=high(this) 
+            src="school.gif" 
+            style="FILTER: alpha(opacity=40)" width=105></a></div>
+      <div align=center><a 
+            href="#"><img 
+            border=0 height=21 name=Image4 onMouseOut=low(this) 
+            onMouseOver=high(this) 
+            src="somegood.gif" 
+            style="FILTER: alpha(opacity=40)" width=105></a></div>
+      <div align=center><a 
+            href="#"><img 
+            border=0 height=21 onMouseOut=low(this) onMouseOver=high(this) 
+            src="gbook.gif" 
+            style="FILTER: alpha(opacity=40)" width=105 name="image5"></a></div>
+      <div align=center></div>
+      <div align=center>
+        <p>&nbsp;</p>
+      </div>
+    </td>
+    <td rowspan="7" width="600" valign="top"> 
+      <p>以下是完全的页面代码，看起来长，但是你仅仅需要改动绿色部分的一小部分。它们是：图片（换成你自己的）、图片的连接、尺寸大小。别的什么也不用改。切记，绿色部分中的</p>
+      <p><font face="Times New Roman, Times, serif" size="3"><font color="#33FF33">onMouseOut=low(this) 
+        onMouseOver=high(this) src=&quot;new.gif&quot; style=&quot;FILTER: alpha(opacity=40)&quot; 
+        别丢啊。 </font></font></p>
+      <p><font face="Times New Roman, Times, serif" size="3">&lt;HTML&gt;<br>
+        &lt;HEAD&gt;&lt;TITLE&gt;&lt;/TITLE&gt; </font> </p>
+      <p><font face="Times New Roman, Times, serif" size="3">&lt;STYLE&gt;<br>
+        #spotlight {<br>
+        FILTER: light<br>
+        }<br>
+        &lt;/STYLE&gt;</font></p>
+      <p><font face="Times New Roman, Times, serif" size="3">&lt;SCRIPT language=JavaScript1.2&gt;</font></p>
+      <p><font face="Times New Roman, Times, serif" size="3">function high(which2){<br>
+        theobject=which2<br>
+        highlighting=setInterval(&quot;highlightit(theobject)&quot;,50)<br>
+        }<br>
+        function low(which2){<br>
+        clearInterval(highlighting)<br>
+        which2.filters.alpha.opacity=40<br>
+        }</font></p>
+      <p></p>
+      <p><font face="Times New Roman, Times, serif" size="3">function highlightit(cur2){<br>
+        if (cur2.filters.alpha.opacity&lt;100)<br>
+        cur2.filters.alpha.opacity+=5<br>
+        else if (window.highlighting)<br>
+        clearInterval(highlighting)<br>
+        }</font></p>
+      <p><font face="Times New Roman, Times, serif" size="3">&lt;/SCRIPT&gt;</font></p>
+      <p><font face="Times New Roman, Times, serif" size="3">&lt;/HEAD&gt;<br>
+        &lt;BODY bgColor=#000000&gt; </font></p>
+      <p>&lt;!--背景是黑色的才能看出特色来。---&gt;</p>
+      <p><font face="Times New Roman, Times, serif" size="3"> <font color="#33FF33">&lt;table 
+        border=0 cellpadding=1 cellspacing=1&gt;<br>
+        &lt;tr&gt; <br>
+        &lt;td&gt; <br>
+        &lt;div align=center&gt;&lt;a <br>
+        href=&quot;../../../index.html&quot;&gt;&lt;img border=0 height=21 name=Image1 
+        onMouseOut=low(this) onMouseOver=high(this) <br>
+        src=&quot;home.gif&quot; style=&quot;FILTER: alpha(opacity=40)&quot; width=105&gt;&lt;/a&gt;&lt;/div&gt;<br>
+        &lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;tr&gt; <br>
+        &lt;td&gt; <br>
+        &lt;div align=center&gt;&lt;a <br>
+        href=&quot;#&quot;&gt;&lt;img border=0 height=21 name=Image2 onMouseOut=low(this) 
+        <br>
+        onMouseOver=high(this) src=&quot;new.gif&quot; style=&quot;FILTER: alpha(opacity=40)&quot; 
+        width=105&gt;&lt;/a&gt;&lt;/div&gt;<br>
+        &lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;tr&gt; <br>
+        &lt;td&gt; <br>
+        &lt;div align=center&gt;&lt;a <br>
+        href=&quot;#&quot;&gt;&lt;img border=0 height=21 name=Image3 onMouseOut=low(this) 
+        onMouseOver=high(this) src=&quot;school.gif&quot; style=&quot;FILTER: 
+        alpha(opacity=40)&quot; width=105&gt;&lt;/a&gt;&lt;/div&gt;<br>
+        &lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;tr&gt; <br>
+        &lt;td&gt; <br>
+        &lt;div align=center&gt;&lt;a href=&quot;#&quot;&gt;&lt;img border=0 height=21 
+        name=Image4 onMouseOut=low(this) <br>
+        onMouseOver=high(this) src=&quot;somegood.gif&quot; style=&quot;FILTER: 
+        alpha(opacity=40)&quot; width=105&gt;&lt;/a&gt;&lt;/div&gt;<br>
+        &lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;tr&gt; <br>
+        &lt;td&gt; <br>
+        &lt;div align=center&gt;&lt;a href=&quot;#&quot;&gt;&lt;img border=0 height=21 
+        onMouseOut=low(this) onMouseOver=high(this) <br>
+        src=&quot;gbook.gif&quot; style=&quot;FILTER: alpha(opacity=40)&quot; 
+        width=105 name=&quot;image5&quot;&gt;&lt;/a&gt;&lt;/div&gt;<br>
+        &lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;tr&gt; <br>
+        &lt;td&gt; <br>
+        &lt;div align=center&gt;&lt;a href=&quot;#&quot; target=&quot;_blank&quot;&gt;&lt;img 
+        border=0 height=21 name=Image6 onMouseOut=low(this) onMouseOver=high(this) 
+        src=&quot;wuhan.gif&quot; style=&quot;FILTER: alpha(opacity=40)&quot; 
+        width=105&gt;&lt;/a&gt;&lt;/div&gt;<br>
+        &lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;tr&gt; <br>
+        &lt;td&gt; <br>
+        &lt;div align=center&gt;&lt;a href=&quot;#&quot; target=_blank&gt;&lt;img 
+        border=0 height=21 name=Image7 <br>
+        onMouseOut=low(this) onMouseOver=high(this) src=&quot;wzl.gif&quot; style=&quot;FILTER: 
+        alpha(opacity=40)&quot; width=105&gt;&lt;/a&gt;&lt;/div&gt;<br>
+        &lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;/table&gt;</font><br>
+        &lt;P&gt;</font></p>
+      <p><font face="Times New Roman, Times, serif" size="3"><br>
+        &lt;SCRIPT language=JavaScript1.2&gt;</font></p>
+      <p><font face="Times New Roman, Times, serif" size="3"> if (document.all&amp;&amp;window.spotlight){<br>
+        var x=new Array()<br>
+        var direction=new Array()<br>
+        var y=new Array()<br>
+        if (spotlight.length==null){<br>
+        spotlight[0]=document.all.spotlight<br>
+        x[0]=0<br>
+        direction[0]=&quot;right&quot;<br>
+        y[0]=spotlight[0].height<br>
+        spotlight[0].filters.light.addPoint(100,50,100,255,255,255,90)<br>
+        }<br>
+        else<br>
+        for (i=0;i&lt;spotlight.length;i++){<br>
+        x[i]=0<br>
+        direction[i]=&quot;right&quot;<br>
+        y[i]=spotlight[i].height<br>
+        spotlight[i].filters.light.addPoint(100,50,100,255,255,255,90)<br>
+        }<br>
+        }</font></p>
+      <p><font face="Times New Roman, Times, serif" size="3">function slidelight(cur){<br>
+        spotlight[cur].filters.light.MoveLight(0,x[cur],y[cur],200,-1)</font></p>
+      <p><font face="Times New Roman, Times, serif" size="3">if (x[cur]&lt;spotlight[cur].width+200&amp;&amp;direction[cur]==&quot;right&quot;)<br>
+        x[cur]+=10<br>
+        else if (x[cur]&gt;spotlight[cur].width+200){<br>
+        direction[cur]=&quot;left&quot;<br>
+        x[cur]-=10<br>
+        }<br>
+        else if (x[cur]&gt;-200&amp;&amp;x[cur]&lt;-185){<br>
+        direction[cur]=&quot;right&quot;<br>
+        x[cur]+=10<br>
+        }<br>
+        else{<br>
+        x[cur]-=10<br>
+        direction[cur]=&quot;left&quot;<br>
+        }<br>
+        }</font></p>
+      <p><font face="Times New Roman, Times, serif" size="3">if (document.all&amp;&amp;window.spotlight){<br>
+        if (spotlight.length==null)<br>
+        setInterval(&quot;slidelight(0)&quot;,spotlight[0].speed)<br>
+        else<br>
+        for (t=0;t&lt;spotlight.length;t++){<br>
+        var temp='setInterval(&quot;slidelight('+t+')&quot;,'+spotlight[t].speed+')'<br>
+        eval(temp)<br>
+        }<br>
+        }<br>
+        &lt;/SCRIPT&gt;<br>
+        &lt;/P&gt;<br>
+        &lt;/BODY&gt;&lt;/HTML&gt;</font></p>
+    </td>
+  </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+
+</table>
+<P>
+  <SCRIPT language=JavaScript1.2>
+
+
+if (document.all&&window.spotlight){
+var x=new Array()
+var direction=new Array()
+var y=new Array()
+if (spotlight.length==null){
+spotlight[0]=document.all.spotlight
+x[0]=0
+direction[0]="right"
+y[0]=spotlight[0].height
+spotlight[0].filters.light.addPoint(100,50,100,255,255,255,90)
+}
+else
+for (i=0;i<spotlight.length;i++){
+x[i]=0
+direction[i]="right"
+y[i]=spotlight[i].height
+spotlight[i].filters.light.addPoint(100,50,100,255,255,255,90)
+}
+}
+
+function slidelight(cur){
+spotlight[cur].filters.light.MoveLight(0,x[cur],y[cur],200,-1)
+
+if (x[cur]<spotlight[cur].width+200&&direction[cur]=="right")
+x[cur]+=10
+else if (x[cur]>spotlight[cur].width+200){
+direction[cur]="left"
+x[cur]-=10
+}
+else if (x[cur]>-200&&x[cur]<-185){
+direction[cur]="right"
+x[cur]+=10
+}
+else{
+x[cur]-=10
+direction[cur]="left"
+}
+}
+
+if (document.all&&window.spotlight){
+if (spotlight.length==null)
+setInterval("slidelight(0)",spotlight[0].speed)
+else
+for (t=0;t<spotlight.length;t++){
+var temp='setInterval("slidelight('+t+')",'+spotlight[t].speed+')'
+eval(temp)
+}
+}
+</SCRIPT>
+</P>
+</BODY></HTML>

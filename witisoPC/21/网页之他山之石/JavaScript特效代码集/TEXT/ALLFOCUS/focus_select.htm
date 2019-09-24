@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>focus select-聚焦脚本</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="聚焦,选择,select,selected,focus">
+<meta name="description" content="聚焦和内容选择脚本">
+</head>
+<body onLoad="this.document.form1.a.focus(); this.document.form1.a.select();" bgcolor="#FFFFFF">
+<center>
+</center>
+<div align="center">
+<form>
+    <div align="center"> <font size="3" color="#FF0033"> 聚焦与文本选择脚本</font></div>
+  </form>
+  
+</div>
+<form name=form1>
+  <div align="center">
+    <input type="text" size="40" name="a" value="哈哈" class="pt9">
+    <br>
+    <input type="text" size="40" name="b" value="http://www.newhua.com" class="pt9">
+    <br>
+    看看，不仅聚焦在上面的文本框，而且已经将内容选择了。 </div>
+</form>
+
+<table width="75%" border="0" align="center">
+  <tr bgcolor="#F4F3F2"> 
+    <td> 
+      <p>在&lt;body&gt;区加上如下代码：</p>
+      <p> <font face="Arial, Helvetica, sans-serif">&lt;body onLoad="this.document.form1.a.focus(); 
+        this.document.form1.a.select();"&gt;<br>
+        &lt;form name=form1&gt;<br>
+        &lt;input type="text" size="100" name="a" value="哈哈"&gt;<br>
+        &lt;input type="text" size="100" name="b" value="http://www.newhua.com"&gt;<br>
+        &lt;/form&gt;</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">说明：form1是表单的名字，a是上面的文本框的名字，b是下面的文本框的名字。</font></p>
+</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

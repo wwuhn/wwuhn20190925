@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>浏览器检测脚本</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.yk9 {  font: 9pt "宋体"; text-decoration: none}
+body {  margin-top: 10px; font-size: 9pt}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF">
+<form>
+  <div align="center"> <font size="3">浏览器检测脚本</font></div>
+</form>
+<table width="75%" border="0" align="center">
+  <tr valign="top"> 
+    <td class="yk9"> 
+      <p>检测访问者使用的浏览器是IE还是NS，然后根据检测结果带领他们去相应的页面，可以有效地避免浏览器的不兼容导致的页面浏览异常。</p>
+      <p>代码非常简单，将如下代码加入HTML的&lt;head&gt;区：</p>
+      &lt;!-- 导向IE页面---&gt;<br>
+      &lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt; 
+      <p> &lt;!---------- JavaScript begins...<br>
+        URL = &quot;<font color="#FF0000">IE.htm</font>&quot;;<br>
+        // 将此URL改为支持IE的页面</p>
+      <p>var name = navigator.appName<br>
+        if (name == &quot;Microsoft Internet Explorer&quot;)</p>
+      <p><br>
+        window.location = URL;</p>
+      <p>// JavaScript ends ----------&gt;<br>
+        &lt;/SCRIPT&gt;</p>
+      <p>&lt;!-- 导向NS页面---&gt;<br>
+        &lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;</p>
+      <p> &lt;!---------- JavaScript begins...<br>
+        URL = &quot;<font color="#FF0000">NS.htm</font>&quot;;<br>
+        // 将此URL改为支持NS的页面</p>
+      <p>var name = navigator.appName<br>
+        if (name == &quot;Netscape&quot;)</p>
+      <p><br>
+        window.location = URL;</p>
+      <p>// JavaScript ends ----------&gt;<br>
+        &lt;/SCRIPT&gt;</p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

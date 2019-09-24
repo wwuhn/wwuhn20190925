@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>聚焦脚本</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+body {  font-family: "宋体"; font-size: 9pt; margin-top: 0px}
+.pt9 { font-family: "宋体"; font-size: 9pt}
+a { font-family: "宋体"; font-size: 9pt }
+-->
+</style>
+<meta name="keywords" content="focus 聚焦 select form">
+<meta name="description" content="文本选择聚焦脚本">
+<script language="javascript">
+function go(){
+this.location="buttonfocus.htm";
+}
+</script>
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><font size="3" color="#FF0033">可以方便地实现文本区内容选择的脚本</font></p>
+<p align="center"><a href="javascript:history.go(-1)">返回上一步</a> 
+  <input type="button" value="看看按钮聚焦代码" class="pt9" onClick="go()" name="button">
+</p>
+<form>
+  <p align="center"> 
+    <script>
+<!--
+function highlight(x){
+document.forms[x].elements[0].focus()
+document.forms[x].elements[0].select()
+}
+//-->
+</script>
+    <a href="javascript:highlight(0)" onMouseOver="window.status='将代码复制到裁剪板';return true"><img src="select.gif" border=0 width="93" height="27" ></a> 
+    <br>
+    <textarea name="textfield" cols="60" rows="10" class="pt9" wrap="VIRTUAL">&lt;form&gt;
+&lt;script&gt;
+&lt;!--
+function highlight(x){
+document.forms[x].elements[0].focus()
+document.forms[x].elements[0].select()
+}
+//--&gt;
+&lt;/script&gt;
+&lt;a href=&quot;javascript:highlight(0)&quot; onMouseover=&quot;window.status='将代码复制到裁剪板';return true&quot;&gt;&lt;img src=&quot;select.gif&quot; border=0&gt;&lt;/a&gt;
+&lt;br&gt;
+&lt;textarea name=&quot;textfield&quot; cols=&quot;60&quot; rows=&quot;10&quot;  wrap=&quot;VIRTUAL&quot;&gt;
+&lt;/textarea&gt;
+&lt;/form&gt;
+只要将select.gif换成你自己的图片即可。
+现在点击图片即可选择文本区的内容。</textarea>
+  </p>
+</form>
+<p align="center">&nbsp;</p>
+<center>
+  <noscript> <a target='_blank' href='http://ads.clickagents.com/cgibin/click.ca?nettrain.1'> 
+  </a> </noscript> 
+</center>
+</body>
+</html>

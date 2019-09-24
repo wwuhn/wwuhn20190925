@@ -1,0 +1,741 @@
+<html>
+<head>
+<title>Drop Down Menu Generator-下拉式菜单生成器</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script>
+<!--
+function start(){
+xwin=window.open("editor.htm","editor","location=no,width=780,height=250,top=280,left=5");
+}
+
+function createcodes(entry)
+{
+line="<form>";
+if (entry.go[1].checked) {line=line+"<select name=\"choice\" size=\"1\">";}
+else {line=line+"<select name=\"choice\" size=\"1\" onChange=\"jump(this.form)\">";}
+for (i=3; i<=42; i=i+2)
+{
+ if (entry[i].value) {line=line+"<option value=\""+entry[i+1].value+"\">"+entry[i].value+"</option>"}
+}
+line=line+"</select>";
+if (entry.go[1].checked) {line=line+"<input TYPE=\"button\" VALUE=\"GO!\" onClick=\"jump(this.form)\">";}
+line=line+"</form>";
+entry.code.value=line;
+}
+//-->
+</script>
+<script>
+<!--
+
+function land(ref, target)
+{
+if (target=="_self") {window.location=loc;}
+else {if (target=="_top") {top.location=loc;}
+ else {if (target=="_blank") {window.open(loc);}
+  else {if (target=="_parent") {parent.location=loc;}
+   else {parent.frames[target].location=loc;};
+     }}}
+}
+
+function jump(menu)
+{
+ref=menu.choice.options[menu.choice.selectedIndex].value;
+splitc=ref.lastIndexOf("&");
+target="";
+if (splitc!=-1)
+{loc=ref.substring(0,splitc);
+target=ref.substring(splitc+1,1000).toLowerCase();}
+else {loc=ref; target="_self";};
+if (ref != "") {land(loc,target);}
+}
+//-->
+</script>
+<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="drop,drop down,menu,generator,tools,下拉式,菜单,生成器,navigation,navigator">
+<meta name="description" content="一个可以自动生成下拉式菜单脚本的工具。">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="5" marginheight="0" link="#000000" vlink="#000000">
+<center>
+</center>
+<div align="center">
+<form>
+    <div align="center"> <font color="#C40000" face="Arial" size="5"><b>Drop Down 
+      Menu Generator</b></font></div>
+  </form>
+  
+</div>
+<div align="center"></div>
+<table align="CENTER" width="527">
+  <tr valign="top"> 
+    <td height="2068"> 
+    
+        <center>
+        <br>
+        </center>
+
+      <table align="Center" width="481">
+        <tr> 
+          <td height="74" width="10">&nbsp;</td>
+          <td height="74" width="459">生成的菜单可以工作在帧内。<font color="#000000" face="Arial" size="2"> 
+            <input type="button" onClick="alert('http://www.yahoo.com&MAINWINDOW/指定打开的TARGETS:/n/n_blank/oo.com&_blank\n\n指定打开的TARGETS:\n\n_blank : 将在新窗口中打开连接。\n_top : 全屏幕打开连接页面。\n\n\nFRAMESET TARGETS:\n\n如果你的页面分了帧，将打开的窗口的名字作为一个target。\n这使连接在指定的帧窗口打开。\n\n例如：\n使Yahoo在一个叫做MAINWINDOW的帧窗口中打开，\n你可以这样设置连接的url:\n\n        http://www.yahoo.com&MAINWINDOW')" value="看看Frame帧的格式" name="button" class="pt9">
+            <br>
+            </font>生成的菜单外观如下：<font color="#000000" face="Arial" size="2"> <br>
+            <form>
+              <p align="center"> 
+                <select name="choice" class="pt9">
+                  <option>选择一个连接</option>
+                  <option value="http://www.yahoo.com/">YAHOO</option>
+                  <option value="http://www.hotbot.com/">HOTBOT</option>
+                  <option>- - - - - - - - - -</option>
+                  <option value="http://www.microsoft.com/">MICROSOFT</option>
+                  <option value="http://www.netscape.com/">NETSCAPE</option>
+                </select>
+                <input type="button" value="GO!" onClick="jump(this.form)" name="button2" class="pt9">
+              </p>
+            </form>
+            </font></td>
+        </tr>
+      </table>
+      <form name="detectform">
+        <table width="519">
+          <tr> 
+            <td height="934">&nbsp;</td>
+            <td height="934"> 
+              <div align="center"> 
+                <center>
+                  <table border="1" width="78%">
+                    <tr> 
+                      <td bgcolor="#CCCCDD" colspan="2"> 
+                        <div align="center"> 
+                          <center>
+                            <font face="Arial" color="#000000" size=4><strong> 
+                            <p>Menu Options 
+                            </strong></font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#FFFFFF" colspan=2 align=left>&nbsp;</td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#EEEEFF" colspan=2 align=center><font color="#000000"><font color="#FF0000">是否需要“GO”按钮？</font></font></td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan=2 align=left><font color="#000000" size=3> 
+                        <input type="radio" value="false" name="go"
+              checked>
+                        不需要按钮</font><br>
+                        <input type="radio" value="true" name="go">
+                        需要一个 
+                        <input type="Button" name="GO!" value="GO!">
+                        按钮。 </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#FFFFFF" colspan=2 align=left>&nbsp;</td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#EEEEFF" colspan=2 align=center><font face="Arial" color="#000000" size=3><b>MENU 
+                        ENTRIES</b></font></td>
+                    </tr>
+                    <tr align="center"> 
+                      <td valign="TOP" bgcolor="#E4E4E4" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#FF0033">菜单内的文字</font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td valign="TOP" bgcolor="#E4E4E4" width="60%"> 
+                        <div align="center"><font color="#FF0033">对应连接的URL</font><br>
+                          <br>
+                          如果是分隔线，保持为空。 </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan="" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="text1" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td bgcolor="#E4E4E4" colspan="" width="60%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="url1" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan="" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="text2" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td bgcolor="#E4E4E4" colspan="" width="60%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="url2" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan="" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="text3" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td bgcolor="#E4E4E4" colspan="" width="60%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="url3" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan="" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="text4" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td bgcolor="#E4E4E4" colspan="" width="60%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="url4" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan="" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="text5" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td bgcolor="#E4E4E4" colspan="" width="60%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="url5" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan="" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="text6" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td bgcolor="#E4E4E4" colspan="" width="60%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="url6" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan="" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="text7" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td bgcolor="#E4E4E4" colspan="" width="60%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="url7" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan="" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="text8" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td bgcolor="#E4E4E4" colspan="" width="60%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="url8" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan="" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="text9" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td bgcolor="#E4E4E4" colspan="" width="60%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="url9" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan="" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="text10" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td bgcolor="#E4E4E4" colspan="" width="60%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="url10" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan="" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="text11" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td bgcolor="#E4E4E4" colspan="" width="60%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="url11" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan="" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="text12" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td bgcolor="#E4E4E4" colspan="" width="60%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="url12" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan="" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="text13" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td bgcolor="#E4E4E4" colspan="" width="60%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="url13" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan="" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="text14" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td bgcolor="#E4E4E4" colspan="" width="60%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="url14" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan="" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="text15" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td bgcolor="#E4E4E4" colspan="" width="60%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="url15" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan="" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="text16" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td bgcolor="#E4E4E4" colspan="" width="60%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="url16" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan="" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="text17" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td bgcolor="#E4E4E4" colspan="" width="60%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="url17" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan="" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="text18" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td bgcolor="#E4E4E4" colspan="" width="60%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="url18" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan="" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="text19" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td bgcolor="#E4E4E4" colspan="" width="60%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="url9" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td bgcolor="#E4E4E4" colspan="" width="40%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="text20" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                      <td bgcolor="#E4E4E4" colspan="" width="60%"> 
+                        <div align="center"> 
+                          <center>
+                            <font color="#000000"> 
+                            <input
+              type="text" name="url20" size="20" value="">
+                            </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr align="center"> 
+                      <td colspan="2" bgcolor="#C0C0C0" align="center"> 
+                        <div align="center"> 
+                          <center>
+                            <p><font color="#FFFFFF"> 
+                              <input
+              type="button" value="生成代码" name="B1" onClick="createcodes(this.form)" class="pt9">
+                              <br>
+                              <input type="reset" value="清除重来" name="B2" class="pt9">
+                              </font> 
+                          </center>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </center>
+              </div>
+            </td>
+            <td height="934">&nbsp;</td>
+          </tr>
+        </table>
+        <br>
+        <table align="center" width="384">
+          <tr> 
+            <td height="963" width="1">&nbsp;</td>
+            <td height="963" width="362"> 
+              <table border="1" width="377" class="pt9">
+                <tr> 
+                  <td bgcolor="#CCCCDD" colspan="2"> 
+                    <div align="center"> 
+                      <center>
+                        <font face="Arial" color="#000000" size=4><strong> 
+                        <p>The Code For Your Page 
+                        </strong></font> 
+                      </center>
+                    </div>
+                  </td>
+                </tr>
+                <tr align="center"> 
+                  <td bgcolor="#FFFFFF">&nbsp;</td>
+                </tr>
+                <tr> 
+                <tr> 
+                  <td bgcolor="#EEEEFF" height="33"> 
+                    <div align="center"> 
+                      <center>
+                        <p><font face="Arial" color="#000000" size=3>&nbsp; </font>如下代码放在<font face="Arial" color="#000000" size=3><b>&lt;HEAD&gt;</b>区 
+                          </font></p>
+                      </center>
+                    </div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td bgcolor="#EEEEEE" align=center height="403"> 
+                    <table width="99%" border="1" cellpadding="10">
+                      <tr> 
+                        <td bgcolor="#FFFFFF" class="pt9"><font face="Arial" color="#000000" size=2>&nbsp;<br>
+                          &lt;script&gt;<br>
+                          &lt;!--<br>
+                          function land(ref, target)<br>
+                          {<br>
+                          if (target==&quot;_self&quot;) {window.location=loc;}<br>
+                          else {if (target==&quot;_top&quot;) {top.location=loc;}<br>
+                          else {if (target==&quot;_blank&quot;) {window.open(loc);}<br>
+                          else {if (target==&quot;_parent&quot;) {parent.location=loc;}<br>
+                          else {parent.frames[target].location=loc;};<br>
+                          }}}<br>
+                          }<br>
+                          function jump(menu)<br>
+                          {<br>
+                          ref=menu.choice.options[menu.choice.selectedIndex].value;<br>
+                          splitc=ref.lastIndexOf(&quot;&&quot;);<br>
+                          target=&quot;&quot;;<br>
+                          if (splitc!=-1)<br>
+                          {loc=ref.substring(0,splitc);<br>
+                          target=ref.substring(splitc+1,1000).toLowerCase();}<br>
+                          else {loc=ref; target=&quot;_self&quot;;};<br>
+                          if (ref != &quot;&quot;) {land(loc,target);}<br>
+                          }<br>
+                          //--><br>
+                          &lt;/script&gt;<br>
+                          &nbsp;</font> </td>
+                      </tr>
+                    </table>
+                    <div align="left"> 
+                      <p>注意：如果在一个页面内放置多个菜单，只要拷贝一次即可。<br>
+                        &nbsp;<br>
+                        &nbsp;</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr align="center"> 
+                  <td bgcolor="#FFFFFF">&nbsp;</td>
+                </tr>
+                <tr> 
+                <tr> 
+                  <td bgcolor="#EEEEFF"> 
+                    <div align="center"> 
+                      <center>
+                        <p><font face="Arial" color="#000000" size=3>&nbsp;如下代码放在<font face="Arial" color="#000000" size=3><b>&lt;BODY&gt;</b>区 
+                          </font></font></p>
+                      </center>
+                    </div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td bgcolor="#EEEEEE"> 
+                    <div align="center"> 
+                      <center>
+                        <p> 
+                          <textarea name="code" cols="55" rows="25" wrap="PHYSICAL"></textarea>
+                        </p>
+                      </center>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td height="963" width="10">&nbsp;</td>
+          </tr>
+        </table>
+      </form>
+      <br>
+      <font color="#000000" size="2"
+face="Arial"> 
+      <script language="JavaScript">
+<!--
+document.detectform.text1.value="CHOOSE A LINK";
+document.detectform.text2.value="YAHOO"; document.detectform.url2.value="http://www.yahoo.com/";
+document.detectform.text3.value="HOTBOT"; document.detectform.url3.value="http://www.hotbot.com/";
+document.detectform.text4.value="- - - - - - - - - -";
+document.detectform.text5.value="MICROSOFT"; document.detectform.url5.value="http://www.microsoft.com/";
+document.detectform.text6.value="NETSCAPE"; document.detectform.url6.value="http://www.netscape.com/";
+
+//-->
+</script>
+      </font></td>
+  </tr>
+</table>
+<div align="center">
+  <center>
+  </center>
+</div>
+<p>&nbsp;</p>
+</body>
+</html>

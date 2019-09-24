@@ -1,0 +1,233 @@
+<html>
+<head>
+<title>日历脚本 </title>
+<style type="text/css">
+<!--
+td {  font: 9pt "宋体"; text-decoration: none}
+th { font: 9pt "宋体"; text-decoration: none }
+.yk9 { font: 9pt "宋体"; text-decoration: none }
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" background="../../../images/bg011.gif">
+<div align="center">
+  <center>
+  </center>
+</div>
+<form>
+  <div align="center"> <font size="5" color="#FF0000">特酷的日历脚本</font></div>
+</form>
+<table width="84%" border="0" align="center">
+  <tr> 
+    <td height="15" width="23%" valign="top"> 
+      <script language="JavaScript">
+<!-- Hide this script from old browsers --
+function greeting()
+{
+   var today = new Date();
+   var hrs = today.getHours();
+   document.writeln("<CENTER>");
+   document.write("Good ");
+   if (hrs < 6)
+      document.write("(Early) Morning");
+   else if (hrs < 12)
+      document.write("Morning");
+   else if (hrs <= 18)
+      document.write("Afternoon");
+   else
+      document.write("Evening");
+     document.write("!");
+
+   document.write("当前时间是:");
+   dayStr = today.toLocaleString();
+   document.write(dayStr);
+   document.writeln("</CENTER>");
+}
+function montharr(m0, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11)
+{
+   this[0] = m0;
+   this[1] = m1;
+   this[2] = m2;
+   this[3] = m3;
+   this[4] = m4;
+   this[5] = m5;
+   this[6] = m6;
+   this[7] = m7;
+   this[8] = m8;
+   this[9] = m9;
+   this[10] = m10;
+   this[11] = m11;
+}
+function calendar()
+{
+
+   var today = new Date();
+   var thisDay;
+   var monthDays = new montharr(31, 28, 31, 30, 31, 30, 31, 31, 30,
+      31, 30, 31);
+   
+   year = today.getYear();
+   if (year<2000)
+      year=year+1900;
+ 
+   thisDay = today.getDate();
+   
+   if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0))
+      monthDays[1] = 29;
+   nDays = monthDays[today.getMonth()];
+   firstDay = today;
+   firstDay.setDate(1); // works fine for most systems
+   testMe = firstDay.getDate();
+   if (testMe == 2)
+        firstDay.setDate(0);    
+   startDay = firstDay.getDay();
+     
+   document.writeln("<CENTER>");
+   document.write("<TABLE BORDER bgcolor=moccasin>");
+   document.write("<TR><TH COLSPAN=7>");
+   document.write(year+'年');
+   document.write(today.getMonth()+1+'月');
+
+
+   document.write("<TR><TH>日<TH>一<TH>二<TH>三<TH>四<TH>五<TH>六");
+   document.write("<TR>");
+   column = 0;
+   for (i=0; i<startDay; i++)
+   {
+      document.write("<TD>");
+      column++;
+   }
+   for (i=1; i<=nDays; i++)
+   {
+      document.write("<TD>");
+      if (i == thisDay)
+         document.write("<FONT COLOR=\"red\">")
+      document.write(i);
+      if (i == thisDay)
+        document.write("</FONT>")
+      column++;
+      if (column == 7)
+      {
+         document.write("<TR>"); 
+         column = 0;
+      }
+   }
+   document.write("</TABLE>");
+   document.writeln("</CENTER>");
+}
+greeting();
+document.write("<br>");
+calendar();
+document.write("");
+// -- End Hiding Here -->
+</script>
+    </td>
+    <td height="15" width="77%" valign="top">
+      <p>&nbsp;</p>
+      <p>将如下的脚本加入HTML的&lt;body&gt;区即可：<br>
+      </p>
+      <p>&lt;script language=&quot;JavaScript&quot;&gt;<br>
+        &lt;!-- Hide this script from old browsers --<br>
+        function greeting()<br>
+        {<br>
+        var today = new Date();<br>
+        var hrs = today.getHours();<br>
+        document.writeln(&quot;&lt;CENTER&gt;&quot;);<br>
+        document.write(&quot;Good &quot;);<br>
+        if (hrs &lt; 6)<br>
+        document.write(&quot;(Early) Morning&quot;);<br>
+        else if (hrs &lt; 12)<br>
+        document.write(&quot;Morning&quot;);<br>
+        else if (hrs &lt;= 18)<br>
+        document.write(&quot;Afternoon&quot;);<br>
+        else<br>
+        document.write(&quot;Evening&quot;);<br>
+        document.write(&quot;!&quot;); </p>
+      <p> document.write(&quot;当前时间是:&quot;);<br>
+        dayStr = today.toLocaleString();<br>
+        document.write(dayStr);<br>
+        document.writeln(&quot;&lt;/CENTER&gt;&quot;);<br>
+        }<br>
+        function montharr(m0, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11)<br>
+        {<br>
+        this[0] = m0;<br>
+        this[1] = m1;<br>
+        this[2] = m2;<br>
+        this[3] = m3;<br>
+        this[4] = m4;<br>
+        this[5] = m5;<br>
+        this[6] = m6;<br>
+        this[7] = m7;<br>
+        this[8] = m8;<br>
+        this[9] = m9;<br>
+        this[10] = m10;<br>
+        this[11] = m11;<br>
+        }<br>
+        function calendar()<br>
+        {</p>
+      <p> var today = new Date();<br>
+        var thisDay;<br>
+        var monthDays = new montharr(31, 28, 31, 30, 31, 30, 31, 31, 30,<br>
+        31, 30, 31);<br>
+        <br>
+        year = today.getYear();<br>
+        if (year&lt;2000)<br>
+        year=year+1900;<br>
+        <br>
+        thisDay = today.getDate();<br>
+        <br>
+        if (((year % 4 == 0) &amp;&amp; (year % 100 != 0)) || (year % 400 == 0))<br>
+        monthDays[1] = 29;<br>
+        nDays = monthDays[today.getMonth()];<br>
+        firstDay = today;<br>
+        firstDay.setDate(1); // works fine for most systems<br>
+        testMe = firstDay.getDate();<br>
+        if (testMe == 2)<br>
+        firstDay.setDate(0); <br>
+        startDay = firstDay.getDay();<br>
+        <br>
+        document.writeln(&quot;&lt;CENTER&gt;&quot;);<br>
+        document.write(&quot;&lt;TABLE BORDER bgcolor=<font color="#FF0000">moccasin</font>&gt;&quot;);<br>
+        document.write(&quot;&lt;TR&gt;&lt;TH COLSPAN=7&gt;&quot;);<br>
+        document.write(year+'年');<br>
+        document.write(today.getMonth()+1+'月');</p>
+      <p><br>
+        document.write(&quot;&lt;TR&gt;&lt;TH&gt;日&lt;TH&gt;一&lt;TH&gt;二&lt;TH&gt;三&lt;TH&gt;四&lt;TH&gt;五&lt;TH&gt;六&quot;);<br>
+        document.write(&quot;&lt;TR&gt;&quot;);<br>
+        column = 0;<br>
+        for (i=0; i&lt;startDay; i++)<br>
+        {<br>
+        document.write(&quot;&lt;TD&gt;&quot;);<br>
+        column++;<br>
+        }<br>
+        for (i=1; i&lt;=nDays; i++)<br>
+        {<br>
+        document.write(&quot;&lt;TD&gt;&quot;);<br>
+        if (i == thisDay)<br>
+        document.write(&quot;&lt;FONT COLOR=\&quot;<font color="#FF0000">red</font>\&quot;&gt;&quot;)<br>
+        document.write(i);<br>
+        if (i == thisDay)<br>
+        document.write(&quot;&lt;/FONT&gt;&quot;)<br>
+        column++;<br>
+        if (column == 7)<br>
+        {<br>
+        document.write(&quot;&lt;TR&gt;&quot;); <br>
+        column = 0;<br>
+        }<br>
+        }<br>
+        document.write(&quot;&lt;/TABLE&gt;&quot;);<br>
+        document.writeln(&quot;&lt;/CENTER&gt;&quot;);<br>
+        }<br>
+        greeting();<br>
+        document.write(&quot;&lt;br&gt;&quot;);<br>
+        calendar();<br>
+        document.write(&quot;&quot;);<br>
+        // -- End Hiding Here --&gt;<br>
+        &lt;/script&gt;</p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp; </p>
+</body>
+</html>

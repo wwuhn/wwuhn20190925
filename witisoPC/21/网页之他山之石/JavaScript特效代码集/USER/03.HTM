@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>记录浏览次数</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="03.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="03c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><br>
+            <b>记录浏览次数</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="40" valign="top">提示：</td>
+                <td> 下面的特效记录了你浏览本页的次数，你,刷新一次记录就会多一次。<br>
+                  <br>
+                  <br>
+                  <br>
+                  <script language="JavaScript">
+<!--
+var caution = false
+function setCookie(name, value, expires, path, domain, secure) {
+        var curCookie = name + "=" + escape(value) +
+                ((expires) ? "; expires=" + expires.toGMTString() : "") +
+                ((path) ? "; path=" + path : "") +
+                ((domain) ? "; domain=" + domain : "") +
+                ((secure) ? "; secure" : "")
+        if (!caution || (name + "=" + escape(value)).length <= 4000)
+                document.cookie = curCookie
+        else
+                if (confirm("Cookie exceeds 4KB and will be cut!"))
+                        document.cookie = curCookie
+}
+
+function getCookie(name) {
+        var prefix = name + "="
+        var cookieStartIndex = document.cookie.indexOf(prefix)
+        if (cookieStartIndex == -1)
+                return null
+        var cookieEndIndex = document.cookie.indexOf(";", cookieStartIndex + prefix.length)
+        if (cookieEndIndex == -1)
+                cookieEndIndex = document.cookie.length
+        return unescape(document.cookie.substring(cookieStartIndex + prefix.length, cookieEndIndex))
+}
+
+function deleteCookie(name, path, domain) {
+        if (getCookie(name)) {
+                document.cookie = name + "=" + 
+                ((path) ? "; path=" + path : "") +
+                ((domain) ? "; domain=" + domain : "") +
+                "; expires=Thu, 01-Jan-70 00:00:01 GMT"
+        }
+}
+
+function fixDate(date) {
+        var base = new Date(0)
+        var skew = base.getTime()
+        if (skew > 0)
+                date.setTime(date.getTime() - skew)
+}
+
+var now = new Date()
+fixDate(now)
+now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000)
+var visits = getCookie("counter")
+if (!visits)
+        visits = 1
+else
+        visits = parseInt(visits) + 1
+setCookie("counter", visits, now)
+document.write("朋友您已来这儿" + visits + "次.")
+
+// -->
+</script>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

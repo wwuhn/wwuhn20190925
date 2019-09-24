@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>flash element </title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="flash, 闪烁, 表单, flash text， 文字,递交, 表单递交, 闪烁的文字, 字符">
+<meta name="description" content="是表单区字符产生闪烁效果的脚本。">
+</head>
+
+<body bgcolor="#000066" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+<div align="center"><font size="3">闪烁的表单区内容</font>(IE4++)<br>
+  <form>
+    <div align="center"></div>
+  </form>
+  
+</div>
+<form method="post" action="">
+  <div align="center">
+    <textarea name="textfield" cols="40" rows="8" class="pt9" id="flashit">
+闪烁的东西往往会吸引别人的注意。
+
+你可以用它来强调一些比较重要的内容。</textarea>
+    <br>
+    <input type="text" name="textfield2" value="文本框也可以的" size="40" id="flashit" class="pt9">
+    <br>
+    <input type="submit" name="Submit" value="Submit" id="flashit">
+    <input type="reset" name="Submit2" value="Reset">
+  </div>
+</form>
+<div align="center">
+  <table width="75%" border="0">
+    <tr> 
+      <td height="542"> 
+        <p>将如下javascripts代码加入<font color="#66FF66">紧靠&lt;/BODY&gt;上面的位置</font>。</p>
+        <p> &lt;script language=&quot;JavaScript1.2&quot;&gt;<br>
+          &lt;!--//<br>
+          if (document.all&amp;&amp;document.all.flashit){</p>
+        <p>var flashelement=document.all.flashit<br>
+          if (flashelement.length==null)<br>
+          flashelement[0]=document.all.flashit</p>
+        <p>function changecolor(which){<br>
+          if (flashelement[which].style.color=='')<br>
+          flashelement[which].style.color=&quot;<font color="#66FF66">red</font>&quot;<br>
+          else<br>
+          flashelement[which].style.color=&quot;&quot;<br>
+          }</p>
+        <p><br>
+          if (flashelement.length==null)<br>
+          setInterval(&quot;changecolor(0)&quot;,1000)<br>
+          else<br>
+          for (i=0;i&lt;flashelement.length;i++){<br>
+          var tempvariable='setInterval(&quot;changecolor('+i+')&quot;,'+'1000)'<br>
+          eval(tempvariable)<br>
+          }</p>
+        <p>}<br>
+          //--&gt;<br>
+          &lt;/script&gt;</p>
+        <p>然后在凡是要产生闪烁效果的地方加上：<font face="Arial, Helvetica, sans-serif" size="3" color="#66FF66">id=&quot;flashit&quot;</font> 
+          即可。例如：</p>
+        <p>(1):<br>
+          &lt;textarea name=&quot;textfield&quot; cols=&quot;40&quot; rows=&quot;8&quot; 
+          id=&quot;flashit&quot;&gt;<br>
+          (2):<br>
+          &lt;input type=&quot;text&quot; name=&quot;textfield&quot; value=&quot;文本框也可以的&quot; 
+          size=&quot;40&quot; id=&quot;flashit&quot;&gt;<br>
+          (3):<br>
+          &lt;input type=&quot;submit&quot; name=&quot;Submit&quot; value=&quot;Submit&quot; 
+          id=&quot;flashit&quot;&gt;<br>
+        </p>
+        </td>
+    </tr>
+  </table>
+</div>
+<p align="center">&nbsp;</p>
+<script language="JavaScript1.2">
+<!--//
+if (document.all&&document.all.flashit){
+
+var flashelement=document.all.flashit
+if (flashelement.length==null)
+flashelement[0]=document.all.flashit
+
+function changecolor(which){
+if (flashelement[which].style.color=='')
+flashelement[which].style.color="red"
+else
+flashelement[which].style.color=""
+}
+
+
+if (flashelement.length==null)
+setInterval("changecolor(0)",1000)
+else
+for (i=0;i<flashelement.length;i++){
+var tempvariable='setInterval("changecolor('+i+')",'+'1000)'
+eval(tempvariable)
+}
+
+}
+//-->
+</script>
+</body>
+</html>

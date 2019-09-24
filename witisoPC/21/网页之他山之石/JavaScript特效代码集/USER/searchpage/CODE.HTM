@@ -1,0 +1,254 @@
+<html>
+<head>
+<title>代码解释</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css_style/effect.css" type="text/css">
+</head>
+
+<body bgcolor="#FFCCCC">
+<div align="center">
+  <p align="center">&nbsp;
+  <p></p><p></p>
+  <p><font size="5">代码解释</font></p>
+  <p>&nbsp;</p>
+  <table width="85%" border="0" class="normal">
+    <tr>
+      <td>
+        <p>我的体会：</p>
+        <p>在前面已经介绍了好几款的站内搜索引擎，各有特色，但是相对比较而言，都有一个共同的缺点：由于数据库的不断增加，势必会导致页面的长度的增大。在网上最适合的页面大小不应该超过30K，否则会严重地影响下载速度。</p>
+        <p>由于前几款脚本都是将数据库与搜索页面合在了一起，所以并不适合将搜索页面作为首页使用，否则首页的长度极有可能可能会达到50K以上。所以我一直在寻找一个可以搜索外部页面的搜索引擎脚本。现在终于到手了！奉献给大家，希望你们能用在自己的首页上。别忘记来封感谢信呀！ 
+          :-D </p>
+        <p>你需要创建如下几个页面文件：</p>
+        <p>1、独立的搜索页面 search.htm(数据库页面)：</p>
+        <p>将如下的代码加入HTML的&lt;body&gt;区：</p>
+        <p>&lt;!-- 代码开始--&gt; <br>
+          &lt;form NAME=&quot;database&quot;&gt;<br>
+          &lt;input type=&quot;hidden&quot; name=&quot;list&quot;<br>
+          value=&quot;http://java2000.126.com~最酷的java脚本资源站|javascript java scripts 
+          applet free java2000^最酷的java脚本资源站为主页制作提供全面的JS脚本帮助!*第2个页面的URL~第2个页面的标题|关键字,用空格隔开^该页面的描述!*第3个页面的URL~第3个页面的标题|关键字用空格隔开写^该页面描述!*第4个页面的URL~第三个页面的标题|关键字,用空格隔开^该页面的描述!*第5个页面的URL~第五个页面的标题|关键字用空格隔开写^该页面描述!*&quot;&gt;<br>
+          &lt;/form&gt;<br>
+          &lt;!-- 以下代码不要变动--&gt; <br>
+          &lt;script language=&quot;JavaScript&quot;&gt;<br>
+          &lt;!--<br>
+          function Page(url,title,keywords,description) {<br>
+          while ((url.length &gt; 0) &amp;&amp; (url.charAt(0) == &quot; &quot;)) 
+          {<br>
+          url = url.substring(1,url.length);<br>
+          }<br>
+          this.url = url;<br>
+          while ((title.length &gt; 0) &amp;&amp; (title.charAt(0) == &quot; &quot;)) 
+          {<br>
+          title = title.substring(1,title.length);<br>
+          }<br>
+          this.title = title;<br>
+          this.keywords = keywords;<br>
+          this.description = description;<br>
+          return this;<br>
+          }<br>
+          function Database() {<br>
+          var pos = 0;<br>
+          while ((pos1 = amorphous.indexOf(&quot;~&quot;,pos)) != -1) {<br>
+          pos2 = amorphous.indexOf(&quot;|&quot;,pos1+1);<br>
+          pos3 = amorphous.indexOf(&quot;^&quot;,pos2+1);<br>
+          pos4 = amorphous.indexOf(&quot;*&quot;,pos3+1);<br>
+          if ((pos2 != -1)<br>
+          &amp;&amp; (pos2 &lt; pos3) &amp;&amp; (pos3 &lt; pos4)<br>
+          &amp;&amp; (pos4 &lt;= amorphous.indexOf(&quot;*&quot;,pos))) {<br>
+          this[database_length++] = new Page(amorphous.substring(pos,pos1),<br>
+          amorphous.substring(pos1+1,pos2),<br>
+          amorphous.substring(pos2+1,pos3),<br>
+          amorphous.substring(pos3+1,pos4));<br>
+          pos = pos4+1;<br>
+          } else { // error reading amorphous database<br>
+          if (pos+30 &lt;= amorphous.length)<br>
+          alert('Error reading in amorphous database around &quot;'<br>
+          + amorphous.substring(pos,pos+30) + '&quot;');<br>
+          pos = amorphous.indexOf(&quot;*&quot;,pos) + 1;<br>
+          }<br>
+          }<br>
+          return this;<br>
+          }<br>
+          function search(str) {<br>
+          menu_length = 0;<br>
+          temp = new Object();<br>
+          temp_length = 0;<br>
+          words_length = 0;<br>
+          words = new Object();<br>
+          pos = 0;<br>
+          while ((pos = str.indexOf(&quot; &quot;)) != -1<br>
+          &amp;&amp; and_search != &quot;exact&quot;) {<br>
+          words[words_length] = str.substring(0,pos);<br>
+          if (words[words_length].length &gt; 0)<br>
+          words_length++;<br>
+          if (str.length == 1)<br>
+          str=&quot;&quot;;<br>
+          else<br>
+          str = str.substring(pos+1,str.length);<br>
+          }<br>
+          if (str.length &gt; 0)<br>
+          words[words_length++] = str;<br>
+          for (q=0;q&lt;words_length;q++) {<br>
+          temp_length = 0;<br>
+          str = words[q].toLowerCase();<br>
+          len = (and_search==&quot;and&quot;&amp;&amp;q&gt;0?menu_length:database_length);<br>
+          for (n=0; n&lt;len; n++) {<br>
+          if (and_search==&quot;and&quot;&amp;&amp;q&gt;0) {<br>
+          combo = (menu[n].title + &quot; &quot; + menu[n].description<br>
+          + &quot; &quot; + menu[n].keywords).toLowerCase();<br>
+          } else {<br>
+          combo = (database[n].title + &quot; &quot; + database[n].description<br>
+          + &quot; &quot; + database[n].keywords).toLowerCase();<br>
+          }<br>
+          if (combo.indexOf(str) != -1) // found<br>
+          temp[temp_length++] = (and_search==&quot;and&quot;&amp;&amp;q&gt;0?menu[n]:database[n]);<br>
+          }<br>
+          if (and_search!=&quot;and&quot; &amp;&amp; q&gt;0) {<br>
+          added = 0;<br>
+          for (i=0;i&lt;temp_length;i++) {<br>
+          duplicate = false;<br>
+          for (j=0;j&lt;menu_length&amp;&amp;!duplicate;j++) {<br>
+          if (menu[j] == temp[i]) {<br>
+          duplicate = true;<br>
+          }<br>
+          }<br>
+          if (!duplicate)<br>
+          menu[menu_length+(added++)] = temp[i];<br>
+          }<br>
+          menu_length += added;<br>
+          } else {<br>
+          for(h=0;h&lt;temp_length;h++)<br>
+          menu[h] = temp[h];<br>
+          menu_length = temp_length;<br>
+          }<br>
+          }<br>
+          }<br>
+          function entry() {<br>
+          if ((document.entryform.keyword.value.length == 0)<br>
+          || (document.entryform.keyword.value == &quot; &quot;)) {<br>
+          alert(&quot;你必须填写关键字!&quot;);<br>
+          return false;<br>
+          }<br>
+          and_search = (document.entryform.and_or.selectedIndex == 0?&quot;and&quot;:&quot;or&quot;);<br>
+          if (document.entryform.and_or.selectedIndex == 2)<br>
+          and_search = &quot;exact&quot;;<br>
+          location.href = location.pathname + &quot;?&quot;<br>
+          + escape(document.entryform.keyword.value)<br>
+          + (and_search != &quot;or&quot;?&quot;&amp;&quot;+and_search:&quot;&quot;);<br>
+          return false;<br>
+          }<br>
+          function redWord(str) {<br>
+          for(r=0; r&lt;words_length; r++) {<br>
+          pos = -3;<br>
+          word = words[r].toLowerCase();<br>
+          while ((pos = str.toLowerCase().indexOf(word,pos+3)) != -1) {<br>
+          val = pos+word.length;<br>
+          str = str.substring(0,pos) + &quot;*&quot;<br>
+          + str.substring(pos,val) + &quot;|&quot;<br>
+          + str.substring(val,str.length);<br>
+          }<br>
+          }<br>
+          pos = -16;<br>
+          while ((pos = str.toLowerCase().indexOf(&quot;*&quot;,pos+16)) != -1)<br>
+          str = str.substring(0,pos) + &quot;&lt;font color=red&gt;&quot;<br>
+          + str.substring(pos+1,str.length);<br>
+          pos = -7;<br>
+          while ((pos = str.toLowerCase().indexOf(&quot;|&quot;,pos+7)) != -1)<br>
+          str = str.substring(0,pos) + &quot;&lt;/font&gt;&quot;<br>
+          + str.substring(pos+1,str.length);<br>
+          return str;<br>
+          }</p>
+        <p>var amorphous = document.database.list.value;<br>
+          temp_str = amorphous.substring(amorphous.length-2,amorphous.length);<br>
+          if (temp_str.indexOf(&quot;*&quot;) == -1)<br>
+          amorphous += &quot;* &quot;;<br>
+          else<br>
+          amorphous += &quot; &quot;; // amorphous database must have characters 
+          after last asterisk</p>
+        <p>database_length = 0; // Netscape 2 fix<br>
+          var database = new Database(); // read in from amorphous database</p>
+        <p>menu_length = 0; // Netscape 2 fix<br>
+          var menu = new Object();</p>
+        <p>string = &quot;&quot;;<br>
+          and_search = &quot;or&quot;;<br>
+          if (location.search.length &gt; 1) {<br>
+          string = unescape(location.search.substring(1,location.search.length));<br>
+          pos = 0;<br>
+          while ((pos = string.indexOf('&quot;',pos)) != -1) {<br>
+          string = string.substring(0,pos) + '\\&quot;' + string.substring(pos+1,string.length);<br>
+          pos += 2;<br>
+          }<br>
+          if (string.substring(string.length-4,string.length) == &quot;&amp;and&quot;) 
+          {<br>
+          string = string.substring(0,string.length-4);<br>
+          and_search = &quot;and&quot;;<br>
+          } else if (string.substring(string.length-6,string.length) == &quot;&amp;exact&quot;) 
+          {<br>
+          string = string.substring(0,string.length-6);<br>
+          and_search = &quot;exact&quot;;<br>
+          } else if (string.substring(string.length-3,string.length) == &quot;&amp;or&quot;) 
+          {<br>
+          string = string.substring(0,string.length-3);<br>
+          and_search = &quot;or&quot;;<br>
+          }<br>
+          search(string);<br>
+          }<br>
+          document.write('&lt;form name=&quot;entryform&quot; onSubmit=&quot;return 
+          entry()&quot;&gt;'<br>
+          +'Search for:&lt;input type=&quot;text&quot; size=22 '<br>
+          +'name=&quot;keyword&quot; value=&quot;'+string+'&quot;&gt; '<br>
+          +'&lt;input type=&quot;button&quot; value=&quot;Search&quot; onClick=&quot;entry()&quot;&gt;&lt;br&gt;&lt;select 
+          name=&quot;and_or&quot; '<br>
+          +'size=1&gt;&lt;option'+(and_search==&quot;and&quot;?&quot; selected&quot;:&quot;&quot;)+'&gt;Search 
+          All word '<br>
+          +'(AND)&lt;option'+(and_search==&quot;or&quot;?&quot; selected&quot;:&quot;&quot;)+'&gt;Search 
+          any word '<br>
+          +'(OR)&lt;option'+(and_search==&quot;exact&quot;?&quot; selected&quot;:&quot;&quot;)+'&gt;Exact 
+          '<br>
+          +'word&lt;/select&gt;&lt;/form&gt;&lt;br&gt;');<br>
+          if (location.search.length &gt; 1)<br>
+          document.write('查询结果:&lt;br&gt;&lt;br&gt;\n');</p>
+        <p>for (n=0; n&lt;menu_length; n++)<br>
+          document.write('&lt;a href=&quot;'+menu[n].url+'&quot;&gt;'+menu[n].title<br>
+          +'&lt;/a&gt;&lt;br&gt;'+redWord(menu[n].description)+'&lt;br&gt;Keywords: 
+          '<br>
+          +redWord(menu[n].keywords)+'&lt;br&gt;&lt;br&gt;\n');<br>
+          if ((menu_length == 0) &amp;&amp; (location.search.length &gt; 1))<br>
+          document.write('对不起:你查询的关键字&quot;'+string+'&quot;没有发现!\n');<br>
+          // --&gt;<br>
+          &lt;/script&gt;</p>
+        <p>2、搜索表单页面index.htm</p>
+        <p>将如下代码加入HTML的&lt;body&gt;区：</p>
+        <p> &lt;script language=&quot;JavaScript&quot;&gt;<br>
+          &lt;!--<br>
+          // 下面是负责搜索的页面的全路径或相对路径<br>
+          var search_htm_url = &quot;search.htm&quot;;</p>
+        <p>function searchPage() {<br>
+          if ((document.searchpage.keyword.value.length == 0)<br>
+          || (document.searchpage.keyword.value == &quot; &quot;)) {<br>
+          alert(&quot;请填入关键字!&quot;);<br>
+          } else {<br>
+          sel = document.searchpage.and_or.selectedIndex;<br>
+          location.href = search_htm_url + &quot;?&quot;<br>
+          + escape(document.searchpage.keyword.value)<br>
+          + (sel==0?&quot;&amp;and&quot;:(sel==2?&quot;&amp;exact&quot;:&quot;&amp;or&quot;));<br>
+          }<br>
+          return false;<br>
+          }</p>
+        <p>document.write('&lt;form name=&quot;searchpage&quot; onSubmit=&quot;return 
+          searchPage()&quot;&gt;'<br>
+          +'Search for: &lt;input type=&quot;text&quot; size=22 name=&quot;keyword&quot;&gt; 
+          '<br>
+          +'&lt;input type=&quot;button&quot; value=&quot;Search&quot; onClick=&quot;searchPage()&quot;&gt;&lt;br&gt;'<br>
+          +'&lt;select name=&quot;and_or&quot; size=1&gt;&lt;option&gt;find all 
+          words (AND)&lt;option&gt;find any word '<br>
+          +'(OR)&lt;option&gt;exact match&lt;/select&gt;&lt;/form&gt;');<br>
+          // --&gt;<br>
+          &lt;/script&gt;<br>
+          &lt;!-- 代码结束--&gt;</p>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

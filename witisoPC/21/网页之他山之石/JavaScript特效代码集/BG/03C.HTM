@@ -1,0 +1,136 @@
+<html>
+<head>
+<title>自动变化背景</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+a:active {font-style:normal;text-decoration:none;color:yellow;}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="#009900" topmargin="0" leftmargin="0">
+<form name="form">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr bgcolor="#009900"> 
+      <td colspan="3" height="18">&nbsp; </td>
+    </tr>
+    <tr> 
+      <td bgcolor="#009900" width="18"></td>
+      <td align="center" bgcolor="#FFFFFF" valign="top"> <br>
+        <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+          <tr> 
+            <td rowspan="2" width="16" valign="top"> 
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+                <tr bgcolor="#336699" bordercolor="#336699"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="03.htm">演<br>
+                    <br>
+                    示</a></strong></td>
+                </tr>
+                <tr bordercolor="#009900" bgcolor="#009900"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="03c.htm">源<br>
+                    代<br>
+                    码</a></strong></td>
+                </tr>
+              </table>
+            </td>
+            <td rowspan="2" width="8" bgcolor="#009900">&nbsp;</td>
+            <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#009900" valign="top"> 
+              <br>
+              <b>自动变化背景</b> 
+              <hr width="92%" size="1" align="center">
+              <table  cellspacing="0" cellpadding="0" width="81%">
+                <tr> 
+                  <td colspan="2" height="30">注释：放在&lt;body****&gt;里</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <input type="text" name="1" onFocus="this.select()" onMouseOver="this.focus()" size="52" style="BACKGROUND-COLOR: #009900;" class="pt9" value="onLoad=&quot;chgCol(); pingpong();&quot;">
+                  </td>
+                </tr>
+                <tr> 
+                  <td height="25" colspan="2">注释：放在&lt;body&gt;与&lt;/body&gt;之间</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <textarea name="Code" onFocus="this.select()" onMouseOver="this.focus()" cols="50" rows="12" wrap="VIRTUAL" style="BACKGROUND-COLOR: #009900;" class="pt9">&lt;script language=&quot;JavaScript&quot;&gt;
+&lt;!-- Hide from JavaScript-Impaired Browsers
+var pos = 10;
+function initArray() {
+ this.length = initArray.arguments.length;
+ for (var i = 0; i &lt; this.length; i++) {
+  this[i] = initArray.arguments[i];
+  }
+}
+var col=new initArray(&quot;4b&quot;,&quot;5b&quot;,&quot;8b&quot;,&quot;8b&quot;);
+col[0] = &quot;white&quot;;
+col[1] = &quot;coral&quot;;
+col[2] = &quot;orange&quot;;
+col[3] = &quot;red&quot;;
+col[4] = &quot;greenyellow&quot;;
+col[5] = &quot;lime&quot;;
+col[6] = &quot;turquoise&quot;;
+col[7] = &quot;coral&quot;;
+col[8] = &quot;blueviolet&quot;;
+col[9] = &quot;violet&quot;;
+
+function chgCol() {
+  pos++;
+  if (pos&lt;0||pos&gt;9) {
+    pos = 0;
+    }
+  document.bgColor = col[pos];
+  setTimeout(&quot;chgCol()&quot;,5000);
+  /* Change above set to every 10 seconds (1000 = 1 sec)  If
+       you wish to speed it up, lower the number. To slow it
+       down, raise the number. */
+ }
+
+var yourwords = &quot;&quot;;var buffer1=&quot;           &quot;;
+var buffer2=&quot;           &quot;;
+var message1=buffer1+yourwords+buffer2;
+var dir = &quot;left&quot;;var speed =150;
+function pingpong(){if (dir == &quot;left&quot;) 
+ {    message2=message1.substring(2,message1.length)+&quot;  &quot;; 
+   window.status=message2;  
+  setTimeout(&quot;pingpong();&quot;,speed); 
+   message1=message2; 
+   if (message1.substring(0,1) == &quot;*&quot;) dir=&quot;right&quot;;
+  }
+else 
+ {    message2=&quot;  &quot;+message1.substring(0,message1.length-2); 
+   window.status=message2;   
+ setTimeout(&quot;pingpong();&quot;,speed); 
+   message1=message2; 
+   if (message1.substring(message1.length-1,message1.length) == &quot;*&quot;) dir=&quot;left&quot;; 
+ }
+}
+// --&gt;
+&lt;/script&gt;</textarea>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr> 
+            <td height="20" class="white" bgcolor="#009900">&nbsp;</td>
+          </tr>
+        </table>
+        <br>
+      </td>
+      <td bgcolor="#009900" width="18"></td>
+    </tr>
+    <tr bgcolor="#009900"> 
+      <td></td>
+      <td align="center" height="35">&nbsp; </td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>网站连接介绍脚本 </title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function linkDisplay(selection) {
+if (selection=="1") {
+document.form.info.value="内容1";
+document.form.go.value="#";
+}
+else if(selection=="2") {
+document.form.info.value="内容2";
+document.form.go.value="#";
+}
+else if(selection=="3") {
+document.form.info.value="内容3";
+document.form.go.value="#";
+}
+else if(selection=="4") {
+document.form.info.value="内容4";
+document.form.go.value="#";
+}
+else if(selection=="5") {
+document.form.info.value="内容5";
+document.form.go.value="#";
+}
+else if(selection=="6") {
+document.form.info.value="内容6";
+document.form.go.value="#";
+}
+else {
+document.form.info.value = "内容7";
+document.form.go.value="#";
+   } 
+}
+function moreInfo() {
+var page=document.form.go.value;
+window.location=page;
+}
+// End -->
+</script>
+<style type="text/css">
+<!--
+.yk9 {  font: 9pt "宋体"; text-decoration: none}
+td { font: 9pt "宋体"; text-decoration: none }
+a:hover { font: 9pt "宋体"; text-decoration: underline; color: #FF0000}
+-->
+</style></head>
+
+<body bgcolor="#FFFFFF" background="../../../images/bg011.gif" topmargin="0">
+<form>
+  <div align="center"> <font size="5" color="#FF0000">连接说明脚本，帮助访问者了解栏目内容。 </font></div>
+</form>
+<form name=form>
+  <table border=0 width=229 align="center" bgcolor="#FFCCCC">
+    <tr> 
+      <td align=center width="79"><a href="javascript:linkDisplay(1);">项目1</a><br>
+      </td>
+      <td align=center width="96"><a href="javascript:linkDisplay(2);">项目2</a><br>
+      </td>
+      <td align=center width="72"><a href="javascript:linkDisplay(3);">项目3</a><br>
+      </td>
+    </tr>
+    <tr> 
+      <td align=center width="79"><a href="javascript:linkDisplay(4);">项目4</a><br>
+      </td>
+      <td align=center width="96"><a href="javascript:linkDisplay(5);">项目5</a><br>
+      </td>
+      <td align=center width="72"><a href="javascript:linkDisplay(6);">项目4</a><br>
+      </td>
+    </tr>
+    <tr> 
+      <td colspan=3 align=center height="177"> 
+        <textarea name=info rows=6 cols=35 wrap=virtual class="yk9">点击连接可以看到介绍啊！
+
+
+
+&gt;&gt;&gt;保存此页看源代码&lt;&lt;&lt;</textarea>
+        <br>
+        <input type=button name=button onClick="moreInfo()" class="yk9" value="GO There">
+        <input type=hidden name=go value="">
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

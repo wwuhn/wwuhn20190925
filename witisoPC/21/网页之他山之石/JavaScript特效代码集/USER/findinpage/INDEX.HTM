@@ -1,0 +1,183 @@
+<html>
+<head>
+<title>find in page 页面字符查询</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="search, page, find, find in page, search in page, searcher, finder, 页面搜索, 页面, 搜索, 全文搜索, 检索, 查询, 字符">
+<meta name="description" content="今后你再也不需要用CTRL+F来实现长页面中文字的搜索了。">
+</head>
+
+<body bgcolor="#004080" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+<p align="center"><font size="5">页面全文搜索脚本<font size="3">（IE4 &amp; NS4）</font></font></p>
+<div align="center">
+  <table width="28%" border="0">
+    <tr> 
+      <td> 
+        <script language="JavaScript">
+
+var NS4 = (document.layers);  
+var IE4 = (document.all);
+
+// window to search.
+var win = window;   
+var n   = 0;
+
+function findInPage(str) {
+
+  var txt, i, found;
+
+  if (str == "")
+    return false;
+
+
+  if (NS4) {
+
+    if (!win.find(str))
+      while(win.find(str, false, true))
+        n++;
+    else
+      n++;
+
+
+    if (n == 0)
+      alert("Not found.");
+  }
+
+  if (IE4) {
+    txt = win.document.body.createTextRange();
+
+    for (i = 0; i <= n && (found = txt.findText(str)) != false; i++) {
+      txt.moveStart("character", 1);
+      txt.moveEnd("textedit");
+    }
+
+    if (found) {
+      txt.moveStart("character", -1);
+      txt.findText(str);
+      txt.select();
+      txt.scrollIntoView();
+      n++;
+    }
+
+
+    else {
+      if (n > 0) {
+        n = 0;
+        findInPage(str);
+      }
+
+
+      else
+        alert("Not found.");
+    }
+  }
+
+  return false;
+}
+
+</script>
+        <form name="search" onSubmit="return findInPage(this.string.value);">
+          <input name="string" type="text" size=20 onChange="n = 0;" class="pt9">
+          <input type="submit" value="Find" name="submit" class="pt9">
+        </form>
+      </td>
+    </tr>
+  </table>
+<table width="58%" border="0">
+    <tr>
+      <td>
+        <p>你的页面是否很长很长？我见过的最长的页面足有60厘米，至少150K之巨，真不知道天杀的制作人员怎么想的。</p>
+        <p>一般你可以通过CTRL+F来实现页面文字的搜索，但是用用这个脚本岂不更别具一格？</p>
+      </td>
+    </tr>
+  </table>
+  
+</div>
+<form method="post" action="">
+  <p align="center"> 
+    <script>
+<!--
+function highlight(x){
+document.forms[x].elements[0].focus()
+document.forms[x].elements[0].select()
+}
+//-->
+</script>
+    <textarea name="textfield" cols="60" rows="6" wrap="VIRTUAL" class="pt9"> &lt;script language=&quot;JavaScript&quot;&gt;
+
+var NS4 = (document.layers);  
+var IE4 = (document.all);
+
+// window to search.
+var win = window;   
+var n   = 0;
+
+function findInPage(str) {
+
+  var txt, i, found;
+
+  if (str == &quot;&quot;)
+    return false;
+
+
+  if (NS4) {
+
+    if (!win.find(str))
+      while(win.find(str, false, true))
+        n++;
+    else
+      n++;
+
+
+    if (n == 0)
+      alert(&quot;Not found.&quot;);
+  }
+
+  if (IE4) {
+    txt = win.document.body.createTextRange();
+
+    for (i = 0; i &lt;= n &amp;&amp; (found = txt.findText(str)) != false; i++) {
+      txt.moveStart(&quot;character&quot;, 1);
+      txt.moveEnd(&quot;textedit&quot;);
+    }
+
+    if (found) {
+      txt.moveStart(&quot;character&quot;, -1);
+      txt.findText(str);
+      txt.select();
+      txt.scrollIntoView();
+      n++;
+    }
+
+
+    else {
+      if (n &gt; 0) {
+        n = 0;
+        findInPage(str);
+      }
+
+
+      else
+        alert(&quot;Not found.&quot;);
+    }
+  }
+
+  return false;
+}
+
+&lt;/script&gt;
+&lt;/p&gt;
+&lt;form name=&quot;search&quot; onSubmit=&quot;return findInPage(this.string.value);&quot;&gt;
+&lt;input name=&quot;string&quot; type=&quot;text&quot; size=20 onChange=&quot;n = 0;&quot;&gt;
+&lt;input type=&quot;submit&quot; value=&quot;Find&quot;&gt;
+&lt;/form&gt;</textarea>
+    <br>
+  </p>
+  </form>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div align="center">
+<p>&nbsp;</p>
+</div>
+</body>
+</html>

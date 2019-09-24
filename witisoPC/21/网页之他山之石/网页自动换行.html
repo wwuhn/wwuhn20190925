@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>自动换行</title>
+<style type="text/css">
+
+#wrap1,#wrap2,#wrap3,#wrap4,#wrap5{
+ width:200px; border:#000099 solid 1px;  margin:18px;
+}
+
+#wrap1{/*white-space:normal*/;}
+#wrap2{word-wrap:break-word;}
+#wrap3{word-break:break-all; }
+#wrap5{word-break:break-all; width:200px; overflow:auto;}
+
+table tr,td{
+border:1px #000099 solid;
+}
+</style>
+
+
+</head>
+
+<body>
+<ol>
+  <li>对于div,p等块级元素
+     <ol>
+         <li>正常文字的换行(亚洲文字和非亚洲文字)元素拥有默认的white-space:normal,当定义</li>
+             <div id="wrap1">效果效果效果效果效果效果效果效果效果效果效果效果效果效果效果效果效果效果效果效果</div>
+
+        <li>连续的英文字符和阿拉伯数字
+           <ol>
+           <li>IE浏览器,使用word-wrap:break-word;或者word-break:break-all;实现强制断行</li>
+			   <p>以下举例属性：1 默认的white-space:normal；2 word-wrap:break-word;3 word-break:break-all;</p>
+			   <div id="wrap1">abcdefghijklmnabcdefghijklmnabcdefghijklmn111111111</div>
+			   <div id="wrap2">abcdefghijklmnabcdefghijklmnabcdefghijklmn111111111</div>
+			   <div id="wrap3">abcdefghijklmnabcdefghijklmnabcdefghijklmn111111111</div>
+
+           <li>Firefox:连续的英文字符和阿拉伯数字的断行,Firefox的所有版本的没有解决这个问题,我们只有让超出边界的字符隐藏或者,给容器添加滚动条;word-break:break-all; width:200px; overflow:auto;</li>
+           
+
+				<div id="wrap5">abcdefghijklmnabcdefghijklmnabcdefghijklmn111111111</div>
+				<p>效果：容器正常，内容隐藏;</p>
+           </ol>
+</li>
+</ol>
+</li>
+
+<li>对于table
+
+<ol><li> (IE浏览器)使用 table-layout:fixed;强制table的宽度,多余内容隐藏</li>
+
+<table style="table-layout:fixed; border:solid #000099 1px;" width="200">
+<tr>
+<td>abcdefghigklmnopqrstuvwxyz1234567890ssssssssssssss
+</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+</tr>
+</table>
+
+2.(IE浏览器)使用 table-layout:fixed;强制table的宽度,内层td,th采用word-break : break-all;或者word-wrap : break-word ;换行
+
+<table width="200" style="table-layout:fixed;">
+<tr>
+<td width="25%" style="word-break : break-all; ">abcdefghigklmnopqrstuvwxyz 1234567890
+</td>
+<td style="word-wrap : break-word ;">abcdefghigklmnopqrstuvwxyz 1234567890
+</td>
+</tr>
+</table>
+
+3. (IE浏览器)在td,th中嵌套div,p等采用上面提到的div,p的换行方法
+
+4.(Firefox浏览器)使用 table-layout:fixed;强制table的宽度,内层td,th采用word-break : break-all;或者word-wrap : break-word ;换行，使用overflow:hidden;隐藏超出内容，这里overflow:auto;无法起作用
+
+<table style="table-layout:fixed" width="200">
+<tr>
+<td width="25%"  style="word-break : break-all; overflow:hidden; ">abcdefghigklmnopqrstuvwxyz1234567890</td>
+<td width="75%" style="word-wrap : break-word; overflow:hidden; ">abcdefghigklmnopqrstuvwxyz1234567890</td>
+</tr>
+</table>
+
+效果：隐藏多于内容
+
+5.(Firefox浏览器) 在td,th中嵌套div,p等采用上面提到的对付Firefox的方法
+
+</ol>
+</li>
+</ol>
+</body>
+</html>

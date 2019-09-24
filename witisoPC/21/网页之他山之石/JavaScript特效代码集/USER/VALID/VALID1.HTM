@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>表单内容检测-只接受数字</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="style.css">
+<meta name="keywords" content="form check valid 数字 表单检测 submit">
+<meta name="description" content="检测表单递交内容是否是数字的脚本。">
+</head>
+  <SCRIPT LANGUAGE="JavaScript">
+ function numericCheck(){
+  nr1=document.myform.content.value;
+  flg=0;
+  str="";
+  spc=""
+  arw="";
+  for (var i=0;i<nr1.length;i++){
+   cmp="0123456789"
+   tst=nr1.substring(i,i+1)
+   if (cmp.indexOf(tst)<0){
+    flg++;
+    str+=" "+tst;
+    spc+=tst;
+    arw+="^";
+   }
+   else{arw+="_";}
+  }
+  if (flg!=0){
+   if (spc.indexOf(" ")>-1) {
+    str+="和空格";
+    }
+   alert("这里只接受数字，发现"
+   +flg+"个不可接受的字符:\n"+str);
+  return false;
+  }
+ }
+  </SCRIPT>
+<body bgcolor="#FFFFFF">
+<div align="center"> 
+   <font size="3" color="#FF0033">表单递交内容检测脚本</font>-这里只接受数字</div>
+<form name="myform" method="post" enctype="text/plain" onsubmit="return numericCheck()" action="mailto:mail@mail.com"> 
+<DIV ALIGN=CENTER> 
+            
+    <INPUT TYPE="text" name="content" class="pt9">
+       
+    <INPUT TYPE="submit" NAME="submit" VALUE="递交" class="pt9" >
+          </DIV>
+</form>
+
+<br>
+<table width="64%" border="0" align="center">
+  <tr>
+    <td height="482"> 
+      <p>如下代码加入HTML的&lt;head&gt;区：</p>
+      <p>&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;<br>
+        function numericCheck(){<br>
+        nr1=document.myform.content.value;<br>
+        flg=0;<br>
+        str=&quot;&quot;;<br>
+        spc=&quot;&quot;<br>
+        arw=&quot;&quot;;<br>
+        for (var i=0;i&lt;nr1.length;i++){<br>
+        cmp=&quot;0123456789&quot;<br>
+        tst=nr1.substring(i,i+1)<br>
+        if (cmp.indexOf(tst)&lt;0){<br>
+        flg++;<br>
+        str+=&quot; &quot;+tst;<br>
+        spc+=tst;<br>
+        arw+=&quot;^&quot;;<br>
+        }<br>
+        else{arw+=&quot;_&quot;;}<br>
+        }<br>
+        if (flg!=0){<br>
+        if (spc.indexOf(&quot; &quot;)&gt;-1) {<br>
+        str+=&quot;和空格&quot;;<br>
+        }<br>
+        alert(&quot;这里只接受数字，发现&quot;<br>
+        +flg+&quot;个不可接受的字符:\n&quot;+str);<br>
+        return false;<br>
+        }<br>
+        }<br>
+        &lt;/SCRIPT&gt;</p>
+      <p>如下代码加入HTML的&lt;body&gt;区，表单递交部分：</p>
+      <p>&lt;form name=&quot;myform&quot; method=&quot;post&quot; enctype=&quot;text/plain&quot; 
+        onsubmit=&quot;return numericCheck()&quot; action=&quot;mailto:mail@mail.com&quot;&gt; 
+        <br>
+        &lt;INPUT TYPE=&quot;text&quot; name=&quot;content&quot;&gt;<br>
+        &lt;INPUT TYPE=&quot;submit&quot; NAME=&quot;submit&quot; VALUE=&quot;递交&quot;&gt;<br>
+        &lt;/form&gt;</p>
+      <p>注意：表单的名字和文本框的名字要保持前后一样。</p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

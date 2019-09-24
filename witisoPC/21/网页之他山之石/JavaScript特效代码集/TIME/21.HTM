@@ -1,0 +1,191 @@
+<html>
+<head>
+<title>纯JavaScript时钟</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+<script language=javascript>
+<!--
+pX=400;pY=200
+obs = new Array(13)
+function ob () {
+for (i=0; i<13; i++) {
+	if (document.all) obs[i]=new Array (eval('ob'+i).style,-100,-100)
+	else obs[i] = new Array (eval('document.ob'+i),-100,-100)
+	}
+}
+function cl(a,b,c){
+	if (document.all) {
+		if (a!=0) b+=-1
+		eval('c'+a+'.style.pixelTop='+(pY+(c)))
+		eval('c'+a+'.style.pixelLeft='+(pX+(b)))
+		}
+else{
+	if (a!=0) b+=10
+	eval('document.c'+a+'.top='+(pY+(c)))
+	eval('document.c'+a+'.left='+(pX+(b)))
+}
+if (document.all) c0.style.pixelLeft=26
+}
+
+function runClock() {
+	for (i=0; i<13; i++) {
+		obs[i][0].left=obs[i][1]+pX
+		obs[i][0].top=obs[i][2]+pY
+	}
+}
+
+var lastsec
+function timer() {
+	time = new Date ()
+	sec = time.getSeconds()
+	if (sec!=lastsec) {
+
+		lastsec = sec
+		sec=Math.PI*sec/30
+		min=Math.PI*time.getMinutes()/30
+		hr =Math.PI*((time.getHours()*60)+time.getMinutes())/360
+		for (i=1;i<6;i++) {
+			obs[i][1] = Math.sin(sec) * (44 - (i-1)*11)-16;
+			if (document.layers)obs[i][1]+=10;
+			obs[i][2] = -Math.cos(sec) * (44 - (i-1)*11)-27;
+		}
+		for (i=6;i<10;i++) {
+			obs[i][1] = Math.sin(min) * (40 - (i-6)*10)-16;
+			if (document.layers)obs[i][1]+=10;
+			obs[i][2] = -Math.cos(min) * (40 - (i-6)*10)-27;
+		}
+		for (i=10;i<13;i++) {
+			obs[i][1] = Math.sin(hr) * (37 - (i-10)*11)-16;
+			if (document.layers)obs[i][1]+=10;
+			obs[i][2] = -Math.cos(hr) * (37 - (i-10)*11)-27;
+		}
+	}
+
+}
+function setNum(){
+
+cl (0,-67,-65);
+cl (1,10,-51);
+cl (2,28,-33);
+cl (3,35,-8);
+cl (4,28,17);
+cl (5,10,35);
+cl (6,-15,42);
+cl (7,-40,35);
+cl (8,-58,17);
+cl (9,-65,-8);
+cl (10,-58,-33);
+cl (11,-40,-51);
+cl (12,-16,-56);
+
+}
+
+//-->
+
+
+</script>
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0" onLoad="ob(),setNum(),setInterval('timer()',100);setInterval('runClock()',100)">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="21.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="21c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><br>
+            <b>纯JavaScript时钟</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="40" valign="top">提示：</td>
+                <td valign="top"><br>
+                  <div id="c0" style="position:absolute;right:6;top:6; z-index:2;"> 
+                  </div>
+                  <div id="c1" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;"><b>1</b></div>
+                  <div id="c2" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;"><b>2</b></div>
+                  <div id="c3" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;"><b>3</b></div>
+                  <div id="c4" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;"><b>4</b></div>
+                  <div id="c5" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;"><b>5</b></div>
+                  <div id="c6" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;"><b>6</b></div>
+                  <div id="c7" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;"><b>7</b></div>
+                  <div id="c8" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;"><b>8</b></div>
+                  <div id="c9" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;"><b>9</b></div>
+                  <div id="c10" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;"><b>10</b></div>
+                  <div id="c11" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;"><b>11</b></div>
+                  <div id="c12" style="position:absolute;left:20;top:-20; z-index:5;font-size:11px;"><b>12</b></div>
+                  <div id="ob0" style="position:absolute;left:-20;top:-20;z-index:1"> 
+                  </div>
+                  <div id="ob1" style="position:absolute;left:-20;top:-20;z-index:8"> 
+                    <font size="+3" color="#0000FF"><b>.</b></font></div>
+                  <div id="ob2" style="position:absolute;left:-20;top:-20;z-index:8"> 
+                    <font size="+3" color="#0000FF"><b>.</b></font></div>
+                  <div id="ob3" style="position:absolute;left:-20;top:-20;z-index:8"> 
+                    <font size="+3" color="#0000FF"><b>.</b></font></div>
+                  <div id="ob4" style="position:absolute;left:-20;top:-20;z-index:8"> 
+                    <font size="+3" color="#0000FF"><b>.</b></font></div>
+                  <div id="ob5" style="position:absolute;left:-20;top:-20;z-index:8"> 
+                    <font size="+3" color="#0000FF"><b>.</b></font></div>
+                  <div id="ob6" style="position:absolute;left:-20;top:-20;z-index:7"> 
+                    <font size="+3" color="#00FFFF"><b>.</b></font></div>
+                  <div id="ob7" style="position:absolute;left:-20;top:-20;z-index:7"> 
+                    <font size="+3" color="#00FFFF"><b>.</b></font></div>
+                  <div id="ob8" style="position:absolute;left:-20;top:-20;z-index:7"> 
+                    <font size="+3" color="#00FFFF"><b>.</b></font></div>
+                  <div id="ob9" style="position:absolute;left:-20;top:-20;z-index:7"> 
+                    <font size="+3" color="#00FFFF"><b>.</b></font></div>
+                  <div id="ob10" style="position:absolute;left:-20;top:-20;z-index:6"> 
+                    <font size="+3" color="#F30000"><b>.</b></font></div>
+                  <div id="ob11" style="position:absolute;left:-20;top:-20;z-index:6"> 
+                    <font size="+3" color="#F30000"><b>.</b></font></div>
+                  <div id="ob12" style="position:absolute;left:-20;top:-20;z-index:6"> 
+                    <font size="+3" color="#F30000"><b>.</b></font></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

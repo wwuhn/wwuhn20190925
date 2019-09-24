@@ -1,0 +1,105 @@
+<html>
+
+<head>
+<script language="JavaScript">
+   <!--
+   //  Browser checker
+
+   Browser_Name = navigator.appName;
+   Browser_Ver  = parseInt(navigator.appVersion);
+   if((Browser_Name == "Netscape" && Browser_Ver >= 3) || (Browser_Name == "Microsoft Internet Explorer" && Browser_Ver >= 4)) Browser_Gen = ">=3rd";
+   else Browser_Gen = "<3rd";
+
+   if (Browser_Gen == '>=3rd') {
+   
+
+   num_of_slides = 5;    // 图片数目
+   slide_num = 1;        // 哪个图片首先显示
+
+   // 图片说明
+   desc1 = "我喜欢的007男主角";
+   desc2 = "我喜欢的007男主角";
+   desc3 = "我喜欢的007男主角";
+   desc4 = "我喜欢的007男主角";
+   desc5 = "我喜欢的007男主角";
+   }
+
+   
+   function firstslide(){
+     slide_num = 1;
+     changeslide();
+   }
+   function prevslide(){
+     slide_num = slide_num - 1;
+     if(slide_num < 1){
+       slide_num = num_of_slides;
+     }
+     changeslide();
+   }
+   function nextslide(){
+     slide_num = slide_num + 1;
+     if(slide_num > num_of_slides){
+       slide_num = 1
+     }
+     changeslide();
+   }
+   function lastslide(){
+     slide_num = 5;
+     changeslide();
+   }
+
+
+   // 改变循环显示图片和相应的说明。
+   function changeslide(){        
+
+     // 图片文件名pic1.jpg,pic2.jpg...
+     eval('document.picbox.src = "pic' + slide_num + '.jpg"');
+
+     eval('document.descform.descbox.value = "图片' + slide_num + '说明: ' + eval('desc' + slide_num) + '"');
+   }
+//-->
+</script>
+<title>Image Slideshow with description</title>
+<link rel="stylesheet" href="../style.css">
+<meta name="description" content="图片展示脚本和相应的图片说明。">
+<meta name="keywords" content="image, picture, show, slide, slide show, 图片展示, 图片, 图象, 图形, 循环">
+</head>
+<!--不要忘记body里面的onload-->
+<body bgcolor="#FFFFFF" onload="changeslide()" text="#000000">
+<br>
+<div align="center"><br>
+  <br>
+</div>
+<div align="center"> 
+  <table border="1" cellspacing="2" cellpadding="2" cols="1"
+    width="212" bgcolor="#FFFFFF" bordercolorlight="#FF0033" bordercolor="#FF0033">
+    <tr> 
+      <td align="CENTER" valign="BOTTOM" height="112"> <img src="pic1.jpg" name="picbox" width="120" height="155"> 
+        <br>
+      </td>
+    </tr>
+    <tr> 
+      <td align="CENTER" valign="CENTER"> 
+        <form name="descform">
+          <p> 
+            <textarea name="descbox" rows="3" cols="25" wrap="virtual" onFocus="this.blur()" class="pt9">
+</textarea>
+            <br>
+            <a href="javascript:firstslide()">最前面</a> <a href="javascript:prevslide()">上一幅</a> 
+            <a href="javascript:nextslide()">下一幅</a> <a href="javascript:lastslide()">最后面</a> 
+          </p>
+        </form>
+      </td>
+    </tr>
+  </table>
+  <form>
+    <div align="center"> 
+      <input type="BUTTON" value="查看源代码" onClick= 'window.location = "view-source:" + window.location.href' name="BUTTON">
+    </div>
+  </form>
+</div>
+<p>
+</body>
+</html>
+
+

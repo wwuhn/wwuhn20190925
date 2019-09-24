@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>状态栏跑马灯 </title>
+<style type="text/css">
+<!--
+.unnamed1 {  font-family: "宋体"; font-size: 9pt; text-decoration: none}
+-->
+</style></head>
+
+<body>
+<form>
+  <div align="center"> <font color="#FF0000" size="5">状态栏跑马灯</font></div>
+</form>
+<p align="center"><br>
+  <script language="JavaScript">
+
+
+                      <!-- Start of Scroller Script
+                      var scrollCounter = 0;
+                      var scrollText    = "本站最佳分辨率800*600，使用IE浏览器！欢迎光临JAVA2000。";
+                      var scrollDelay   = 10;
+
+                      var i = 0;
+                      while (i ++ < 140)
+                          scrollText = " " + scrollText
+
+                      function Scroller ()
+                      {
+                          window.status = scrollText.substring(scrollCounter++,
+                                              scrollText.length);
+                          if (scrollCounter == scrollText.length)
+                              scrollCounter = 0;
+                          setTimeout("Scroller()", scrollDelay);
+                       }
+
+                       Scroller ();
+                       // End of scroller script -->
+
+
+
+</script>
+  <textarea name="textfield" cols="60" rows="10" class="unnamed1">如下代码加入&lt;BODY&gt;区：
+&lt;script language=&quot;JavaScript&quot;&gt;
+   &lt;!-- Start of Scroller Script
+      var scrollCounter = 0;
+      var scrollText    = &quot;跑马灯内容&quot;;
+      var scrollDelay   = 20;
+      var i = 0;
+      while (i ++ &lt; 140)
+      scrollText = &quot; &quot; + scrollText
+ function Scroller ()
+  {
+ window.status = scrollText.substring(scrollCounter++,
+      scrollText.length);
+       if (scrollCounter == scrollText.length)
+      scrollCounter = 0;
+      setTimeout(&quot;Scroller()&quot;, scrollDelay);
+  }
+      Scroller ();
+ // End of scroller script --&gt;
+&lt;/script&gt;</textarea>
+</p>
+</body>
+</html>
+

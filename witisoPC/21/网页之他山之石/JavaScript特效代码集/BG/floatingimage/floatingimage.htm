@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>漂浮的图片</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!--head头部代码开始--> 
+<script language="JavaScript" SRC="moveobj.js"> </script>
+<script>
+
+var chip1;
+var chip2;
+var chip3;
+//根据使用的图片的多少增加或减少上面相应代码；
+
+function pagestart()
+{checkbrOK(); 
+ chip1=new Chip("chip1",60,80);
+ chip2=new Chip("chip2",60,80);
+ chip3=new Chip("chip3",60,80);
+ //根据使用的图片的多少增加或减少上面的相应代码
+ if(brOK) 
+   { movechip("chip1");
+     movechip("chip2");
+     movechip("chip3");
+ //根据使用的图片的多少增加或减少上面的相应代码
+   }
+}
+</script>
+<!--代码结束--> 
+<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="floating, image, images, fly, flying, 漂浮, 浮动, 图象, 图片, 漂动">
+<meta name="description" content="漂浮的图片脚本，每个图片都可以有自己的连接。">
+</head>
+
+<body onLoad="pagestart();" onUnload="if(brOK) {stopme('chip1'); stopme('chip2'); stopme('chip3');}" bgcolor="#FFFFFF" text="#000000" >
+<DIV ID="chip1" STYLE="position:absolute; width:47; height:68;">
+<A HREF="../../../index.html"><IMG SRC="ballon1.gif" BORDER=0></a>
+</DIV>
+<DIV ID="chip2" STYLE="position:absolute; width:47; height:68;">
+<A HREF="../../navigation/newscript.htm"><IMG SRC="ballon2.gif" BORDER=0></a>
+</DIV>
+<DIV ID="chip3" STYLE="position:absolute; width:47; height:68;">
+<A HREF="../../navigation/applet/appletindex.htm"><IMG SRC="ballon3.gif" BORDER=0></a>
+</DIV>
+
+<center>
+  <p>
+    <script src="moveobj.js"></script>
+    <br>
+  </p>
+  <p>&nbsp;</p>
+  <p><a href="code.htm">看说明下载代码</a></p>
+</center>
+</body>
+</html>

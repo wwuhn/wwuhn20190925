@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>层的代码</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+body {  font-family: "宋体"; font-size: 9pt}
+-->
+</style></head>
+
+<body bgcolor="#000000" text="#FFFFFF">
+<p>由于IE和NS对于层的支持存在差别，所以在代码的最前面。先对浏览器进行检测。IE使用document.all.<font color="#FFFF33">id-name</font>.style.visibility="visible"，NS使用document.layers.<font color="#FFFF33">id-name</font>.visibility="visible"。</p>
+<p>&lt;HTML&gt;<br>
+  &lt;HEAD&gt;<br>
+  &lt;TITLE&gt;层的显示和隐藏及浏览器检测&lt;/TITLE&gt;<br>
+  &lt;script language=&quot;javascript&quot;&gt;<br>
+  &lt;!--<br>
+  //if explorer (4.x)<br>
+  if (document.all) {<br>
+  layerRef='document.all'<br>
+  styleRef='.style.'<br>
+  }<br>
+  //else if netscape (4.x)<br>
+  else if (document.layers) {<br>
+  layerRef='document.layers'<br>
+  styleRef='.'<br>
+  } <br>
+  else{<br>
+  alert(&quot;你使用的浏览器可能看不到效果。&quot;)<br>
+  }<br>
+  function show(){<br>
+  eval(layerRef+'[&quot;<font color="#FFFF33">divTest</font>&quot;]'+styleRef+'visibility=&quot;visible&quot;') 
+  <br>
+  }<br>
+  function hide(){<br>
+  eval(layerRef+'[&quot;<font color="#FFFF33">divTest</font>&quot;]'+styleRef+'visibility=&quot;hidden&quot;') 
+  <br>
+  }<br>
+  //--&gt;<br>
+  &lt;/script&gt;<br>
+  &lt;/HEAD&gt; </p>
+<p>&lt;BODY bgcolor=&quot;#000000&quot; text=&quot;#FFFFFF&quot; link=&quot;#FFFFCC&quot; 
+  vlink=&quot;#CCFFCC&quot; alink=&quot;#CCCCFF&quot;&gt;<br>
+  <br>
+  &lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;javascript:hide('<font color="#FFFF33">divText</font>')&quot;&gt;隐藏代码&lt;/a&gt; 
+  &lt;a href=&quot;javascript:show('<font color="#FFFF00">divText</font>')&quot;&gt;显示代码&lt;/a&gt; 
+  <br>
+  <br>
+  &lt;div id=&quot;<font color="#FFFF33">divTest</font>&quot; style=&quot;position:absolute; 
+  left:238px; width:340px; height:32px; top:190px; visibility: hidden&quot;&gt; 
+  <br>
+  &lt;p align=&quot;center&quot;&gt;本例是显示和隐藏层的例子。-----这里是层里显示的内容，随便。&lt;/p&gt;<br>
+  &lt;/div&gt;<br>
+  &lt;/BODY&gt;<br>
+  &lt;/HTML&gt;</p>
+<p>说明：&lt;div id=&quot;<font color="#FFFF33">divTest</font>&quot; style=&quot;position:absolute; 
+  left:238px; width:340px; height:32px; top:190px; visibility: hidden&quot;&gt; 
+  是设置层的绝对位置以及宽度和高度。使用象素值表示。层一开始设置为“hidden”隐含的，点击后显示出来“visible”。 </p>
+<p>你所需要做的仅仅是：</p>
+<p>（1）改一下&lt;div&gt;...&lt;/div&gt;中的id名字，当然不改页可以，只要前后保持一致即可。</p>
+<p>（2）根据你的页面情况设置一下层的绝对位置，多试几次直到合适为止。绝对位置left:238px（距离屏幕左侧的象素）， top:190px（距离屏幕上端的象素）。</p>
+</body>
+</html>

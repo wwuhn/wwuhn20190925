@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>检测访问历史记录脚本</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+body {  margin-top: 0px; font-family: "宋体"; font-size: 9pt}
+-->
+</style>
+<meta name="keywords" content="浏览器 检测 历史记录">
+<meta name="description" content="一个检测先前曾经访问过的站点的脚本。">
+</head>
+
+<body bgcolor="#F7F7F4">
+<form>
+  <div align="center"> <font size="4" color="#FF0000">能够检测出已经去过多少个站点的脚本</font></div>
+</form>
+<table width="75%" border="0" align="center">
+  <tr> 
+    <td> 
+      <script>
+// Copyright 1998 Jon Eyrick - action1@vfr.net
+// http://www.geocities.com/CapeCanaveral/4155/
+var times=history.length;
+document.write('此浏览器已经去过'+times+'个站了。');
+</script>
+    </td>
+  </tr>
+  <tr> 
+    <td><font face="Arial, Helvetica, sans-serif" size="3" color="#FF0000">&lt;CENTER&gt;<br>
+      &lt;SCRIPT&gt;<br>
+      var times=history.length;<br>
+      document.write('此浏览器已经去过'+times+'个站了。');<br>
+      &lt;/SCRIPT&gt;<br>
+      &lt;/CENTER&gt;</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

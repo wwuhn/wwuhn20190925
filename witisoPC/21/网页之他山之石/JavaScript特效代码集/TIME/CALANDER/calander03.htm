@@ -1,0 +1,243 @@
+<html>
+<head>
+<title>精美日历</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.unnamed1 {  font: 9pt "宋体"; text-decoration: none}
+-->
+</style></head>
+
+<body bgcolor="#FFFFFF">
+<form>
+  <div align="center"> <font size="5" color="#FF0000">很酷的日历脚本</font></div>
+</form>
+<table width="95%" border="0" align="center">
+  <tr>
+    <td width="26%" valign="top"> 
+      <script language="JavaScript">
+<!-- Begin
+monthnames = new Array(
+"1月",
+"2月",
+"3月",
+"4月",
+"5月",
+"6月",
+"7月",
+"8月",
+"10月",
+"11月",
+"12月");
+
+var linkcount=0;
+function addlink(month, day, href) {
+var entry = new Array(3);
+entry[0] = month;
+entry[1] = day;
+entry[2] = href;
+this[linkcount++] = entry;
+}
+Array.prototype.addlink = addlink;
+linkdays = new Array();
+monthdays = new Array(12);
+monthdays[0]=31;
+monthdays[1]=28;
+monthdays[2]=31;
+monthdays[3]=30;
+monthdays[4]=31;
+monthdays[5]=30;
+monthdays[6]=31;
+monthdays[7]=31;
+monthdays[8]=30;
+monthdays[9]=31;
+monthdays[10]=30;
+monthdays[11]=31;
+todayDate=new Date();
+thisday=todayDate.getDay();
+thismonth=todayDate.getMonth();
+thisdate=todayDate.getDate();
+thisyear=todayDate.getYear();
+thisyear = thisyear % 100;
+thisyear = ((thisyear < 50) ? (2000 + thisyear) : (1900 + thisyear));
+if (((thisyear % 4 == 0) 
+&& !(thisyear % 100 == 0))
+||(thisyear % 400 == 0)) monthdays[1]++;
+startspaces=thisdate;
+while (startspaces > 7) startspaces-=7;
+startspaces = thisday - startspaces + 1;
+if (startspaces < 0) startspaces+=7;
+document.write("<table border=2 bgcolor=white ");
+document.write("bordercolor=black><font color=black>");
+document.write("<tr><td colspan=7><center>" 
++ thisyear 
++"年"+monthnames[thismonth]+"</center></font></td></tr>");
+document.write("<tr>");
+document.write("<td align=center>日</td>");
+document.write("<td align=center>一</td>");
+document.write("<td align=center>二</td>");
+document.write("<td align=center>三</td>");
+document.write("<td align=center>四</td>");
+document.write("<td align=center>五</td>");
+document.write("<td align=center>六</td>"); 
+document.write("</tr>");
+document.write("<tr>");
+for (s=0;s<startspaces;s++) {
+document.write("<td>&nbsp</td>");
+}
+count=1;
+while (count <= monthdays[thismonth]) {
+for (b = startspaces;b<7;b++) {
+linktrue=false;
+document.write("<td>");
+for (c=0;c<linkdays.length;c++) {
+if (linkdays[c] != null) {
+if ((linkdays[c][0]==thismonth + 1) && (linkdays[c][1]==count)) {
+document.write("<a href=\"" + linkdays[c][2] + "\">");
+linktrue=true;
+      }
+   }
+}
+if (count==thisdate) {
+document.write("<font color='FF0000'><strong>");
+}
+if (count <= monthdays[thismonth]) {
+document.write(count);
+}
+else {
+document.write("&nbsp");
+}
+if (count==thisdate) {
+document.write("</strong></font>");
+}
+if (linktrue)
+document.write("</a>");
+document.write("</td>");
+count++;
+}
+document.write("</tr>");
+document.write("<tr>");
+startspaces=0;
+}
+document.write("</table></p>");
+// End -->
+</script>
+    </td>
+    <td valign="top" width="74%"> 
+      <p>&nbsp;</p>
+      <p>将如下的脚本加入HTML的&lt;body&gt;区即可：</p>
+      <p>&lt;script language=&quot;JavaScript&quot;&gt;<br>
+        &lt;!-- Begin<br>
+        monthnames = new Array(<br>
+        &quot;1月&quot;,<br>
+        &quot;2月&quot;,<br>
+        &quot;3月&quot;,<br>
+        &quot;4月&quot;,<br>
+        &quot;5月&quot;,<br>
+        &quot;6月&quot;,<br>
+        &quot;7月&quot;,<br>
+        &quot;8月&quot;,<br>
+        &quot;10月&quot;,<br>
+        &quot;11月&quot;,<br>
+        &quot;12月&quot;); </p>
+      <p>var linkcount=0;<br>
+        function addlink(month, day, href) {<br>
+        var entry = new Array(3);<br>
+        entry[0] = month;<br>
+        entry[1] = day;<br>
+        entry[2] = href;<br>
+        this[linkcount++] = entry;<br>
+        }<br>
+        Array.prototype.addlink = addlink;<br>
+        linkdays = new Array();<br>
+        monthdays = new Array(12);<br>
+        monthdays[0]=31;<br>
+        monthdays[1]=28;<br>
+        monthdays[2]=31;<br>
+        monthdays[3]=30;<br>
+        monthdays[4]=31;<br>
+        monthdays[5]=30;<br>
+        monthdays[6]=31;<br>
+        monthdays[7]=31;<br>
+        monthdays[8]=30;<br>
+        monthdays[9]=31;<br>
+        monthdays[10]=30;<br>
+        monthdays[11]=31;<br>
+        todayDate=new Date();<br>
+        thisday=todayDate.getDay();<br>
+        thismonth=todayDate.getMonth();<br>
+        thisdate=todayDate.getDate();<br>
+        thisyear=todayDate.getYear();<br>
+        thisyear = thisyear % 100;<br>
+        thisyear = ((thisyear &lt; 50) ? (2000 + thisyear) : (1900 + thisyear));<br>
+        if (((thisyear % 4 == 0) <br>
+        &amp;&amp; !(thisyear % 100 == 0))<br>
+        ||(thisyear % 400 == 0)) monthdays[1]++;<br>
+        startspaces=thisdate;<br>
+        while (startspaces &gt; 7) startspaces-=7;<br>
+        startspaces = thisday - startspaces + 1;<br>
+        if (startspaces &lt; 0) startspaces+=7;<br>
+        document.write(&quot;&lt;table border=2 bgcolor=white &quot;);<br>
+        document.write(&quot;bordercolor=black&gt;&lt;font color=black&gt;&quot;);<br>
+        document.write(&quot;&lt;tr&gt;&lt;td colspan=7&gt;&lt;center&gt;&quot; 
+        <br>
+        + thisyear <br>
+        +&quot;年&quot;+monthnames[thismonth]+&quot;&lt;/center&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&quot;);<br>
+        document.write(&quot;&lt;tr&gt;&quot;);<br>
+        document.write(&quot;&lt;td align=center&gt;日&lt;/td&gt;&quot;);<br>
+        document.write(&quot;&lt;td align=center&gt;一&lt;/td&gt;&quot;);<br>
+        document.write(&quot;&lt;td align=center&gt;二&lt;/td&gt;&quot;);<br>
+        document.write(&quot;&lt;td align=center&gt;三&lt;/td&gt;&quot;);<br>
+        document.write(&quot;&lt;td align=center&gt;四&lt;/td&gt;&quot;);<br>
+        document.write(&quot;&lt;td align=center&gt;五&lt;/td&gt;&quot;);<br>
+        document.write(&quot;&lt;td align=center&gt;六&lt;/td&gt;&quot;); <br>
+        document.write(&quot;&lt;/tr&gt;&quot;);<br>
+        document.write(&quot;&lt;tr&gt;&quot;);<br>
+        for (s=0;s&lt;startspaces;s++) {<br>
+        document.write(&quot;&lt;td&gt;&amp;nbsp&lt;/td&gt;&quot;);<br>
+        }<br>
+        count=1;<br>
+        while (count &lt;= monthdays[thismonth]) {<br>
+        for (b = startspaces;b&lt;7;b++) {<br>
+        linktrue=false;<br>
+        document.write(&quot;&lt;td&gt;&quot;);<br>
+        for (c=0;c&lt;linkdays.length;c++) {<br>
+        if (linkdays[c] != null) {<br>
+        if ((linkdays[c][0]==thismonth + 1) &amp;&amp; (linkdays[c][1]==count)) 
+        {<br>
+        document.write(&quot;&lt;a href=\&quot;&quot; + linkdays[c][2] + &quot;\&quot;&gt;&quot;);<br>
+        linktrue=true;<br>
+        }<br>
+        }<br>
+        }<br>
+        if (count==thisdate) {<br>
+        document.write(&quot;&lt;font color='FF0000'&gt;&lt;strong&gt;&quot;);<br>
+        }<br>
+        if (count &lt;= monthdays[thismonth]) {<br>
+        document.write(count);<br>
+        }<br>
+        else {<br>
+        document.write(&quot;&amp;nbsp&quot;);<br>
+        }<br>
+        if (count==thisdate) {<br>
+        document.write(&quot;&lt;/strong&gt;&lt;/font&gt;&quot;);<br>
+        }<br>
+        if (linktrue)<br>
+        document.write(&quot;&lt;/a&gt;&quot;);<br>
+        document.write(&quot;&lt;/td&gt;&quot;);<br>
+        count++;<br>
+        }<br>
+        document.write(&quot;&lt;/tr&gt;&quot;);<br>
+        document.write(&quot;&lt;tr&gt;&quot;);<br>
+        startspaces=0;<br>
+        }<br>
+        document.write(&quot;&lt;/table&gt;&lt;/p&gt;&quot;);<br>
+        // End --&gt;<br>
+        &lt;/script&gt;</p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp; </p>
+</body>
+</html>

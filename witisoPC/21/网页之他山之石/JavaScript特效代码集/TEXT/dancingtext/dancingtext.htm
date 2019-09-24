@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>dancing text-会跳舞的文字</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--//
+function initArray() {
+for (var i = 0; i < initArray.arguments.length; i++) {
+this[i] = initArray.arguments[i];
+}
+this.length = initArray.arguments.length;
+}
+var colors = new initArray(
+"#ffffff",
+"yellow",
+"green",
+"purple",
+"black",
+"tan",
+"red");
+delay = 0.5; // 单位：秒
+link = 0;
+vlink = 2;
+function linkDance() {
+link = (link+1)%colors.length;
+vlink = (vlink+1)%colors.length;
+document.linkColor = colors[link];
+document.vlinkColor = colors[vlink];
+setTimeout("linkDance()",delay*1000);
+}
+linkDance();
+//-->
+</script>
+<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="dancing text, text, dance, dancing, 跳舞文字, 文字特效, 特效, 页面特效">
+<meta name="description" content="文字特效脚本-会跳舞的文字。">
+</head>
+
+<body bgcolor="#004080" text="#FFFFFF">
+<div align="center">
+<p><font size="5">跳舞的文字</font> <font size="3">（IE4+ Only）</font></p>
+  <form>
+    <div align="center"> </div>
+  </form>
+  
+</div>
+<p align="center"><font size="5" face="Arial, Helvetica, sans-serif"><a href="dancingtext.htm">Dancing 
+  Text In Your Page NOW !</a></font></p>
+<div align="center">
+  <table width="58%" border="0">
+    <tr> 
+      <td>
+        <p>将下面的代码加入&lt;HEAD&gt;区即可：</p>
+        <p>&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;<br>
+          &lt;!--//<br>
+          function initArray() {<br>
+          for (var i = 0; i &lt; initArray.arguments.length; i++) {<br>
+          this[i] = initArray.arguments[i];<br>
+          }<br>
+          this.length = initArray.arguments.length;<br>
+          }<br>
+          var colors = new initArray(<br>
+          &quot;#ffffff&quot;,<br>
+          &quot;yellow&quot;,<br>
+          &quot;green&quot;,<br>
+          &quot;purple&quot;,<br>
+          &quot;black&quot;,<br>
+          &quot;tan&quot;,<br>
+          &quot;red&quot;);<br>
+          delay = 0.5; // 单位：秒<br>
+          link = 0;<br>
+          vlink = 2;<br>
+          function linkDance() {<br>
+          link = (link+1)%colors.length;<br>
+          vlink = (vlink+1)%colors.length;<br>
+          document.linkColor = colors[link];<br>
+          document.vlinkColor = colors[vlink];<br>
+          setTimeout(&quot;linkDance()&quot;,delay*1000);<br>
+          }<br>
+          linkDance();<br>
+          //--&gt;<br>
+          &lt;/script&gt;</p>
+        <p>说明：页面内所有的连接都会产生这个效果。NS不支持。颜色可以根据页面情况随便改。</p>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+</body>
+</html>

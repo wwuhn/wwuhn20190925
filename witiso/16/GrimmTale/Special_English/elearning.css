@@ -1,0 +1,22 @@
+body.hightlight {
+scrollbar-highlight-color:#99ccff;
+scrollbar-face-color:#ccccff;
+scrollbar-3dlight-color:#ccccff;
+scrollbar-3dshadow-color:#ccccff;
+scrollbar-darkshadow-color:#ccccff;
+scrollbar-track-color:#ccccff;
+scrollbar-arrow-color:#ccccff;
+
+}
+P{
+font-family:"MV Boli";
+font-size:24px;
+text-indent:2em;
+line-height:34px;
+}
+.title{
+font-family:"»ªÎÄÁ¥Êé";
+font-size:34px;
+text-align:center;
+}/* CSS Document */
+

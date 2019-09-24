@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>眨眼睛的字符脚本和颜色配色表</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<form>
+  <div align="center"> <font size="5">眨眼睛的字符脚本和颜色配色表</font></div>
+</form>
+<hr noshade width="75%">
+<p align="center"> 
+  <SCRIPT LANGUAGE="JavaScript1.2">
+
+<!-- Begin
+function initArray() {
+this.length = initArray.arguments.length;
+for (var i = 0; i < this.length; i++) {
+this[i] = initArray.arguments[i];
+   }
+}
+
+var ctext = "哇!这些字符真的会眨眼睛啊!http�/java2000.126.com提供更多的脚本。-)";
+var speed = 1000;
+var x = 0;
+var color = new initArray(
+"red", 
+"blue", 
+"green",
+"black",
+"darkred",
+"tomato"
+
+);
+if(navigator.appName == "Netscape") {
+document.write('<layer id="c"><center>'+ctext+'</center></layer><br>');
+}
+if (navigator.appVersion.indexOf("MSIE") != -1){
+document.write('<div id="c"><center>'+ctext+'</center></div>');
+}
+function chcolor(){ 
+if(navigator.appName == "Netscape") {
+document.c.document.write('<center><font color="'+color[x]);
+document.c.document.write('">'+ctext+'</font></center>');
+document.c.document.close();
+}
+else if (navigator.appVersion.indexOf("MSIE") != -1){
+document.all.c.style.color = color[x];
+}
+(x < color.length-1) ? x++ : x = 0;
+}
+setInterval("chcolor()",1000);
+// End -->
+</script>
+</p>
+<hr noshade width="75%">
+<table width="75%" border="0" align="center">
+  <tr>
+    <td>
+      <p>IE4和NS4都可以看到效果啊！以下代码加入HTML的&lt;body&gt;区即可：<br>
+        <a href="color.htm" target="_blank">参考颜色配色表－认识颜色的本名</a></p>
+      <p>&lt;SCRIPT LANGUAGE=&quot;JavaScript1.2&quot;&gt; </p>
+      <p>&lt;!-- Begin<br>
+        function initArray() {<br>
+        this.length = initArray.arguments.length;<br>
+        for (var i = 0; i &lt; this.length; i++) {<br>
+        this[i] = initArray.arguments[i];<br>
+        }<br>
+        }</p>
+      <p>var ctext = &quot;显示的文字内容，随便写点什么东西！&quot;;<br>
+        var speed = 1000;<br>
+        var x = 0;<br>
+        var color = new initArray(<br>
+        <font color="#FF0000">&quot;red&quot;, <br>
+        &quot;blue&quot;, <br>
+        &quot;green&quot;,<br>
+        &quot;black&quot;,<br>
+        &quot;darkred&quot;,<br>
+        &quot;tomato&quot;<br>
+        </font>);<font color="#FF0000"><br>
+        <br>
+        //以上的颜色过渡可以自由设定，参考颜色配色表。 </font></p>
+      <p> if(navigator.appName == &quot;Netscape&quot;) {<br>
+        document.write('&lt;layer id=&quot;c&quot;&gt;&lt;center&gt;'+ctext+'&lt;/center&gt;&lt;/layer&gt;&lt;br&gt;');<br>
+        }<br>
+        if (navigator.appVersion.indexOf(&quot;MSIE&quot;) != -1){<br>
+        document.write('&lt;div id=&quot;c&quot;&gt;&lt;center&gt;'+ctext+'&lt;/center&gt;&lt;/div&gt;');<br>
+        }<br>
+        function chcolor(){ <br>
+        if(navigator.appName == &quot;Netscape&quot;) {<br>
+        document.c.document.write('&lt;center&gt;&lt;font color=&quot;'+color[x]);<br>
+        document.c.document.write('&quot;&gt;'+ctext+'&lt;/font&gt;&lt;/center&gt;');<br>
+        document.c.document.close();<br>
+        }<br>
+        else if (navigator.appVersion.indexOf(&quot;MSIE&quot;) != -1){<br>
+        document.all.c.style.color = color[x];<br>
+        }<br>
+        (x &lt; color.length-1) ? x++ : x = 0;<br>
+        }<br>
+        setInterval(&quot;chcolor()&quot;,1000);<br>
+        // End --&gt;<br>
+        &lt;/script&gt;</p>
+      </td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

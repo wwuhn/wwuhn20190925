@@ -1,0 +1,253 @@
+<html>
+<head>
+<title>四处游走的小球 - 图象特效</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript">
+<!--//
+
+//设置下面一些参数，小球移动速度1-50，数值大速度快；
+var ballWidth = 40;
+var ballHeight = 40;
+var BallSpeed = 10;
+
+var maxBallSpeed = 50;
+var xMax;
+var yMax;
+var xPos = 0;
+var yPos = 0;
+var xDir = 'right';  //水平方向向右移动
+var yDir = 'down'; //垂直方向向下移动
+var superballRunning = true;
+var tempBallSpeed;
+var currentBallSrc;
+var newXDir;
+var newYDir;
+
+function initializeBall() {
+   if (document.all) {
+      xMax = document.body.clientWidth
+      yMax = document.body.clientHeight
+      document.all("superball").style.visibility = "visible";
+      }
+   else if (document.layers) {
+      xMax = window.innerWidth;
+      yMax = window.innerHeight;
+      document.layers["superball"].visibility = "show";
+      }
+   setTimeout('moveBall()',400);
+   }
+
+function moveBall() {
+   if (superballRunning == true) {
+      calculatePosition();
+      if (document.all) {
+         document.all("superball").style.left = xPos + document.body.scrollLeft;
+         document.all("superball").style.top = yPos + document.body.scrollTop;
+         }
+      else if (document.layers) {
+         document.layers["superball"].left = xPos + pageXOffset;
+         document.layers["superball"].top = yPos + pageYOffset;
+         }
+      setTimeout('moveBall()',30);
+      }
+   }
+
+function calculatePosition() {
+   if (xDir == "right") {
+      if (xPos > (xMax - ballWidth - BallSpeed)) { 
+         xDir = "left";
+         }
+      }
+   else if (xDir == "left") {
+      if (xPos < (0 + BallSpeed)) {
+         xDir = "right";
+         }
+      }
+   if (yDir == "down") {
+      if (yPos > (yMax - ballHeight - BallSpeed)) {
+         yDir = "up";
+         }
+      }
+   else if (yDir == "up") {
+      if (yPos < (0 + BallSpeed)) {
+         yDir = "down";
+         }
+      }
+   if (xDir == "right") {
+      xPos = xPos + BallSpeed;
+      }
+   else if (xDir == "left") {
+      xPos = xPos - BallSpeed;
+      }
+   else {
+      xPos = xPos;
+      }
+   if (yDir == "down") {
+      yPos = yPos + BallSpeed;
+      }
+   else if (yDir == "up") {
+      yPos = yPos - BallSpeed;
+      }
+   else {
+      yPos = yPos;
+      }
+   }
+
+if (document.all||document.layers)
+window.onload = initializeBall;
+window.onresize = new Function("window.location.reload()");
+
+// -->
+</script>
+<style type="text/css">
+
+#superball {
+position:absolute;
+left:0;
+top:0;
+visibility:hide;
+visibility:hidden;
+width:40;
+height:40;
+}
+
+</style>
+<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="flying, fly, ball, image, 图象特效, 特效, 小球, 飘动, 浮动">
+<meta name="description" content="图象特效,四处游走的小球。">
+</head>
+
+<body bgcolor="#FFFFFF">
+<span id="superball" style="left: 0"><img name="superballImage" src="ball.gif" height="30" width="30" border="0"></span> 
+<div align="center">
+  <p>&nbsp; </p>
+  <p><font size="3">图象特效 －四处飞翔的小球(IE &amp; NS)</font></p>
+</div>
+<form>
+  <div align="center"> </div>
+</form>
+<div align="center"> 
+  <table width="71%" border="1" cellspacing="0" cellpadding="2" bordercolor="#0080C0">
+    <tr> 
+      <td>&lt;html&gt;<br>
+        &lt;head&gt;<br>
+        &lt;title&gt;四处游走的小球 - 图象特效&lt;/title&gt;<br>
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; 
+        charset=gb2312&quot;&gt;<br>
+        <font color="#FF0033">&lt;script language=&quot;JavaScript&quot;&gt;<br>
+        &lt;!--// </font>
+        <p><font color="#FF0033">//设置下面一些参数，小球移动速度1-50，数值大速度快；<br>
+          var ballWidth = 40;<br>
+          var ballHeight = 40;<br>
+          var BallSpeed = 10;</font></p>
+        <p><font color="#FF0033">var maxBallSpeed = 50;<br>
+          var xMax;<br>
+          var yMax;<br>
+          var xPos = 0;<br>
+          var yPos = 0;<br>
+          var xDir = 'right'; //水平方向向右移动<br>
+          var yDir = 'down'; //垂直方向向下移动<br>
+          var superballRunning = true;<br>
+          var tempBallSpeed;<br>
+          var currentBallSrc;<br>
+          var newXDir;<br>
+          var newYDir;</font></p>
+        <p><font color="#FF0033">function initializeBall() {<br>
+          if (document.all) {<br>
+          xMax = document.body.clientWidth<br>
+          yMax = document.body.clientHeight<br>
+          document.all(&quot;superball&quot;).style.visibility = &quot;visible&quot;;<br>
+          }<br>
+          else if (document.layers) {<br>
+          xMax = window.innerWidth;<br>
+          yMax = window.innerHeight;<br>
+          document.layers[&quot;superball&quot;].visibility = &quot;show&quot;;<br>
+          }<br>
+          setTimeout('moveBall()',400);<br>
+          }</font></p>
+        <p><font color="#FF0033">function moveBall() {<br>
+          if (superballRunning == true) {<br>
+          calculatePosition();<br>
+          if (document.all) {<br>
+          document.all(&quot;superball&quot;).style.left = xPos + document.body.scrollLeft;<br>
+          document.all(&quot;superball&quot;).style.top = yPos + document.body.scrollTop;<br>
+          }<br>
+          else if (document.layers) {<br>
+          document.layers[&quot;superball&quot;].left = xPos + pageXOffset;<br>
+          document.layers[&quot;superball&quot;].top = yPos + pageYOffset;<br>
+          }<br>
+          setTimeout('moveBall()',30);<br>
+          }<br>
+          }</font></p>
+        <p><font color="#FF0033">function calculatePosition() {<br>
+          if (xDir == &quot;right&quot;) {<br>
+          if (xPos &gt; (xMax - ballWidth - BallSpeed)) { <br>
+          xDir = &quot;left&quot;;<br>
+          }<br>
+          }<br>
+          else if (xDir == &quot;left&quot;) {<br>
+          if (xPos &lt; (0 + BallSpeed)) {<br>
+          xDir = &quot;right&quot;;<br>
+          }<br>
+          }<br>
+          if (yDir == &quot;down&quot;) {<br>
+          if (yPos &gt; (yMax - ballHeight - BallSpeed)) {<br>
+          yDir = &quot;up&quot;;<br>
+          }<br>
+          }<br>
+          else if (yDir == &quot;up&quot;) {<br>
+          if (yPos &lt; (0 + BallSpeed)) {<br>
+          yDir = &quot;down&quot;;<br>
+          }<br>
+          }<br>
+          if (xDir == &quot;right&quot;) {<br>
+          xPos = xPos + BallSpeed;<br>
+          }<br>
+          else if (xDir == &quot;left&quot;) {<br>
+          xPos = xPos - BallSpeed;<br>
+          }<br>
+          else {<br>
+          xPos = xPos;<br>
+          }<br>
+          if (yDir == &quot;down&quot;) {<br>
+          yPos = yPos + BallSpeed;<br>
+          }<br>
+          else if (yDir == &quot;up&quot;) {<br>
+          yPos = yPos - BallSpeed;<br>
+          }<br>
+          else {<br>
+          yPos = yPos;<br>
+          }<br>
+          }</font></p>
+        <p><font color="#FF0033">if (document.all||document.layers)<br>
+          window.onload = initializeBall;<br>
+          window.onresize = new Function(&quot;window.location.reload()&quot;);</font></p>
+        <p><font color="#FF0033">// --&gt;<br>
+          &lt;/script&gt;</font></p>
+        <p><font color="#FF0033">&lt;style type=&quot;text/css&quot;&gt;</font></p>
+        <p><font color="#FF0033">#superball {<br>
+          position:absolute;<br>
+          left:0;<br>
+          top:0;<br>
+          visibility:hide;<br>
+          visibility:hidden;<br>
+          width:40;<br>
+          height:40;<br>
+          }</font></p>
+        <p><font color="#FF0033">&lt;/style&gt;</font><br>
+          &lt;/head&gt;</p>
+        <p>&lt;body bgcolor=&quot;#FFFFFF&quot;&gt;<br>
+          <font color="#FF0033">&lt;span id=&quot;superball&quot;&gt;&lt;a href=&quot;http://java2000.126.com&quot;&gt;&lt;img 
+          name=&quot;superballImage&quot; src=&quot;ball.gif&quot; height=&quot;30&quot; 
+          width=&quot;30&quot; border=&quot;0&quot;&gt;&lt;/a&gt;&lt;/span&gt; 
+          </font><br>
+          &lt;/body&gt;<br>
+          &lt;/html&gt;</p>
+        <p>注意：不要将&lt;span&gt;...&lt;/span&gt;之间的内容放在任何标签内。</p>
+        </td>
+    </tr>
+  </table>
+</div>
+<p>&nbsp;</p>
+</body>
+</html>

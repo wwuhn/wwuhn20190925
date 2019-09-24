@@ -1,0 +1,365 @@
+
+<html>
+<head>
+<title>酷日历 最酷的java脚本资源站 http://java2000.126.com</title>
+<style type="text/css">
+<!--
+body {  font: 9pt "宋体"; text-decoration: none}
+td { font: 9pt "宋体"; text-decoration: none }
+th { font: 9pt "宋体"; text-decoration: none }
+.unnamed1 { font: 9pt "宋体"; text-decoration: none }
+-->
+</style>
+</head>
+<body bgcolor="#FFFFFF" background="../../../images/bg012.gif">
+<div align="center"></div>
+<form>
+  <div align="center"> <font size="4" color="#CC0000"> <font size="5">酷日历脚本</font></font> 
+  </div>
+</form>
+<table width="78%" border="0" align="center">
+  <tr> 
+    <td width="29%" valign="top"> 
+      <script language="JavaScript">
+<!-- Hide this script from old browsers --
+setCal()
+function getTime() {
+	// initialize time-related variables with current time settings
+	var now = new Date()
+	var hour = now.getHours()
+	var minute = now.getMinutes()
+	now = null
+	var ampm = "" 
+	// validate hour values	and set value of ampm
+	if (hour >= 12) {
+		hour -= 12
+		ampm = "PM"
+	} else
+		ampm = "AM"
+	hour = (hour == 0) ? 12 : hour
+	// add zero digit to a one digit minute
+	if (minute < 10)
+		minute = "0" + minute // do not parse this number!
+	// return time string
+	return hour + ":" + minute + " " + ampm
+}
+function leapYear(year) {
+	if (year % 4 == 0) // basic rule
+		return true // is leap year
+	/* else */ // else not needed when statement is "return"
+		return false // is not leap year
+}
+function getDays(month, year) {
+	// create array to hold number of days in each month
+	var ar = new Array(12)
+	ar[0] = 31 // January
+	ar[1] = (leapYear(year)) ? 29 : 28 // February
+	ar[2] = 31 // March
+	ar[3] = 30 // April
+	ar[4] = 31 // May
+	ar[5] = 30 // June
+	ar[6] = 31 // July
+	ar[7] = 31 // August
+	ar[8] = 30 // September
+	ar[9] = 31 // October
+	ar[10] = 30 // November
+	ar[11] = 31 // December
+	
+	return ar[month]
+}
+function getMonthName(month) {
+	// create array to hold name of each month
+	var ar = new Array(12)
+	ar[0] = "1月"
+	ar[1] = "2月"
+	ar[2] = "3月"
+	ar[3] = "4月"
+	ar[4] = "5月"
+	ar[5] = "6月"
+	ar[6] = "7月"
+	ar[7] = "8月"
+	ar[8] = "9月"
+	ar[9] = "10月"
+	ar[10] = "11月"
+	ar[11] = "12月"
+	// return name of specified month (parameter)
+	return ar[month]
+}
+function setCal() {
+	// standard time attributes
+	var now = new Date()
+	var year = now.getYear()
+	var month = now.getMonth()
+	var monthName = getMonthName(month)
+	var date = now.getDate()
+	now = null
+	// create instance of first day of month, and extract the day on which it occurs
+	var firstDayInstance = new Date(year, month, 1)
+	var firstDay = firstDayInstance.getDay()
+	firstDayInstance = null
+	// number of days in current month
+	var days = getDays(month, year)
+	// call function to draw calendar
+	drawCal(firstDay + 1, days, date, monthName, year)
+}
+function drawCal(firstDay, lastDate, date, monthName, year) {
+	// constant table settings
+	var headerHeight = 25 // height of the table's header cell
+	var border = 1 // 3D height of table's border
+	var cellspacing = 1 // width of table's border
+	var headerColor = "midnightblue" // color of table's header
+	var headerSize = "4" // size of tables header font
+	var colWidth = 15 // width of columns in table
+	var dayCellHeight = 12 // height of cells containing days of the week
+	var dayColor = "darkblue" // color of font representing week days
+	var cellHeight = 20 // height of cells representing dates in the calendar
+	var todayColor = "red" // color specifying today's date in the calendar
+	var timeColor = "black" // color of font representing current time
+	// create basic table structure
+	var text = "" // initialize accumulative variable to empty string
+	text += '<CENTER>'
+	text += '<TABLE bgcolor=moccasin BORDER=' + border + ' CELLSPACING=' + cellspacing + '>' // table settings
+	text += 	'<TH COLSPAN=7 HEIGHT=' + headerHeight + '>' // create table header cell
+	text += 		'<FONT COLOR="' + headerColor + '" SIZE=' + headerSize + '>' // set font for table header
+	text += 			year +'年'+monthName 
+                text += '</FONT>'
+                text += '<FONT COLOR="' + timeColor + '" >'
+					text += getTime() 
+					
+	text += 		'</FONT>' // close table header's font settings
+	text += 	'</TH>' // close header cell
+	// variables to hold constant settings
+	var openCol = '<TD WIDTH=' + colWidth + ' HEIGHT=' + dayCellHeight + '>'
+	openCol += '<FONT COLOR="' + dayColor + '">'
+	var closeCol = '</FONT></TD>'
+	// create array of abbreviated day names
+	var weekDay = new Array(7)
+	weekDay[0] = "日"
+	weekDay[1] = "一"
+	weekDay[2] = "二"
+	weekDay[3] = "三"
+	weekDay[4] = "四"
+	weekDay[5] = "五"
+	weekDay[6] = "六"
+	
+	// create first row of table to set column width and specify week day
+	text += '<TR ALIGN="center" VALIGN="center">'
+	for (var dayNum = 0; dayNum < 7; ++dayNum) {
+		text += openCol + weekDay[dayNum] + closeCol 
+	}
+	text += '</TR>'
+	
+	var digit = 1
+	var curCell = 1
+	
+	for (var row = 1; row <= Math.ceil((lastDate + firstDay - 1) / 7); ++row) {
+		text += '<TR ALIGN="right" VALIGN="top">'
+		for (var col = 1; col <= 7; ++col) {
+			if (digit > lastDate)
+				break
+			if (curCell < firstDay) {
+				text += '<TD></TD>';
+				curCell++
+			} else {
+				if (digit == date) {
+					text += '<TD HEIGHT=' + cellHeight + '>'
+					text += '<FONT COLOR="' + todayColor + '">'
+					text += digit
+					text += '</FONT><BR>'
+					
+					text += '</TD>'
+				} else
+					text += '<TD HEIGHT=' + cellHeight + '>' + digit + '</TD>'
+				digit++
+			}
+		}
+		text += '</TR>'
+	}
+		text += '</TABLE>'
+	text += '</CENTER>'
+	document.write(text) 
+}
+// -- End Hiding Here -->
+</script>
+    </td>
+    <td width="71%"><font size="+1">看看源代码，俺已经比较详细地注释了，你只要稍微修改一下外观和颜色以适应你的页面即可。用CSS控制一下字体效果更好。到了2000年“99年”就会变成“2000年”。</font> 
+    </td>
+  </tr>
+  <tr> 
+    <td valign="top" colspan="2"> 
+      <div align="left"><font size="+1">如下代码加入HTML的&lt;BODY&gt;区：<br>
+        &lt;script language=&quot;JavaScript&quot;&gt;<br>
+        &lt;!-- Hide this script from old browsers --<br>
+        setCal()<br>
+        function getTime() {<br>
+        // 初始化时间<br>
+        var now = new Date()<br>
+        var hour = now.getHours()<br>
+        var minute = now.getMinutes()<br>
+        now = null<br>
+        var ampm = &quot;&quot; <br>
+        // 时间检测，并设置上下午AM和PM<br>
+        if (hour &gt;= 12) {<br>
+        hour -= 12<br>
+        ampm = &quot;PM&quot;<br>
+        } else<br>
+        ampm = &quot;AM&quot;<br>
+        hour = (hour == 0) ? 12 : hour<br>
+        // add zero digit to a one digit minute<br>
+        if (minute &lt; 10)<br>
+        minute = &quot;0&quot; + minute // do not parse this number!<br>
+        // return time string<br>
+        return hour + &quot;:&quot; + minute + &quot; &quot; + ampm<br>
+        }<br>
+        function leapYear(year) {<br>
+        if (year % 4 == 0) // basic rule<br>
+        return true // is leap year<br>
+        /* else */ // else not needed when statement is &quot;return&quot;<br>
+        return false // is not leap year<br>
+        }<br>
+        function getDays(month, year) {<br>
+        // 设定每月的天数数组<br>
+        var ar = new Array(12)<br>
+        ar[0] = 31 // January<br>
+        ar[1] = (leapYear(year)) ? 29 : 28 // February<br>
+        ar[2] = 31 // March<br>
+        ar[3] = 30 // April<br>
+        ar[4] = 31 // May<br>
+        ar[5] = 30 // June<br>
+        ar[6] = 31 // July<br>
+        ar[7] = 31 // August<br>
+        ar[8] = 30 // September<br>
+        ar[9] = 31 // October<br>
+        ar[10] = 30 // November<br>
+        ar[11] = 31 // December<br>
+        <br>
+        return ar[month]<br>
+        }<br>
+        function getMonthName(month) {<br>
+        // 为月份名称设定数组<br>
+        var ar = new Array(12)<br>
+        ar[0] = &quot;1月&quot;<br>
+        ar[1] = &quot;2月&quot;<br>
+        ar[2] = &quot;3月&quot;<br>
+        ar[3] = &quot;4月&quot;<br>
+        ar[4] = &quot;5月&quot;<br>
+        ar[5] = &quot;6月&quot;<br>
+        ar[6] = &quot;7月&quot;<br>
+        ar[7] = &quot;8月&quot;<br>
+        ar[8] = &quot;9月&quot;<br>
+        ar[9] = &quot;10月&quot;<br>
+        ar[10] = &quot;11月&quot;<br>
+        ar[11] = &quot;12月&quot;<br>
+        <br>
+        return ar[month]<br>
+        }<br>
+        function setCal() {<br>
+        <br>
+        var now = new Date()<br>
+        var year = now.getYear()<br>
+        var month = now.getMonth()<br>
+        var monthName = getMonthName(month)<br>
+        var date = now.getDate()<br>
+        now = null<br>
+        <br>
+        var firstDayInstance = new Date(year, month, 1)<br>
+        var firstDay = firstDayInstance.getDay()<br>
+        firstDayInstance = null<br>
+        <br>
+        var days = getDays(month, year)<br>
+        // 呼叫函数画日历<br>
+        drawCal(firstDay + 1, days, date, monthName, year)<br>
+        }<br>
+        function drawCal(firstDay, lastDate, date, monthName, year) {<br>
+        // 以下设定表格的属性，这些参数可以自己改变，只是注意相互匹配。<br>
+        var headerHeight = 25 // height of the table's header cell<br>
+        var border = 1 // 3D height of table's border<br>
+        var cellspacing = 1 // width of table's border<br>
+        var headerColor = &quot;midnightblue&quot; // color of table's header<br>
+        var headerSize = &quot;4&quot; // size of tables header font<br>
+        var colWidth = 15 // width of columns in table<br>
+        var dayCellHeight = 12 // height of cells containing days of the week<br>
+        var dayColor = &quot;darkblue&quot; // color of font representing week 
+        days<br>
+        var cellHeight = 20 // height of cells representing dates in the calendar<br>
+        var todayColor = &quot;red&quot; // color specifying today's date in the 
+        calendar<br>
+        var timeColor = &quot;black&quot; // color of font representing current 
+        time<br>
+        // create basic table structure<br>
+        var text = &quot;&quot; // initialize accumulative variable to empty string<br>
+        text += '&lt;CENTER&gt;'<br>
+        text += '&lt;TABLE bgcolor=moccasin BORDER=' + border + ' CELLSPACING=' 
+        + cellspacing + '&gt;' // table settings<br>
+        text += '&lt;TH COLSPAN=7 HEIGHT=' + headerHeight + '&gt;' // create table 
+        header cell<br>
+        text += '&lt;FONT COLOR=&quot;' + headerColor + '&quot; SIZE=' + headerSize 
+        + '&gt;' // set font for table header<br>
+        text += year +'年'+monthName <br>
+        text += '&lt;/FONT&gt;'<br>
+        text += '&lt;FONT COLOR=&quot;' + timeColor + '&quot; &gt;'<br>
+        text += getTime() <br>
+        <br>
+        text += '&lt;/FONT&gt;' // close table header's font settings<br>
+        text += '&lt;/TH&gt;' // close header cell<br>
+        // variables to hold constant settings<br>
+        var openCol = '&lt;TD WIDTH=' + colWidth + ' HEIGHT=' + dayCellHeight 
+        + '&gt;'<br>
+        openCol += '&lt;FONT COLOR=&quot;' + dayColor + '&quot;&gt;'<br>
+        var closeCol = '&lt;/FONT&gt;&lt;/TD&gt;'<br>
+        // create array of abbreviated day names<br>
+        var weekDay = new Array(7)<br>
+        weekDay[0] = &quot;日&quot;<br>
+        weekDay[1] = &quot;一&quot;<br>
+        weekDay[2] = &quot;二&quot;<br>
+        weekDay[3] = &quot;三&quot;<br>
+        weekDay[4] = &quot;四&quot;<br>
+        weekDay[5] = &quot;五&quot;<br>
+        weekDay[6] = &quot;六&quot;<br>
+        <br>
+        // create first row of table to set column width and specify week day<br>
+        text += '&lt;TR ALIGN=&quot;center&quot; VALIGN=&quot;center&quot;&gt;'<br>
+        for (var dayNum = 0; dayNum &lt; 7; ++dayNum) {<br>
+        text += openCol + weekDay[dayNum] + closeCol <br>
+        }<br>
+        text += '&lt;/TR&gt;'<br>
+        <br>
+        var digit = 1<br>
+        var curCell = 1<br>
+        <br>
+        for (var row = 1; row &lt;= Math.ceil((lastDate + firstDay - 1) / 7); 
+        ++row) {<br>
+        text += '&lt;TR ALIGN=&quot;right&quot; VALIGN=&quot;top&quot;&gt;'<br>
+        for (var col = 1; col &lt;= 7; ++col) {<br>
+        if (digit &gt; lastDate)<br>
+        break<br>
+        if (curCell &lt; firstDay) {<br>
+        text += '&lt;TD&gt;&lt;/TD&gt;';<br>
+        curCell++<br>
+        } else {<br>
+        if (digit == date) {<br>
+        text += '&lt;TD HEIGHT=' + cellHeight + '&gt;'<br>
+        text += '&lt;FONT COLOR=&quot;' + todayColor + '&quot;&gt;'<br>
+        text += digit<br>
+        text += '&lt;/FONT&gt;&lt;BR&gt;'<br>
+        <br>
+        text += '&lt;/TD&gt;'<br>
+        } else<br>
+        text += '&lt;TD HEIGHT=' + cellHeight + '&gt;' + digit + '&lt;/TD&gt;'<br>
+        digit++<br>
+        }<br>
+        }<br>
+        text += '&lt;/TR&gt;'<br>
+        }<br>
+        text += '&lt;/TABLE&gt;'<br>
+        text += '&lt;/CENTER&gt;'<br>
+        document.write(text) <br>
+        }<br>
+        // -- End Hiding Here --&gt;<br>
+        &lt;/script&gt; </font></div>
+    </td>
+  </tr>
+</table>
+<p align="center">&nbsp; </p>
+</body>
+</html>

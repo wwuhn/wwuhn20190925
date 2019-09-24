@@ -1,0 +1,61 @@
+<html>
+<head>
+<script>
+
+function errorbox(){
+errorwindow=window.open("","","width=250,height=125")
+errorwindow.document.write('<title>脚本错误报告</title><center>该页面发现了脚本运行错误，请通知管理员。<Br><form><input type="button" value="关闭窗口" onClick="window.close()"></form></center>')
+errorwindow.document.close()
+errorwindow.document.bgColor="#fff7f7"
+return true
+}
+window.onerror=errorbox
+</script>
+<title>脚本错误反馈</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="keywords" content="error 脚本错误 反馈">
+<meta name="description" content="自己设置脚本错误反馈信息">
+<style type="text/css">
+<!--
+.yk9 {  font-family: "宋体"; font-size: 9pt}
+body { font-family: "宋体"; font-size: 9pt ; margin-top: 0px}
+-->
+</style>
+</head>
+
+<body bgcolor="#fff7f7">
+<form>
+  <div align="center"> <font size="4" color="#FF0000">自己设置的脚本运行错误信息反馈样式</font></div>
+</form>
+<p>
+  <script>
+alert("该脚本错误，没有封闭。"
+</script>
+</p>
+<table width="75%" border="0" align="center">
+  <tr>
+    <td>
+      <p>是否遇见过脚本错误的情况？由于访问者使用的浏览器并非都支持页面里的脚本，所以这种情况经常出现。一般会弹出一个非常难看的脚本运行错误警告窗口，灰蒙蒙的非常难看。</p>
+      <p>使用这个脚本，你完全可以控制这个窗口的外观样式，甚至里面的说明文字。</p>
+      <p>将如下脚本加入HTML的&lt;HEAD&gt;区最前面即可，不要在里面加入任何其它的代码。你可以自由改编外观样式，背景色和显示的文字内容。</p>
+      <p>&lt;script&gt; </p>
+      <p>function errorbox(){<br>
+        errorwindow=window.open(&quot;&quot;,&quot;&quot;,&quot;width=250,height=125&quot;)<br>
+        errorwindow.document.write('&lt;title&gt;脚本错误报告&lt;/title&gt;&lt;center&gt;该页面发现了脚本运行错误，请通知管理员。&lt;Br&gt;&lt;form&gt;&lt;input 
+        type=&quot;button&quot; value=&quot;关闭窗口&quot; onClick=&quot;window.close()&quot;&gt;&lt;/form&gt;&lt;/center&gt;')<br>
+        errorwindow.document.close()<br>
+        errorwindow.document.bgColor=&quot;#fff7f7&quot;<br>
+        return true<br>
+        }<br>
+        window.onerror=errorbox<br>
+        &lt;/script&gt;</p>
+      <p>本页面故意使用了一个错误的脚本，代码如下，很明显脚本不是封闭的，少一个“）”</p>
+      <p><font color="#3333FF">&lt;script&gt;<br>
+        alert(&quot;该脚本错误，没有封闭。&quot;<br>
+        &lt;/script&gt;</font></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

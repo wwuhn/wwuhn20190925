@@ -1,0 +1,230 @@
+<html>
+<head>
+<title>2000年日历</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+a:active {font-style:normal;text-decoration:none;color:yellow;}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="#009900" topmargin="0" leftmargin="0">
+<form name="form">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr bgcolor="#009900"> 
+      <td colspan="3" height="18">&nbsp; </td>
+    </tr>
+    <tr> 
+      <td bgcolor="#009900" width="18"></td>
+      <td align="center" bgcolor="#FFFFFF"> <br>
+        <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+          <tr> 
+            <td rowspan="2" width="16" valign="top"> 
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+                <tr bgcolor="#336699" bordercolor="#336699"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="24.htm">演<br>
+                    <br>
+                    示</a></strong></td>
+                </tr>
+                <tr bordercolor="#009900" bgcolor="#009900"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="24c.htm">源<br>
+                    代<br>
+                    码</a></strong></td>
+                </tr>
+              </table>
+            </td>
+            <td rowspan="2" width="8" bgcolor="#009900">&nbsp;</td>
+            <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#009900" valign="top"> 
+              <script language="JavaScript">
+<!--hide
+
+function view(form){
+msg=open("","DisplayWindow","status=1,left=0,top=0,height=320,width=790,");msg.document.write(form.code2.value);
+}
+function CodeOut(form){
+var     
+txt1="<html><title>效果演示</title><head></head><body onblur=window.close()  onmouseover=javascript:close()><font color=red>提醒：按F5刷新本页看下面效果。</font><br><br>";
+txt=""+form.a.value+""+form.b.value+""+form.c.value+"";
+txt+=""+form.d.value+""+form.e.value+""+form.f.value+"";
+txt+=""+form.g.value+""+form.h.value+""+form.i.value+"";
+txt2="</body></html>";
+	
+form.Code.value=txt;
+form.code2.value=txt1 + txt + txt2;
+}
+
+<!-->
+</script>
+              <input type="hidden" name="code2">
+              <div id="Layer1" style="position:absolute; width:207px; height:173px; z-index:1; visibility: hidden"> 
+                <textarea name="a" cols="40" rows="0" wrap="VIRTUAL"></textarea>
+                <textarea name="c" cols="40" rows="0" wrap="VIRTUAL"></textarea>
+                <textarea name="e" cols="40" rows="0" wrap="VIRTUAL"></textarea>
+                <textarea name="g" cols="40" rows="0" wrap="VIRTUAL"></textarea>
+                <textarea name="i" cols="40" rows="0" wrap="VIRTUAL"></textarea>
+              </div>
+              <br>
+              <b>2000年日历</b> 
+              <hr width="92%" size="1" align="center">
+              <table  cellspacing="0" cellpadding="0" width="81%">
+                <tr> 
+                  <td colspan="2" height="20">注释：放在&lt;body&gt;与&lt;/body&gt;之间</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <p> 
+                      <textarea name="Code" onFocus="this.select()" onMouseOver="this.focus()" cols="50" style="BACKGROUND-COLOR: #009900;" wrap="VIRTUAL" rows="16" class="pt9">&lt;script language=&quot;javascript&quot;&gt;
+&lt;!--
+// fill the month table with column headings
+function day_title(day_name){
+     document.write(&quot;&lt;TD ALIGN=center WIDTH=35&gt;&quot;+day_name+&quot;&lt;/TD&gt;&quot;)
+}
+
+// fills the month table with numbers
+
+function fill_table(month,month_length)
+
+{ 
+
+  day=1
+
+  // begin the new month table
+
+  document.write(&quot;&lt;TABLE BORDER=3 CELLSPACING=3 CELLPADDING=%3&gt;&lt;TR&gt;&quot;)
+
+  document.write(&quot;&lt;TD COLSPAN=7 ALIGN=center&gt;&lt;B&gt;&quot;+month+&quot;   &quot;+year+&quot;&lt;/B&gt;&lt;TR&gt;&quot;)
+
+  // column headings
+
+  
+  day_title(&quot;Mon&quot;)
+
+  day_title(&quot;Tue&quot;)
+
+  day_title(&quot;Wed&quot;)
+
+  day_title(&quot;Thu&quot;)
+
+  day_title(&quot;Fri&quot;)
+
+  day_title(&quot;Sat&quot;)
+  
+  day_title(&quot;Sun&quot;)
+
+  // pad cells before first day of month
+
+  document.write(&quot;&lt;/TR&gt;&lt;TR&gt;&quot;)
+
+  for (var i=1;i&lt;start_day;i++){
+
+        document.write(&quot;&lt;TD&gt;&quot;)
+
+  }
+
+  // fill the first week of days
+
+  for (var i=start_day;i&lt;8;i++){
+
+        document.write(&quot;&lt;TD ALIGN=center&gt;&quot;+day+&quot;&lt;/TD&gt;&quot;)
+
+        day++
+
+  }
+
+  document.write(&quot;&lt;TR&gt;&quot;)
+
+
+
+  // fill the remaining weeks
+
+  while (day &lt;= month_length) {
+
+     for (var i=1;i&lt;=7 &amp;&amp; day&lt;=month_length;i++){
+
+         document.write(&quot;&lt;TD ALIGN=center&gt;&quot;+day+&quot;&lt;/TD&gt;&quot;)
+
+         day++
+
+     }
+
+     document.write(&quot;&lt;/TR&gt;&lt;TR&gt;&quot;)
+
+     // the first day of the next month
+
+     start_day=i
+
+  }
+
+  document.write(&quot;&lt;/TR&gt;&lt;/TABLE&gt;&lt;BR&gt;&quot;)
+
+}
+
+// end hiding --&gt;
+
+&lt;/script&gt;
+                  &lt;script language=&quot;javascript&quot;&gt;
+
+// year
+
+year=2000
+
+// first day of the week of the new year
+
+today= new Date(&quot;January 1, &quot;+year)
+
+start_day = today.getDay() + 1   // starts with 0
+
+fill_table(&quot;January&quot;,31)
+
+fill_table(&quot;February&quot;,28)
+
+fill_table(&quot;March&quot;,31)
+
+fill_table(&quot;April&quot;,30)
+
+fill_table(&quot;May&quot;,31)
+
+fill_table(&quot;June&quot;,30)
+
+fill_table(&quot;July&quot;,31)
+
+fill_table(&quot;August&quot;,31)
+
+fill_table(&quot;September&quot;,30)
+
+fill_table(&quot;October&quot;,31)
+
+fill_table(&quot;November&quot;,30)
+
+fill_table(&quot;December&quot;,31)
+
+&lt;/script&gt;</textarea>
+                    
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr> 
+            <td height="20" class="white" bgcolor="#009900">&nbsp;</td>
+          </tr>
+        </table>
+        <br>
+      </td>
+      <td bgcolor="#009900" width="18"></td>
+    </tr>
+    <tr bgcolor="#009900"> 
+      <td></td>
+      <td align="center" height="35">&nbsp; </td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

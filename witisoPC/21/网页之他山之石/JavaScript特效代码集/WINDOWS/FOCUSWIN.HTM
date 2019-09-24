@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>窗口聚焦控制脚本 </title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script>
+function openpopup(){
+window.open("focuswin.htm","","width=200,height=200")
+window.open("focuswin2.htm","","width=200,height=100")
+} 
+</script>
+<style type="text/css">
+<!--
+body {  margin-top: 5px; font-family: "宋体"; font-size: 9pt}
+-->
+</style>
+<link rel="stylesheet" href="../../css_style/effect.css" type="text/css">
+</HEAD>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<center>
+</center>
+<form>
+  <div align="center"> <font size="3" color="#FF0033">窗口聚焦控制脚本 </font></div>
+</form>
+<table width="69%" border="0" align="center" class="normal" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td> 
+      <p><a href="#" onClick=openpopup()>测试：打开两个小窗口</a> </p>
+      </td>
+  </tr>
+  <tr>
+    <td>
+      <p>&nbsp;</p>
+      <p>我们都有这样的经验：打开多个窗口时，同时只有一个窗口是处于“聚焦状态”，或者说是处于“活动状态”，后打开的窗口总是处于聚焦状态。</p>
+      <p>能否让先打开的窗口或者任意一个比较重要的窗口聚焦呢？这对于你可能是非常重要的，因为该窗口内可能有你最想或最先让访问者看到的内容。那么，这里提供的脚本是非常简单而实用的。<br>
+        <br>
+        看看我是如何作的：<br>
+        首先，把下面的脚本加入页面(本页)HTML的&lt;head&gt; 区，控制弹出窗口的文件名和大小。本例先后弹出2个窗口。<br>
+        <br>
+        &lt;script language=&quot;javascript&quot;&gt;<br>
+        function openpopup(){<br>
+        window.open(&quot;focuswin.htm&quot;,&quot;&quot;,&quot;width=200,height=200&quot;)<br>
+        window.open(&quot;focuswin2.htm&quot;,&quot;&quot;,&quot;width=200,height=100&quot;)<br>
+        } <br>
+        &lt;/script&gt;</p>
+      <p>然后，将下面一行加入&lt;body&gt;区，呼叫窗口。注意：不呼叫上面的代码没有任何动静。这里用了一个小技巧“#”，因为&lt;a href=...&gt;并非指向一个真正的连接。用onclick事件呼叫上面定义的函数。<br>
+        <br>
+        &lt;a href=&quot;#&quot; onclick=openpopup()&gt;测试：打开两个小窗口&lt;/a&gt;</p>
+      <p> 下面的脚本是加入到任意想要聚焦的窗口的&lt;head&gt;区的：<br>
+        <br>
+        &lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;</p>
+      <p>&lt;!-- Begin<br>
+        var time = 10; // 时间控制（秒），每隔10秒就聚焦。<br>
+        function remind() {<br>
+        this.focus();<br>
+        var real = time * 1000;<br>
+        setTimeout(&quot;remind()&quot;,real);<br>
+        } <br>
+        remind();<br>
+        // End --&gt; <br>
+        &lt;/script&gt;</p>
+      <p>OK?就这么简单。</p>
+    </td>
+  </tr>
+</table>
+<p class="unnamed1">&nbsp;</p>
+</body>
+</html>

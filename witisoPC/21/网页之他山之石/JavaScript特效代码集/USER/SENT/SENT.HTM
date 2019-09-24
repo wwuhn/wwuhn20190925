@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<TITLE>显示当前页的路径 </TITLE>
+
+<script language="JavaScript">
+
+<!-- Begin
+var dir = location.href.substring(0,location.href.lastIndexOf('?')+1);
+var email = location.href.substring(dir.length,location.href.length+1);
+// End -->
+</script>
+
+<style type="text/css">
+<!--
+.unnamed1 {  font: 9pt "宋体"; text-decoration: none}
+-->
+</style></HEAD>
+
+<BODY>
+<div align="center"><BR>
+  <form>
+    <div align="center"> <font size="5" color="#FF0000">显示当前页的路径 </font></div>
+  </form>
+  <table width="69%" border="0">
+    <tr bgcolor="#FFFFCC"> 
+      <td height="21">当前页:<font color="red"> 
+        <script language="JavaScript">
+<!-- Begin
+document.write(email);
+// End -->
+</script>
+        </font></td>
+    </tr>
+    <tr> 
+      <td height="187"> 
+        <p>前言：现在许多朋友都喜欢用“帧”来安排页面的布局。诚然，使用FRAME的确使页面比较易于安排，但是不容忽视的一个问题是：许多初上网的朋友往往直接保存了FRAMESET页面，离线后看时却什么也没有。其实一个含有“帧”的页面，仅仅是一个框架，并非真正的页面，除非你将帧指向的所有页面都保存下来。</p>
+        <p>对于一个为用户考虑的webmaster来讲，网上的资料就要大家共享，否则你放在网上做什么？(有版权的除外)。所以页面要易于保存才行，人家花了大量的时间在你的站里下载了许多感兴趣的页面，拿回去后确发现是一大堆框架文件，下一次谁还再来呢？所以我很少使用框架来组织自己的网站。</p>
+        <p>下面的这个脚本就是对那些爱使用frame的朋友提供的，这个脚本能显示当前页面的路径(url)，这样访问者就可以按照这个URL下载它了。<br>
+          <br>
+          如下代码加入HTML的&lt;HEAD&gt;区：<br>
+          &lt;script language=&quot;JavaScript&quot;&gt;<br>
+          &lt;!-- Begin<br>
+          var dir = location.href.substring(0,location.href.lastIndexOf('?')+1);<br>
+          var email = location.href.substring(dir.length,location.href.length+1);<br>
+          // End --&gt;<br>
+          &lt;/script&gt;</p>
+        <p>如下代码加入HTML的&lt;HEAD&gt;区：<br>
+          &lt;script language=&quot;JavaScript&quot;&gt;<br>
+          &lt;!-- Begin<br>
+          document.write(email);<br>
+          // End --&gt;<br>
+          &lt;/script&gt;</p>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp; </p>
+</div>
+</body>
+</html>
+
+
+
+
+

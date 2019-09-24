@@ -1,0 +1,272 @@
+<html>
+<head>
+<title>涂格子</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+a:active {font-style:normal;text-decoration:none;color:yellow;}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="#009900" topmargin="0" leftmargin="0">
+<form name="form">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr bgcolor="#009900"> 
+      <td colspan="3" height="18">&nbsp; </td>
+    </tr>
+    <tr> 
+      <td bgcolor="#009900" width="18"></td>
+      <td align="center" bgcolor="#FFFFFF" valign="top"> <br>
+        <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+          <tr> 
+            <td rowspan="2" width="16" valign="top"> 
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+                <tr bgcolor="#336699" bordercolor="#336699"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="01.htm">演<br>
+                    <br>
+                    示</a></strong></td>
+                </tr>
+                <tr bordercolor="#009900" bgcolor="#009900"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="01c.htm">源<br>
+                    代<br>
+                    码</a></strong></td>
+                </tr>
+              </table>
+            </td>
+            <td rowspan="2" width="8" bgcolor="#009900">&nbsp;</td>
+            <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#009900" valign="top"> 
+              <b> </b><br>
+              <b>涂格子</b> 
+              <hr width="92%" size="1" align="center">
+              <table  cellspacing="0" cellpadding="0" width="81%">
+                <tr> 
+                  <td colspan="2" height="25">注释：放在&lt;head&gt;与&lt;/head&gt;之间</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <p> 
+                      <textarea name="head" onFocus="this.select()" onMouseOver="this.focus()" cols="50" style="BACKGROUND-COLOR: #009900;" wrap="VIRTUAL" class="pt9" rows="7">&lt;script&gt;
+function ShowMenu(bMenu) {
+document.all.idFinder.style.display = (bMenu) ? &quot;none&quot; : &quot;block&quot; 
+document.all.idMenu.style.display = (bMenu) ? &quot;block&quot; : &quot;none&quot;
+idML.className = (bMenu) ? &quot;cOn&quot; : &quot;cOff&quot;
+idRL.className = (bMenu) ? &quot;cOff&quot; : &quot;cOn&quot;
+return false
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+&lt;!--
+A.cOn {text-decoration:none;font-weight:bolder}
+#article {font: 12pt Verdana, geneva, arial, sans-serif;  background: white; color: black; padding: 10pt 15pt 0 5pt}
+#article P.start {text-indent: 0pt}
+#article P {margin-top:0pt;font-size:10pt;text-indent:12pt}
+#article #author {margin-bottom:5pt;text-indent:0pt;font-style: italic}
+#pageList P {padding-top:10pt}
+#article H3 {font-weight:bold}
+#article DL, UL, OL {font-size: 10pt}
+--&gt;
+&lt;/style&gt;
+&lt;script&gt;
+&lt;!--
+function addList(url,desc) {
+if ((navigator.appName==&quot;Netscape&quot;) || (parseInt(navigator.appVersion)&gt;=4)) {
+var w=window.open(&quot;&quot;,&quot;_IDHTML_LIST_&quot;,&quot;top=0,left=0,width=475,height=150,history=no,menubar=no,status=no,resizable=no&quot;)
+var d=w.document
+if (!w._init) {
+d.open()
+d.write(&quot;&lt;TITLE&gt;Loading...&lt;/TITLE&gt;&lt;EM&gt;Loading...&lt;/EM&gt;&quot;)
+d.close()
+d.location.replace(&quot;/assist/listing.asp?url=&quot;+escape(url)+&quot;&amp;desc=&quot;+escape(desc))  
+w.opener=self    
+window.status=&quot;Personal Assistant (Adding): &quot; + desc
+} else {
+window.status=w.addOption(url,desc)    
+w.focus()
+}
+}
+else
+alert(&quot;Your browser does not support the personal assistant.&quot;)
+return false
+}
+// --&gt;
+&lt;/script&gt;
+
+&lt;style&gt;
+    #board {cursor: default}    
+    #board TD {width: 25px; height: 25px; }
+  &lt;/style&gt;
+</textarea>
+                    
+                  </td>
+                </tr>
+                <tr> 
+                  <td height="25" colspan="2">注释：放在&lt;body&gt;与&lt;/body&gt;之间</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <textarea name="Code" onFocus="this.select()" onMouseOver="this.focus()" cols="50" wrap="VIRTUAL" style="BACKGROUND-COLOR: #009900;" class="pt9" rows="7">&lt;table border=&quot;1&quot; width=&quot;90%&quot;&gt;
+              &lt;tr&gt; 
+                &lt;td width=&quot;50%&quot; height=&quot;27&quot;&gt; 
+                  &lt;div align=&quot;right&quot;&gt; 
+                    &lt;table id=&quot;score&quot; border=&quot;0&quot; width=&quot;250&quot;&gt;
+                      &lt;tr&gt; 
+                        &lt;td width=&quot;45&quot; align=&quot;center&quot;&gt;移动: &lt;/td&gt;
+                        &lt;td id=&quot;moves&quot; width=&quot;37&quot;&gt;0&lt;/td&gt;
+                        &lt;td width=&quot;45&quot; align=&quot;center&quot;&gt;灯灭:&lt;/td&gt;
+                        &lt;td id=&quot;off&quot; width=&quot;37&quot;&gt;100&lt;/td&gt;
+                        &lt;td width=&quot;45&quot; align=&quot;center&quot;&gt;灯亮:&lt;/td&gt;
+                        &lt;td id=&quot;on&quot; width=&quot;37&quot;&gt;0&lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/div&gt;
+                &lt;/td&gt;
+                &lt;td width=&quot;50%&quot; height=&quot;27&quot;&gt; 
+                  &lt;div align=&quot;left&quot;&gt; 
+                    &lt;table width=&quot;185&quot;&gt;
+                      &lt;tr&gt; 
+                        &lt;td width=&quot;54&quot;&gt;大小: &lt;/td&gt;
+                        &lt;td width=&quot;31&quot;&gt; 
+                          &lt;input id=&quot;gameSize&quot; type=&quot;text&quot; value=&quot;10&quot; size=&quot;2&quot; name=&quot;text&quot;&gt;
+                        &lt;/td&gt;
+                        &lt;td width=&quot;97&quot;&gt; 
+                          &lt;input onClick=&quot;newGame()&quot; type=&quot;button&quot; value=&quot;开始游戏&quot; name=&quot;button&quot;&gt;
+                        &lt;/td&gt;
+                      &lt;/tr&gt;
+                    &lt;/table&gt;
+                  &lt;/div&gt;
+                &lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt; 
+                &lt;td colspan=&quot;2&quot; height=&quot;27&quot; align=&quot;center&quot;&gt;
+                  &lt;script&gt;
+    var size=10
+    var moves = 0
+    var off = size*2
+    var on = 0
+    var current = null
+    function doOver() {
+      if ((event.srcElement.tagName==&quot;TD&quot;) &amp;&amp; (current!=event.srcElement)) {
+        if (current!=null)
+          current.style.backgroundColor = current._background
+        event.srcElement._background = event.srcElement.style.backgroundColor
+        event.srcElement.style.backgroundColor = &quot;lightgrey&quot;
+        current = event.srcElement
+      }
+    }
+
+    function setColor(el) {
+      if ((el._background==&quot;&quot;) || (el._background==null)) {
+        el.style.backgroundColor = &quot;yellow&quot;
+        el._background = &quot;yellow&quot; 
+      } else {
+        el.style.backgroundColor = &quot;&quot;
+        el._background = &quot;&quot; 
+      }
+    }
+
+    function countLights() {
+      off = 0; on = 0
+      for (var x=0; x &lt; size; x++) 
+        for (var y=0; y &lt; size; y++) {
+          var p = board.rows[x].cells[y]
+          if (p._background==&quot;yellow&quot;)
+            on++
+          else
+            off ++
+        }
+        document.all.on.innerText = on
+      if (off!=0)     
+        document.all.off.innerText = off
+      else
+        document.all.off.innerText = &quot;You Win!&quot;
+      return (off==0)
+    }
+
+    function doClick() {
+      setColor(current)     
+      var cellIdx = current.cellIndex
+      var rowIdx = current.parentElement.rowIndex
+      if (rowIdx&gt;0) 
+        setColor(board.rows[rowIdx-1].cells[cellIdx])
+      if (rowIdx&lt;size-1)
+        setColor(board.rows[rowIdx+1].cells[cellIdx])
+      if (cellIdx&gt;0) 
+        setColor(board.rows[rowIdx].cells[cellIdx-1])
+      if (cellIdx&lt;size-1)
+        setColor(board.rows[rowIdx].cells[cellIdx+1])
+      moves++
+      document.all.moves.innerText = moves
+      win = countLights()
+      if (win) {
+        board.onclick = null
+        board.onmouseover = null
+        current.style.background = &quot;yellow&quot;
+      }
+    }
+
+    function buildBoard() {
+      var str = &quot;&lt;TABLE ID=board ONSELECTSTART=\&quot;return false\&quot; ONCLICK=\&quot;doClick()\&quot; ONMOUSEOVER=\&quot;doOver()\&quot; cellspacing=0 cellpadding=0 border=5&gt;&quot;
+      for (var x=0; x &lt; size; x++) {
+        str+=&quot;&lt;TR&gt;&quot;
+        for (var y=0; y &lt; size; y++) {
+          str+=&quot;&lt;TD&gt;&amp;nbsp;&lt;/TD&gt;&quot;
+        } 
+        str+=&quot;&lt;/TR&gt;&quot;
+      }
+      str+=&quot;&lt;/TABLE&gt;&quot;
+      return str
+    }
+
+    function newGame() {
+      size = document.all.gameSize.value
+      if (size&lt;3)
+        size=3
+      if (size&gt;15)
+        size=15
+      document.all.gameSize.value = size
+      document.all.board.outerHTML = buildBoard()
+      moves=0
+      document.all.moves.innerText = moves
+      countLights()
+ 
+    }
+    
+  &lt;/script&gt;
+&lt;script&gt;
+    document.write(buildBoard())
+  &lt;/script&gt;
+                 &lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt; 
+                &lt;td colspan=&quot;2&quot; height=&quot;27&quot;&gt;游戏提示：你能将方格全部填成绿色吗？？开动脑筋，看看有什么规律和技巧吧。&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/table&gt;</textarea>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr> 
+            <td height="20" class="white" bgcolor="#009900">&nbsp;</td>
+          </tr>
+        </table>
+        <br>
+      </td>
+      <td bgcolor="#009900" width="18"></td>
+    </tr>
+    <tr bgcolor="#009900"> 
+      <td></td>
+      <td align="center" height="35"> <font color="#FFFFFF"></font> </td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>全球搜索 </title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript">
+<!--
+function startSearch(){
+	searchString = document.searchForm.searchText.value;	
+	if(searchString != ""){
+		searchEngine = document.searchForm.whichEngine.selectedIndex + 1;
+		finalSearchString = "";
+
+		if(searchEngine == 1){
+			finalSearchString = "http://www.altavista.digital.com/cgi-bin/query?pg=q&what=web&fmt=.&q=" + searchString;
+		}
+		if(searchEngine == 2){
+			finalSearchString = "http://av.yahoo.com/bin/query?p=" + searchString + "&hc=0&hs=0";
+		}
+		if(searchEngine == 3){
+			finalSearchString = "http://www.excite.com/search.gw?trace=a&search=" + searchString;
+		}
+		if(searchEngine == 4){
+			finalSearchString = "http://www.hotbot.com/?SW=web&SM=MC&MT=" + searchString + "&DC=10&DE=2&RG=NA&_v=2&act.search.x=89&act.search.y=7";
+		}
+		if(searchEngine == 5){
+			finalSearchString = "http://www.infoseek.com/Titles?qt=" + searchString + "&col=WW&sv=IS&lk=noframes&nh=10";
+		}
+		if(searchEngine == 6){
+			finalSearchString = "http://www.lycos.com/cgi-bin/pursuit?adv=%26adv%3B&cat=lycos&matchmode=and&query=" + searchString + "&x=45&y=11";
+		}
+		if(searchEngine == 7){
+			finalSearchString = "http://netfind.aol.com/search.gw?search=" + searchString + "&c=web&lk=excite_netfind_us&src=1";
+		}
+
+		location.href = finalSearchString;
+	}
+}
+
+
+// -->
+</script>
+
+<style type="text/css">
+<!--
+.unnamed1 {  font: 9pt "宋体"; text-decoration: none}
+-->
+</style></head>
+
+<body bgcolor="#FFFFFF" background="../../../images/bg002.gif">
+<div align="center"></div>
+<form>
+  <div align="center"> <font size="5">综合的全球流行搜索引擎 </font></div>
+</form>
+<p>&nbsp;</p>
+<!--全球搜索器代码开始-->
+<form name="searchForm">
+  <table width=320 border cellpadding=3 cellspacing=2 bgcolor=444444 align="center">
+    <tr> 
+      <td bgcolor=lightblue>
+      Search for:<br>
+      <td bgcolor=lightblue>
+      Search from: 
+      <td bgcolor=lightblue>&nbsp; 
+    <tr> 
+      <td bgcolor=navajowhite height="45"> 
+        <input style="background: dddddd" name="searchText" type="text">
+      <td bgcolor=navajowhite height="45"> 
+        <select style="background: dddddd" name="whichEngine">
+          <option selected>Altavista 
+          <option>Yahoo! 
+          <option>Excite 
+          <option>Hotbot 
+          <option>Infoseek 
+          <option>Lycos 
+          <option>AOL Netfind 
+        </select>
+      <td bgcolor=navajowhite height="45"> 
+        <input type="button" value="Send" onClick="startSearch()" name="button">
+  </table>
+</form>
+<!--全球搜索器代码结束-->
+<!--一下是源代码显示代码-->
+<form>
+  <div align="center">
+    <center>
+      <p>
+        <input type="button" name="view" value="看看源码，详细注释" onClick="window.location=&quot;view-source:&quot;
++window.location.href" class="unnamed1">
+      </p>
+    </center>
+  </div>
+</form>
+<p>&nbsp;</p>
+</body>
+</html>

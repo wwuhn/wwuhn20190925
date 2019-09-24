@@ -1,0 +1,248 @@
+<HTML> 
+<TITLE>cookies和问候信息 </TITLE>
+<style type="text/css">
+<!--
+.unnamed1 {  font-family: "宋体"; font-size: 9pt; text-decoration: none}
+td { font-family: "宋体"; font-size: 9pt; text-decoration: none }
+-->
+</style></head>
+<BODY background="../../../images/bg011.gif">
+<form>
+  <div align="center"> <font size="5" color="#FF0000">显示来访次数及不同的信息提示</font></div>
+</form>
+<table width="75%" border="0" align="center">
+  <tr bgcolor="bisque"> 
+    <td> 
+      <script language="JavaScript">
+
+<!-- Hide this script from old browsers --
+
+function getCookieVal (offset) 
+
+   {
+
+   var endstr = document.cookie.indexOf (";", offset);
+
+   if (endstr == -1)
+
+      endstr = document.cookie.length;
+
+   return unescape(document.cookie.substring(offset, endstr));
+
+   }
+
+function GetCookie (name) 
+
+   {
+
+   var arg = name + "=";
+
+   var alen = arg.length;
+
+   var clen = document.cookie.length;
+
+   var i = 0;
+
+   while (i < clen) 
+
+      {
+
+      var j = i + alen;
+
+      if (document.cookie.substring(i, j) == arg)
+
+         return getCookieVal (j);
+
+      i = document.cookie.indexOf(" ", i) + 1;
+
+      if (i == 0) 
+
+         break; 
+
+      }
+
+   return null;
+
+   }
+
+function SetCookie (name, value) 
+
+   {
+
+   var argv = SetCookie.arguments;
+
+   var argc = SetCookie.arguments.length;
+
+   var expires = (2 < argc) ? argv[2] : null;
+
+   var path = (3 < argc) ? argv[3] : null;
+
+   var domain = (4 < argc) ? argv[4] : null;
+
+   var secure = (5 < argc) ? argv[5] : false;
+
+   document.cookie = name + "=" + escape (value) +
+
+     ((expires == null) ? "" : ("; expires=" + expires.toGMTString())) +
+
+     ((path == null) ? "" : ("; path=" + path)) +
+
+     ((domain == null) ? "" : ("; domain=" + domain)) +
+
+        ((secure == true) ? "; secure" : "");
+
+   }
+
+
+
+function ResetCounts(name) 
+
+   {
+
+   visits = 0;
+
+   SetCookie("visits", visits, expdate , "/", null, false);
+
+   location.reload();
+
+   }
+
+// -- End Hiding Here -->
+
+</script>
+      <script language="JavaScript">
+
+<!-- Hide this script from old browsers --
+
+var expdate = new Date();
+
+var visits;
+
+// Set expiration date to a year from now.
+
+expdate.setTime(expdate.getTime() +  (24 * 60 * 60 * 1000 * 365)); 
+
+if(!(visits = GetCookie("visits"))) 
+
+   visits = 0;
+
+visits++;
+
+SetCookie("visits", visits, expdate, "/", null, false);
+
+document.write("你已经光临本页"+"<FONT COLOR=red>"+visits+"</FONT>"+"次！");
+
+   if(visits == 1) 
+
+      document.write("<br>"+"欢迎光临本站，觉得本站内容如何？");
+
+   if(visits == 2) 
+
+      document.write("<br>"+"再次光临不胜容幸!今后要常来啊！欢迎订阅本站邮件列表。");
+
+   if(visits == 3) 
+
+      document.write("<br>"+"常客，在本站的论坛发个帖子如何？");
+
+   if(visits == 4) 
+
+      document.write("<br>"+"你这个疯子!");
+
+   if(visits >= 5) 
+
+      document.write("<br>"+"疯狂的家伙!我真的非常喜欢你。");
+
+
+// -- End Hiding Here -->
+
+</script>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>如下代码HTML的&lt;BODY&gt;区:</p>
+      <p>&lt;script language=&quot;JavaScript&quot;&gt; </p>
+      <p>&lt;!-- Hide this script from old browsers --</p>
+      <p>function getCookieVal (offset) </p>
+      <p> {</p>
+      <p> var endstr = document.cookie.indexOf (&quot;;&quot;, offset);</p>
+      <p> if (endstr == -1)</p>
+      <p> endstr = document.cookie.length;</p>
+      <p> return unescape(document.cookie.substring(offset, endstr));</p>
+      <p> }</p>
+      <p>function GetCookie (name) </p>
+      <p> {</p>
+      <p> var arg = name + &quot;=&quot;;</p>
+      <p> var alen = arg.length;</p>
+      <p> var clen = document.cookie.length;</p>
+      <p> var i = 0;</p>
+      <p> while (i &lt; clen) </p>
+      <p> {</p>
+      <p> var j = i + alen;</p>
+      <p> if (document.cookie.substring(i, j) == arg)</p>
+      <p> return getCookieVal (j);</p>
+      <p> i = document.cookie.indexOf(&quot; &quot;, i) + 1;</p>
+      <p> if (i == 0) </p>
+      <p> break; </p>
+      <p> }</p>
+      <p> return null;</p>
+      <p> }</p>
+      <p>function SetCookie (name, value) </p>
+      <p> {</p>
+      <p> var argv = SetCookie.arguments;</p>
+      <p> var argc = SetCookie.arguments.length;</p>
+      <p> var expires = (2 &lt; argc) ? argv[2] : null;</p>
+      <p> var path = (3 &lt; argc) ? argv[3] : null;</p>
+      <p> var domain = (4 &lt; argc) ? argv[4] : null;</p>
+      <p> var secure = (5 &lt; argc) ? argv[5] : false;</p>
+      <p> document.cookie = name + &quot;=&quot; + escape (value) +</p>
+      <p> ((expires == null) ? &quot;&quot; : (&quot;; expires=&quot; + expires.toGMTString())) 
+        +</p>
+      <p> ((path == null) ? &quot;&quot; : (&quot;; path=&quot; + path)) +</p>
+      <p> ((domain == null) ? &quot;&quot; : (&quot;; domain=&quot; + domain)) 
+        +</p>
+      <p> ((secure == true) ? &quot;; secure&quot; : &quot;&quot;);</p>
+      <p> }</p>
+      <p></p>
+      <p>function ResetCounts(name) </p>
+      <p> {</p>
+      <p> visits = 0;</p>
+      <p> SetCookie(&quot;visits&quot;, visits, expdate , &quot;/&quot;, null, 
+        false);</p>
+      <p> location.reload();</p>
+      <p> }</p>
+      <p>// -- End Hiding Here --&gt;</p>
+      <p>&lt;/script&gt;<br>
+        <br>
+        &lt;script language=&quot;JavaScript&quot;&gt;</p>
+      <p>&lt;!-- Hide this script from old browsers --</p>
+      <p>var expdate = new Date();</p>
+      <p>var visits;</p>
+      <p>//以下设置COOKIES时间为1年,自己随便设置该时间..</p>
+      <p>expdate.setTime(expdate.getTime() + (24 * 60 * 60 * 1000 * 365)); </p>
+      <p>if(!(visits = GetCookie(&quot;visits&quot;))) </p>
+      <p> visits = 0;</p>
+      <p>visits++;</p>
+      <p>SetCookie(&quot;visits&quot;, visits, expdate, &quot;/&quot;, null, false);</p>
+      <p>//以下信息显示可以使用标准的HTML语法,自己随便设置。</p>
+      <p>document.write(&quot;你已经光临本页&quot;+&quot;&lt;FONT COLOR=red&gt;&quot;+visits+&quot;&lt;/FONT&gt;&quot;+&quot;次！&quot;);</p>
+      <p> if(visits == 1) //来访1次的信息显示</p>
+      <p> document.write(&quot;&lt;br&gt;&quot;+&quot;欢迎光临本站，觉得本站内容如何？&quot;);</p>
+      <p> if(visits == 2) //来访2次的信息显示，以下类推，自己随便增加。</p>
+      <p> document.write(&quot;&lt;br&gt;&quot;+&quot;再次光临不胜容幸!今后要常来啊！欢迎订阅本站邮件列表。&quot;);</p>
+      <p> if(visits == 3) </p>
+      <p> document.write(&quot;&lt;br&gt;&quot;+&quot;常客，在本站的论坛发个帖子如何？&quot;);</p>
+      <p> if(visits == 4) </p>
+      <p> document.write(&quot;&lt;br&gt;&quot;+&quot;你这个疯子!&quot;);</p>
+      <p> if(visits &gt;= 5) </p>
+      <p> document.write(&quot;&lt;br&gt;&quot;+&quot;疯狂的家伙!我真的非常喜欢你。&quot;);</p>
+      <p><br>
+        // -- End Hiding Here --&gt;</p>
+      <p>&lt;/script&gt;</p>
+    </td>
+  </tr>
+</table>
+<P align="center"> 
+</body>
+</html>
+

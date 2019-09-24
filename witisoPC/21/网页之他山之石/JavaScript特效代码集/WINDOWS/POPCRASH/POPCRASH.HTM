@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>浏览器毁灭者</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript">
+
+<!---hide---
+
+function pop(){
+
+            for(i=1;i<=3;i++){
+
+                 window.open('page.htm','','width=60,height=60','status=off','location=off','toolbar=off','scrollbars=off')}}
+
+//--->
+
+</script>
+<style type="text/css">
+<!--
+.unnamed1 {  font: 11pt "宋体"; text-decoration: none}
+-->
+</style></head>
+
+<body bgcolor="#FFFFFF">
+<form name="form">
+  <div align="center">
+    <p> <font size="5" color="#FF0000">浏览器毁灭者－请小心使用！</font></p>
+    <p> 
+      <input type="button" value="测试:一点击就打开3个60*60的小窗口" onClick="pop()" name="button" class="unnamed1">
+    </p>
+  </div>
+</form>
+
+<table width="79%" border="0" align="center">
+  <tr valign="top"> 
+    <td>源代码如下：<br>
+      &lt;html&gt;<br>
+      &lt;head&gt;<br>
+      &lt;title&gt;&lt;/title&gt;<br>
+      &lt;script language=&quot;JavaScript&quot;&gt; <br>
+      &lt;!---hide--- <br>
+      function pop(){ <br>
+      for(i=1;i&lt;=<font color="#FF0000">3</font>;i++)<br>
+      {<br>
+      window.open('<font color="#FF0000">page.htm</font>','','width=60,height=60','status=off','location=off',<br>
+      'toolbar=off','scrollbars=off')<br>
+      }<br>
+      } <br>
+      //---&gt; <br>
+      &lt;/script&gt;<br>
+      &lt;/head&gt; <br>
+      <br>
+      &lt;body&gt;<br>
+      &lt;form name=&quot;form&quot;&gt;<br>
+      &lt;input type=&quot;button&quot; value=&quot;测试:打开3个60*60的小窗口&quot; onClick=&quot;pop()&quot; 
+      name=&quot;button&quot;&gt;<br>
+      &lt;/form&gt;<br>
+      &lt;/body&gt;<br>
+      &lt;/html&gt;
+      <p>说明:不正当的使用会造成系统资源的耗尽。如果你将源代码稍微改一下，将&lt;body&gt;改成&lt;body onload=pop()&gt;，同时又将for(i=1;i&lt;=<font color="#FF0000">3</font>;i++) 
+        中的打开窗口数目修改得非常大(例如：99999999999999999999)。(此时form表单就不需要了)那么，只要一打开含有该脚本的HTML后，无数的窗口会被打开，直至吃尽你的内存。</p>
+      <p>千万不要给别人发这样的缺德邮件，本例只在于介绍此类脚本的语句写法。</p>
+      </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

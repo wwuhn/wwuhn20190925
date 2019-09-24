@@ -1,0 +1,340 @@
+<html>
+<head>
+<title>链接注释框</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="11.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="11c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><br>
+            <b>链接注释框</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="40" valign="top">提示：</td>
+                <td> 将鼠标放在下面表格的超链接上。<br>
+                  <div id=overDiv style="LEFT: 20px; POSITION: absolute; Z-INDEX: 1; visibility: hidden; top: 64px" 42px;37px 
+14px;top:2px> </div>
+                  <script language=JavaScript>
+
+// Main background color (the large area)
+// Usually a bright color (white, yellow etc)
+	if (typeof fcolor == 'undefined') { var fcolor = "#FFFFFF";}
+	
+// Border color and color of caption
+// Usually a dark color (black, brown etc)
+	if (typeof backcolor == 'undefined') { var backcolor = "#0000FF";}
+	
+	
+// Text color
+// Usually a dark color
+	if (typeof textcolor == 'undefined') { var textcolor = "#000000";}
+	
+// Color of the caption text
+// Usually a bright color
+	if (typeof capcolor == 'undefined') { var capcolor = "#FFFF00";}
+	
+// Color of "Close" when using Sticky
+// Usually a semi-bright color
+	if (typeof closecolor == 'undefined') { var closecolor = "#9999FF";}
+	
+	
+// Width of the popups in pixels
+// 100-300 pixels is typical
+	if (typeof width == 'undefined') { var width = "200";}
+	
+// How thick the border should be in pixels
+// 1-3 pixels is typical
+	if (typeof border == 'undefined') { var border = "1";}
+	
+	
+// How many pixels to the right/left of the cursor to show the popup
+// Values between 3 and 12 are best
+	if (typeof offsetx == 'undefined') { var offsetx = 10;}
+	
+// How many pixels to the below the cursor to show the popup
+// Values between 3 and 12 are best
+	if (typeof offsety == 'undefined') { var offsety = 10;}
+	
+////////////////////////////////////////////////////////////////////////////////////
+// END CONFIGURATION
+////////////////////////////////////////////////////////////////////////////////////
+
+ns4 = (document.layers)? true:false
+ie4 = (document.all)? true:false
+
+// Microsoft Stupidity Check.
+if (ie4) {
+	if (navigator.userAgent.indexOf('MSIE 5')>0) {
+		ie5 = true;
+	} else {
+		ie5 = false; }
+} else {
+	ie5 = false;
+}
+
+var x = 0;
+var y = 0;
+var snow = 0;
+var sw = 0;
+var cnt = 0;
+var dir = 1;
+var tr = 1;
+if ( (ns4) || (ie4) ) {
+	if (ns4) over = document.overDiv
+	if (ie4) over = overDiv.style
+	document.onmousemove = mouseMove
+	if (ns4) document.captureEvents(Event.MOUSEMOVE)
+}
+
+// Public functions to be used on pages.
+
+// Simple popup right
+function drs(text) {
+	dts(1,text);
+}
+
+// Caption popup right
+function drc(text, title) {
+	dtc(1,text,title);
+}
+
+// Sticky caption right
+function src(text,title) {
+	stc(1,text,title);
+}
+
+// Simple popup left
+function dls(text) {
+	dts(0,text);
+}
+
+// Caption popup left
+function dlc(text, title) {
+	dtc(0,text,title);
+}
+
+// Sticky caption left
+function slc(text,title) {
+	stc(0,text,title);
+}
+
+// Simple popup center
+function dcs(text) {
+	dts(2,text);
+}
+
+// Caption popup center
+function dcc(text, title) {
+	dtc(2,text,title);
+}
+
+// Sticky caption center
+function scc(text,title) {
+	stc(2,text,title);
+}
+
+// Clears popups if appropriate
+function nd() {
+	if ( cnt >= 1 ) { sw = 0 };
+	if ( (ns4) || (ie4) ) {
+		if ( sw == 0 ) {
+			snow = 0;
+			hideObject(over);
+		} else {
+			cnt++;
+		}
+	}
+}
+
+// Non public functions. These are called by other functions etc.
+
+// Simple popup
+function dts(d,text) {
+	txt = "<TABLE WIDTH="+width+" BORDER=0 CELLPADDING="+border+" CELLSPACING=0 BGCOLOR=\""+backcolor+"\"><TR><TD><TABLE WIDTH=100% BORDER=0 CELLPADDING=2 CELLSPACING=0 BGCOLOR=\""+fcolor+"\"><TR><TD><FONT FACE=\"Arial,Helvetica\" COLOR=\""+textcolor+"\" SIZE=\"-2\">"+text+"</FONT></TD></TR></TABLE></TD></TR></TABLE>"
+	layerWrite(txt);
+	dir = d;
+	disp();
+}
+
+// Caption popup
+function dtc(d,text, title) {
+	txt = "<TABLE WIDTH="+width+" BORDER=0 CELLPADDING="+border+" CELLSPACING=0 BGCOLOR=\""+backcolor+"\"><TR><TD><TABLE WIDTH=100% BORDER=0 CELLPADDING=0 CELLSPACING=0><TR><TD><SPAN ID=\"PTT\"><FONT COLOR=\""+capcolor+"\">"+title+"</FONT></SPAN></TD></TR></TABLE><TABLE WIDTH=100% BORDER=0 CELLPADDING=2 CELLSPACING=0 BGCOLOR=\""+fcolor+"\"><TR><TD><SPAN ID=\"PST\"><FONT COLOR=\""+textcolor+"\">"+text+"</FONT><SPAN></TD></TR></TABLE></TD></TR></TABLE>"
+	layerWrite(txt);
+	dir = d;
+	disp();
+}
+
+// Sticky
+function stc(d,text, title) {
+	sw = 1;
+	cnt = 0;
+	txt = "<TABLE WIDTH="+width+" BORDER=0 CELLPADDING="+border+" CELLSPACING=0 BGCOLOR=\""+backcolor+"\"><TR><TD><TABLE WIDTH=100% BORDER=0 CELLPADDING=0 CELLSPACING=0><TR><TD><SPAN ID=\"PTT\"><FONT COLOR=\""+capcolor+"\">"+title+"</FONT></SPAN></TD><TD ALIGN=RIGHT><A HREF=\"/\" onMouseOver=\"cClick();\" ID=\"PCL\"><FONT COLOR=\""+closecolor+"\">Close</FONT></A></TD></TR></TABLE><TABLE WIDTH=100% BORDER=0 CELLPADDING=2 CELLSPACING=0 BGCOLOR=\""+fcolor+"\"><TR><TD><SPAN ID=\"PST\"><FONT COLOR=\""+textcolor+"\">"+text+"</FONT><SPAN></TD></TR></TABLE></TD></TR></TABLE>"
+	layerWrite(txt);
+	dir = d;
+	disp();
+	snow = 0;
+}
+
+// Common calls
+function disp() {
+	if ( (ns4) || (ie4) ) {
+		if (snow == 0) 	{
+			if (dir == 2) { // Center
+				moveTo(over,x+offsetx-(width/2),y+offsety);
+			}
+			if (dir == 1) { // Right
+				moveTo(over,x+offsetx,y+offsety);
+			}
+			if (dir == 0) { // Left
+				moveTo(over,x-offsetx-width,y+offsety);
+			}
+			showObject(over);
+			snow = 1;
+		}
+	}
+// Here you can make the text goto the statusbar.
+}
+
+// Moves the layer
+function mouseMove(e) {
+	if (ns4) {x=e.pageX; y=e.pageY;}
+	if (ie4) {x=event.x; y=event.y;}
+	if (ie5) {x=event.x+document.body.scrollLeft; y=event.y+document.body.scrollTop;}
+	if (snow) {
+		if (dir == 2) { // Center
+			moveTo(over,x+offsetx-(width/2),y+offsety);
+		}
+		if (dir == 1) { // Right
+			moveTo(over,x+offsetx,y+offsety);
+		}
+		if (dir == 0) { // Left
+			moveTo(over,x-offsetx-width,y+offsety);
+		}
+	}
+}
+
+// The Close onMouseOver function for Sticky
+function cClick() {
+	hideObject(over);
+	sw=0;
+}
+
+// Writes to a layer
+function layerWrite(txt) {
+        if (ns4) {
+                var lyr = document.overDiv.document
+                lyr.write(txt)
+                lyr.close()
+        }
+        else if (ie4) document.all["overDiv"].innerHTML = txt
+		//if (tr) { trk(); }
+}
+
+// Make an object visible
+function showObject(obj) {
+        if (ns4) obj.visibility = "show"
+        else if (ie4) obj.visibility = "visible"
+}
+
+// Hides an object
+function hideObject(obj) {
+        if (ns4) obj.visibility = "hide"
+        else if (ie4) obj.visibility = "hidden"
+}
+
+// Move a layer
+function moveTo(obj,xL,yL) {
+        obj.left = xL
+        obj.top = yL
+}
+
+//function trk() {
+//	if ( (ns4) || (ie4) ) {
+//			nt=new Image(32,32); nt.src="../../../www.nedstat.nl/cgi-bin/nedstat.gif縩ame=ol2t";
+//			bt=new Image(1,1); bt.src="../../../www.bosrup.com/web/overlib/o2/tr.gif";
+//			refnd=new Image(1,1); refnd.src="../../../www.nedstat.nl/cgi-bin/referstat.gif縩ame=ol2t&refer="+escape(top.document.referrer);
+//			
+//	}
+//	tr = 0;
+//}
+</script>
+                  <br>
+                  <br>
+                  <table border=1 
+                        cellpadding=0 cellspacing=1 width="195" align="center">
+                    <tbody> 
+                    <tr align="center"> 
+                      <td height=26 width="83%"><a 
+                              href="#" 
+                              onMouseOut="nd();return true;" 
+                              onMouseOver="drc('　超级引擎内集合了十多个中外有名的搜索引擎，让你可以不必多次输入关键字和进入各大搜索网站，就能很快完成你的工作。。','超级引擎');return true;"><font color="#000000">超级引擎</font></a> 
+                    <tr align="center"> 
+                      <td width="83%" height="26"><a 
+                              href="#" 
+                              onMouseOut="nd();return true;" 
+                              onMouseOver="drc('　你在做网站时难道不想让你的网站更加吸引人么？你的定答案一定想，那么你就一定要用特效啦。','网页特效');return true;"><font color="#000000">网页特效</font></a> 
+                    <tr align="center"> 
+                      <td height="26" width="83%"><a 
+                              href="#" 
+                              onMouseOut="nd();return true;" 
+                              onMouseOver="drc('　假如你建了一网站，却不知道它被访问的状况，我想一定会感到很悲哀，那就快快行动，来注册一个访问统计吧！) ','访问统计');return true;"><font color="#000000">访问统计</font></a> 
+                    </tbody> 
+                  </table>
+                  <br>
+                  <br>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white"  bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr bgcolor="#336699"> 
+    <td></td>
+    <td align="center" height="35">&nbsp; </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

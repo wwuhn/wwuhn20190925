@@ -1,0 +1,197 @@
+<html>
+<head>
+<title>2000年日历</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="24.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="24c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><br>
+            <b>2000年日历</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="40" valign="top">提示：</td>
+                <td valign="top">下面是2000年1－12月的日历。<br>
+                  <br>
+                  <script language="javascript">
+<!--
+// fill the month table with column headings
+function day_title(day_name){
+     document.write("<TD ALIGN=center WIDTH=35>"+day_name+"</TD>")
+}
+
+// fills the month table with numbers
+
+function fill_table(month,month_length)
+
+{ 
+
+  day=1
+
+  // begin the new month table
+
+  document.write("<TABLE BORDER=3 CELLSPACING=3 CELLPADDING=%3><TR>")
+
+  document.write("<TD COLSPAN=7 ALIGN=center><B>"+month+"   "+year+"</B><TR>")
+
+  // column headings
+
+  
+  day_title("Mon")
+
+  day_title("Tue")
+
+  day_title("Wed")
+
+  day_title("Thu")
+
+  day_title("Fri")
+
+  day_title("Sat")
+  
+  day_title("Sun")
+
+  // pad cells before first day of month
+
+  document.write("</TR><TR>")
+
+  for (var i=1;i<start_day;i++){
+
+        document.write("<TD>")
+
+  }
+
+  // fill the first week of days
+
+  for (var i=start_day;i<8;i++){
+
+        document.write("<TD ALIGN=center>"+day+"</TD>")
+
+        day++
+
+  }
+
+  document.write("<TR>")
+
+
+
+  // fill the remaining weeks
+
+  while (day <= month_length) {
+
+     for (var i=1;i<=7 && day<=month_length;i++){
+
+         document.write("<TD ALIGN=center>"+day+"</TD>")
+
+         day++
+
+     }
+
+     document.write("</TR><TR>")
+
+     // the first day of the next month
+
+     start_day=i
+
+  }
+
+  document.write("</TR></TABLE><BR>")
+
+}
+
+// end hiding -->
+
+</script>
+                  <script language="javascript">
+
+// year
+
+year=2000
+
+// first day of the week of the new year
+
+today= new Date("January 1, "+year)
+
+start_day = today.getDay() + 1   // starts with 0
+
+fill_table("January",31)
+
+fill_table("February",28)
+
+fill_table("March",31)
+
+fill_table("April",30)
+
+fill_table("May",31)
+
+fill_table("June",30)
+
+fill_table("July",31)
+
+fill_table("August",31)
+
+fill_table("September",30)
+
+fill_table("October",31)
+
+fill_table("November",30)
+
+fill_table("December",31)
+
+</script>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

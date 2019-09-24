@@ -1,0 +1,184 @@
+<html>
+<head>
+<title>变换图形</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="08.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="08c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><br>
+            <b>变换图形</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="40" valign="top">提示：</td>
+                <td> 看下面的图形，会自动变换，共有三张循环，并且每张图片的链接地址都不同。<br>
+                  <br>
+                  <script language="JavaScript">
+<!--
+
+function getCookieVal (offset) {
+  var endstr = document.cookie.indexOf (";", offset);
+  if (endstr == -1)
+    endstr = document.cookie.length;
+  return unescape(document.cookie.substring(offset, endstr));  }
+
+function FixCookieDate (date) {
+  var base = new Date(0);
+  var skew = base.getTime(); // dawn of (Unix) time - should be 0
+  if (skew > 0)  // Except on the Mac - ahead of its time
+    date.setTime (date.getTime() - skew);  }
+
+function GetCookie (name) {
+  var arg = name + "=";
+  var alen = arg.length;
+  var clen = document.cookie.length;
+  var i = 0;
+  while (i < clen) {
+    var j = i + alen;
+    if (document.cookie.substring(i, j) == arg)
+      return getCookieVal (j);
+	i = document.cookie.indexOf(" ", i) + 1;
+    if (i == 0) break; }
+  return null;   }  
+
+//  assign expiration date variable for cookie
+
+var expdate = new Date ();
+FixCookieDate(expdate); 
+expdate.setTime(expdate.getTime() + (5 * 60 * 1000)) // 5 minutes  
+
+//  initialize countimg variable to track images
+countimg = (GetCookie("countimg") != null) ? (GetCookie("countimg")-1) : -1
+countimg = (countimg <-1) ? -1 : countimg
+IMGArray = new Array(3)
+
+if (document.images) {
+	IMGArray[0] = new Image(205,56)
+	IMGArray[1] = new Image(205,56)
+	IMGArray[2] = new Image(205,56) 	 }
+
+//	Old browsers get an array of empty strings
+
+else {
+	IMGArray[0] = ""
+	IMGArray[1] = ""
+	IMGArray[2] = "" 						}
+
+IMGArray[0].src = "../pic/pic01.gif"
+IMGArray[0].URL = "http://www.netease.com/"
+IMGArray[1].src = "../pic/pic02.gif"
+IMGArray[1].URL = "http://www.yahoo.com.cn/"
+IMGArray[2].src = "../pic/pic03.gif"
+IMGArray[2].URL = "http://www.263.net/"
+
+
+function updateIM(countimg) { return countimg; }
+
+//  functions for onMouseOver, onMouseOut, onClick event handlers
+
+function Overhref2() { updateIM(countimg)
+	if (IMGArray[countimg] != null ) { 
+	window.status = IMGArray[countimg].URL; return true; }}
+
+function Outhref2() { window.status = ""; return true; }
+
+function clickhref2() { updateIM(countimg)
+	if (IMGArray[countimg] != null ) { 
+	location = IMGArray[countimg].URL }}
+
+//  Image swapping function
+
+function showIMAGE() { updateIM(countimg++)
+
+if (document.images) {
+
+//	Make sure countimg does'nt get too big
+
+	if ( countimg > IMGArray.length - 1 ) { countimg = IMGArray.length - IMGArray.length }
+
+	document.images.banner.src = IMGArray[countimg].src 
+	exbannerID = setTimeout("showIMAGE()",2500) }}
+
+
+function setIt2() { updateIM(countimg)
+	document.cookie = "countimg=" + countimg + "; expires=" + expdate.toGMTString()  }
+
+//  get cookie countimg onblur, onload
+
+function getIt2() { 
+	countimg = (GetCookie("countimg") != null) ? (GetCookie("countimg")) : 0
+	updateIM(countimg)
+	if (exbannerID != null) { clearTimeout(exbannerID); showIMAGE() }}
+
+function initCOOKIES() {
+
+window.onunload = setIt2
+window.onfocus = getIt2
+window.onblur = setIt2 	}
+
+function initBANNER() {
+	
+	showIMAGE() 
+	cookieID = setTimeout("initCOOKIES()",1000) }
+
+window.onload = initBANNER
+
+// -->
+</script>
+                  <a href="" onClick="clickhref2()" onMouseOver="Overhref2();return true;" onMouseOut="Outhref2;return true;"><img src="" name="banner" border="0" ></a> 
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

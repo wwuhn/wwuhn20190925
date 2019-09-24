@@ -1,0 +1,138 @@
+<html>
+<head>
+<title>按钮时钟</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+a:active {font-style:normal;text-decoration:none;color:yellow;}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="#009900" topmargin="0" leftmargin="0">
+<form name="form">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr bgcolor="#009900"> 
+      <td colspan="3" height="18">&nbsp; </td>
+    </tr>
+    <tr> 
+      <td bgcolor="#009900" width="18"></td>
+      <td align="center" bgcolor="#FFFFFF"> <br>
+        <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+          <tr> 
+            <td rowspan="2" width="16" valign="top"> 
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+                <tr bgcolor="#336699" bordercolor="#336699"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="25.htm">演<br>
+                    <br>
+                    示</a></strong></td>
+                </tr>
+                <tr bordercolor="#009900" bgcolor="#009900"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="25c.htm">源<br>
+                    代<br>
+                    码</a></strong></td>
+                </tr>
+              </table>
+            </td>
+            <td rowspan="2" width="8" bgcolor="#009900">&nbsp;</td>
+            <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#009900" valign="top"> 
+              <br>
+              <b>按钮时钟</b> 
+              <hr width="92%" size="1" align="center">
+              <table  cellspacing="0" cellpadding="0" width="81%">
+                <tr> 
+                  <td colspan="2" height="20">注释：放在＜body****＞里 </td>
+                </tr>
+                <tr> 
+                  <td colspan="2" height="20"> 
+                    <input type="text" name="body" onFocus="this.select()" onMouseOver="this.focus()" size="50" style="BACKGROUND-COLOR: #009900;" class="pt9" value="onLoad=&quot;startclock ()&quot;">
+                  </td>
+                </tr>
+                <tr> 
+                  <td colspan="2" height="20">注释：放在&lt;body&gt;与&lt;/body&gt;之间</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <p> 
+                      <textarea name="Code" onFocus="this.select()" onMouseOver="this.focus()" cols="50" style="BACKGROUND-COLOR: #009900;" wrap="VIRTUAL" rows="13" class="pt9">&lt;script language=&quot;JavaScript&quot;&gt;
+var timerID = null;
+var timerRunning = false;
+// Called by both onLoad in BODY tag, and Resume button.
+function startclock () 
+   {
+   // Make sure the clock is stopped
+   stopclock();
+   time();
+   }
+// Kills clock.
+function stopclock ()
+   {
+   if(timerRunning)
+      clearTimeout(timerID);
+   timerRunning = false;
+   }
+function time ()
+   {
+   var now = new Date();
+   var yr = now.getYear();
+   var mName = now.getMonth() + 1;
+   var dName = now.getDay() + 1;
+   var dayNr = ((now.getDate()&lt;10) ? &quot;0&quot; : &quot;&quot;)+ now.getDate();
+   var ampm = (now.getHours() &gt;= 12) ? &quot; P.M.&quot; : &quot; A.M.&quot;
+   var hours = now.getHours();
+         hours = ((hours &gt; 12) ? hours - 12 : hours);
+   var minutes = ((now.getMinutes() &lt; 10) ? &quot;:0&quot; : &quot;:&quot;) + now.getMinutes();
+   var seconds = ((now.getSeconds() &lt; 10) ? &quot;:0&quot; : &quot;:&quot;) + now.getSeconds();
+  
+   // String to display current date.
+   var DayDateTime=(
+       + hours
+       + minutes
+       + seconds
+       + ampm);
+   // Displays Day-Date-Time on the staus bar.
+   document.clock.face.value=DayDateTime;
+   timerID = setTimeout(&quot;time()&quot;,1000);
+   timerRunning = true;
+   }
+// Stops clock and clears status bar.
+function clearStatus()
+   {
+   if(timerRunning)
+      clearTimeout(timerID);
+   timerRunning = false;
+   window.status=&quot; &quot;;   
+   }
+// -- End Hiding Here --&gt;
+&lt;/script&gt;
+                  &lt;form name=&quot;clock&quot; onSubmit=&quot;0&quot;&gt;
+                    &lt;input type=button name=&quot;face&quot; size=100&gt;&lt;/form&gt;
+                </textarea>
+                    
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr> 
+            <td height="20" class="white" bgcolor="#009900">&nbsp;</td>
+          </tr>
+        </table>
+        <br>
+      </td>
+      <td bgcolor="#009900" width="18"></td>
+    </tr>
+    <tr bgcolor="#009900"> 
+      <td></td>
+      <td align="center" height="35">&nbsp; </td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

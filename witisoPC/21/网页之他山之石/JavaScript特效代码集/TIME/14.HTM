@@ -1,0 +1,210 @@
+<html>
+<head>
+<title>全球时钟</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0" OnLoad="timeCheck(timezone, 0)">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="14.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="14c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><br>
+            <b>全球时钟</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="40" valign="top">提示：</td>
+                <td width="280">只要按相应的按钮，下面的时钟可以显示全球各大城市或地区的当地时间。</td>
+              </tr>
+              <tr align="center"> 
+                <td colspan="2" valign="top">
+                  <script language="JavaScript">
+<!-- Begin
+var timerRunning = false;
+var timezone = "格林尼治标准时间";
+var adjust = 0;
+
+function timeCheck(tzone, diff) {
+if (timerRunning) {
+clearTimeout(updatetime);
+timerRunning = false; }
+gmtOffset=eval(diff+adjust);
+timezone = tzone;
+checkDateTime();
+}
+
+function checkDateTime () {
+var today = new Date();
+var year = today.getYear() + 00;
+var month = today.getMonth()+1;
+var date = today.getDate();
+var day = today.getDay();
+var hour = today.getHours();
+var minute = today.getMinutes();
+var second = today.getSeconds();
+
+var lastSat = date - (day+1);
+while (lastSat < 32) lastSat+=7;
+if (lastSat > 31) lastSat+=-7;
+var firstSat = date - (day+1);
+while (firstSat > 0) firstSat+=-7;
+if (firstSat < 1) firstSat+=7;
+if ((((month == 4) && (date >= firstSat)) || month > 4) && 
+(month < 11 || ((month == 10) && day <= lastSat))) adjust += 60;
+yourOffset = (new Date()).getTimezoneOffset();
+yourOffset = yourOffset + adjust;
+
+var xx = navigator.appName
+var xy = navigator.appVersion;
+xy = xy.substring(0,1);
+if ((xy == 4) && (xx == "Netscape")) yourOffset = yourOffset+adjust;
+if ((((month == 4) && (date > 20)) || month > 4) && (month < 11 || ((month == 10) &&
+day < 30))) adjust -= 60;
+
+ourDifference = eval(gmtOffset - yourOffset);
+var half = eval(ourDifference % 60);
+ourDifference = Math.round(ourDifference / 60);
+hour = eval(hour - ourDifference);
+var m = new Array("",
+"1","2","3",
+"4","5","6",
+"7","8","9",
+"10","11","12");
+var leap = eval(year % 4);
+
+if ((half == -30) || (half == 30)) minute += 30;
+if (minute > 59) minute -= 60, hour++;
+if (minute < 0) minute += 60, hour--;
+if (hour > 23) hour -= 24, date += 1;
+if (((month == 4) || (month == 6) || 
+(month == 9) || (month == 11)) && (date==31)) date = 1, month ++;
+if (((month == 2) && (date > 28)) && (leap != 0)) date = 1, month ++;
+if ((month == 2) && (date > 29)) date = 1, month++;
+if (hour < 0) hour += 24, date --;
+if ((date == 32) && (month == 12)) month = m[1], date = 1, year++;
+if (date == 32) date = 1, month++;
+if ((date < 1) && (month == 1)) month= m[12], date = 31, year--;
+if (date < 1) date = 31, month --;
+if (((month == 4) || (month == 6) || 
+(month== 9) || (month == 11)) && (date == 31)) date = 30;
+if ((month == 2) && (date > 28)) date = 29;
+if (((month == 2) && (date > 28)) && (leap != 0)) date=28;
+for (i=1; i<13; i++) {
+if (month == i) {
+month = m[i]; break;
+   }
+}
+
+var dateTime = hour;
+dateTime = ((dateTime < 10) ? "0":"") + dateTime;
+dateTime = " " + dateTime;
+dateTime += ((minute < 10) ? ":0" : ":") + minute;
+dateTime += ((second < 10) ? ":0" : ":") + second;
+dateTime += (hour >= 12) ? "下午, " : "上午, ";
+dateTime += year + "年" + month + "月" + date + "日" ;
+
+document.clock.zonetime.value = dateTime;
+document.clock.zonename.value = timezone;
+updatetime=setTimeout("checkDateTime()", 900);
+timerRunning = true;
+}
+// End -->
+</script>
+                  <br>
+                  <form name=clock>
+                    <input type=text name=zonetime size=28>
+                    <br>
+                    <br>
+                    <b>当前的地区</b><br>
+                    <input type=text name=zonename size=21>
+                    <br>
+                    <br>
+                    <table border=1 cellpadding=5>
+                      <tr> 
+                        <td align=center> 
+                          <input type=button value="太平洋" onClick="timeCheck(this.value, +480)" name="button">
+                        </td>
+                        <td align=center> 
+                          <input type=button value="中心" onClick="timeCheck(this.value, +420)" name="button">
+                        </td>
+                        <td align=center> 
+                          <input type=button value="东方" onClick="timeCheck(this.value, +300)" name="button">
+                        </td>
+                      </tr>
+                      <tr> 
+                        <td align=center> 
+                          <input type=button value="夏威夷" onClick="timeCheck(this.value, +600)" name="button">
+                        </td>
+                        <td align=center> 
+                          <input type=button value="墨西哥" onClick="timeCheck(this.value, +360)" name="button">
+                        </td>
+                        <td align=center> 
+                          <input type=button value="新德里" onClick="timeCheck(this.value, -330)" name="button">
+                        </td>
+                      </tr>
+                      <tr> 
+                        <td align=center> 
+                          <input type=button value="北京" onClick="timeCheck(this.value, -480)" name="button">
+                        </td>
+                        <td align=center> 
+                          <input type=button value="东京" onClick="timeCheck(this.value, -540)" name="button">
+                        </td>
+                        <td align=center> 
+                          <input type=button value="伦敦" onClick="timeCheck(this.value, +0)" name="button">
+                        </td>
+                      </tr>
+                    </table>
+                    </form>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

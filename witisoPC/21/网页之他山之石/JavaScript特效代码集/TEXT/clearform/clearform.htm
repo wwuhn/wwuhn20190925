@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>清除表单区默认值脚本</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../style.css">
+<meta name="description" content="如何清除表单区原来的默认值。">
+<meta name="keywords" content="表单, 递交, 默认值, 清除, clear, form, submit, default value, ">
+</head>
+
+<body bgcolor="#000066" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+<p align="center"><font size="3">如何清除表单区原有的默认值</font></p>
+<form>
+  <div align="center"></div>
+</form>
+<div align="center">
+<table width="68%" border="0">
+    <tr> 
+      <td> 
+        <form>
+          <div align="center"> 
+            <input type="text" onFocus="this.value=''" value="Email address here" name="text" class="pt9">
+            <input type="submit" name="Submit" value="Submit" class="pt9">
+          </div>
+        </form>
+        <p>我们知道为了提示用户输入相应的信息，一般使用Value的方法设置默认值。用下面的脚本可以再锦上添花，当用户将鼠标点击到文本区后，里面原来的默认值就自动清除了。真的非常体贴人。</p>
+        <p><font size="3" face="Times New Roman, Times, serif">&lt;form action=&quot;submit.asp&quot; 
+          method=&quot;post&quot; &gt;<br>
+          &lt;input type=&quot;text&quot; <font color="#33FF33">onFocus=&quot;this.value=''&quot;</font> 
+          value=&quot;Email address here&quot;&gt;<br>
+          &lt;input type=&quot;submit&quot; name=&quot;Submit&quot; value=&quot;Submit&quot;&gt; 
+          <br>
+          &lt;/form&gt;</font></p>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

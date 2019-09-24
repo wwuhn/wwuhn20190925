@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>可以折叠的帧页面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="whitesmoke">
+<center>
+</center>
+<p align="center"><font size="5" color="#FF0000">可以折叠的帧页面-双击左侧(IE4以上)</font></p>
+<hr noshade width="100%">
+<p align="center"> 
+  <textarea name="textfield" cols="60" rows="10">以下加入FRAMESET帧页面的&lt;HEAD&gt;区：
+&lt;script language=&quot;JavaScript1.2&quot;&gt;
+
+defaultconf=''
+function expandf(){
+if (document.all){
+if (document.body.cols!=&quot;10,*&quot;)
+document.body.cols=&quot;10,*&quot;
+else
+document.body.cols=defaultconf
+}
+}
+
+&lt;/script&gt;</textarea>
+</p>
+<p align="center">
+  <textarea name="textfield2" cols="60" rows="10">以下加入左侧页面的&lt;HEAD&gt;区：
+&lt;script language=&quot;JavaScript1.2&quot;&gt;
+
+if (document.all)
+window.parent.defaultconf=window.parent.document.body.cols
+function expando(){
+window.parent.expandf()
+}
+document.ondblclick=expando
+&lt;/script&gt;</textarea>
+</p>
+</body>
+</html>

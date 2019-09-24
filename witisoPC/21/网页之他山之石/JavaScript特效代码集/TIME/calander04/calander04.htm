@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>日历及其特定日提示</title>
+<style type="text/css">
+<!--
+.yk9 {  font: 9pt "宋体"; text-decoration: none}
+-->
+</style>
+</head>
+<body >
+<form>
+      
+  <div align="center"> <font size="5" color="#FF0000">日历及其特定日提示 </font></div>
+    </form>
+<p>该日历的特点：根据自己指定的时间生成日历，对于每月的一些特殊日可以作出提示，例如“春节”、“情人节”之类的。每月只要更改一下源代码中的生成日期即可。 
+  <a href="ampcal.js"><font size="3">下载ampcal.js </font></a> 并<font size="3" color="#FF0000">保存此页</font>看源代码，非常详细的注释。 
+  本例只创建了1998年11月的日历。仅仅作为演示。 这样引用 js: <br>
+  &lt;script language=&quot;JavaScript&quot; src=&quot;ampcal.js&quot;&gt;&lt;/script&gt;</p>
+
+<!--日历代码由此开始-->
+<!-- 下一句是外部js代码--> 
+<script language="JavaScript" src="ampcal.js"></script>
+<script language="JavaScript">
+//*或者用编辑器打开js，将js的内容粘贴到这里，当然得去掉上面外部js代码一行。*//
+//* 下面创建指定时间的日历,自己指定。*//
+ampCal = new ampCalendar( 11, 1998 );
+
+// 为特定日期设定提示信息，格式如下，按照格式添加任何日期的提示信息。请去掉前面的注释符"//"。*//
+//ampCal.setItem(15,本站创建 );
+
+
+// 注意: 提示信息可以使用html标签语法。
+ampCal.setItem(15,"本页<br>创建");
+
+//设定在表上方显示的一些标题内容，可以不要。
+ampCal.title = ampCal.title + "-Enjoy This Place";
+//不要就这样写:ampCal.title = ampCal.title;
+
+// 设定字符大小
+ampCal.fontSize = "2";
+ampCal.headSize = "2";  // 日，一，二这一行...
+
+// 下面显示日历。
+ampCal.display();
+
+</script>
+</body>
+</html>

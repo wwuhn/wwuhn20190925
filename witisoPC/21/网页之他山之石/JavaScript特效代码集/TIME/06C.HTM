@@ -1,0 +1,121 @@
+<html>
+<head>
+<title>任意位置显示时钟</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+a:active {font-style:normal;text-decoration:none;color:yellow;}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="#009900" topmargin="0" leftmargin="0">
+<form name="form">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr bgcolor="#009900"> 
+      <td colspan="3" height="18">&nbsp; </td>
+    </tr>
+    <tr> 
+      <td bgcolor="#009900" width="18"></td>
+      <td align="center" bgcolor="#FFFFFF" valign="top"><br>
+        <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+          <tr> 
+            <td rowspan="2" width="16" valign="top"> 
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+                <tr bgcolor="#336699" bordercolor="#336699"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="06.htm">演<br>
+                    <br>
+                    示</a></strong></td>
+                </tr>
+                <tr bordercolor="#009900" bgcolor="#009900"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="06code.htm">源<br>
+                    代<br>
+                    码</a></strong></td>
+                </tr>
+              </table>
+            </td>
+            <td rowspan="2" width="8" bgcolor="#009900">&nbsp;</td>
+            <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#009900" valign="top"> 
+              <br>
+              <b>任意位置显示时钟</b> 
+              <hr width="92%" size="1" align="center">
+              <table  cellspacing="0" cellpadding="0" width="81%">
+                <tr> 
+                  <td colspan="2" height="25">注释：放在&lt;body****&gt;里</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <input type="text" name="1" onFocus="this.select()" onMouseOver="this.focus()" size="52" style="BACKGROUND-COLOR: #009900;" class="pt9" value="onLoad=&quot;show5()&quot;">
+                  </td>
+                </tr>
+                <tr> 
+                  <td height="25" colspan="2">注释：放在&lt;body&gt;与&lt;/body&gt;之间</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <textarea name="2" onFocus="this.select()" onMouseOver="this.focus()" cols="50" rows="10" wrap="VIRTUAL" style="BACKGROUND-COLOR: #009900;" class="pt9">&lt;script language=&quot;JavaScript&quot;&gt;
+&lt;!--
+
+function show5(){
+ if (!document.layers&amp;&amp;!document.all)
+ return
+ var Digital=new Date()
+ var hours=Digital.getHours()
+ var minutes=Digital.getMinutes()
+ var seconds=Digital.getSeconds()
+ var dn=&quot;AM&quot; 
+ if (hours&gt;12){
+ dn=&quot;PM&quot;
+ hours=hours-12
+ }
+ if (hours==0)
+ hours=12
+ if (minutes&lt;=9)
+ minutes=&quot;0&quot;+minutes
+ if (seconds&lt;=9)
+ seconds=&quot;0&quot;+seconds
+//change font size here to your desire
+myclock=&quot;&lt;font size='4' face='Arial' &gt;&quot;+hours+&quot;:&quot;+minutes+&quot;:&quot;
+ +seconds+&quot; &quot;+dn+&quot;&lt;/b&gt;&lt;/font&gt;&quot;
+if (document.layers){
+document.layers.liveclock.document.write(myclock)
+document.layers.liveclock.document.close()
+}
+else if (document.all)
+liveclock.innerHTML=myclock
+setTimeout(&quot;show5()&quot;,1000)
+ }
+//--&gt;
+&lt;/script&gt;
+      &lt;span id=&quot;liveclock&quot; style=&quot;position:absolute;left:333px;top:146px;; width: 133px; height: 23px&quot;&gt; 
+      &lt;/span&gt;</textarea>
+                  </td>
+                </tr>
+                <tr> 
+                  <td colspan="2">（提示：将源代码拷备到网页上后，会出现一个图层，只要把图层放在你想放的位置即可。）</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr> 
+            <td height="20" class="white" bgcolor="#009900">&nbsp;</td>
+          </tr>
+        </table>
+        <br>
+      </td>
+      <td bgcolor="#009900" width="18"></td>
+    </tr>
+    <tr bgcolor="#009900"> 
+      <td></td>
+      <td align="center" height="35">&nbsp; </td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

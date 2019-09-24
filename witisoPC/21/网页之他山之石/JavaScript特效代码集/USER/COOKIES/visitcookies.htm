@@ -1,0 +1,158 @@
+<html>
+<head>
+<title>visit cookies</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function GetCookie (name) {  
+var arg = name + "=";  
+var alen = arg.length;  
+var clen = document.cookie.length;  
+var i = 0;  
+while (i < clen) {
+var j = i + alen;    
+if (document.cookie.substring(i, j) == arg)      
+return getCookieVal (j);    
+i = document.cookie.indexOf(" ", i) + 1;    
+if (i == 0) break;   
+}  
+return null;
+}
+function SetCookie (name, value) {  
+var argv = SetCookie.arguments;  
+var argc = SetCookie.arguments.length;  
+var expires = (argc > 2) ? argv[2] : null;  
+var path = (argc > 3) ? argv[3] : null;  
+var domain = (argc > 4) ? argv[4] : null;  
+var secure = (argc > 5) ? argv[5] : false;  
+document.cookie = name + "=" + escape (value) + 
+((expires == null) ? "" : ("; expires=" + expires.toGMTString())) + 
+((path == null) ? "" : ("; path=" + path)) +  
+((domain == null) ? "" : ("; domain=" + domain)) +    
+((secure == true) ? "; secure" : "");
+}
+function DeleteCookie (name) {  
+var exp = new Date();  
+exp.setTime (exp.getTime() - 1);   
+var cval = GetCookie (name);  
+document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
+}
+var expDays = 365;
+var exp = new Date(); 
+exp.setTime(exp.getTime() + (expDays*24*60*60*1000));
+function amt(){
+var count = GetCookie('count')
+if(count == null) {
+SetCookie('count','1')
+return 1
+}
+else {
+var newcount = parseInt(count) + 1;
+DeleteCookie('count')
+SetCookie('count',newcount,exp)
+return count
+   }
+}
+function getCookieVal(offset) {
+var endstr = document.cookie.indexOf (";", offset);
+if (endstr == -1)
+endstr = document.cookie.length;
+return unescape(document.cookie.substring(offset, endstr));
+}
+// End -->
+</SCRIPT>
+</head>
+
+<body bgcolor="#FFFFFF" background="../../../images/bg011.gif">
+<form>
+  <div align="center"> <font size="5" color="#FF0000">Cookies之访问次数</font></div>
+</form>
+<table width="75%" border="0" align="center">
+  <tr> 
+    <td bgcolor="bisque"> 
+      <script language="JavaScript">
+<!-- Begin
+document.write("您已经来此" + amt() + "次了！")
+// End -->
+</script>
+    </td>
+  </tr>
+  <tr> 
+    <td>如下代码加入&lt;HEAD&gt;区：<br>
+      &lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt; 
+      <p>&lt;!-- Begin<br>
+        function GetCookie (name) { <br>
+        var arg = name + &quot;=&quot;; <br>
+        var alen = arg.length; <br>
+        var clen = document.cookie.length; <br>
+        var i = 0; <br>
+        while (i &lt; clen) {<br>
+        var j = i + alen; <br>
+        if (document.cookie.substring(i, j) == arg) <br>
+        return getCookieVal (j); <br>
+        i = document.cookie.indexOf(&quot; &quot;, i) + 1; <br>
+        if (i == 0) break; <br>
+        } <br>
+        return null;<br>
+        }<br>
+        function SetCookie (name, value) { <br>
+        var argv = SetCookie.arguments; <br>
+        var argc = SetCookie.arguments.length; <br>
+        var expires = (argc &gt; 2) ? argv[2] : null; <br>
+        var path = (argc &gt; 3) ? argv[3] : null; <br>
+        var domain = (argc &gt; 4) ? argv[4] : null; <br>
+        var secure = (argc &gt; 5) ? argv[5] : false; <br>
+        document.cookie = name + &quot;=&quot; + escape (value) + <br>
+        ((expires == null) ? &quot;&quot; : (&quot;; expires=&quot; + expires.toGMTString())) 
+        + <br>
+        ((path == null) ? &quot;&quot; : (&quot;; path=&quot; + path)) + <br>
+        ((domain == null) ? &quot;&quot; : (&quot;; domain=&quot; + domain)) + 
+        <br>
+        ((secure == true) ? &quot;; secure&quot; : &quot;&quot;);<br>
+        }<br>
+        function DeleteCookie (name) { <br>
+        var exp = new Date(); <br>
+        exp.setTime (exp.getTime() - 1); <br>
+        var cval = GetCookie (name); <br>
+        document.cookie = name + &quot;=&quot; + cval + &quot;; expires=&quot; 
+        + exp.toGMTString();<br>
+        }<br>
+        var expDays = <font color="#FF0000">30</font>;　　//设置COOKIES时间<br>
+        var exp = new Date(); <br>
+        exp.setTime(exp.getTime() + (expDays*24*60*60*1000));<br>
+        function amt(){<br>
+        var count = GetCookie('count')<br>
+        if(count == null) {<br>
+        SetCookie('count','1')<br>
+        return 1<br>
+        }<br>
+        else {<br>
+        var newcount = parseInt(count) + 1;<br>
+        DeleteCookie('count')<br>
+        SetCookie('count',newcount,exp)<br>
+        return count<br>
+        }<br>
+        }<br>
+        function getCookieVal(offset) {<br>
+        var endstr = document.cookie.indexOf (&quot;;&quot;, offset);<br>
+        if (endstr == -1)<br>
+        endstr = document.cookie.length;<br>
+        return unescape(document.cookie.substring(offset, endstr));<br>
+        }<br>
+        // End --&gt;<br>
+        &lt;/SCRIPT&gt;<br>
+        &lt;/head&gt;</p>
+      <p>如下代码加入&lt;BODY&gt;区：</p>
+      <p>&lt;body&gt;<br>
+        &lt;script language=&quot;JavaScript&quot;&gt;<br>
+        &lt;!-- Begin<br>
+        document.write(&quot;您已经来此&quot; + amt() + &quot;次了！&quot;)<br>
+        // End --&gt;<br>
+        &lt;/script&gt;</p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

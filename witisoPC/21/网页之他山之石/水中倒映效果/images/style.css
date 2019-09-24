@@ -1,0 +1,84 @@
+BODY {
+	BACKGROUND-COLOR: #999999; BACKGROUND-IMAGE: url(../images/body_bg.gif); COLOR: #666666; FONT-FAMILY: "宋体"; MARGIN: 0px; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px; TEXT-ALIGN: center
+}
+FORM {
+	MARGIN: 0px; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #339900; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #990000; TEXT-DECORATION: none
+}
+.Nav {
+	COLOR: #000000; FONT-FAMILY: "宋体"; FONT-SIZE: 14px; TEXT-ALIGN: center
+}
+.Nav A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.Nav A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.Nav A:hover {
+	COLOR: #ff0000
+}
+.Nav A:active {
+	COLOR: #990000; TEXT-DECORATION: none
+}
+.Nav2 {
+	COLOR: #000000; FONT-FAMILY: "宋体"; FONT-SIZE: 9pt; TEXT-ALIGN: center
+}
+.Nav2 A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.Nav2 A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.Nav2 A:hover {
+	COLOR: #ff0000
+}
+.Nav2 A:active {
+	COLOR: #990000; TEXT-DECORATION: none
+}
+.FormStyle1 {
+	BACKGROUND-COLOR: #fdbe25; BORDER-BOTTOM: #a4a4a4 1px solid; BORDER-LEFT: #a4a4a4 1px solid; BORDER-RIGHT: #a4a4a4 1px solid; BORDER-TOP: #a4a4a4 1px solid; FONT-FAMILY: "Verdana", "song"; FONT-SIZE: 12px; LETTER-SPACING: 6px; MARGIN: 0px; PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-TOP: 2px; WIDTH: 70px
+}
+.TopImgNews TD {
+	FONT-SIZE: 14px; FONT-WEIGHT: bold; LETTER-SPACING: 3px; TEXT-ALIGN: center
+}
+.NavBox1 {
+	BACKGROUND-COLOR: #dff3e5; BORDER-BOTTOM: #000000 2px solid; BORDER-TOP: #000000 1px dotted; PADDING-BOTTOM: 3px; PADDING-LEFT: 10px; PADDING-TOP: 3px
+}
+.contenttitle {
+	COLOR: #993300; FONT-FAMILY: "宋体"; FONT-SIZE: 20px; FONT-VARIANT: normal; FONT-WEIGHT: bolder; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.contentword {
+	FONT-SIZE: 14px; LINE-HEIGHT: 150%
+}
+TD {
+	COLOR: #000000; FONT-FAMILY: "宋体"; FONT-SIZE: 12px; LINE-HEIGHT: 150%; TEXT-DECORATION: none
+}
+.tableborder {
+	BORDER-BOTTOM: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid
+}
+P {
+	
+}
+.tdbootom {
+	BORDER-BOTTOM: #996633 1px solid; BORDER-LEFT-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-TOP-STYLE: none
+}
+.td2bootom {
+	BACKGROUND-COLOR: #ffe395; BORDER-BOTTOM: #ffcc66 4px solid; BORDER-LEFT-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-TOP-STYLE: none
+}
+.input2 {
+	BORDER-BOTTOM: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid
+}
+.unnamed1 {
+	filter: Wave(Add=add, Freq=6, LightStrength=2, Phase=="+b+", Strength="6");
+}

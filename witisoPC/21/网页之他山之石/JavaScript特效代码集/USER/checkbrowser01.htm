@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>浏览器检测脚本</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.yk9 {  font: 9pt "宋体"; text-decoration: none}
+-->
+</style></head>
+
+<body bgcolor="#FFFFFF">
+<div align="center">
+  <center>
+    <form>
+      <div align="center"> <font size="3">浏览器检测脚本</font></div>
+    </form>
+    <table width="79%" border="0" align="right" class="yk9">
+      <tr>
+        <td>
+          <p>检测访问者使用的浏览器是IE还是NS，然后根据检测结果带领他们去相应的页面，可以有效地避免浏览器的不兼容导致的页面浏览异常。</p>
+          <p>代码非常简单，将如下代码加入HTML的&lt;head&gt;区：</p>
+          <p>&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;<br>
+            &lt;!-- Start Code</p>
+          <p> var ver = navigator.appVersion;</p>
+          <p> if (ver.indexOf(&quot;MSIE&quot;) != -1)</p>
+          <p> {</p>
+          <p> window.location.href=&quot;<font color="#FF0000">IE.htm</font>&quot;</p>
+          <p> }else</p>
+          <p> window.location.href=&quot;<font color="#FF0000">NS.htm</font>&quot;</p>
+          <p> </p>
+          <p>// End Code --&gt;</p>
+          <p>&lt;/SCRIPT&gt;</p>
+        </td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </center>
+</div>
+</body>
+</html>

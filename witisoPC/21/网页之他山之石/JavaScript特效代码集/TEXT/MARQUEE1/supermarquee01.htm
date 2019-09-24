@@ -1,0 +1,127 @@
+<html>
+<head>
+<title>SuperMarquee</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.yk9 {  font-family: "宋体"; font-size: 9pt; text-decoration: none}
+body {  font-family: "宋体"; font-size: 9pt; margin-top: 0px}
+-->
+</style>
+<meta name="keywords" content="scroll marquee 跑马灯">
+<meta name="description" content="marquee跑马灯脚本">
+</head>
+
+<body bgcolor="#FFFFFF">
+<form>
+  <div align="center"> 
+    <font size="4" color="#FF0000"> 超级<b><font face="Arial, Helvetica, sans-serif">Marquee</font></b>脚本 
+    </font></div>
+</form>
+<p> 
+  <script language="JavaScript1.2">
+//设置marquee的宽度 (in pixels)
+var marqueewidth=400
+//设置marquee的高度 (in pixels, 该参数只适用于NS)
+var marqueeheight=20
+//设置marquee滚动的速度(数值大速度快)
+var speed=4
+//设置marquee显示内容，使用标准的HTML语法。
+var marqueecontents='<font face="Arial"><strong><big>Thank you for visiting <a href="#">This Place</a> Enjoy them... <a href="mailto:XXXXX@990.net">click here mail me!</a></big></strong></font>'
+
+if (document.all)
+document.write('<marquee scrollAmount='+speed+' style="width:'+marqueewidth+'">'+marqueecontents+'</marquee>')
+
+function regenerate(){
+window.location.reload()
+}
+function regenerate2(){
+if (document.layers){
+setTimeout("window.onresize=regenerate",450)
+intializemarquee()
+}
+}
+
+function intializemarquee(){
+document.cmarquee01.document.cmarquee02.document.write('<nobr>'+marqueecontents+'</nobr>')
+document.cmarquee01.document.cmarquee02.document.close()
+thelength=document.cmarquee01.document.cmarquee02.document.width
+scrollit()
+}
+
+function scrollit(){
+if (document.cmarquee01.document.cmarquee02.left>=thelength*(-1)){
+document.cmarquee01.document.cmarquee02.left-=speed
+setTimeout("scrollit()",100)
+}
+else{
+document.cmarquee01.document.cmarquee02.left=marqueewidth
+scrollit()
+}
+}
+
+window.onload=regenerate2
+</script>
+  <ilayer width=&{marqueewidth}; height=&{marqueeheight}; name="cmarquee01"> 
+  <layer name="cmarquee02"></layer>
+  </ilayer>
+</p>
+<div align="center">
+<form method="post" action="">
+    <textarea name="textfield" cols="65" rows="10" class="yk9">&lt;script language=&quot;JavaScript1.2&quot;&gt;
+//设置marquee的宽度 (in pixels)
+var marqueewidth=400
+//设置marquee的高度 (in pixels, 该参数只适用于NS)
+var marqueeheight=20
+//设置marquee滚动的速度(数值大速度快)
+var speed=4
+//设置marquee显示内容，使用标准的HTML语法。
+var marqueecontents='&lt;font face=&quot;Arial&quot;&gt;&lt;strong&gt;&lt;big&gt;Thank you for visiting &lt;a href=&quot;http://java2000.126.com&quot;&gt;Java2000&lt;/a&gt; Enjoy them... &lt;a href=&quot;mailto:kingyang@990.net&quot;&gt;click here mail me!&lt;/a&gt;&lt;/big&gt;&lt;/strong&gt;&lt;/font&gt;'
+
+if (document.all)
+document.write('&lt;marquee scrollAmount='+speed+' style=&quot;width:'+marqueewidth+'&quot;&gt;'+marqueecontents+'&lt;/marquee&gt;')
+
+function regenerate(){
+window.location.reload()
+}
+function regenerate2(){
+if (document.layers){
+setTimeout(&quot;window.onresize=regenerate&quot;,450)
+intializemarquee()
+}
+}
+
+function intializemarquee(){
+document.cmarquee01.document.cmarquee02.document.write('&lt;nobr&gt;'+marqueecontents+'&lt;/nobr&gt;')
+document.cmarquee01.document.cmarquee02.document.close()
+thelength=document.cmarquee01.document.cmarquee02.document.width
+scrollit()
+}
+
+function scrollit(){
+if (document.cmarquee01.document.cmarquee02.left&gt;=thelength*(-1)){
+document.cmarquee01.document.cmarquee02.left-=speed
+setTimeout(&quot;scrollit()&quot;,100)
+}
+else{
+document.cmarquee01.document.cmarquee02.left=marqueewidth
+scrollit()
+}
+}
+
+window.onload=regenerate2
+&lt;/script&gt;
+  &lt;ilayer width=&amp;{marqueewidth}; height=&amp;{marqueeheight}; name=&quot;cmarquee01&quot;&gt; 
+  &lt;layer name=&quot;cmarquee02&quot;&gt;&lt;/layer&gt;
+  &lt;/ilayer&gt;</textarea>
+  </form>
+  <table width="62%" border="0">
+    <tr>
+      <td>说明：你只要改动一下显示的内容和相应的连接，这个脚本就是你的了。你可以去掉显示内容中关于&lt;font&gt;的设置，然后用CSS控制一下字体，效果也不错啊！</td>
+    </tr>
+  </table>
+  <p>&nbsp; </p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

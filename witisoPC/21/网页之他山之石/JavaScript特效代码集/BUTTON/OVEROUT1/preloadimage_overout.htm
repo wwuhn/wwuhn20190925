@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>鼠标覆盖和离开事件以及图片的PreLoad</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript">
+<!--
+function preloadimage() { 
+  if (document.pic) {
+    var imgFiles = preloadimage.arguments;
+    if (document.preloadArray==null) document.preloadArray = new Array();
+    var i = document.preloadArray.length;
+    with (document) for (var j=0; j<imgFiles.length; j++) if (imgFiles[j].charAt(0)!="#"){
+      preloadArray[i] = new Image;
+      preloadArray[i++].src = imgFiles[j];
+  } }
+}
+//-->
+</script>
+<SCRIPT>
+<!--
+function over(){
+        document.pic.src="button2.gif"
+        
+}
+
+function out(){
+
+        document.pic.src="button1.gif"
+}
+
+//-->
+</SCRIPT>
+ <style type="text/css">
+<!--
+.unnamed1 {  font: 9pt "宋体"; text-decoration: none}
+-->
+</style></head>
+<body onLoad="preloadimage('button1.gif','button2.gif')" background="../../../images/bg012.gif">
+<center>
+  <div align="center"></div>
+  <form>
+    <div align="center"> <font size="3" color="#FF3333">鼠标覆盖和离开事件以及图片的PreLoad(预先读取) 
+      </font></div>
+  </form>
+  <p><A HREF="../../../index.html" onMouseOver="over()" onMouseOut="out()"><IMG SRC="button1.gif" NAME="pic" WIDTH=120 HEIGHT=42 BORDER=0></A></p>
+  </center> 
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p align="center"></p>
+<p align="center"></p>
+<p align="center"></p>
+<p align="center"></p>
+<p align="center"></p>
+<table width="75%" border="0" align="center">
+  <tr> 
+    <td> 
+      <p>前言：MouseOver和MouseOut效果应该是比较流行的一种做法，但是你也许忘记了这样一个事实，当你的鼠标移动到一个图片上时，由于显示over或out的图片是需要一定的读取时间的，所以会产生一定的延迟感，真是“大煞风景”。只要用一个简单的PreLoad脚本控制一下，在页面读取(onload)的时候，所需要在over或out事件中显示的有关图片已经被事先读取下来，这样当鼠标再次移动到或离开图片时就不会产生延迟的感觉，似乎一下子就产生图片的变化效果。Try 
+        it !</p>
+      <p>（1）将下面的代码加入HTML的&lt;HEAD&gt;区:</p>
+      <p>//以下是preload脚本<br>
+        &lt;script language=&quot;javascript&quot;&gt;<br>
+        &lt;!--<br>
+        function preloadimage() { <br>
+        if (document.pic) {<br>
+        var imgFiles = preloadimage.arguments;<br>
+        if (document.preloadArray==null) document.preloadArray = new Array();<br>
+        var i = document.preloadArray.length;<br>
+        with (document) for (var j=0; j&lt;imgFiles.length; j++) if (imgFiles[j].charAt(0)!=&quot;#&quot;){<br>
+        preloadArray[i] = new Image;<br>
+        preloadArray[i++].src = imgFiles[j];<br>
+        } }<br>
+        }<br>
+        //--&gt;<br>
+        &lt;/script&gt;</p>
+      <p>//以下是over和out脚本<br>
+        &lt;SCRIPT&gt;<br>
+        &lt;!--<br>
+        function over(){<br>
+        document.pic.src=&quot;<font color="#FF0000">yourmouseoverimage</font>&quot;<br>
+        <br>
+        }</p>
+      <p>function out(){</p>
+      <p> document.pic.src=&quot;<font color="#FF0000">yourmouseoutimage</font>&quot;<br>
+        }</p>
+      <p>//--&gt;<br>
+        &lt;/SCRIPT&gt;</p>
+      <p>（2）不要忘记将如下代码替换HTML的原有的&lt;body&gt;标签：<br>
+        <br>
+        &lt;body onLoad=&quot;preloadimage('<font color="#FF0000">yourmouseoverimage</font>','<font color="#FF0000">yourmouseoutimage</font>')&quot;&gt;<br>
+      </p>
+      <p> （3）下面代码加入&lt;body&gt;区的任意位置，激活over和out效果：<br>
+        <br>
+        &lt;A HREF=&quot;<font color="#FF0000">http://URL.htm</font>&quot; onMouseOver=&quot;over()&quot; 
+        onMouseOut=&quot;out()&quot;&gt; &lt;IMG SRC=&quot;<font color="#FF0000">yourimage.gif</font>&quot; 
+        NAME=&quot;pic&quot; WIDTH=** HEIGHT=** BORDER=0&gt;&lt;/A&gt;</p>
+      <p>说明:yourmouseoverimage和yourmouseoutimage分别是鼠标覆盖(over)和离开(out)时显示的图片，yourimage.gif是正常显示的图片，可以与out的图片一样(即鼠标离开图片复原)。URL是图片代表的连接。</p>
+      <p>你可以在多个图片上使用mouseover和mouseout效果。</p>
+    </td>
+  </tr>
+</table>
+<p align="center"></p>
+
+
+
+</body>
+</html>

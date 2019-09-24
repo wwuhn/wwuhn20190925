@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>移动的对联广告</title>
+
+<style type="text/css">
+<!--
+*{
+margin:0;
+padding:0;
+}
+body{
+font-size:12px;
+}
+.main{
+width:300px;
+height:300px;
+margin:0px auto;
+background:#eee;
+border:1px solid #333;
+}
+p{
+height:90%;
+}
+#left,#right{
+width:110px;
+height:230px;
+background:#f58a33;
+color:#fff;
+position:absolute;
+top:40px;
+}
+#left{left:10px;}
+#right{right:10px;}
+-->
+</style>
+
+<script language="JavaScript" type="text/javascript">
+function closead(){
+document.getElementById("left").style.display="none";
+document.getElementById("right").style.display="none";
+}
+
+
+</script>
+
+</head>
+
+<body>
+<div id="left">
+<a href="javascript:closead();" title="close ad">close</a>
+</div>
+<div id="right">
+<a href="javascript:closead();" title="close ad">close</a>
+</div>
+<div class="main">页面主体内容</div>
+<div class="main">
+<hr/>
+页面滚动条的垂直距离<span id="text4" /></span><hr />
+页面滚动条的宽度<span id="text1" /></span><hr />
+页面滚动条的高度<span id="text2" /></span><hr />
+页面滚动条的水平流动的距离<span id="text3" /></span><hr />
+</div>
+<div class="main">页面主体内容2</div>
+<div class="main">页面主体内容3</div>
+<div class="main">页面主体内容4</div>
+</body>
+</html>

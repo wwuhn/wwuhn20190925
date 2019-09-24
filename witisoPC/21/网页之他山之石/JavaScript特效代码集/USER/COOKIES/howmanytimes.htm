@@ -1,0 +1,231 @@
+<html>
+<head>
+<title> Simple Cookie Counter </title>
+<script language="JavaScript">
+
+<!-- Hide this script from old browsers --
+
+function GetCookie (name) {  
+
+	var arg = name + "=";  
+
+	var alen = arg.length;  
+
+	var clen = document.cookie.length;  
+
+	var i = 0;  
+
+	while (i < clen) {    
+
+	var j = i + alen;    
+
+	if (document.cookie.substring(i, j) == arg)      
+
+		return getCookieVal (j);    
+
+		i = document.cookie.indexOf(" ", i) + 1;    
+
+		if (i == 0) break;   
+
+	}  
+
+	return null;
+
+}
+
+function SetCookie (name, value) {  
+
+	var argv = SetCookie.arguments;  
+
+	var argc = SetCookie.arguments.length;  
+
+	var expires = (argc > 2) ? argv[2] : null;  
+
+	var path = (argc > 3) ? argv[3] : null;  
+
+	var domain = (argc > 4) ? argv[4] : null;  
+
+	var secure = (argc > 5) ? argv[5] : false;  
+
+	document.cookie = name + "=" + escape (value) + 
+
+	((expires == null) ? "" : ("; expires=" + expires.toGMTString())) + 
+
+	((path == null) ? "" : ("; path=" + path)) +  
+
+	((domain == null) ? "" : ("; domain=" + domain)) +    
+
+	((secure == true) ? "; secure" : "");
+
+}
+
+function DeleteCookie (name) {  
+
+	var exp = new Date();  
+
+	exp.setTime (exp.getTime() - 1);  
+
+	// This cookie is history  
+
+	var cval = GetCookie (name);  
+
+	document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
+
+}
+
+var expDays = 365;
+
+var exp = new Date(); 
+
+exp.setTime(exp.getTime() + (expDays*24*60*60*1000));
+
+function amt(){
+
+	var count = GetCookie('count')
+
+	if(count == null) {
+
+		SetCookie('count','1')
+
+		return 1
+
+	}
+
+	else {
+
+		var newcount = parseInt(count) + 1;
+
+		DeleteCookie('count')
+
+		SetCookie('count',newcount,exp)
+
+		return count
+
+	}
+
+}
+
+function getCookieVal(offset) {
+
+  var endstr = document.cookie.indexOf (";", offset);
+
+  if (endstr == -1)
+
+    endstr = document.cookie.length;
+
+  return unescape(document.cookie.substring(offset, endstr));
+
+}
+
+// -- End Hiding Here -->
+
+</script>
+<style type="text/css">
+<!--
+td {  font-family: "宋体"; font-size: 9pt; text-decoration: none}
+.unnamed1 { font-family: "宋体"; font-size: 9pt; text-decoration: none }
+-->
+</style></head>
+
+<body bgcolor="#FFFFFF">
+<form>
+  <div align="center"> <font size="5" color="#FF0000">Cookies之访问次数脚本 </font></div>
+</form>
+<table width="75%" border="0" align="center">
+  <tr bgcolor="bisque"> 
+    <td> 
+      <script language="JavaScript">
+
+<!-- Hide this script from old browsers --
+
+
+document.write("你已经来此" + amt() + "次了！")
+
+// -- End Hiding Here -->
+
+</script>
+    </td>
+  </tr>
+  <tr>
+    <td> 
+      <p>如下代码放在&lt;HEAD&gt;区：</p>
+      <p>&lt;script language=&quot;JavaScript&quot;&gt;</p>
+      <p>&lt;!-- Hide this script from old browsers --</p>
+      <p>function GetCookie (name) { </p>
+      <p> var arg = name + &quot;=&quot;; </p>
+      <p> var alen = arg.length; </p>
+      <p> var clen = document.cookie.length; </p>
+      <p> var i = 0; </p>
+      <p> while (i &lt; clen) { </p>
+      <p> var j = i + alen; </p>
+      <p> if (document.cookie.substring(i, j) == arg) </p>
+      <p> return getCookieVal (j); </p>
+      <p> i = document.cookie.indexOf(&quot; &quot;, i) + 1; </p>
+      <p> if (i == 0) break; </p>
+      <p> } </p>
+      <p> return null;</p>
+      <p>}</p>
+      <p>function SetCookie (name, value) { </p>
+      <p> var argv = SetCookie.arguments; </p>
+      <p> var argc = SetCookie.arguments.length; </p>
+      <p> var expires = (argc &gt; 2) ? argv[2] : null; </p>
+      <p> var path = (argc &gt; 3) ? argv[3] : null; </p>
+      <p> var domain = (argc &gt; 4) ? argv[4] : null; </p>
+      <p> var secure = (argc &gt; 5) ? argv[5] : false; </p>
+      <p> document.cookie = name + &quot;=&quot; + escape (value) + </p>
+      <p> ((expires == null) ? &quot;&quot; : (&quot;; expires=&quot; + expires.toGMTString())) 
+        + </p>
+      <p> ((path == null) ? &quot;&quot; : (&quot;; path=&quot; + path)) + </p>
+      <p> ((domain == null) ? &quot;&quot; : (&quot;; domain=&quot; + domain)) 
+        + </p>
+      <p> ((secure == true) ? &quot;; secure&quot; : &quot;&quot;);</p>
+      <p>}</p>
+      <p>function DeleteCookie (name) { </p>
+      <p> var exp = new Date(); </p>
+      <p> exp.setTime (exp.getTime() - 1); </p>
+      <p> // This cookie is history </p>
+      <p> var cval = GetCookie (name); </p>
+      <p> document.cookie = name + &quot;=&quot; + cval + &quot;; expires=&quot; 
+        + exp.toGMTString();</p>
+      <p>}</p>
+      <p>//设置cookies时间,自己根据情况设置。<br>
+        var expDays = <font color="#FF0000">365</font>;</p>
+      <p>var exp = new Date(); </p>
+      <p>exp.setTime(exp.getTime() + (expDays*24*60*60*1000));</p>
+      <p>function amt(){</p>
+      <p> var count = GetCookie('count')</p>
+      <p> if(count == null) {</p>
+      <p> SetCookie('count','1')</p>
+      <p> return 1</p>
+      <p> }</p>
+      <p> else {</p>
+      <p> var newcount = parseInt(count) + 1;</p>
+      <p> DeleteCookie('count')</p>
+      <p> SetCookie('count',newcount,exp)</p>
+      <p> return count</p>
+      <p> }</p>
+      <p>}</p>
+      <p>function getCookieVal(offset) {</p>
+      <p> var endstr = document.cookie.indexOf (&quot;;&quot;, offset);</p>
+      <p> if (endstr == -1)</p>
+      <p> endstr = document.cookie.length;</p>
+      <p> return unescape(document.cookie.substring(offset, endstr));</p>
+      <p>}</p>
+      <p>// -- End Hiding Here --&gt;</p>
+      <p>&lt;/script&gt;</p>
+      <p>如下代码放在&lt;BODY&gt;区：<br>
+        &lt;script language=&quot;JavaScript&quot;&gt; </p>
+      <p>&lt;!-- Hide this script from old browsers --</p>
+      <p><br>
+        document.write(&quot;你已经来此&quot; + amt() + &quot;次了！&quot;)</p>
+      <p>// -- End Hiding Here --&gt;</p>
+      <p>&lt;/script&gt;</p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp; </p>
+</body>
+
+</html>
+<!-- Tommy Raven (Min) says Moo. -->
+

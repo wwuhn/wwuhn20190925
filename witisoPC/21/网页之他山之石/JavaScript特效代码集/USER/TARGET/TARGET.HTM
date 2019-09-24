@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>页面访问来路检测</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script>
+<!--
+var previousurl="http://java2000.wol.com/java/navigation/others.htm"
+if (document.referrer!=previousurl){
+//history.go(-1)
+alert("你不是通过指定页面(其它脚本区页面)访问本页的！")
+}
+else
+alert("你是通过指定的页面（其它脚本区页面）访问本页的！")
+//-->
+</script>
+<meta name="description" content="检测是否通过指定路径访问一个页面的脚本。">
+<meta name="keywords" content="referrer check 页面保护 指定页面 访问控制">
+<style type="text/css">
+<!--
+body {  font-family: "宋体"; font-size: 9pt; margin-top: 0px}
+.unnamed1 { font-family: "宋体"; font-size: 9pt}
+-->
+</style></head>
+
+<body bgcolor="#FFF7F7">
+<center>
+</center>
+<form>
+  <div align="center"> <font color="#FF0000" size="4">检测一个页面是否通过过规定的路径访问的脚本</font></div>
+</form>
+<form method="post" action="">
+  <div align="center">
+    <textarea name="textfield" cols="50" rows="12" class="unnamed1">将如下代码加入HTML的&lt;HEAD&gt;区：
+修改指定访问页面的URL，如果该页面是从指定的路径访问的，则显示一段提示的话，当然你完全可以去掉它。来访者完全注意不到它的存在。如果不是从指定的页面来的，则拒绝访问，返回上一页。这对于拒绝非法的站外连接有一定的效果。
+当然,本站为了演示,没有这样做,仅仅弹出警示窗口.
+
+&lt;script&gt;
+&lt;!--
+var previousurl=&quot;http://yoursite.com/index.htm&quot;
+if (document.referrer!=previousurl){
+history.go(-1)
+alert(&quot;你不是通过指定页面访问本页的！&quot;)
+}
+//--&gt;
+&lt;/script&gt;</textarea>
+  </div>
+</form>
+<p>&nbsp;</p>
+</body>
+</html>

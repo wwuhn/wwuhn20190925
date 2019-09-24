@@ -1,0 +1,581 @@
+<html>
+<head>
+<title>计算器</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+a:active {font-style:normal;text-decoration:none;color:yellow;}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="#009900" topmargin="0" leftmargin="0">
+<form name="form">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr bgcolor="#009900"> 
+      <td colspan="3" height="18">&nbsp; </td>
+    </tr>
+    <tr> 
+      <td bgcolor="#009900" width="18"></td>
+      <td align="center" bgcolor="#FFFFFF" valign="top"> <br>
+        <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+          <tr> 
+            <td rowspan="2" width="16" valign="top"> 
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+                <tr bgcolor="#336699" bordercolor="#336699"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="04.htm">演<br>
+                    <br>
+                    示</a></strong></td>
+                </tr>
+                <tr bordercolor="#009900" bgcolor="#009900"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="04c.htm">源<br>
+                    代<br>
+                    码</a></strong></td>
+                </tr>
+              </table>
+            </td>
+            <td rowspan="2" width="8" bgcolor="#009900">&nbsp;</td>
+            <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#009900" valign="top"> 
+              <b> </b><br>
+              <b>计 算 器</b> 
+              <hr width="92%" size="1" align="center">
+              <table  cellspacing="0" cellpadding="0" width="81%">
+                <tr> 
+                  <td height="25" colspan="2">注释：放在&lt;body&gt;与&lt;/body&gt;之间</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <textarea name="Code" onFocus="this.select()" onMouseOver="this.focus()" cols="50" wrap="VIRTUAL" style="BACKGROUND-COLOR: #009900;" class="pt9" rows="15">&lt;form name=&quot;keypad&quot;&gt;
+                    &lt;center&gt;
+                      &lt;font size=&quot;4&quot; color=&quot;#66FF66&quot;&gt;&lt;b&gt; 
+                      &lt;script language=&quot;JavaScript&quot;&gt;
+&lt;!--
+function round(val)
+
+{
+
+	return(Math.round(val*10000000)/10000000);
+
+}
+
+
+
+PI = 3.141592654;
+
+function pie()
+
+{
+
+	document.keypad.display.value = PI;
+
+}
+
+
+
+function MakeArray(n){
+
+	this.length=n;
+
+   	for(var i=1; i&lt;=n; i++) this[i]=0;
+
+   return this
+
+}
+
+link = new MakeArray(5);
+
+
+
+function enter(num)
+
+{
+
+	document.keypad.display.value += num;
+
+}
+
+
+
+function calculate(sign)
+
+{
+
+	var temp = document.keypad.display.value * 1;
+
+	document.keypad.display.value = &quot;&quot;;
+
+	document.keypad.list.value = temp;
+
+	link[1] = temp;
+
+
+
+	if (sign == &quot;/&quot;) {link[2] = &quot;/&quot;; document.keypad.list.value += &quot; / &quot;;}
+
+	if (sign == &quot;*&quot;) {link[2] = &quot;*&quot;; document.keypad.list.value += &quot; * &quot;;}
+
+	if (sign == &quot;-&quot;) {link[2] = &quot;-&quot;; document.keypad.list.value += &quot; - &quot;;}
+
+	if (sign == &quot;+&quot;) {link[2] = &quot;+&quot;; document.keypad.list.value += &quot; + &quot;;}
+
+	if (sign == &quot;p&quot;) {link[2] = &quot;p&quot;; document.keypad.list.value += &quot; ^ &quot;;}
+
+}
+
+
+
+function power()
+
+{
+
+	temp = 1;
+
+	n = link[3];
+
+   	for(var i=1; i&lt;=n; i++) temp *= link[1];
+
+	return(temp);
+
+}
+
+
+
+function equal()
+
+{
+
+	if (link[2]) {
+
+		if (document.keypad.display.value != &quot;&quot;) {
+
+
+
+			var temp = document.keypad.display.value * 1;
+
+			document.keypad.list.value += temp;
+
+			link[3] = temp;
+
+
+
+			if (link[2] == &quot;/&quot;) {res = link[1] / link[3]; document.keypad.display.value = round(res)}
+
+			if (link[2] == &quot;*&quot;) {res = link[1] * link[3]; document.keypad.display.value = round(res)}
+
+			if (link[2] == &quot;-&quot;) {res = link[1] - link[3]; document.keypad.display.value = round(res)}
+
+			if (link[2] == &quot;+&quot;) {res = link[1] + link[3]; document.keypad.display.value = round(res)}
+
+			if (link[2] == &quot;p&quot;) {document.keypad.display.value = round( power() )}
+
+
+
+			link[1]=0; link[2]=0; link[3]=0;
+
+		}
+
+	}
+
+}
+
+
+
+function calc(code)
+
+{
+
+	var temp = document.keypad.display.value * 1;
+
+
+
+	if (code == 1) {temp1 = Math.sin(temp*PI/180); document.keypad.list.value = &quot;sin &quot;}
+
+	if (code == 2) {temp1 = Math.cos(temp*PI/180); document.keypad.list.value = &quot;cos &quot;}
+
+	if (code == 3) {temp1 = Math.tan(temp*PI/180); document.keypad.list.value = &quot;tan &quot;}
+
+	if (code == 4) {temp1 = Math.sqrt(temp); document.keypad.list.value = &quot;sqrt &quot;}
+
+	if (code == 5) {temp1 = Math.log(temp); document.keypad.list.value = &quot;ln &quot;}
+
+	if (code == 6) {temp1 = 1/temp; document.keypad.list.value = &quot;1/x, x=&quot;}
+
+	if (code == 7) {temp1 = temp * temp; document.keypad.list.value = &quot;x*x, x=&quot;}
+
+
+
+	document.keypad.list.value += temp;
+
+	document.keypad.display.value = round(temp1);
+
+}
+
+
+
+function fsolve()
+
+{
+
+	var a = document.keypad.c1.value*1;
+
+	var b = document.keypad.c2.value*1;
+
+	var c = document.keypad.c3.value*1;
+
+
+
+	if (a==0) {document.keypad.list.value = &quot;Not a Quadratic&quot;;
+
+		     document.keypad.display.value = &quot;Equation&quot;}
+
+	else { x1 = (b*b-4*a*c);
+
+		if ( x1 &lt; 0) {document.keypad.list.value = &quot;Imaginary Roots&quot;;
+
+				  temp = (Math.sqrt(Math.abs(x1)))/(2*a);
+
+				  x2 = round(-b/(2*a)) + &quot;+/- &quot; + round(temp) + &quot;i&quot;;
+
+				  document.keypad.display.value = x2}
+
+		else {
+
+			var x1 = (-b + Math.sqrt(b*b-4*a*c)) / (2*a);
+
+			var x2 = (-b - Math.sqrt(b*b-4*a*c)) / (2*a);
+
+
+
+			document.keypad.list.value = &quot;x1 = &quot; + round(x1);
+
+			document.keypad.display.value = &quot;x2 = &quot; + round(x2);
+
+		}
+
+	}
+
+}
+
+
+
+function change()
+
+{
+
+	var temp = document.keypad.display.value;
+
+
+
+	if (temp.substring(0,1) == &quot;-&quot;) {document.keypad.list.value = &quot;&quot;;
+
+						   document.keypad.display.value = 0 - document.keypad.display.value * 1}
+
+	if (temp.substring(0,1) != &quot;-&quot;) {document.keypad.list.value = &quot;&quot;;
+
+						   document.keypad.display.value = &quot;-&quot; + temp.substring(0,temp.length)}
+
+}
+
+
+
+function eraser()
+
+{
+
+	document.keypad.list.value = &quot;Start Punching!&quot;;
+
+	document.keypad.display.value = &quot;&quot;;
+
+	document.keypad.c1.value = &quot;&quot;;
+
+	document.keypad.c2.value = &quot;&quot;;
+
+	document.keypad.c3.value = &quot;&quot;;
+
+	link[1]=0; link[2]=0; link[3]=0;
+
+}
+
+
+
+function backer()
+
+{
+
+	var temp = document.keypad.display.value;
+
+	document.keypad.display.value = temp.substring(0,temp.length*1 -1);
+
+}
+
+
+
+var memory = 0;
+
+function mem(val)
+
+{
+
+	if (val == 1 ) {document.keypad.list.value = &quot;--&gt; Memory In&quot;;
+
+			    memory = document.keypad.display.value * 1}
+
+	if (val == -1) {document.keypad.display.value = memory}
+
+	if (val == 0 ) {document.keypad.list.value = &quot;Memory Erased&quot;;
+
+			    document.keypad.display.value = &quot;&quot;; memory = 0}
+
+}
+
+
+
+function message()
+
+{
+
+alert('\n\nSend your comments and suggestions to:\n\n   ----&gt; aag4@lehigh.edu &lt;----');
+
+}
+
+
+
+function travel(link)
+
+{
+
+window.open(link,&quot;calculator&quot;,&quot;toolbar=1,location=1,status=1,scrollbars=1,directories=1,copyhistory=1,menubar=1,resizable=1&quot;)
+
+}
+
+
+
+var screen=&quot; &quot;;
+
+function eraser2()
+
+{
+
+	var ans = confirm('\nDo you want to clear the entire CALCpad?\n');
+
+	if (ans) {screen = document.notes.junk.value; document.notes.junk.value = &quot;&quot;;}
+
+}
+
+
+
+function copy()
+
+{
+
+document.notes.junk.value = document.keypad.list.value+&quot;\n&quot;+document.keypad.display.value+&quot;\n&quot;+document.notes.junk.value;
+
+}
+
+
+
+function help()
+
+{
+
+	screen = document.notes.junk.value;
+
+	msg1 = &quot;Following are some of the\ncalculator functions:\n&quot;;
+
+	msg2 = &quot;\n(&lt;-&gt; M) - Erase Memory Contents\n(--&gt; M) - Memory In\n(&lt;-- M) - Memory Out&quot;;
+
+	msg3 = &quot;\n(&lt;--)   - Erase last character\n(x^y)   - X to the power of Y&quot;;
+
+	msg4 = &quot;\n\nTo Go Back, click 'Restore CALCpad'&quot;;
+
+	document.notes.junk.value = &quot;&quot;;
+
+	document.notes.junk.value = msg1 + msg2 + msg3 + msg4;
+
+}
+
+
+
+function restore()
+
+{
+
+	document.notes.junk.value = &quot;&quot;;
+
+	document.notes.junk.value = screen;	
+
+}
+
+
+
+&lt;/script&gt;
+                      &lt;/b&gt;&lt;/font&gt; 
+                      &lt;table border=6 cellspacing=2 cellpadding=3&gt;
+                        &lt;tr&gt; 
+                          &lt;td valign=middle align=center colspan=9 bgcolor=&quot;yellow&quot;&gt; 
+                            &lt;font size=4 color=&quot;#800040&quot;&gt;&lt;b&gt;超 级 计 算 器&lt;/b&gt;&lt;/font&gt;&lt;font size=6 color=&quot;#800040&quot;&gt;&lt;b&gt;&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt; 
+                          &lt;td valign=middle align=center colspan=6&gt; 
+                            &lt;input type=&quot;text&quot; name=&quot;list&quot; size=22 value=&quot;Start Punching!&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td valign=middle align=center colspan=3&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;       CLEAR      &quot; onClick=&quot;eraser()&quot;&gt;
+                          &lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt; 
+                          &lt;td valign=middle align=center colspan=6&gt; 
+                            &lt;input type=&quot;text&quot; name=&quot;display&quot; size=22 value=&quot;&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td valign=middle align=center colspan=2&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;       =      &quot; onClick=&quot;equal()&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;  &lt;--  &quot; onClick=&quot;backer()&quot;&gt;
+                          &lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt; 
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;  1  &quot; onClick=&quot;enter(1)&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;  2  &quot; onClick=&quot;enter(2)&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;  3  &quot; onClick=&quot;enter(3)&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td&gt;&lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;   /   &quot; onClick=&quot;calculate('/')&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td&gt;&lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot; sin &quot; onClick=&quot;calc(1)&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot; x&amp;#189; &quot; onClick=&quot;calc(4)&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;&lt;-&gt;M&quot; onClick=&quot;mem(0)&quot;&gt;
+                          &lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt; 
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;  4  &quot; onClick=&quot;enter(4)&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;  5  &quot; onClick=&quot;enter(5)&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;  6  &quot; onClick=&quot;enter(6)&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td&gt;&lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;   *   &quot; onClick=&quot;calculate('*')&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td&gt;&lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;cos&quot; onClick=&quot;calc(2)&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;  x&amp;#178; &quot; onClick=&quot;calc(7)&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;--&gt; M&quot; onClick=&quot;mem(1)&quot;&gt;
+                          &lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt; 
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;  7  &quot; onClick=&quot;enter(7)&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;  8  &quot; onClick=&quot;enter(8)&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;  9  &quot; onClick=&quot;enter(9)&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td&gt;&lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;   -   &quot; onClick=&quot;calculate('-')&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td&gt;&lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;tan &quot; onClick=&quot;calc(3)&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;1/x &quot; onClick=&quot;calc(6)&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;&lt;-- M&quot; onClick=&quot;mem(-1)&quot;&gt;
+                          &lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt; 
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;  0  &quot; onClick=&quot;enter(0)&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;dot&quot; onClick=&quot;enter('.')&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot; +|- &quot; onClick=&quot;change()&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td&gt;&lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;  +   &quot; onClick=&quot;calculate('+')&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td&gt;&lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;  pi &quot; onClick=&quot;pie()&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot; Ln &quot; onClick=&quot;calc(5)&quot;&gt;
+                          &lt;/td&gt;
+                          &lt;td valign=middle align=center&gt; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot; x^y  &quot; onClick=&quot;calculate('p')&quot;&gt;
+                          &lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt; 
+                        &lt;tr&gt; 
+                          &lt;td valign=middle align=center colspan=9&gt;&lt;/td&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt; 
+                          &lt;td valign=middle align=center colspan=9&gt; 
+                            &lt;input type=&quot;text&quot; name=&quot;c1&quot; size=4 value=&quot;&quot;&gt;
+                            &amp;nbsp;*X&amp;#178;&amp;nbsp;+&amp;nbsp; 
+                            &lt;input type=&quot;text&quot; name=&quot;c2&quot; size=4 value=&quot;&quot;&gt;
+                            &amp;nbsp;*X&amp;nbsp;+&amp;nbsp; 
+                            &lt;input type=&quot;text&quot; name=&quot;c3&quot; size=4 value=&quot;&quot;&gt;
+                            &amp;nbsp;=&amp;nbsp;0&amp;nbsp; 
+                            &lt;input type=&quot;button&quot; name=&quot;alex&quot; value=&quot;Solve&quot; onClick=&quot;fsolve()&quot;&gt;
+                          &lt;/td&gt;
+                        &lt;/tr&gt;
+                      &lt;/table&gt;
+                    &lt;/center&gt;
+                  &lt;/form&gt;</textarea>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr> 
+            <td height="20" class="white" bgcolor="#009900">&nbsp;</td>
+          </tr>
+        </table>
+        <br>
+      </td>
+      <td bgcolor="#009900" width="18"></td>
+    </tr>
+    <tr bgcolor="#009900"> 
+      <td></td>
+      <td align="center" height="35">&nbsp; </td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

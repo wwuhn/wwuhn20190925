@@ -1,0 +1,225 @@
+<html>
+<head>
+<title>COOL数字钟</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+a:active {font-style:normal;text-decoration:none;color:yellow;}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="#009900" topmargin="0" leftmargin="0">
+<form name="form">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr bgcolor="#009900"> 
+      <td colspan="3" height="18">&nbsp; </td>
+    </tr>
+    <tr> 
+      <td bgcolor="#009900" width="18"></td>
+      <td align="center" bgcolor="#FFFFFF" valign="top"><br>
+        <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+          <tr> 
+            <td rowspan="2" width="16" valign="top"> 
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+                <tr bgcolor="#336699" bordercolor="#336699"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="05.htm">演<br>
+                    <br>
+                    示</a></strong></td>
+                </tr>
+                <tr bordercolor="#009900" bgcolor="#009900"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="05c.htm">源<br>
+                    代<br>
+                    码</a></strong></td>
+                </tr>
+              </table>
+            </td>
+            <td rowspan="2" width="8" bgcolor="#009900">&nbsp;</td>
+            <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#009900" valign="top"> 
+              <br>
+              <b>COOL数字钟</b> 
+              <hr width="92%" size="1" align="center">
+              <table  cellspacing="0" cellpadding="0" width="81%">
+                <tr> 
+                  <td colspan="2" height="25">注释：放在&lt;body****&gt;里</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <input type="text" name="1" onFocus="this.select()" onMouseOver="this.focus()" size="52" style="BACKGROUND-COLOR: #009900;" class="pt9" value="onLoad=&quot;show3()&quot;">
+                  </td>
+                </tr>
+                <tr> 
+                  <td height="25" colspan="2">注释：放在&lt;body&gt;与&lt;/body&gt;之间</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <textarea name="2" onFocus="this.select()" onMouseOver="this.focus()" cols="50" rows="11" wrap="VIRTUAL" style="BACKGROUND-COLOR: #009900;" class="pt9">&lt;script language=&quot;javascript1.1&quot;&gt;
+
+&lt;!--
+
+/*
+
+Live clock script credit: Website Abstraction (www.wsabstract.com). 
+
+Your free JavaScripts archieve, with over 200+ free JavaScripts. 
+
+This script may be freely used as long as credit remains intact.
+
+*/
+
+var dn
+
+c1=new Image(); c1.src=&quot;c1.gif&quot;
+
+c2=new Image(); c2.src=&quot;c2.gif&quot;
+
+c3=new Image(); c3.src=&quot;c3.gif&quot;
+
+c4=new Image(); c4.src=&quot;c4.gif&quot;
+
+c5=new Image(); c5.src=&quot;c5.gif&quot;
+
+c6=new Image(); c6.src=&quot;c6.gif&quot;
+
+c7=new Image(); c7.src=&quot;c7.gif&quot;
+
+c8=new Image(); c8.src=&quot;c8.gif&quot;
+
+c9=new Image(); c9.src=&quot;c9.gif&quot;
+
+c0=new Image(); c0.src=&quot;c0.gif&quot;
+
+cb=new Image(); cb.src=&quot;cb.gif&quot;
+
+cam=new Image(); cam.src=&quot;cam.gif&quot;
+
+cpm=new Image(); cpm.src=&quot;cpm.gif&quot;
+
+function extract(h,m,s,type){
+
+if (!document.images)
+
+return
+
+if (h&lt;=9){
+
+document.images.a.src=cb.src
+
+document.images.b.src=eval(&quot;c&quot;+h+&quot;.src&quot;)
+
+}
+
+else {
+
+document.images.a.src=eval(&quot;c&quot;+Math.floor(h/10)+&quot;.src&quot;)
+
+document.images.b.src=eval(&quot;c&quot;+(h%10)+&quot;.src&quot;)
+
+}
+
+if (m&lt;=9){
+
+document.images.d.src=c0.src
+
+document.images.e.src=eval(&quot;c&quot;+m+&quot;.src&quot;)
+
+}
+
+else {
+
+document.images.d.src=eval(&quot;c&quot;+Math.floor(m/10)+&quot;.src&quot;)
+
+document.images.e.src=eval(&quot;c&quot;+(m%10)+&quot;.src&quot;)
+
+}
+
+if (s&lt;=9){
+
+document.g.src=c0.src
+
+document.images.h.src=eval(&quot;c&quot;+s+&quot;.src&quot;)
+
+}
+
+else {
+
+document.images.g.src=eval(&quot;c&quot;+Math.floor(s/10)+&quot;.src&quot;)
+
+document.images.h.src=eval(&quot;c&quot;+(s%10)+&quot;.src&quot;)
+
+}
+
+if (dn==&quot;AM&quot;) document.j.src=cam.src
+
+else document.images.j.src=cpm.src
+
+}
+
+function show3(){
+
+if (!document.images)
+
+return
+
+var Digital=new Date()
+
+var hours=Digital.getHours()
+
+var minutes=Digital.getMinutes()
+
+var seconds=Digital.getSeconds()
+
+dn=&quot;AM&quot; 
+
+if ((hours&gt;=12)&amp;&amp;(minutes&gt;=1)||(hours&gt;=13)){
+
+dn=&quot;PM&quot;
+
+hours=hours-12
+
+}
+
+if (hours==0)
+
+hours=12
+
+extract(hours,minutes,seconds,dn)
+
+setTimeout(&quot;show3()&quot;,1000)
+
+}
+
+//--&gt;
+
+&lt;/script&gt;
+&lt;img src=&quot;cb.gif&quot; name=&quot;a&quot;&gt;&lt;img src=&quot;cb.gif&quot; name=&quot;b&quot;&gt;&lt;img src=&quot;colon.gif&quot; name=&quot;c&quot;&gt;&lt;img src=&quot;cb.gif&quot; name=&quot;d&quot;&gt;&lt;img src=&quot;cb.gif&quot; name=&quot;e&quot;&gt;&lt;img src=&quot;colon.gif&quot; name=&quot;f&quot;&gt;&lt;img src=&quot;cb.gif&quot; name=&quot;g&quot;&gt;&lt;img src=&quot;cb.gif&quot; name=&quot;h&quot;&gt;&lt;img src=&quot;cam.gif&quot; name=&quot;j&quot;&gt;</textarea>
+                  </td>
+                </tr>
+                <tr> 
+                  <td colspan="2" height="25">(提示：<a href="../pic/cool.zip"><font color="#0000FF">图片包下载</font></a>，将图片解压缩后与网页放同一目录)</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr> 
+            <td height="20" class="white" bgcolor="#009900">&nbsp;</td>
+          </tr>
+        </table>
+        <br>
+      </td>
+      <td bgcolor="#009900" width="18"></td>
+    </tr>
+    <tr bgcolor="#009900"> 
+      <td></td>
+      <td align="center" height="35">&nbsp; </td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

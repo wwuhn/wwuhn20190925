@@ -1,0 +1,222 @@
+<html>
+<head>
+<title>随页面上下移动</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18"> 
+      <script language=JavaScript>
+	self.onError=null;
+	currentX = currentY = 0;  
+	whichIt = null;           
+	lastScrollX = 0; lastScrollY = 0;
+	NS = (document.layers) ? 1 : 0;
+	IE = (document.all) ? 1: 0;
+	<!-- STALKER CODE -->
+	function heartBeat() {
+		if(IE) { diffY = document.body.scrollTop; diffX = document.body.scrollLeft; }
+	    if(NS) { diffY = self.pageYOffset; diffX = self.pageXOffset; }
+		if(diffY != lastScrollY) {
+	                percent = .1 * (diffY - lastScrollY);
+	                if(percent > 0) percent = Math.ceil(percent);
+	                else percent = Math.floor(percent);
+					if(IE) document.all.floater.style.pixelTop += percent;
+					if(NS) document.floater.top += percent; 
+	                lastScrollY = lastScrollY + percent;
+	    }
+		if(diffX != lastScrollX) {
+			percent = .1 * (diffX - lastScrollX);
+			if(percent > 0) percent = Math.ceil(percent);
+			else percent = Math.floor(percent);
+			if(IE) document.all.floater.style.pixelLeft += percent;
+			if(NS) document.floater.left += percent;
+			lastScrollX = lastScrollX + percent;
+		}	
+	}
+	<!-- /STALKER CODE -->
+	<!-- DRAG DROP CODE -->
+	function checkFocus(x,y) { 
+	        stalkerx = document.floater.pageX;
+	        stalkery = document.floater.pageY;
+	        stalkerwidth = document.floater.clip.width;
+	        stalkerheight = document.floater.clip.height;
+	        if( (x > stalkerx && x < (stalkerx+stalkerwidth)) && (y > stalkery && y < (stalkery+stalkerheight))) return true;
+	        else return false;
+	}
+	function grabIt(e) {
+		if(IE) {
+			whichIt = event.srcElement;
+			while (whichIt.id.indexOf("floater") == -1) {
+				whichIt = whichIt.parentElement;
+				if (whichIt == null) { return true; }
+		    }
+			whichIt.style.pixelLeft = whichIt.offsetLeft;
+		    whichIt.style.pixelTop = whichIt.offsetTop;
+			currentX = (event.clientX + document.body.scrollLeft);
+	   		currentY = (event.clientY + document.body.scrollTop); 	
+		} else { 
+	        window.captureEvents(Event.MOUSEMOVE);
+	        if(checkFocus (e.pageX,e.pageY)) { 
+	                whichIt = document.floater;
+	                StalkerTouchedX = e.pageX-document.floater.pageX;
+	                StalkerTouchedY = e.pageY-document.floater.pageY;
+	        } 
+		}
+	    return true;
+	}
+	function moveIt(e) {
+		if (whichIt == null) { return false; }
+		if(IE) {
+		    newX = (event.clientX + document.body.scrollLeft);
+		    newY = (event.clientY + document.body.scrollTop);
+		    distanceX = (newX - currentX);    distanceY = (newY - currentY);
+		    currentX = newX;    currentY = newY;
+		    whichIt.style.pixelLeft += distanceX;
+		    whichIt.style.pixelTop += distanceY;
+			if(whichIt.style.pixelTop < document.body.scrollTop) whichIt.style.pixelTop = document.body.scrollTop;
+			if(whichIt.style.pixelLeft < document.body.scrollLeft) whichIt.style.pixelLeft = document.body.scrollLeft;
+			if(whichIt.style.pixelLeft > document.body.offsetWidth - document.body.scrollLeft - whichIt.style.pixelWidth - 20) whichIt.style.pixelLeft = document.body.offsetWidth - whichIt.style.pixelWidth - 20;
+			if(whichIt.style.pixelTop > document.body.offsetHeight + document.body.scrollTop - whichIt.style.pixelHeight - 5) whichIt.style.pixelTop = document.body.offsetHeight + document.body.scrollTop - whichIt.style.pixelHeight - 5;
+			event.returnValue = false;
+		} else { 
+			whichIt.moveTo(e.pageX-StalkerTouchedX,e.pageY-StalkerTouchedY);
+	        if(whichIt.left < 0+self.pageXOffset) whichIt.left = 0+self.pageXOffset;
+	        if(whichIt.top < 0+self.pageYOffset) whichIt.top = 0+self.pageYOffset;
+	        if( (whichIt.left + whichIt.clip.width) >= (window.innerWidth+self.pageXOffset-17)) whichIt.left = ((window.innerWidth+self.pageXOffset)-whichIt.clip.width)-17;
+	        if( (whichIt.top + whichIt.clip.height) >= (window.innerHeight+self.pageYOffset-17)) whichIt.top = ((window.innerHeight+self.pageYOffset)-whichIt.clip.height)-17;
+	        return false;
+		}
+	    return false;
+	}
+	function dropIt() {
+		whichIt = null;
+	    if(NS) window.releaseEvents (Event.MOUSEMOVE);
+	    return true;
+	}
+	<!-- DRAG DROP CODE -->
+	if(NS) {
+		window.captureEvents(Event.MOUSEUP|Event.MOUSEDOWN);
+		window.onmousedown = grabIt;
+	 	window.onmousemove = moveIt;
+		window.onmouseup = dropIt;
+	}
+	if(IE) {
+		document.onmousedown = grabIt;
+	 	document.onmousemove = moveIt;
+		document.onmouseup = dropIt;
+	}
+	if(NS || IE) action = window.setInterval("heartBeat()",1);
+</script>
+      <div id="floater" style="position:absolute; width:94px; height:55px; z-index:10; left: 367px; top: 233px"><img src="../pic/work.gif" width="81" height="50"></div>
+    </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="08.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="08c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><br>
+            <b>随页面上下移动</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="40" valign="top">提示：</td>
+                <td> 上下拖动滚动条，你会发现下面的图片总是跟着移动。<br>
+                  <br>
+                  <br>
+                  <br>
+                </td>
+              </tr>
+            </table>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

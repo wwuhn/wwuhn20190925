@@ -1,0 +1,141 @@
+<html>
+<head>
+<title>From日历带时钟</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+a:active {font-style:normal;text-decoration:none;color:yellow;}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="#009900" topmargin="0" leftmargin="0">
+<form name="form">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr bgcolor="#009900"> 
+      <td colspan="3" height="18">&nbsp; </td>
+    </tr>
+    <tr> 
+      <td bgcolor="#009900" width="18"></td>
+      <td align="center" bgcolor="#FFFFFF" valign="top"> <br>
+        <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+          <tr> 
+            <td rowspan="2" width="16" valign="top"> 
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+                <tr bgcolor="#336699" bordercolor="#336699"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="13.htm">演<br>
+                    <br>
+                    示</a></strong></td>
+                </tr>
+                <tr bordercolor="#009900" bgcolor="#009900"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="13c.htm">源<br>
+                    代<br>
+                    码</a></strong></td>
+                </tr>
+              </table>
+            </td>
+            <td rowspan="2" width="8" bgcolor="#009900">&nbsp;</td>
+            <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#009900" valign="top"> 
+              <br>
+              <b>From日期带时钟</b> 
+              <hr width="92%" size="1" align="center">
+              <table  cellspacing="0" cellpadding="0" width="81%">
+                <tr> 
+                  <td colspan="2" height="25">注释：放在&lt;body****&gt;里</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <input type="text" name="1" onFocus="this.select()" onMouseOver="this.focus()" size="52" style="BACKGROUND-COLOR: #009900;" class="pt9" value="onLoad=&quot;startclock();&quot;">
+                  </td>
+                </tr>
+                <tr> 
+                  <td height="25" colspan="2">注释：放在&lt;body&gt;与&lt;/body&gt;之间</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <textarea name="2" onFocus="this.select()" onMouseOver="this.focus()" cols="50" rows="12" wrap="VIRTUAL" style="BACKGROUND-COLOR: #009900;" class="pt9">&lt;script language=&quot;JavaScript&quot;&gt;
+&lt;!-- Hide
+  var timerID = null
+  var timerRunning = false
+  function MakeArray(size) 
+  {
+  this.length = size;
+  for(var i = 1; i &lt;= size; i++)
+  {
+  this[i] = &quot;&quot;;
+  }
+  return this;
+  }
+  function stopclock (){
+  if(timerRunning)
+  clearTimeout(timerID);
+  timerRunning = false
+  }
+  function showtime () {
+  var now = new Date();
+  var year = now.getYear();
+  var month = now.getMonth() + 1;
+  var date = now.getDate();
+  var hours = now.getHours();
+  var minutes = now.getMinutes();
+  var seconds = now.getSeconds();
+  var day = now.getDay();
+  Day = new MakeArray(7);
+  Day[0]=&quot;星期天&quot;;
+  Day[1]=&quot;星期一&quot;;
+  Day[2]=&quot;星期二&quot;;
+  Day[3]=&quot;星期三&quot;;
+  Day[4]=&quot;星期四&quot;;
+  Day[5]=&quot;星期五&quot;;
+  Day[6]=&quot;星期六&quot;;
+  var timeValue = &quot;&quot;;
+  timeValue += year + &quot;年&quot;;
+  timeValue += ((month &lt; 10) ? &quot;0&quot; : &quot;&quot;) + month + &quot;月&quot;;
+  timeValue += date + &quot;日  &quot;;
+  timeValue += (Day[day]) + &quot;  &quot;;
+  timeValue += ((hours &lt;= 12) ? hours : hours - 12);
+  timeValue += ((minutes &lt; 10) ? &quot;:0&quot; : &quot;:&quot;) + minutes;
+  timeValue += ((seconds &lt; 10) ? &quot;:0&quot; : &quot;:&quot;) + seconds;
+  timeValue += (hours &lt; 12) ? &quot;上午&quot; : &quot;下午&quot;;
+  document.jsfrm.face.value = timeValue;
+  timerID = setTimeout(&quot;showtime()&quot;,1000);
+  timerRunning = true
+  }
+  function startclock () {
+  stopclock();
+  showtime()
+  }
+  //--&gt;
+
+&lt;/script&gt;
+                  &lt;br&gt;
+                  &lt;form name='jsfrm'&gt;
+                    &lt;input type=text name='face' size=34 value=''&gt;
+                  &lt;/form&gt;</textarea>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr> 
+            <td height="20" class="white" bgcolor="#009900">&nbsp;</td>
+          </tr>
+        </table>
+        <br>
+      </td>
+      <td bgcolor="#009900" width="18"></td>
+    </tr>
+    <tr bgcolor="#009900"> 
+      <td></td>
+      <td align="center" height="35">&nbsp; </td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>聚焦脚本</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+body {  font-family: "宋体"; font-size: 9pt; margin-top: 0px}
+.pt9 { font-family: "宋体"; font-size: 9pt}
+a:hover { font-family: "宋体"; font-size: 9pt ; color: #FF0033; text-decoration: underline}
+-->
+</style>
+<meta name="keywords" content="focus 聚焦 select form">
+<meta name="description" content="文本选择聚焦脚本">
+<script language="javascript">
+function go(){
+this.location="imagefocus.htm";
+}
+</script>
+</head>
+
+<body bgcolor="#FFFFFF">
+<div align="center"><br>
+  <br>
+  <script>
+<!--
+function highlight(x){
+document.forms[x].elements[0].focus()
+document.forms[x].elements[0].select()
+}
+//-->
+</script>
+  <input type="button" value="按这里可以直接选择代码" onClick="javascripts:highlight(0)" class="pt9" name="button">
+  <input type="button" value="看看图片聚焦代码" class="pt9" onclick="go()">
+</div>
+<form>
+  <div align="center"> 
+    <textarea name="textarea" cols="55" rows="10" class="pt9" wrap="VIRTUAL">&lt;script&gt;
+&lt;!--
+function highlight(x){
+document.forms[x].elements[0].focus()
+document.forms[x].elements[0].select()
+}
+//--&gt;
+&lt;/script&gt;
+&lt;input type=&quot;button&quot; value=&quot;按这里可以直接选择代码&quot; onClick=&quot;javascripts:highlight(0)&quot;  name=&quot;button&quot;&gt;
+&lt;form&gt;
+&lt;textarea name=&quot;textarea&quot; cols=&quot;40&quot; rows=&quot;10&quot; wrap=&quot;VIRTUAL&quot;&gt;
+&lt;/textarea&gt;
+&lt;/form&gt;</textarea>
+  </div>
+</form>
+
+<p>
+<center>
+    <noscript></noscript> 
+  </center>
+<p> 
+</body>
+</html>

@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>状态栏跑马灯</title>
+<style type="text/css">
+<!--
+.unnamed1 {  font-family: "宋体"; font-size: 9pt; text-decoration: none}
+-->
+</style>
+</head>
+<BODY onLoad="timerONE=window.setTimeout('slide(120,0)',20);">
+<form>
+  <div align="center"> <font size="5" color="#FF0000">状态栏跑马灯脚本 </font> 
+    <hr noshade width="70%">
+  </div>
+</form>
+<p align="center">
+  <script language="JavaScript">
+function slide(jumpSpaces,position) {
+  var msg = "订阅本站免费的邮件列表-JAVA脚本送上门！"
+  var out = ""
+  if (endScroll) {return false}
+  for (var i=0; i<position; i++) 
+    {out += msg.charAt(i)}
+  for (i=1;i<jumpSpaces;i++) 
+    {out += " "}
+  out += msg.charAt(position)
+  window.status = out
+  if (jumpSpaces <= 1) {
+    position++
+    if (msg.charAt(position) == ' ') 
+      {position++ }
+    jumpSpaces = 100-position
+  } else if (jumpSpaces >  3)
+       {jumpSpaces *= .75}
+  else
+    {jumpSpaces--}
+  if (position != msg.length) {
+    var cmd = "slide(" + jumpSpaces + "," + position + ")";
+    scrollID = window.setTimeout(cmd,5);
+  } else {
+    scrolling = false
+    return false 
+  }
+  return true
+}
+function ccSetup() {
+ if (scrolling) 
+  if (!confirm('Re-initialize slide?'))
+   return false 
+   endScroll = true 
+   scrolling = true 
+   var killID = window.setTimeout('endScroll=false',6)
+   scrollID = window.setTimeout('slide(100,0)',10)
+   return true 
+}
+var scrollID = Object
+var scrolling = false
+var endScroll = false
+</script>
+  <textarea name="textfield" cols="65" rows="10" class="unnamed1">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;BODY onLoad=&quot;timerONE=window.setTimeout('slide(120,0)',20);&quot;&gt;
+&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;
+function slide(jumpSpaces,position) {
+  var msg = &quot;跑马灯的代码比较简单，只要将如下的代码稍微修改一下即可! &quot;
+  var out = &quot;&quot;
+  if (endScroll) {return false}
+  for (var i=0; i&lt;position; i++) 
+    {out += msg.charAt(i)}
+  for (i=1;i&lt;jumpSpaces;i++) 
+    {out += &quot; &quot;}
+  out += msg.charAt(position)
+  window.status = out
+  if (jumpSpaces &lt;= 1) {
+    position++
+    if (msg.charAt(position) == ' ') 
+      {position++ }
+    jumpSpaces = 100-position
+  } else if (jumpSpaces &gt;  3)
+       {jumpSpaces *= .75}
+  else
+    {jumpSpaces--}
+  if (position != msg.length) {
+    var cmd = &quot;slide(&quot; + jumpSpaces + &quot;,&quot; + position + &quot;)&quot;;
+    scrollID = window.setTimeout(cmd,5);
+  } else {
+    scrolling = false
+    return false 
+  }
+  return true
+}
+function ccSetup() {
+ if (scrolling) 
+  if (!confirm('Re-initialize slide?'))
+   return false 
+   endScroll = true 
+   scrolling = true 
+   var killID = window.setTimeout('endScroll=false',6)
+   scrollID = window.setTimeout('slide(100,0)',10)
+   return true 
+}
+var scrollID = Object
+var scrolling = false
+var endScroll = false
+&lt;/SCRIPT&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+</p>
+</body>
+</html>
+
+

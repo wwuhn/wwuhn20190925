@@ -1,0 +1,96 @@
+<HTML><HEAD>
+<SCRIPT>
+if (window != window.top)
+  top.location.href = location.href;
+
+x1="no",x2="no",x3="no",x4="no",x5="no",x6="no",x7="no",x8="no",d=""
+y = new Array()
+
+function make4windows() {
+lt="blank.htm"
+lb="blank.htm"
+rt="blank.htm"
+rb="blank.htm"
+if (y[0]) lt=y[0]
+if (y[1]) lb=y[1]
+if (y[2]) rt=y[2]
+if (y[3]) rb=y[3]
+d+='<frameset cols="50%,*" border=5><frameset rows="50%,*"><frame src="'+lt
+d+='" name="lt"><frame src="'+lb
+d+='" name="lb"></frameset><frameset rows=50%,*><frame src="'+rt
+d+='" name="rt"><frame src="'+rb+'" name="rb"></frameset></frameset>'
+document.write(d)
+document.close()
+ }
+
+function getCheckedPages(){
+if (document.p.b1.checked==true)y=y.concat("code4.htm")
+if (document.p.b2.checked==true)y=y.concat("demo.htm")
+if (document.p.b3.checked==true)y=y.concat("demo.htm")
+if (document.p.b4.checked==true)y=y.concat("demo.htm")
+if (document.p.b5.checked==true)y=y.concat("demo.htm")
+if (document.p.b6.checked==true)y=y.concat("demo.htm")
+if (document.p.b7.checked==true)y=y.concat("demo.htm")
+if (document.p.b8.checked==true)y=y.concat("demo.htm")
+make4windows()
+}
+</SCRIPT>
+<TITLE>Load 4 Pages</TITLE>
+<style type="text/css">
+<!--
+body {  font-family: "宋体"; font-size: 9pt; margin-top: 0px}
+-->
+</style></HEAD>
+<BODY bgcolor="#004080" text="#FFFFFF" link="#FFFFFF" vlink="#CCFFFF" alink="#FFFFFF" >
+<p align="center">&nbsp; </p>
+<p align="center">这里已经选中了四个页面，将同时打开。</p>
+<FORM name="p">
+  <div align="center">
+    <table border=1 cellpadding=5 width="493">
+      <tr> 
+        <td> 
+          <input type=checkbox name=b5 checked>
+          演示页面</td>
+        <td> 
+          <input type=checkbox name=b6 checked>
+          演示页面</td>
+        <td> 
+          <input type=checkbox name=b7>
+          演示页面</td>
+        <td> 
+          <input type=checkbox name=b8>
+          演示页面</td>
+      </tr>
+      <tr> 
+        <td> 
+          <input type=checkbox name=b1 checked>
+          下载代码</td>
+        <td> 
+          <input type=checkbox name=b2 checked>
+          演示页面</td>
+        <td> 
+          <input type=checkbox name=b3>
+          演示页面</td>
+        <td> 
+          <input type=checkbox name=b4>
+          演示页面</td>
+      </tr>
+    </table>
+  </div>
+  <div align="center"><font face="Arial, Helvetica, sans-serif" size="5"><a href="javascript:getCheckedPages()">Go</a></font></div>
+</FORM>
+<div align="center">
+  <table width="60%" border="0">
+    <tr> 
+      <td>说明：这里仅仅是一个演示，至于用这个脚本作什么，就要靠你的创意了。例如：可以做产品的演示，四个帧页面随便放想要说明的内容。用户选择了他们想要看的项目在一个页面全部显示，真正的方便！如果选择的项目少于4个，则显示空白的页面。空白页面你可以放任何辅助性质的说明文字。</td>
+    </tr>
+  </table>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr> 
+      <td align="center"> 
+        <input type="BUTTON" value="查看源代码" onClick= 'window.location = "view-source:" + window.location.href' name="BUTTON">
+      </td>
+    </tr>
+  </table>
+  </div>
+</BODY></HTML>

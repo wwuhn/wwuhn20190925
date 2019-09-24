@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>状态栏日期</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+a:active {font-style:normal;text-decoration:none;color:yellow;}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="#009900" topmargin="0" leftmargin="0">
+<form name="form">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr bgcolor="#009900"> 
+      <td colspan="3" height="18">&nbsp; </td>
+    </tr>
+    <tr> 
+      <td bgcolor="#009900" width="18"></td>
+      <td align="center" bgcolor="#FFFFFF"> <br>
+        <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+          <tr> 
+            <td rowspan="2" width="16" valign="top"> 
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+                <tr bgcolor="#336699" bordercolor="#336699"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="30.htm">演<br>
+                    <br>
+                    示</a></strong></td>
+                </tr>
+                <tr bordercolor="#009900" bgcolor="#009900"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="30c.htm">源<br>
+                    代<br>
+                    码</a></strong></td>
+                </tr>
+              </table>
+            </td>
+            <td rowspan="2" width="8" bgcolor="#009900">&nbsp;</td>
+            <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#009900" valign="top"> 
+              <br>
+              <b>状态栏日期</b> 
+              <hr width="92%" size="1" align="center">
+              <table  cellspacing="0" cellpadding="0" width="81%">
+                <tr> 
+                  <td colspan="2" height="20">注释：放在&lt;head&gt;与&lt;/head&gt;之间</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <p> 
+                      <textarea name="Code" onFocus="this.select()" onMouseOver="this.focus()" cols="50" style="BACKGROUND-COLOR: #009900;" wrap="VIRTUAL" rows="13" class="pt9">&lt;script&gt;
+// This function displays the time in the status line.
+// Invoke it once to activate the clock; it will call itself from then on.
+function display_time_in_status_line()
+{
+var d = new Date(); // month day, year hours:minutes:seconds
+var y = d.getYear(); // get current year
+var mo = d.getMonth() + 1; // extract months: January to December 
+var da = d.getDate(); // extract days: 1 to 31
+var t = y + '年' + mo + '月' + da + '日'; // put it all together
+defaultStatus = t; // display it in the status line
+// arrange to do it again in 1 second.
+setTimeout(&quot;display_time_in_status_line()&quot;, 1000); // 1000 ms in 1 second
+}
+&lt;/script&gt;</textarea>
+                    
+                  </td>
+                </tr>
+                <tr> 
+                  <td colspan="2" height="20">注释：放在＜body****＞里 </td>
+                </tr>
+                <tr> 
+                  <td colspan="2" height="20"> 
+                    <input type="text" name="body" onFocus="this.select()" onMouseOver="this.focus()" size="50" style="BACKGROUND-COLOR: #009900;" class="pt9" value=" onload=display_time_in_status_line();">
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr> 
+            <td height="20" class="white" bgcolor="#009900">&nbsp;</td>
+          </tr>
+        </table>
+        <br>
+      </td>
+      <td bgcolor="#009900" width="18"></td>
+    </tr>
+    <tr bgcolor="#009900"> 
+      <td></td>
+      <td align="center" height="35"> <font color="#FFFFFF"> </font> </td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

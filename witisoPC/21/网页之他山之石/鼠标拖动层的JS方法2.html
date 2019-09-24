@@ -1,0 +1,29 @@
+﻿<a href="http://www.zzjs.net/">站长特效网</a>,站长必备的高质量网页特效和广告代码。zzjs.net，站长js特效。<hr>
+<!--欢迎来到站长特效网，我们网站收集大量高质量js特效，提供许多广告代码下载，网址：www.zzjs.net，zzjs@msn.com,用.net打造靓站-->
+<div style="width:140px; height:140px; background-color:pink; cursor:pointer;" id="www_zzjs_net" onmousedown="divBlock_event_mousedown(arguments[0]);"></div>
+<script>
+function divBlock_event_mousedown(e){
+var e, obj, temp;
+obj=document.getElementById("www_zzjs_net");
+e=window.event?window.event:e;
+obj.startX=e.clientX-obj.offsetLeft;
+obj.startY=e.clientY-obj.offsetTop;
+document.onmousemove=document_event_mousemove;
+temp=document.attachEvent?document.attachEvent("onmouseup",document_event_mouseup):document.addEventListener("mouseup",document_event_mouseup,"");
+}//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+function document_event_mousemove(e){
+var e, obj;
+obj=document.getElementById("www_zzjs_net");
+e=window.event?window.event:e;
+with(obj.style){
+position="absolute";
+left=e.clientX-obj.startX+"px";
+top=e.clientY-obj.startY+"px";
+}
+}
+function document_event_mouseup(e){
+var temp;
+document.onmousemove="";
+temp=document.detachEvent?document.detachEvent("onmouseup",document_event_mouseup):document.removeEventListener("mouseup",document_event_mouseup,"");
+}//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+</script>

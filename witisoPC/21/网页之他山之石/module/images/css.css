@@ -1,0 +1,96 @@
+BODY {
+	FONT-SIZE: 12px; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #cccccc; COLOR: #333333; SCROLLBAR-3DLIGHT-COLOR: #cccccc; LINE-HEIGHT: 22px; SCROLLBAR-ARROW-COLOR: #330000; SCROLLBAR-TRACK-COLOR: #f6f6f6; FONT-FAMILY: "宋体", "楷体_GB2312", "黑体", "隶书"; SCROLLBAR-DARKSHADOW-COLOR: #ffffff
+}
+TD {
+	FONT-SIZE: 12px; COLOR: #333333; LINE-HEIGHT: 22px; FONT-FAMILY: "宋体", "楷体_GB2312", "黑体", "隶书"
+}
+TH {
+	FONT-SIZE: 12px; COLOR: #333333; LINE-HEIGHT: 22px; FONT-FAMILY: "宋体", "楷体_GB2312", "黑体", "隶书"
+}
+A {
+	FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+A:link {
+	COLOR: #333333
+}
+A:visited {
+	COLOR: #333333
+}
+A:hover {
+	COLOR: #ff0000; BORDER-BOTTOM: #ff0000 1px dotted
+}
+A:active {
+	COLOR: #ff6600
+}
+A.Channel:link {
+	FONT-SIZE: 13px; COLOR: #1a5100
+}
+A.Channel:visited {
+	FONT-SIZE: 13px; COLOR: #1a5100
+}
+A.Channel:hover {
+	FONT-SIZE: 13px; COLOR: #ff0000; BORDER-BOTTOM: #ff0000 1px dotted
+}
+A.Channel:active {
+	FONT-SIZE: 13px; COLOR: #1a5100
+}
+A.about:link {
+	COLOR: #ffffff
+}
+A.about:visited {
+	COLOR: #ffffff
+}
+A.about:hover {
+	LEFT: 1px; COLOR: #e4d61b; BORDER-BOTTOM: #bb5326 1px dotted; POSITION: relative; TOP: 1px
+}
+A.about:active {
+	COLOR: #97cbff
+}
+A.low:link {
+	COLOR: #a1a1a1
+}
+A.low:visited {
+	COLOR: #a1a1a1
+}
+A.low:hover {
+	COLOR: #ff0000; BORDER-BOTTOM: #ff0000 1px dotted
+}
+A.low:active {
+	COLOR: #a1a1a1
+}
+.Glow {
+	FILTER: Glow(Color=0733B2, Strength=1) dropshadow(Color=0733B2, OffX=1, OffY=1,); WIDTH: 100%; COLOR: #ffffff; LINE-HEIGHT: 20px
+}
+INPUT {
+	BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; FONT-SIZE: 9pt; BORDER-LEFT: #666666 1px solid; COLOR: #666666; BORDER-BOTTOM: #666666 1px solid; HEIGHT: 18px; BACKGROUND-COLOR: #dc4e4d
+}
+BUTTON {
+	FONT-SIZE: 9pt; HEIGHT: 20px
+}
+SELECT {
+	FONT-SIZE: 9pt; HEIGHT: 20px
+}
+.black {
+	FONT-SIZE: 12px; COLOR: #a1a1a1
+}
+.red {
+	FONT-SIZE: 12px; COLOR: #cc0001
+}
+.blue {
+	FONT-SIZE: 12px; COLOR: #0d4f93
+}
+.white {
+	FONT-SIZE: 12px
+}
+.green {
+	FONT-SIZE: 12px; COLOR: #236b00
+}
+.green2 {
+	FONT-SIZE: 13px; COLOR: #1a5100
+}
+.green3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 15px; COLOR: #1a5100
+}
+.green_h {
+	FONT-SIZE: 13px; COLOR: #1a5100; LINE-HEIGHT: 25px
+}

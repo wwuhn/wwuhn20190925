@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>频道方式打开的窗口</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="channel,window,open,pop,pop window,pop up,频道,ie,窗口,弹出窗口,弹出">
+<meta name="description" content="IE特有的以频道方式打开的窗口。">
+</head>
+
+<body bgcolor="#FFFFFF">
+<script language="">
+<!--
+function channel(){
+window.open("hehe.htm","","channelmode,scrollbars")
+}
+//-->
+</script>
+
+<form>
+  <div align="center">
+    <input type="button" onClick="channel()" value="以频道方式打开测试窗口" name="button" class="pt9">
+  </div>
+</form>
+<form>
+  <div align="center">
+    <textarea name="textfield" class="pt9" wrap="VIRTUAL" cols="60" rows="6">如下的代码加入HTML的&lt;body&gt;区即可：
+&lt;script&gt;
+&lt;!--
+function channel(){
+window.open(&quot;index.html&quot;,&quot;&quot;,&quot;channelmode,scrollbars&quot;)
+}
+//--&gt;
+&lt;/script&gt;
+
+&lt;p&gt;
+&lt;form&gt;
+&lt;input type=&quot;button&quot; onClick=&quot;channel()&quot; value=&quot;打开窗口&quot; name=&quot;button&quot;&gt;
+&lt;/form&gt;</textarea>
+  </div>
+</form>
+<p align="center">由于频道(channel)是IE特有的，所以这个特性只有IE才支持。<br>
+</p>
+<p align="center">&nbsp; </p>
+</body>
+</html>

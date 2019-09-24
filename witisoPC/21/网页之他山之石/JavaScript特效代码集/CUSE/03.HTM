@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>Email信息发送</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="03.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="03c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"> 
+            <br>
+            <b>Email信息发送</b> 
+            <hr width="92%" size="1" align="center">
+            <script language="JavaScript">
+<!--
+function validate_form() {
+  validity = true;
+  if (!check_empty(document.form.NAME.value))
+        { validity = false; alert('对不起!请你填入你的姓名。'); }
+  if (!check_email(document.form.EMAIL.value))
+        { validity = false; alert('对不起!请重新正确填入Email地址。'); }
+  if (!check_empty(document.form.DESCRIPTION.value))
+        { validity = false; alert('对不起!请你在"简要描述"留言填入留言。'); }
+  if (validity)
+        alert ("                      谢谢你的来信.                                  "
+                + "              你所填的信息将以Email形式发送给我，                      "
+                + "              假如你认为本站内容不错的话，请将本                       "
+                + "              介绍给你的朋友，希望大家经常光顾本站。");
+  return validity; 
+}
+
+function check_empty(text) {
+  return (text.length > 0); 
+}
+
+function check_email(address) {
+  if ((address == "")
+    || (address.indexOf ('@') == -1)
+    || (address.indexOf ('.') == -1))
+      return false;
+  return true;
+}
+
+// -->
+</script>
+            <form name="form" method="post" action="mailto:abc@263.net?SUBJECT=网友的留言"
+enctype="text/plain" onSubmit="return validate_form()">
+              <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                <tr> 
+                  <td width="77%"> 
+                    <div align="left"><font size="3"><b>姓名:</b></font> 
+                      <input type="text" size=46 name="NAME">
+                      <br>
+                      <b><font size="3">Email地址: </font></b> 
+                      <input type="text" size=46 name="EMAIL">
+                      <br>
+                      <b><font size="3">URL地址: </font></b> 
+                      <input type="text" size=46 name="URL" value="http://">
+                      <br>
+                      <b><font size="3">留言内容:</font></b><br>
+                      <textarea name="DESCRIPTION" rows=8 cols=45 wrap=virtual></textarea>
+                    </div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <div align="center"><br>
+                      <input type="submit" name="submit" value="发送">
+                      <input type="reset" value="清除" name="reset">
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </form>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

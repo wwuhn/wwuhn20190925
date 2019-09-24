@@ -1,0 +1,124 @@
+<html>
+<head>
+<title>自动变化背景</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+</head>
+
+<body topmargin="0" leftmargin="0" onLoad="chgCol(); pingpong();">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center"> <br>
+      <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="03.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="03c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><br>
+            <b>自动变化背景</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="40" valign="top">提示：</td>
+                <td>不要乱动，等上5秒钟就会看到效果。
+                  <script language="JavaScript">
+<!-- Hide from JavaScript-Impaired Browsers
+var pos = 10;
+function initArray() {
+ this.length = initArray.arguments.length;
+ for (var i = 0; i < this.length; i++) {
+  this[i] = initArray.arguments[i];
+  }
+}
+var col=new initArray("4b","5b","8b","8b");
+col[0] = "white";
+col[1] = "coral";
+col[2] = "orange";
+col[3] = "red";
+col[4] = "greenyellow";
+col[5] = "lime";
+col[6] = "turquoise";
+col[7] = "coral";
+col[8] = "blueviolet";
+col[9] = "violet";
+
+function chgCol() {
+  pos++;
+  if (pos<0||pos>9) {
+    pos = 0;
+    }
+  document.bgColor = col[pos];
+  setTimeout("chgCol()",5000);
+  /* Change above set to every 10 seconds (1000 = 1 sec)  If
+       you wish to speed it up, lower the number. To slow it
+       down, raise the number. */
+ }
+
+var yourwords = "";var buffer1="           ";
+var buffer2="           ";
+var message1=buffer1+yourwords+buffer2;
+var dir = "left";var speed =150;
+function pingpong(){if (dir == "left") 
+ {    message2=message1.substring(2,message1.length)+"  "; 
+   window.status=message2;  
+  setTimeout("pingpong();",speed); 
+   message1=message2; 
+   if (message1.substring(0,1) == "*") dir="right";
+  }
+else 
+ {    message2="  "+message1.substring(0,message1.length-2); 
+   window.status=message2;   
+ setTimeout("pingpong();",speed); 
+   message1=message2; 
+   if (message1.substring(message1.length-1,message1.length) == "*") dir="left"; 
+ }
+}
+// -->
+</script>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

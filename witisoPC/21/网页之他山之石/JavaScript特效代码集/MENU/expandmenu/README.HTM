@@ -1,0 +1,118 @@
+<html>
+<head>
+<title>folder menu tree 重要说明文件</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+body {  font: 9pt "宋体"; margin: 0px}
+td {  font: 9pt "宋体"}
+-->
+</style></head>
+
+<body bgcolor="#F3F3F3">
+
+
+
+<!-- Spidersoft WebZIP Banner Ad Insert -->
+<!-- For removal instructions see:  http://www.spidersoft.com/webzip/help/noads.asp  -->
+
+<SCRIPT FOR=window EVENT=onload LANGUAGE="JScript">
+  initAd();
+</SCRIPT>
+
+<script language="JScript">
+<!--
+
+function initAd() {
+  document.all.AdLayer.style.posTop = -200;
+  document.all.AdLayer.style.visibility = 'visible'
+  MoveLayer('AdLayer');
+}
+
+function MoveLayer(layerName) {
+  var x = 10;
+  var y = 10;
+  var diff = (document.body.scrollTop + y - document.all.AdLayer.style.posTop)*.40;
+  var y = document.body.scrollTop + y - diff;
+  eval("document.all." + layerName + ".style.posTop =  y");
+  eval("document.all." + layerName + ".style.posLeft = x");
+  setTimeout("MoveLayer('AdLayer');", 60);
+}
+
+if (navigator.onLine){
+  document.write("<div bgcolor=#000000 style='height=70px;'></div>");
+  document.write("<div id=AdLayer style='position:absolute; width:100%; height:80px; z-index:20; visibility:hidden;'>");
+  document.write("<IFRAME SRC='http://www.spidersoft.com/ads/bwz468_60.asp' width=100% height=60 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></IFRAME>");
+  document.write("</div>");
+}
+ //-->
+</script>
+
+<!-- /Spidersoft WebZIP Banner Ad Insert -->
+
+
+
+        <div align="center">
+          <script language="javascript" src="../../../library/javascript/ads46860.js"></script>
+        </div>
+<hr noshade width="70%">
+<p align="center"><font size="3" color="#990099"><br>
+  </font></p>
+<p align="center"><font size="5" color="#990099">说 明 文 件</font><font size="3" color="#990099">  </font></p>
+<table width="81%" border="0" align="center">
+  <tr> 
+    <td> 
+      <p>下载文件后展开，有一个images目录，里面的图片是所需的所有LOGO，如果你有更好的换掉即可。</p>
+      <p>（1）index.htm是FRAME帧页面，定义帧页面的布局。没有什么特别的。本例左侧页面left.htm，右侧right.htm，左侧Frame名字“left”，右侧Frame名字“Right”。</p>
+      <p>（2）menu.js文件不必有任何改动。</p>
+      <p>（3）改动最大的就是left.htm（左侧帧页面），第一眼你一定会头昏的，其实代码非常有规律，只要改好一层的菜单，其余层的复制/粘贴，再稍微小小改动即可。</p>
+      <p>下面是一层菜单(父目录级，即最高级)的完全代码(我是从代码中搬下来的，没有任何改动)：</p>
+      <table width="100%" border="0">
+        <tr bgcolor="#990033"> 
+          <td> 
+            <p><font color="#FFFFFF">&lt;script language=&quot;JavaScript1.2&quot; 
+              src=&quot;menu.js&quot;&gt;&lt;/script&gt;</font></p>
+            <p><font color="#FFFFFF"> &lt;!--上面引用外部javascript文件，放在BODY标签后面--&gt;<br>
+              <br>
+              &lt;!--第一层--&gt;<br>
+              <br>
+              &lt;div id=&quot;<font color="#FFFF33" size="+1">KB1Parent</font>&quot; 
+              class=&quot;<font color="#33FF33" size="+1"><b><font face="Times New Roman, Times, serif">parent</font></b></font>&quot;&gt;&lt;a 
+              href=&quot;#&quot; onClick=&quot;expandIt('<font color="#FFFF33" size="+1">KB1</font>'); 
+              return false&quot; onMouseOver=&quot;window.status='文件夹1的状态栏信息...';return 
+              true;&quot; onMouseOut=&quot;window.status='';return true;&quot;&gt;&lt;IMG 
+              SRC=&quot;images/plus.gif&quot; WIDTH=35 HEIGHT=17 BORDER=0&gt;文件夹一&lt;/a&gt;&lt;/div&gt;</font></p>
+            <p><font color="#FFFFFF">&lt;div id=&quot;<font color="#FFFF33" size="+1">KB1Child</font>&quot; 
+              class=&quot;<font color="#66FF33" face="Times New Roman, Times, serif" size="+1"><b>child</b></font>&quot;&gt;<br>
+              &lt;a href=&quot;sample.htm&quot; target=&quot;right&quot; onMouseOver=&quot;window.status='页面1的状态栏信息...';return 
+              true;&quot; onMouseOut=&quot;window.status='';return true;&quot;&gt;&lt;img 
+              src=&quot;images/spacer.gif&quot; width=20 height=11 border=0 alt=&quot;&quot;&gt;&lt;IMG 
+              SRC=&quot;images/blank.gif&quot; WIDTH=32 HEIGHT=18 BORDER=0&gt;页面一&lt;/a&gt;&lt;br&gt;</font></p>
+            <p><font color="#FFFFFF"><br>
+              &lt;a href=&quot;sample.htm&quot; target=&quot;right&quot; onMouseOver=&quot;window.status='页面2的状态栏信息...';return 
+              true;&quot; onMouseOut=&quot;window.status='';return true;&quot;&gt;&lt;img 
+              src=&quot;images/spacer.gif&quot; width=20 height=11 border=0 alt=&quot;&quot;&gt;&lt;IMG 
+              SRC=&quot;images/blank.gif&quot; WIDTH=32 HEIGHT=18 BORDER=0&gt;页面二&lt;/a&gt;&lt;br&gt;</font></p>
+            <p><font color="#FFFFFF"><br>
+              &lt;a href=&quot;sample.htm&quot; target=&quot;right&quot; onMouseOver=&quot;window.status='页面3的状态栏信息...';return 
+              true;&quot; onMouseOut=&quot;window.status='';return true;&quot;&gt;&lt;img 
+              src=&quot;images/spacer.gif&quot; width=20 height=11 border=0 alt=&quot;&quot;&gt;&lt;IMG 
+              SRC=&quot;images/blank.gif&quot; WIDTH=32 HEIGHT=18 BORDER=0&gt;页面三&lt;/a&gt;</font></p>
+            <p><font color="#FFFFFF">&lt;/div&gt;</font></p>
+            <p><font color="#FFFFFF">需要改动的地方：黄色的3处是最重要的。第一层文件夹分别用 <font color="#FFFF33" size="+1">KB1Parent，</font> 
+              <font color="#FFFF33" size="+1">KB1，</font> <font color="#FFFF33" size="+1">KB1Child。</font><font color="#FFFFFF">第二层文件夹分别用 
+              <font color="#FFFF33" size="+1">KB2Parent，</font> <font color="#FFFF33" size="+1">KB2，</font> 
+              <font color="#FFFF33" size="+1">KB2Child。<font color="#FFFFFF">第几层就改成几，</font></font></font><font color="#FFFFFF">依次类推，复制粘贴后首先改这3处。</font></font></p>
+            <p><font color="#FFFFFF">其次，绿色的部分，你不必改，只要明白，parent代表父目录，点击它打开下面的子目录。child代表子目录。一个父目录下可以添加很多子目录。</font></p>
+            <p><font color="#FFFFFF">后面的三小段代表3个子目录，只要修改连接URL，状态栏提示信息和页面打开的目标帧即可。target用“_top”在整个页面打开，用 
+              “_blank” 在新的页面打开，用frame的名字“right”在右侧的帧打开。</font></p>
+            <p>&nbsp;</p>
+    </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>菜单式月历表</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+a:active {font-style:normal;text-decoration:none;color:yellow;}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="#009900" topmargin="0" leftmargin="0">
+<form name="form">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr bgcolor="#009900"> 
+      <td colspan="3" height="18">&nbsp; </td>
+    </tr>
+    <tr> 
+      <td bgcolor="#009900" width="18"></td>
+      <td align="center" bgcolor="#FFFFFF" valign="top"> <br>
+        <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+          <tr> 
+            <td rowspan="2" width="16" valign="top"> 
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+                <tr bgcolor="#336699" bordercolor="#336699"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="08.htm">演<br>
+                    <br>
+                    示</a></strong></td>
+                </tr>
+                <tr bordercolor="#009900" bgcolor="#009900"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="08c.htm">源<br>
+                    代<br>
+                    码</a></strong></td>
+                </tr>
+              </table>
+            </td>
+            <td rowspan="2" width="8" bgcolor="#009900">&nbsp;</td>
+            <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#009900" valign="top"> 
+              <br>
+              <b>菜单式月历表</b> 
+              <hr width="92%" size="1" align="center">
+              <table  cellspacing="0" cellpadding="0" width="81%">
+                <tr> 
+                  <td height="25" colspan="2">注释：放在&lt;body&gt;与&lt;/body&gt;之间</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <textarea name="2" onFocus="this.select()" onMouseOver="this.focus()" cols="50" rows="15" wrap="VIRTUAL" style="BACKGROUND-COLOR: #009900;" class="pt9">&lt;script language=&quot;JavaScript&quot;&gt;
+&lt;!-- Begin
+today = new Date();
+thismonth = today.getMonth()+1;
+thisyear = today.getYear();
+thisday = today.getDate();
+montharray=new Array(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+maxdays=montharray[thismonth-1];
+if (thismonth==2) {
+if ((thisyear/4)!=parseInt(thisyear/4)) maxdays=28;
+else maxdays=29;
+}
+thismonth = &quot;&quot; + thismonth
+if (thismonth.length == 1) {
+thismonth = &quot;0&quot; + thismonth;
+}
+document.write(&quot;&lt;form&gt;&quot;);
+document.write(&quot;&lt;select name=dates size=1&gt;&quot;);
+for (var theday = 1; theday &lt;= maxdays; theday++) {
+var theday = &quot;&quot; + theday;
+if (theday.length == 1) {
+theday = &quot;0&quot; + theday;
+}
+document.write(&quot;&lt;option&quot;);
+if (theday == thisday) document.write(&quot; selected&quot;);
+document.write(&quot;&gt;&quot;);
+document.write(thismonth + &quot;-&quot; + theday + &quot;-&quot; + thisyear);
+}
+document.write(&quot;&lt;/select&gt;&lt;/form&gt;&quot;);
+// End --&gt;
+&lt;/script&gt;</textarea>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr> 
+            <td height="20" class="white" bgcolor="#009900">&nbsp;</td>
+          </tr>
+        </table>
+        <br>
+      </td>
+      <td bgcolor="#009900" width="18"></td>
+    </tr>
+    <tr bgcolor="#009900"> 
+      <td></td>
+      <td align="center" height="35">&nbsp; </td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

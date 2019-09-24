@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>倒计时脚本</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.font {  font-family: "宋体"; font-size: 9pt}
+body { font-family: "宋体"; font-size: 9pt; margin-top: 0px }
+-->
+</style>
+<meta name="keywords" content="倒计时 时间 日历">
+<meta name="description" content="一个倒计时脚本，时间到了后会显示欢迎词，超过倒计时日期后，信息就不再显示了。">
+<script language="javascript">
+function dl(){
+this.location="dg.zip";
+}
+</script>
+</head>
+
+<body bgcolor="#FFF7f7">
+<div align="center">
+  <center>
+  </center>
+</div>
+<form>
+  <div align="center"> <font size="5" color="#FF0000">独有特色的倒计时脚本<br>
+    </font><font color="#FF0000">一个倒计时脚本，时间到了后会显示欢迎词，超过倒计时日期后，信息就不再显示了。</font></div>
+</form>
+<table width="75%" border="0" align="center">
+  <tr>
+    <td> 
+      <hr noshade>
+      <script>
+//change the text below to reflect your own,
+var before="圣诞节"
+var current="圣诞节到了，祝大家圣诞快乐！"
+var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+
+function countdown(yr,m,d){
+var today=new Date()
+var todayy=today.getYear()
+var todaym=today.getMonth()
+var todayd=today.getDate()
+var todaystring=montharray[todaym]+" "+todayd+", "+todayy
+var futurestring=montharray[m-1]+" "+d+", "+yr
+var difference=(Math.round((Date.parse(futurestring)-Date.parse(todaystring))/(24*60*60*1000))*1)
+var dstring=difference.toString()
+if (difference==0)
+document.write(current)
+else if (difference>0){
+document.write("距离"+before)
+for (i=0;i<=dstring.length-1;i++)
+document.write('<img src="c'+dstring.charAt(i)+'.gif">')
+document.write('天')
+}
+}
+//enter the count down date using the format year/month/day
+countdown(2000,12,25)
+</script>
+      <br>
+      （<font color="#3300CC">如果本行没有图片显示说明：时间在２０００年１２月２５日以后</font>）<br>
+      <font color="#FF0000">本例显示距离２０００年圣诞节的倒计时时间。</font>
+      <hr noshade>
+    </td>
+  </tr>
+  <tr>
+    <td> 
+      <form method="post" action="">
+        <input type="button" name="Button" value="下载全部文件" class="font" onclick="dl()">
+      </form>
+      <p>&nbsp;</p>
+      <p>如下的脚本加入ＨＴＭＬ的&lt;body&gt;区：</p>
+      <p>&lt;script&gt;<br>
+        //以下参数第一行是显示的特殊日名称，后面要引用的。<br>
+        //参数第二行是特殊日到了后显示的欢迎词。<br>
+        //<font color="#FF0000">特殊日过了后就不显示了</font>。</p>
+      <p><br>
+        var before=&quot;圣诞节&quot;<br>
+        var current=&quot;圣诞节到了，祝大家圣诞快乐！&quot;<br>
+        var montharray=new Array(&quot;Jan&quot;,&quot;Feb&quot;,&quot;Mar&quot;,&quot;Apr&quot;,&quot;May&quot;,&quot;Jun&quot;,&quot;Jul&quot;,&quot;Aug&quot;,&quot;Sep&quot;,&quot;Oct&quot;,&quot;Nov&quot;,&quot;Dec&quot;) 
+      </p>
+      <p>function countdown(yr,m,d){<br>
+        var today=new Date()<br>
+        var todayy=today.getYear()<br>
+        var todaym=today.getMonth()<br>
+        var todayd=today.getDate()<br>
+        var todaystring=montharray[todaym]+&quot; &quot;+todayd+&quot;, &quot;+todayy<br>
+        var futurestring=montharray[m-1]+&quot; &quot;+d+&quot;, &quot;+yr<br>
+        var difference=(Math.round((Date.parse(futurestring)-Date.parse(todaystring))/(24*60*60*1000))*1)<br>
+        var dstring=difference.toString()<br>
+        if (difference==0)<br>
+        document.write(current)<br>
+        else if (difference&gt;0){<br>
+        document.write(&quot;距离&quot;+before)<br>
+        for (i=0;i&lt;=dstring.length-1;i++)<br>
+        document.write('&lt;img src=&quot;c'+dstring.charAt(i)+'.gif&quot;&gt;')<br>
+        document.write('天')<br>
+        }<br>
+        }<br>
+        //<font color="#FF0000">倒计时的日期在这里。</font><br>
+        countdown(2000,12,25)<br>
+        &lt;/script&gt;</p>
+      <p>注释：自己用任意的图片（c0.gif--c9.gif代替本例的图片即可。）</p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

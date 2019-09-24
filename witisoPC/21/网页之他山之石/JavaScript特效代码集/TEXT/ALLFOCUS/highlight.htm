@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>聚焦脚本-focus</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="focus,highlight,聚焦">
+<meta name="description" content="几个聚焦脚本的实例">
+</head>
+
+<body bgcolor="#FFFFFF">
+<form>
+    
+  <div align="center"> <font size="3" color="#FF0033">Highlight a text area--反显选择文本框内容</font></div>
+  </form>
+<form name=form2>
+  <div align="center">
+    <textarea name="c" rows=4 cols=40 class="pt9" wrap="VIRTUAL">你好！欢迎光临一千个经典网页特效
+
+
+</TEXTAREA>
+    <br>
+    <input type="button" value="选择" onClick="document.form2.c.focus(); document.form2.c.select();" class="pt9">
+  </div>
+</form>
+<table width="75%" border="0" align="center">
+  <tr bgcolor="#F4F3F2"> 
+    <td> 
+      <p><font face="Arial, Helvetica, sans-serif">&lt;form name=form2&gt;<br>
+        &lt;textarea name=&quot;c&quot; rows=4 cols=40&gt;<br>
+        你好！欢迎光临java2000<br>
+        &lt;/textarea&gt;<br>
+        &lt;br&gt;<br>
+        &lt;input type=&quot;button&quot; value=&quot;选择&quot; onClick=&quot;document.form2.c.focus(); 
+        document.form2.c.select();&quot;&gt;<br>
+        &lt;/form&gt;</font></p>
+      <p><font face="Arial, Helvetica, sans-serif">说明：form2是表单的名字， c是textarea的名字。</font></p>
+      </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>分割显示文件确切路径</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.unnamed1 {  font: 9pt "宋体"; text-decoration: none}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" background="../../../images/bg011.gif">
+<form>
+  <div align="center"> <font size="5" color="#FF0000">分割显示文件确切路径，明明白白俺的心。<br>
+    可以访问上级目录了。 </font></div>
+</form>
+<table width="75%" border="0" align="center">
+  <tr bgcolor="#FFFFCC"> 
+    <td> 
+      <script language="JavaScript">
+<!-- Begin
+var path = "";
+var href = document.location.href;
+var s = href.split("/"); 
+for (var i=2;i<(s.length-1);i++) {
+path+="<A HREF=\""+href.substring(0,href.indexOf(s[i])+s[i].length)+"/\">"+s[i]+"</A>/";
+}
+i=s.length-1;
+path+="<A HREF=\""+href.substring(0,href.indexOf(s[i])+s[i].length)+"\">"+s[i]+"</A>";
+var url = window.location.protocol + "//" + path;
+document.writeln("当前文件路径"+url);
+// End -->
+</script>
+    </td>
+  </tr>
+  <tr> 
+    <td>
+      <p>将如下代码加入HTML的&lt;body&gt;区即可：</p>
+      <p>&lt;script language=&quot;JavaScript&quot;&gt;<br>
+        &lt;!-- Begin<br>
+        var path = &quot;&quot;;<br>
+        var href = document.location.href;<br>
+        var s = href.split(&quot;/&quot;); <br>
+        for (var i=2;i&lt;(s.length-1);i++) {<br>
+        path+=&quot;&lt;A HREF=\&quot;&quot;+href.substring(0,href.indexOf(s[i])+s[i].length)+&quot;/\&quot;&gt;&quot;+s[i]+&quot;&lt;/A&gt;/&quot;;<br>
+        }<br>
+        i=s.length-1;<br>
+        path+=&quot;&lt;A HREF=\&quot;&quot;+href.substring(0,href.indexOf(s[i])+s[i].length)+&quot;\&quot;&gt;&quot;+s[i]+&quot;&lt;/A&gt;&quot;;<br>
+        var url = window.location.protocol + &quot;//&quot; + path;<br>
+        document.writeln(&quot;当前文件路径&quot;+url);<br>
+        // End --&gt;<br>
+        &lt;/script&gt;</p>
+    </td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</body>
+</html>

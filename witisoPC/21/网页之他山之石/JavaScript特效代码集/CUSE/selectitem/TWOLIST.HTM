@@ -1,0 +1,148 @@
+<html>
+<head>
+<title>项目选择脚本</title>
+<meta name="keywords" content="select,selectbox,form,submit,项目选择,递交,表单,表单递交">
+<meta name="description" content="表单递交之selectBox-项目选择增加和移动脚本">
+<script LANGUAGE="JavaScript">
+<!--
+// fbox - 待选项目列表
+// tbox - 选择了的项目列表
+
+function move(fbox,tbox)  {
+   for(var i=0; i<fbox.options.length; i++)  {
+     if(fbox.options[i].selected && fbox.options[i].value != "")  {
+        // 增加项目列表到右侧
+        var no = new Option();
+        no.value = fbox.options[i].value
+        no.text = fbox.options[i].text
+        tbox.options[tbox.options.length] = no;
+
+        //  清空左侧的项目列表
+        fbox.options[i].value = ""
+        fbox.options[i].text = ""
+     }
+   }
+   BumpUp(fbox);
+   SortD(tbox);
+}
+
+// 清除空的项目列表
+function BumpUp(box)  {
+  for(var i=0; i<box.options.length; i++)  {
+     if(box.options[i].value == "")  {
+       for(var j=i; j<box.options.length-1; j++)  {
+         box.options[j].value = box.options[j+1].value
+         box.options[j].text = box.options[j+1].text
+       }
+       var ln = i
+       break
+     }
+   }
+   if(ln < box.options.length)  {
+     box.options.length -= 1;
+     BumpUp(box);
+   }
+}
+
+function SortD(box)  {
+  var temp_opts = new Array()
+  var temp = new Object()
+  // 调用临时数组
+  for(var i=0; i<box.options.length; i++)  {
+    temp_opts[i] = box.options[i]
+  }
+
+  //排序
+  for(var x=0; x<temp_opts.length-1; x++)  {
+    for(var y=(x+1); y<temp_opts.length; y++)  {
+      if(temp_opts[x].text > temp_opts[y].text)  {
+        temp = temp_opts[x].text
+        temp_opts[x].text = temp_opts[y].text
+        temp_opts[y].text = temp
+      }
+    }
+  }
+
+  for(var i=0; i<box.options.length; i++)  {
+    box.options[i].value = temp_opts[i].value
+    box.options[i].text = temp_opts[i].text
+  }
+}
+
+function Select(box)  {
+  for(var i=0; i<box.options.length; i++)  {
+    box.options[i].selected = true;
+  }
+}
+
+// -->
+</script> 
+<link rel="stylesheet" href="../style.css"></head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form ACTION="your action" METHOD="POST">
+  <table border="0" align="center">
+    <tr><td>
+        <select SIZE="8" NAME="list1" class="pt9" multiple>
+          <option value="11">项目选择列表1</option>
+      <option value="12">项目选择列表2</option>
+      <option value="13">项目选择列表3</option>
+    </select>
+  </td>
+  <td>
+        <input TYPE="button" VALUE="   &gt;&gt;   " ONClick="move(this.form.list1,this.form.list2)" NAME="B1">
+        <br>
+        <input TYPE="button" VALUE="   &lt;&lt;   " ONClick="move(this.form.list2,this.form.list1)" NAME="B2">
+  </td>
+  <td>
+        <select multiple SIZE="8" NAME="list2" class="pt9">
+          <option value="21">项目选择列表4</option>
+      <option value="22">项目选择列表5</option>
+      <option value="23">项目选择列表6</option>
+    </select>
+  </td></tr></table>
+  <div align="center"><br>
+    <input type="submit" name="Submit" value="Submit">
+  </div>
+</form>
+  
+<p align="center">注意：操作习惯和ＷＩＮ９５一样，用Ctrl和Shift选择多个项目。<br>
+  action应该修改成你自己的递交处理程序，例如cgi或ASP程序。本例没有做。</p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><font color="#FF0000">以下为代码</font><br>
+      <br>
+      &lt;form ACTION=&quot;your action&quot; METHOD=&quot;POST&quot;&gt;<br>
+      &lt;table border=&quot;0&quot; align=&quot;center&quot;&gt;<br>
+      &lt;tr&gt;&lt;td&gt;<br>
+      &lt;select SIZE=&quot;8&quot; NAME=&quot;list1&quot; class=&quot;pt9&quot; 
+      multiple&gt;<br>
+      &lt;option value=&quot;11&quot;&gt;项目选择列表1&lt;/option&gt;<br>
+      &lt;option value=&quot;12&quot;&gt;项目选择列表2&lt;/option&gt;<br>
+      &lt;option value=&quot;13&quot;&gt;项目选择列表3&lt;/option&gt;<br>
+      &lt;/select&gt;<br>
+      &lt;/td&gt;<br>
+      &lt;td&gt;<br>
+      &lt;input TYPE=&quot;button&quot; VALUE=&quot; &amp;gt;&amp;gt; &quot; ONClick=&quot;move(this.form.list1,this.form.list2)&quot; 
+      NAME=&quot;B1&quot;&gt;<br>
+      &lt;br&gt;<br>
+      &lt;input TYPE=&quot;button&quot; VALUE=&quot; &amp;lt;&amp;lt; &quot; ONClick=&quot;move(this.form.list2,this.form.list1)&quot; 
+      NAME=&quot;B2&quot;&gt;<br>
+      &lt;/td&gt;<br>
+      &lt;td&gt;<br>
+      &lt;select multiple SIZE=&quot;8&quot; NAME=&quot;list2&quot; class=&quot;pt9&quot;&gt;<br>
+      &lt;option value=&quot;21&quot;&gt;项目选择列表4&lt;/option&gt;<br>
+      &lt;option value=&quot;22&quot;&gt;项目选择列表5&lt;/option&gt;<br>
+      &lt;option value=&quot;23&quot;&gt;项目选择列表6&lt;/option&gt;<br>
+      &lt;/select&gt;<br>
+      &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;<br>
+      &lt;div align=&quot;center&quot;&gt;&lt;br&gt;<br>
+      &lt;input type=&quot;submit&quot; name=&quot;Submit&quot; value=&quot;Submit&quot;&gt;<br>
+      &lt;/div&gt;<br>
+      &lt;/form&gt; </td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+
+</body>
+</html>

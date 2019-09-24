@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>按钮时钟</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="28.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="28c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><br>
+            <b>按钮时钟</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="40" valign="top">提示：</td>
+                <td valign="top"> 这是一个小巧的按钮时钟，并且你只要点击一下按钮，就会弹出一个对话框，告诉你在本页停留的时间。<br>
+                  <br>
+                  <script language="JavaScript">
+<!-- Begin
+day = new Date();
+miVisit = day.getTime();
+function clock() {
+today = new Date();
+hrNow = today.getHours();
+mnNow = today.getMinutes();    
+scNow = today.getSeconds();
+miNow = today.getTime();
+if (hrNow == 0) {
+hour = 12;
+ap = " AM";
+} else if(hrNow <= 11) {
+ap = " AM";
+hour = hrNow;
+} else if(hrNow == 12) {
+ap = " PM";
+hour = 12;
+} else if (hrNow >= 13) {
+hour = (hrNow - 12);
+ap = " PM";
+}
+if (hrNow >= 13) {
+hour = hrNow - 12;
+}
+if (mnNow <= 9) {
+min = "0" + mnNow;
+}
+else (min = mnNow)
+if (scNow <= 9) {
+secs = "0" + scNow;
+} else {
+secs = scNow;
+}
+time = hour + ":" + min + ":" + secs + ap;
+document.form.button.value = time;
+setTimeout('clock()', 1000);
+}
+function timeInfo() {
+milliSince = miNow;
+milliNow = miNow - miVisit;
+secsVisit = Math.round(milliNow / 1000);
+minsVisit = Math.round((milliNow / 1000) / 60);
+alert("欢迎光临本站"
++ "你已经停留了大约" + minsVisit + "分 "
++ secsVisit + "秒"+ " 在本页面上");
+}document.write("<center><form name=\"form\">"
++ "<input type=button value=\"Click for info!\""
++ " name=button onClick=\"timeInfo()\"></form></center>");
+onError = null;
+clock();
+// End -->
+</script>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35"> <font color="#FFFFFF"> </font> 
+    </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

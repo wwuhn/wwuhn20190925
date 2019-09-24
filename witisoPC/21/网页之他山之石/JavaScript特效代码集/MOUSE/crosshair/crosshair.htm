@@ -1,0 +1,169 @@
+<html>
+<head>
+<title>crosshair-十字准星</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style>
+<!--
+#leftright, #topdown{
+position:absolute;
+left:0;
+top:0;
+width:1px;
+height:1px;
+layer-background-color:black;
+background-color:black;
+z-index:100;
+font-size:1px;
+}
+body {  font: 9pt "宋体"; margin: 0px}
+.pt9 {  font: 9pt "宋体"}
+td { font-size: 9pt}
+-->
+</style>
+<meta name="description" content="鼠标所到之处是一个十字准星。">
+<meta name="keywords" content="crosshair,mouse,十字准星,十字,准星,鼠标">
+</head>
+
+<body bgcolor="#FFFFFF">
+<div id="leftright" style="width:expression(document.body.clientWidth-2)"></div>
+<div id="topdown" style="height:expression(document.body.clientHeight-2)"></div>
+
+<script language="JavaScript1.2">
+<!--
+
+if (document.all&&!window.print){
+leftright.style.width=document.body.clientWidth-2
+topdown.style.height=document.body.clientHeight-2
+}
+else if (document.layers){
+document.leftright.clip.width=window.innerWidth
+document.leftright.clip.height=1
+document.topdown.clip.width=1
+document.topdown.clip.height=window.innerHeight
+}
+
+
+function followmouse1(){
+//move cross engine for IE 4+
+leftright.style.pixelTop=document.body.scrollTop+event.clientY+1
+topdown.style.pixelTop=document.body.scrollTop
+if (event.clientX<document.body.clientWidth-2)
+topdown.style.pixelLeft=document.body.scrollLeft+event.clientX+1
+else
+topdown.style.pixelLeft=document.body.clientWidth-2
+}
+
+function followmouse2(e){
+//move cross engine for NS 4+
+document.leftright.top=e.y+1
+document.topdown.top=pageYOffset
+document.topdown.left=e.x+1
+}
+
+if (document.all)
+document.onmousemove=followmouse1
+else if (document.layers){
+window.captureEvents(Event.MOUSEMOVE)
+window.onmousemove=followmouse2
+}
+
+function regenerate(){
+window.location.reload()
+}
+function regenerate2(){
+setTimeout("window.onresize=regenerate",400)
+}
+if ((document.all&&!window.print)||document.layers)
+//if the user is using IE 4 or NS 4, both NOT IE 5+
+window.onload=regenerate2
+
+//-->
+</script>
+<form>
+  <div align="center"></div>
+</form>
+<p align="center"><font size="5" face="Arial, Helvetica, sans-serif" color="#FF0033">CrossHair 
+  </font><font size="5" color="#FF0033">十 字 准 星</font>
+<form method="post" action="">
+  <div align="center">以下代码加入&lt;HEAD&gt;&lt;/HEAD&gt;之间：<br>
+    <textarea name="textfield" cols="65" rows="8" class="pt9" wrap="VIRTUAL">&lt;style&gt;
+&lt;!--
+#leftright, #topdown{
+position:absolute;
+left:0;
+top:0;
+width:1px;
+height:1px;
+layer-background-color:black;
+background-color:black;
+z-index:100;
+font-size:1px;
+}
+--&gt;
+&lt;/style&gt;</textarea>
+  </div>
+</form>
+<form method="post" action="">
+  <div align="center">以下代码加入&lt;BODY&gt;&lt;/BODY&gt;之间：<br>
+    <textarea name="textfield2" cols="65" rows="8" wrap="VIRTUAL" class="pt9">&lt;div id=&quot;leftright&quot; style=&quot;width:expression(document.body.clientWidth-2)&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;topdown&quot; style=&quot;height:expression(document.body.clientHeight-2)&quot;&gt;&lt;/div&gt;
+
+&lt;script language=&quot;JavaScript1.2&quot;&gt;
+&lt;!--
+
+if (document.all&amp;&amp;!window.print){
+leftright.style.width=document.body.clientWidth-2
+topdown.style.height=document.body.clientHeight-2
+}
+else if (document.layers){
+document.leftright.clip.width=window.innerWidth
+document.leftright.clip.height=1
+document.topdown.clip.width=1
+document.topdown.clip.height=window.innerHeight
+}
+
+
+function followmouse1(){
+//move cross engine for IE 4+
+leftright.style.pixelTop=document.body.scrollTop+event.clientY+1
+topdown.style.pixelTop=document.body.scrollTop
+if (event.clientX&lt;document.body.clientWidth-2)
+topdown.style.pixelLeft=document.body.scrollLeft+event.clientX+1
+else
+topdown.style.pixelLeft=document.body.clientWidth-2
+}
+
+function followmouse2(e){
+//move cross engine for NS 4+
+document.leftright.top=e.y+1
+document.topdown.top=pageYOffset
+document.topdown.left=e.x+1
+}
+
+if (document.all)
+document.onmousemove=followmouse1
+else if (document.layers){
+window.captureEvents(Event.MOUSEMOVE)
+window.onmousemove=followmouse2
+}
+
+function regenerate(){
+window.location.reload()
+}
+function regenerate2(){
+setTimeout(&quot;window.onresize=regenerate&quot;,400)
+}
+if ((document.all&amp;&amp;!window.print)||document.layers)
+//if the user is using IE 4 or NS 4, both NOT IE 5+
+window.onload=regenerate2
+
+//--&gt;
+&lt;/script&gt;</textarea>
+  </div>
+</form>
+<p align="center"> <br>
+  
+<p align="center">&nbsp;
+<p align="center">&nbsp;
+</body>
+</html>

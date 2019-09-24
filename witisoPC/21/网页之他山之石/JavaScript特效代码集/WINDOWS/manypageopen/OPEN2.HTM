@@ -1,0 +1,104 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=gb_2312-80">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Load two Pages</title>
+<style type="text/css">
+<!--
+body {  font-family: "宋体"; font-size: 9pt; margin-top: 0px}
+-->
+</style>
+<script>
+if (window != window.top)
+  top.location.href = location.href;
+
+x1="no",x2="no",x3="no",x4="no",x5="no",x6="no",x7="no",x8="no",d=""
+y = new Array()
+
+function make2windows() {
+lt="blank.htm"
+lb="blank.htm"
+
+if (y[0]) lt=y[0]
+if (y[1]) lb=y[1]
+
+d+='<frameset rows="50%,*" border="5"><frame src="'+lt
+d+='" name="lt"><frame src="'+lb
+d+='" name="lb"></frameset>'
+document.write(d)
+document.close()
+ }
+
+function getCheckedPages(){
+if (document.p.b1.checked==true)y=y.concat("code2.htm")
+if (document.p.b2.checked==true)y=y.concat("demo.htm")
+if (document.p.b3.checked==true)y=y.concat("demo.htm")
+if (document.p.b4.checked==true)y=y.concat("demo.htm")
+if (document.p.b5.checked==true)y=y.concat("demo.htm")
+if (document.p.b6.checked==true)y=y.concat("demo.htm")
+if (document.p.b7.checked==true)y=y.concat("demo.htm")
+if (document.p.b8.checked==true)y=y.concat("demo.htm")
+make2windows()
+}
+</script>
+</head>
+
+<body bgcolor="#004080" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+<br>
+<br>
+<p align="center">这里已经选中了二个页面，将同时打开</p>
+<form name="p">
+  <div align="center">
+    <table border="1" cellpadding="5">
+      <tr> 
+        <td>
+          <input type="checkbox" checked name="b1">
+          下载代码</td>
+        <td>
+          <input type="checkbox" checked name="b2">
+          演示页面</td>
+        <td>
+          <input type="checkbox" name="b3">
+          演示页面</td>
+        <td>
+          <input type="checkbox" name="b4">
+          演示页面</td>
+      </tr>
+      <tr> 
+        <td>
+          <input type="checkbox" name="b5">
+          演示页面</td>
+        <td>
+          <input type="checkbox" name="b6">
+          演示页面</td>
+        <td>
+          <input type="checkbox" name="b7">
+          演示页面</td>
+        <td>
+          <input type="checkbox" name="b8">
+          演示页面</td>
+      </tr>
+    </table>
+  </div>
+  <p align="center"><font size="5" face="Arial, Helvetica, sans-serif"><a href="javascript:getCheckedPages()">Go</a></font></p>
+</form>
+<div align="center">
+  <p>&nbsp;</p>
+  <table width="58%" border="0">
+    <tr>
+      <td>说明：这里仅仅是一个演示，至于用这个脚本作什么，就要靠你的创意了。例如：可以做产品的演示，上面一帧放产品图片，下面是文字说明。用户选择了他们想要看的项目在一个页面全部显示，真正的方便！如果选择的项目少于2个，则显示空白的页面。空白页面你可以放任何辅助性质的说明文字。</td>
+    </tr>
+  </table>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center"> 
+        <input type="BUTTON" value="查看源代码" onClick= 'window.location = "view-source:" + window.location.href' name="BUTTON">
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp; </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<html>
+<head>
+<title>scroll down 屏幕滚动脚本</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="scroll. scroller, 滚动, 屏幕滚动, 滚动屏幕, 滚动">
+<meta name="description" content="非常棒的自动滚屏脚本。">
+</head>
+
+<body bgcolor="#004480" text="#FFFFFF" link="#FFFFFF">
+<p>&nbsp; </p>
+<center>
+</center>
+<p> 
+  <script language="JavaScript1.2">
+
+//speed代表滚动速度，数值大速度快；
+var speed=2
+var currentpos=0,alt=1,curpos1=0,curpos2=-1
+function initialize(){
+startit()
+}
+function scrollwindow(){
+if (document.all)
+temp=document.body.scrollTop
+else
+temp=window.pageYOffset
+if (alt==0)
+alt=1
+else
+alt=0
+if (alt==0)
+curpos1=temp
+else
+curpos2=temp
+if (curpos1!=curpos2){
+if (document.all)
+currentpos=document.body.scrollTop+speed
+else
+currentpos=window.pageYOffset+speed
+window.scroll(0,currentpos)
+}
+else{
+currentpos=0
+window.scroll(0,currentpos)
+}
+}
+function startit(){
+setInterval("scrollwindow()",10)
+}
+window.onload=initialize
+</script>
+</p>
+<div align="center">
+<form name="">
+    <div align="center"> </div>
+  </form>
+  <table width="55%" border="1">
+    <tr bgcolor="#FFFFFF" valign="top"> 
+      <td height="854"> 
+        <p>&nbsp;</p>
+        <p align="center"><font color="#FF0033">只管安心地靠在沙发上，悠闲地饮一杯咖啡吧。</font></p>
+        <p>&nbsp;</p>
+        <div align="center"></div>
+        <p>&nbsp;</p>
+        <p><font color="#000000" face="Courier New, Courier, mono">&lt;script 
+          language=&quot;JavaScript1.2&quot;&gt;</font></p>
+        <p><font color="#000000" face="Courier New, Courier, mono">//speed</font><font color="#000000">代表滚动速度，数值大速度快；</font><font color="#000000" face="Courier New, Courier, mono"><br>
+          var speed=2<br>
+          var currentpos=0,alt=1,curpos1=0,curpos2=-1<br>
+          function initialize(){<br>
+          startit()<br>
+          }<br>
+          function scrollwindow(){<br>
+          if (document.all)<br>
+          temp=document.body.scrollTop<br>
+          else<br>
+          temp=window.pageYOffset<br>
+          if (alt==0)<br>
+          alt=1<br>
+          else<br>
+          alt=0<br>
+          if (alt==0)<br>
+          curpos1=temp<br>
+          else<br>
+          curpos2=temp<br>
+          if (curpos1!=curpos2){<br>
+          if (document.all)<br>
+          currentpos=document.body.scrollTop+speed<br>
+          else<br>
+          currentpos=window.pageYOffset+speed<br>
+          window.scroll(0,currentpos)<br>
+          }<br>
+          else{<br>
+          currentpos=0<br>
+          window.scroll(0,currentpos)<br>
+          }<br>
+          }<br>
+          function startit(){<br>
+          setInterval(&quot;scrollwindow()&quot;,10)<br>
+          }<br>
+          window.onload=initialize<br>
+          &lt;/script&gt;</font></p>
+        <p><font color="#000000">说明：</font></p>
+        <p><font color="#000000">只要将上述的代码加入HTML的&lt;BODY&gt;区的任意位置即可实现效果。</font></p>
+        <p><font color="#000000">带给访问者一点愉悦。</font></p>
+        <p>&nbsp;</p>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <div align="center"></div>
+</div>
+<p>&nbsp;</p>
+</body>
+</html>

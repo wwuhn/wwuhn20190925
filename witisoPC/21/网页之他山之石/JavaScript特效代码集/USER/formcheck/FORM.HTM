@@ -1,0 +1,240 @@
+<html>
+<head>
+<title>表单内容验证脚本</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+body {  font-family: "宋体"; font-size: 9pt; margin-top: 0px}
+.pt9 {  font-family: "宋体"; font-size: 9pt}
+td {  font-size: 9pt}
+-->
+</style>
+<script language="JavaScript">
+<!--
+
+function formhelp() {
+document.forms[0].elements[0].focus();
+}
+
+function testname() 
+{
+
+  var theResult = true;
+  var elem0 = null;
+
+  if (document.forms[0].elements[0].value == "" || document.forms[0].elements[0].value == "undefined" || document.forms[0].elements[0].value == "null")
+  {
+
+    elem0 = prompt("请填写您的姓名！","");
+
+//设成false就不会递交。
+    
+    theResult = false;
+
+
+    document.forms[0].elements[0].value = elem0;
+    
+
+    document.forms[0].elements[0].focus();
+
+    document.forms[0].elements[0].select();
+
+  }
+  
+//给结果，true继续下面的，否则返回。
+  
+  return  theResult;
+}
+
+
+function testmail()
+{
+  var theResult = true;
+  var elem1 = null
+  if ((document.forms[0].elements[1].value.indexOf('@') == -1 || document.forms[0].elements[1].value == "" || document.forms[0].elements[1].value.indexOf('.') == -1)) 
+  {
+    elem1 = prompt("请输入合法的电子邮件！","");
+    theResult = false;
+    document.forms[0].elements[1].value = elem1;
+    document.forms[0].elements[1].focus();
+    document.forms[0].elements[1].select();
+  }
+  return theResult;
+}
+
+function testaddress()
+{
+  var theResult = true;
+  var elem2 = null;
+  if (document.forms[0].elements[2].value == "" || document.forms[0].elements[2].value == "undefined" || document.forms[0].elements[2].value == "null")
+  {
+    elem2 = prompt("请输入联络地址！","");
+    theResult = false;
+    document.forms[0].elements[2].value = elem2;
+    document.forms[0].elements[2].focus();
+    document.forms[0].elements[2].select();
+  }
+  return theResult;
+  }
+
+function testcity()
+{
+  var theResult = true;
+  var elem4 = null;
+  if (document.forms[0].elements[4].value == "" || document.forms[0].elements[4].value == "undefined" || document.forms[0].elements[4].value == "null")
+  {
+    elem4 = prompt("请输入所在城市","");
+    theResult = false;
+    document.forms[0].elements[4].value = elem4;
+    document.forms[0].elements[4].focus();
+    document.forms[0].elements[4].select();
+  }
+  return theResult;
+}
+
+function testprovince()
+{
+  var theResult = true;
+  if ((document.forms[0].elements[5].value == "选择一个"))
+  {
+    alert("请选择所在省份！");
+    theResult = false;
+  }
+  return theResult;
+}
+
+function testzipcode()
+{
+  var theResult = true;
+  var elem6 = null;
+  if (document.forms[0].elements[6].value.length < 6 || document.forms[0].elements[6].value == "undefined")
+  {
+    elem6 = prompt("请输入正确的邮政编码！","");
+    theResult = false;
+    document.forms[0].elements[6].value = elem6;
+    document.forms[0].elements[6].focus();
+    document.forms[0].elements[6].select();
+  }
+  return theResult;
+}
+
+// 全部合格递交
+
+function validate()
+{
+  var theResult = true;
+  theResult = testname() && testmail() && testaddress() && testcity() && testprovince() && testzipcode();
+  return theResult;
+}
+//-->
+</script>
+<meta name="description" content="表单内容检测脚本">
+<meta name="keywords" content="表单, 检测, 合法性, 合法, form, submit, check, valid, validation, mail, email, e-mail">
+</head>
+
+<body onload="formhelp()" bgcolor="#FFFFFF" text="#000000">
+<div align="center">
+<p><font size="3">表单内容验证脚本</font></p>
+  <p><a href="javascript:location.href='form.zip'">下载代码</a></p>
+ 
+  <table border=0 bgcolor="#ffffff" cellpadding="5" bordercolor="#000000" cellspacing="5" width="568">
+    <tr> 
+      <td height="398"> 
+        <form method="post" action="" name="mainform"  onSubmit="return validate()">
+          必填信息：<br>
+          <hr width=100% align=LEFT noshade height=2>
+          <p><font color="#000000">姓名： 
+            <input type="text" name="name" size="25">
+            </font></p>
+          <p><font color="#000000">邮箱： 
+            <input type="text" name="email" size="25">
+            </font></p>
+          <p><font color="#000000">地址1： 
+            <input type="text" name="address 1" size="30">
+            </font></p>
+          <p><font color="#000000">地址2： 
+            <input type="text" name="address 2" size="30">
+            </font></p>
+          <p><font color="#000000">所在城市： 
+            <input type="text" name="textfield" size="15">
+            </font></p>
+          <p><font color="#000000">所在省份： </font> 
+            <select name="province" size="1">
+              <option value="选择一个">选择一个</option>
+              <option value="Beijing">北京</option>
+              <option value="Tianjin">天津</option>
+              <option value="Shanghai">上海</option>
+              <option value="Chongqing">重庆</option>
+              <option value="Hebei">河北</option>
+              <option value="Henan">河南</option>
+              <option value="Heilongjiang">黑龙江</option>
+              <option value="Jinlin">吉林</option>
+              <option value="Shenyang">沈阳</option>
+              <option value="Neimenggu">内蒙古</option>
+              <option value="Shanxi">山西</option>
+              <option value="Shanxi3">陕西</option>
+              <option value="Shandong">山东</option>
+              <option value="Jiangsu">江苏</option>
+              <option value="Zhejiang">浙江</option>
+              <option value="Anhui">安徽</option>
+              <option value="Jiangxi">江西</option>
+              <option value="Fujian">福建</option>
+              <option value="Gansu">甘肃</option>
+              <option value="Ningxia">宁夏</option>
+              <option value="Qinghai">青海</option>
+              <option value="Xinjiang">新疆</option>
+              <option value="Hubei">湖北</option>
+              <option value="Hunan">湖南</option>
+              <option value="Guangdong">广东</option>
+              <option value="Guangxi">广西</option>
+              <option value="Sichuan">四川</option>
+              <option value="Guizhou">贵州</option>
+              <option value="Yunnan">云南</option>
+              <option value="Xizang">西藏</option>
+              <option value="Hongkong">香港</option>
+              <option value="Aomen">澳门</option>
+              <option value="Taiwan">台湾</option>
+            </select>
+          </p>
+          <p><font color="#000000">邮政编码： 
+            <input type="text" name="postcode" size="6">
+            </font></p>
+          <p> 
+            <input type="submit" name="submit" value="Submit">
+            <input type="reset" name="reset" value="Clear">
+          </p>
+        </form>
+      </td>
+    </tr>
+  </table>
+</div>
+<CENTER>
+  <p>
+    <SCRIPT LANGUAGE="javascript">
+<!--
+document.mainform.name.focus();
+//-->
+</SCRIPT>
+  </p>
+  <table width="75%" border="0">
+    <tr>
+      <td>
+        <p>说明：</p>
+        <p>这个脚本提供一种表单验证的思路，具体使用时需要和action配合。可以将表单的内容提交给cgi或asp程序去处理。</p>
+        <p>需要注意的是：例如document.forms[0].elements[0].value类似的语句中，elements后面的方括号内的数字是元素的顺序号，从0开始。本例中姓名就是0，邮箱就是1，地址1是2，依次类推。检测哪一项，该数字就应该表示成哪一项的需要。千万不要搞错了。</p>
+        <p> &lt;SCRIPT LANGUAGE=&quot;javascript&quot;&gt;<br>
+          &lt;!--<br>
+          document.mainform.name.focus();<br>
+          //--&gt;<br>
+          &lt;/SCRIPT&gt;<br>
+          以上代码的作用是一开始就将光标聚焦在”姓名”文本框内”，便于输入。与表单内容的验证无关。加了一个小特性。</p>
+        </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p><p>&nbsp;</p>
+</CENTER>
+</BODY>
+</HTML>
+
+
+

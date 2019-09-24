@@ -1,0 +1,243 @@
+<html>
+<head>
+<title>万年历</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="75%" border="0" cellspacing="0" cellpadding="0" height="300">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="15.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="15c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><b><br>
+            万年历</b> 
+            <hr width="92%" size="1" align="center">
+            <script language="JavaScript">
+<!--
+
+function getTime() {
+	// initialize time-related variables with current time settings
+	var now = new Date()
+	var hour = now.getHours()
+	var minute = now.getMinutes()
+	now = null
+	var ampm = "" 
+
+	// validate hour values	and set value of ampm
+	if (hour >= 12) {
+		hour -= 12
+		ampm = "下午"
+	} else
+		ampm = "上午"
+	hour = (hour == 0) ? 12 : hour
+
+	// add zero digit to a one digit minute
+	if (minute < 10)
+		minute = "0" + minute // do not parse this number!
+
+	// return time string
+	return hour + ":" + minute + " " + ampm
+}
+
+function leapYear(year) {
+	if (year % 4 == 0) // basic rule
+		return true // is leap year
+	return false // is not leap year
+}
+
+function getDays(month, year) {
+	// create array to hold number of days in each month
+	var ar = new Array(12)
+	ar[0] = 31 // January
+	ar[1] = (leapYear(year)) ? 29 : 28 // February
+	ar[2] = 31 // March
+	ar[3] = 30 // April
+	ar[4] = 31 // May
+	ar[5] = 30 // June
+	ar[6] = 31 // July
+	ar[7] = 31 // August
+	ar[8] = 30 // September
+	ar[9] = 31 // October
+	ar[10] = 30 // November
+	ar[11] = 31 // December
+
+	// return number of days in the specified month (parameter)
+	return ar[month]
+}
+
+function getMonthName(month) {
+	// create array to hold name of each month
+	var ar = new Array(12)
+	ar[0] = "一月"
+	ar[1] = "二月"
+	ar[2] = "三月"
+	ar[3] = "四月"
+	ar[4] = "五月"
+	ar[5] = "六月"
+	ar[6] = "七月"
+	ar[7] = "八月"
+	ar[8] = "九月"
+	ar[9] = "十月"
+	ar[10] = "十一月"
+	ar[11] = "十二月"
+
+	// return name of specified month (parameter)
+	return ar[month]
+}
+
+function setCal() {
+	// standard time attributes
+	var now = new Date()
+	var year = now.getYear()
+	var month = now.getMonth()
+	var monthName = getMonthName(month)
+	var date = now.getDate()
+	now = null
+
+	// create instance of first day of month, and extract the day on which it occurs
+	var firstDayInstance = new Date(year, month, 1)
+	var firstDay = firstDayInstance.getDay()
+	firstDayInstance = null
+
+	// number of days in current month
+	var days = getDays(month, year)
+
+	// call function to draw calendar
+	drawCal(firstDay + 1, days, date, monthName, 00 + year)
+}
+
+function drawCal(firstDay, lastDate, date, monthName, year) {
+	// constant table settings
+	var headerHeight = 50 // height of the table's header cell
+	var border = 2 // 3D height of table's border
+	var cellspacing = 4 // width of table's border
+	var headerColor = "midnightblue" // color of table's header
+	var headerSize = "+3" // size of tables header font
+	var colWidth = 60 // width of columns in table
+	var dayCellHeight = 25 // height of cells containing days of the week
+	var dayColor = "darkblue" // color of font representing week days
+	var cellHeight = 40 // height of cells representing dates in the calendar
+	var todayColor = "red" // color specifying today's date in the calendar
+	var timeColor = "purple" // color of font representing current time
+
+	// create basic table structure
+	var text = "" // initialize accumulative variable to empty string
+	text += '<CENTER>'
+	text += '<TABLE BORDER=' + border + ' CELLSPACING=' + cellspacing + '>' // table settings
+	text += 	'<TH COLSPAN=7 HEIGHT=' + headerHeight + '>' // create table header cell
+	text += 		'<FONT COLOR="' + headerColor + '" SIZE=' + headerSize + '>' // set font for table header
+	text += 			year + '年' + monthName 
+	text += 		'</FONT>' // close table header's font settings
+	text += 	'</TH>' // close header cell
+
+	// variables to hold constant settings
+	var openCol = '<TD WIDTH=' + colWidth + ' HEIGHT=' + dayCellHeight + '>'
+	openCol += '<FONT COLOR="' + dayColor + '">'
+	var closeCol = '</FONT></TD>'
+
+	// create array of abbreviated day names
+	var weekDay = new Array(7)
+	weekDay[0] = "星期天"
+	weekDay[1] = "星期一"
+	weekDay[2] = "星期二"
+	weekDay[3] = "星期三"
+	weekDay[4] = "星期四"
+	weekDay[5] = "星期五"
+	weekDay[6] = "星期六"
+	
+	// create first row of table to set column width and specify week day
+	text += '<TR ALIGN="center" VALIGN="center">'
+	for (var dayNum = 0; dayNum < 7; ++dayNum) {
+		text += openCol + weekDay[dayNum] + closeCol 
+	}
+	text += '</TR>'
+	
+	// declaration and initialization of two variables to help with tables
+	var digit = 1
+	var curCell = 1
+	
+	for (var row = 1; row <= Math.ceil((lastDate + firstDay - 1) / 7); ++row) {
+		text += '<TR ALIGN="right" VALIGN="top">'
+		for (var col = 1; col <= 7; ++col) {
+			if (digit > lastDate)
+				break
+			if (curCell < firstDay) {
+				text += '<TD></TD>';
+				curCell++
+			} else {
+				if (digit == date) { // current cell represent today's date
+					text += '<TD HEIGHT=' + cellHeight + '>'
+					text += '<FONT COLOR="' + todayColor + '" >'
+					text += '<FONT COLOR="' + todayColor + '" size:"15pt">' + digit + '</FONT>'
+					text += '<BR>'
+					text += '<FONT COLOR="' + timeColor + '" SIZE:"10pt">'
+					text += '<CENTER>' + getTime() + '</CENTER>'
+					text += '</FONT>'
+					text += '</TD>'
+				} else
+					text += '<TD HEIGHT=' + cellHeight + '>' + digit + '</TD>'
+				digit++
+			}
+		}
+		text += '</TR>'
+	}
+	
+	// close all basic table tags
+	text += '</TABLE>'
+	text += '</CENTER>'
+
+	// print accumulative HTML string
+	document.write(text) 
+}
+
+setCal()
+
+// -->
+</script>
+            <br>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35"> <font color="#000000"> </font></td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>自动页面打印脚本</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="keywords" content="print, printweb, page, webpage, 打印, 页面打印, 打印页面">
+<meta name="description" content="页面打印脚本。">
+<SCRIPT LANGUAGE="JavaScript">
+<!--//
+function printPage() {
+if (window.print) {
+agree = confirm('本页面包含重要信息。\n强烈建议您打印备份！\n\n点确定打印?');
+if (agree) window.print(); 
+   }
+}
+//-->
+</script>
+
+<link rel="stylesheet" href="../style.css"></head>
+
+<body bgcolor="#004080" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF" onload="printPage()">
+<p align="center"><font size="5">自动页面打印脚本</font></p>
+<form>
+  <div align="center"></div>
+</form>
+<div align="center">
+  <table width="67%" border="0">
+    <tr> 
+      <td height="168"> 
+        <p>以下代码加入&lt;HEAD&gt;区：</p>
+        <p>&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;<br>
+          &lt;!--//<br>
+          function printPage() {<br>
+          if (window.print) {<br>
+          agree = confirm('本页面包含重要信息。\n强烈建议您打印备份！\n\n点确定打印?');<br>
+          if (agree) window.print(); <br>
+          }<br>
+          }<br>
+          //--&gt;<br>
+          &lt;/script&gt;</p>
+        <p>别忘记：在&lt;BODY&gt;中不要忘记加上一句 &lt;body onload=&quot;printPage()&quot;&gt; 
+          ，这样才能激活它啊。</p>
+        <p>用 \n 表示换行。别滥用这个脚本，否则会招人嫌的，如果你的站点的某些页面提供一些重要信息，或者当访问者填写完表单后有一些重要信息，例如用户帐号，密码等数据需要打印，用它最好。</p>
+        <p>其它请参考
+          <input type="button" name="Button" value="手动打印脚本" class="pt9" onclick="javascript:location.href='printweb.htm'">
+        </p>
+        </td>
+    </tr>
+  </table>
+</div>
+<p>&nbsp;</p>
+</body>
+</html>

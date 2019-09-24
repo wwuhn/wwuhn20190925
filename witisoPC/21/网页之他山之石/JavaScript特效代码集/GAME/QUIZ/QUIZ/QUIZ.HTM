@@ -1,0 +1,204 @@
+<HTML><HEAD>
+<TITLE>web quiz‘⁄œﬂ≤‚ ‘</TITLE>
+<meta name="keywords" content="web quiz, quiz, online quiz, online, ‘⁄œﬂ≤‚ ‘, ≤‚ ‘, øº ‘">
+<style type="text/css">
+<!--
+body {  font-family: "ÀŒÃÂ"; font-size: 9pt; margin-top: 0px}
+.pt9 {  font-family: "ÀŒÃÂ"; font-size: 9pt}
+-->
+</style>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+ctr=0;
+ttl="Web Quiz‘⁄œﬂ≤‚ ‘";
+
+//◊‹≥…º®
+psco=100;
+
+wrans=25;
+
+noans=20;
+
+//Œ Ã‚ ˝ƒø
+nr=5;
+
+//“‘œ¬ «Œ Ã‚¡–±Ì£¨◊¢“‚◊‹ ˝ƒø”Î…œ√Êµƒnr ˝ƒø“ª—˘°£
+
+ques=new Array();
+ques[0]="÷–π˙µƒ ◊∂º «ƒƒ¿Ô£ø";
+ques[1]="Ã©π˙µƒ ◊∂º «ƒƒ¿Ô£ø";
+ques[2]="∞ƒ¥Û¿˚—«µƒ ◊∂º «ƒƒ¿Ô£ø";
+ques[3]="√¿π˙µƒ ◊∂º «ƒƒ¿Ô£ø";
+ques[4]="∫⁄ ÷µ≥µƒ∆‘¥µÿ‘⁄ƒƒ¿Ô£ø";
+
+//ÀÊ±„‘ˆº”Œ Ã‚µƒ ˝¡ø;
+
+//œ¬√Ê «’˝»∑¥∞∏(a,b,c,d,eµ»)µƒÀ≥–Ú°£
+
+cor="abcde";
+
+//Œ Ã‚÷–≤ª“™ π”√À´“˝∫≈£¨»Áπ˚“™”√”√"&quot;"º¥ø…°£
+
+ans=new Array();
+ans[0]="±±æ©";
+ans[1]="…Ó€⁄";
+ans[2]="÷ÿ«Ï";
+ans[3]="π„÷›";
+ans[4]="Œ˜∞≤";
+
+ans[5]="ª™ ¢∂Ÿ";
+ans[6]="—ˆπ‚";
+ans[7]="ø∞≈‡¿≠";
+ans[8]="∫˙÷æ√˜ –";
+ans[9]="±±æ©";
+
+ans[10]="∫˙÷æ√˜ –";
+ans[11]="—ˆπ‚";
+ans[12]="ø∞≈‡¿≠";
+ans[13]="ª™ ¢∂Ÿ";
+ans[14]="±±æ©";
+
+ans[15]="∫˙÷æ√˜ –";
+ans[16]="—ˆπ‚";
+ans[17]="ø∞≈‡¿≠";
+ans[18]="ª™ ¢∂Ÿ";
+ans[19]="±±æ©";
+
+ans[20]="≈¶‘º";
+ans[21]="∞Õ¿Ë";
+ans[22]="Õ˛ƒ·Àπ";
+ans[23]="ø∞≈‡¿≠";
+ans[24]="Œ˜Œ˜¿Ôµ∫";
+
+//œ¬√Ê≤ª“™∏ƒ
+ns="0123456789"
+ls="abcde";
+astr="";
+ack=new Array();
+for (var i=0;i<nr;i++){
+ ack[i]=(nr*5)+1;
+ }
+
+function lightIt(){
+ document.images[flg+ad].src="nr/rbl.gif";
+ }
+function dimIt(){
+ if (ack[Math.floor(flg/5)]!=flg){
+  document.images[flg+ad].src="nr/rbd.gif";
+  }
+ }
+function dumpIt(){
+ if (ack[Math.floor(flg/5)]==flg){
+  document.images[ack[Math.floor(flg/5)]+ad].src="nr/rbd.gif";
+  ack[Math.floor(flg/5)]=(nr*5)+1;
+  }
+ else{
+  if (ack[Math.floor(flg/5)]!=flg&&ack[Math.floor(flg/5)]!=(nr*5)+1){
+   document.images[ack[Math.floor(flg/5)]+ad].src="nr/rbd.gif";
+   }
+  document.images[flg+ad].src="nr/rbl.gif";
+  ack[Math.floor(flg/5)]=flg;
+  }
+ }
+function ckSco(){
+ document.images[ad+(nr*5)].src="nr/cwf2.gif";
+ setTimeout('document.images[ad+(nr∞5)].src="nr/cwf0.gif"',1000);
+
+ for (var i=0;i<nr;i++){
+  u=cor.charAt(i);
+  v=ls.indexOf(u)+(i*5);
+  document.images[ad+v].src="nr/gbl.gif";
+  }
+ sco=psco;
+ for (var i=0;i<nr;i++){
+  if (ack[i]==(nr*5)+1){
+   sco-=noans;
+   }
+  else{
+   u=cor.charAt(i);
+   v=ls.indexOf(u)+(i*5);
+   sco=(v==ack[i]?sco:sco-wrans);
+   }
+  }
+ sco=(sco<0?0:sco); // prevent minus score
+ scos=""+sco;
+ while (scos.length<3){
+  scos="0"+scos;
+  }
+ document.images[ad+(nr*5)+1].src="nr/yts.gif";
+ ctr=ad+(nr*5)+2;
+ for (var i=0;i<3;i++){
+  nj=ns.indexOf(scos.charAt(i));
+  document.images[ctr].src="nr/"+nj+".gif";
+  ctr++;
+  }
+ }
+function litbut(){
+ document.images[ad+(nr*5)].src="nr/cwf1.gif";
+ }
+function dimbut(){
+ document.images[ad+(nr*5)].src="nr/cwf0.gif";
+ }
+//»Áπ˚ƒ„µƒÕº∆¨∑≈‘⁄∆‰À˚µƒƒø¬ºƒ⁄£¨÷ª“™∏ƒ∂Ø…œ√Êµƒ¥˙¬Îœ‡πÿ≤ø∑÷º¥ø…°£
+
+var ad = 0;
+function getImgAdd(){
+ for (var i=0;i<20;i++){
+  if (document.images[i].src.indexOf("rbd.gif")>-1){
+   ad=i;
+   i=20;
+   }
+  }
+ }
+// End Hiding -->
+</SCRIPT>
+<meta name="description" content="‘⁄œﬂ≤‚ ‘Ω≈±æweb quiz">
+</HEAD>
+<BODY BGCOLOR="white" topmargin=0>
+<form>
+  <div align="center"> 
+    <input type="button" name="Button" value="œ¬‘ÿŒƒº˛∞¸" class="pt9" onclick="javascript:location.href='quiz.zip'">
+  </div>
+</form>
+<p align="center">
+  <SCRIPT LANGUAGE="JavaScript">
+<!--
+
+document.write('<TABLE BORDER=0 CELLPADDING=2'
++' CELLSPACING=0 WIDTH=486><TR><TD COLSPAN=2 '
++'ALIGN=CENTER><FONT SIZE=4 FACE="ÀŒÃÂ" COLOR=red>'+ttl+'</FON'
++'T></TD></TR><TR>');
+
+for (var i=0;i<nr;i++){
+ document.write('<TD COLSPAN=2 VALIGN=TOP><HR'
+ +' NOSHADE><FONT SIZE=4 FACE="ÀŒÃÂ">'+ques[i]+'</FONT></TD></TR>')
+ for (var j=0;j<5;j++){
+  document.write('<TR><TD><A HREF="quiz.htm'
+  +'" onMouseOver="flg='+((i*5)+j)+';lightIt('
+  +');return true" onMouseOut="flg='+((i*5)+j)
+  +';dimIt();return true;" onClick="flg='
+  +((i*5)+j)+';dumpIt();return false;"><IMG S'
+  +'RC="nr/rbd.gif" WIDTH=15 HEIGHT=15 BORDER'
+  +'=0></TD><TD ALIGN=LEFT><FONT SIZE=4 FACE='
+  +'"ÀŒÃÂ">'+ans[(i*5)+j]
+  +'</FONT></TD></TR>');
+  }
+ }
+document.write('<TR><TD COLSPAN=3 ALIGN=CE'
++'NTER><A HREF="quiz.htm" onClick="ckSco'
++'();return false;" onMouseOver="litbut();'
++'return true;" onMouseOut="dimbut();retur'
++'n true;"><IMG SRC="nr/cwf0.gif"'
++' WIDTH=69 HEIGHT=45 BORDER=0 NAME="but">'
++'<P><IMG SRC="nr/10.gif" WIDTH=120 HEIGHT'
++'=10 BORDER=0><IMG SRC="nr/10.gif" WIDTH='
++'7 HEIGHT=10 BORDER=0><IMG SRC="nr/10.gif'
++'" WIDTH=7 HEIGHT=10 BORDER=0><IMG SRC="n'
++'r/10.gif" WIDTH=7 HEIGHT=10 BORDER=0></T'
++'D></TR></TABLE>');
+getImgAdd();
+// End Hiding -->
+</SCRIPT>
+</p>
+</BODY>
+</HTML>

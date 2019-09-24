@@ -1,0 +1,173 @@
+<html>
+<head>
+<title>调色板二</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+</head>
+
+<body topmargin="0" leftmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center"> <br>
+      <table width="75%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="05.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="05c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><br>
+            <b>调色板二</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="50" valign="top">提示：</td>
+                <td>只要把鼠标放到下面的调色板上，就会出在状态栏（左下角）中出现相应的颜色数值，再点击一下背景就变成相应的颜色。</td>
+              </tr>
+              <tr> 
+                <td colspan="2" valign="top"> <br>
+                  <br>
+                  <script language="JavaScript">
+<!--
+
+// Copyright (c) 1996-1997 Tomer Shiran. All rights reserved.
+// Permission given to use the script provided that this notice remains as is.
+// Additional scripts can be found at http://www.geocities.com/~yehuda/
+
+// create 6-element array
+var hex = new Array(6)
+
+// assign non-dithered descriptors
+hex[0] = "FF"
+hex[1] = "CC"
+hex[2] = "99"
+hex[3] = "66"
+hex[4] = "33"
+hex[5] = "00"
+
+// accept triplet string and display as background color
+function display(triplet) {
+	// set color as background color
+	document.bgColor = '#' + triplet
+
+	// display the color hexadecimal triplet
+	alert('现在的背景色是 #'+triplet)
+}
+
+// draw a single table cell based on all descriptors
+function drawCell(red, green, blue) {
+	// open cell with specified hexadecimal triplet background color
+	document.write('<TD BGCOLOR="#' + red + green + blue + '">')
+
+	// open a hypertext link with javascript: scheme to call display function
+	document.write('<A HREF="javascript:display(\'' + (red + green + blue) + '\')">')
+
+	// print transparent image (use any height and width)
+	document.write('<IMG SRC="place.gif" BORDER=0 HEIGHT=12 WIDTH=12>')
+
+	// close link tag
+	document.write('</A>')
+
+	// close table cell
+	document.write('</TD>')
+}
+
+// draw table row based on red and blue descriptors
+function drawRow(red, blue) {
+	// open table row
+	document.write('<TR>')
+
+	// loop through all non-dithered color descripters as green hex
+	for (var i = 0; i < 6; ++i) {
+		drawCell(red, hex[i], blue)
+	}
+
+	// close current table row
+	document.write('</TR>')
+}
+
+// draw table for one of six color cube panels
+function drawTable(blue) {
+	// open table (one of six cube panels)
+	document.write('<TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0>')
+
+	// loop through all non-dithered color descripters as red hex
+	for (var i = 0; i < 6; ++i) {
+		drawRow(hex[i], blue)
+	}
+
+	// close current table
+	document.write('</TABLE>')	
+}
+
+// draw all cube panels inside table cells
+function drawCube() {
+	// open table
+	document.write('<TABLE CELLPADDING=5 CELLSPACING=0 BORDER=1><TR>')
+
+	// loop through all non-dithered color descripters as blue hex
+	for (var i = 0; i < 6; ++i) {
+		// open table cell with white background color
+		document.write('<TD BGCOLOR="#FFFFFF">')
+
+		// call function to create cube panel with hex[i] blue hex
+		drawTable(hex[i])
+
+		// close current table cell
+		document.write('</TD>')
+	}
+
+	// close table row and table
+	document.write('</TR></TABLE>')
+}
+
+// call function to begin execution
+drawCube()
+
+// -->
+</script>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

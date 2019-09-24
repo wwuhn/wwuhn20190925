@@ -1,0 +1,164 @@
+<html>
+<head>
+<title>图形永远在下方</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0" onload="setVariables(); checkLocation();">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="11.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="11c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><br>
+            <b>图形永远在下方</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="40" valign="top" height="76">提示：</td>
+                <td> 
+                  <p>请向下拖动滚动条，并注意左下角的工人。多刷新几次本页，并且每次都记下图形的链接地址，你会发现图形有三个随机接地址。<br>
+                    <br>
+                    <br>
+                    <script language=JavaScript>
+function setVariables() {
+imgwidth=56;
+imgheight=35;
+if (navigator.appName == "Netscape") {
+horz=".left";
+vert=".top";
+docStyle="document.";
+styleDoc="";
+innerW="window.innerWidth";
+innerH="window.innerHeight";
+offsetX="window.pageXOffset";
+offsetY="window.pageYOffset";
+}
+else {
+horz=".pixelLeft";
+vert=".pixelTop";
+docStyle="";
+styleDoc=".style";
+innerW="document.body.clientWidth";
+innerH="document.body.clientHeight";
+offsetX="document.body.scrollLeft";
+offsetY="document.body.scrollTop";
+   }
+}
+function checkLocation() {
+objectXY="branding";
+var availableX=eval(innerW);
+var availableY=eval(innerH);
+var currentX=eval(offsetX);
+var currentY=eval(offsetY);
+x=availableX-(imgwidth+30)+currentX;
+y=availableY-(imgheight+20)+currentY;
+evalMove();
+setTimeout("checkLocation()",10);
+}
+function evalMove() {
+eval(docStyle + objectXY + styleDoc + horz + "=" + x);
+eval(docStyle + objectXY + styleDoc + vert + "=" + y);
+}
+</script>
+                    <script language=JavaScript>
+<!--Hide from non JavaScript browsers
+an = 3
+var ran = Math.random();
+var talet = Math.round(ran * (an-1))+1;
+function create() {
+        this.src = ''
+	
+}
+
+b = new Array()
+for(var i=1; i<=an; i++) { b[i] = new create() }
+
+b[1].src    = "http://www.263.net/t'"
+b[2].src    = "http://www.sina.com/m'"
+b[3].src    = "http://www.sohu.com/m'"
+
+var vis = "";
+vis = vis+b[talet].src+" target='_blank'"
+//-->
+</script>
+                  </p>
+                  <div id=branding 
+style="LEFT: 211px; POSITION: absolute; TOP: 143px; Z-INDEX: 2"> 
+                    <script language=JavaScript>
+document.write("<a href="+vis+"><img src='../pic/work.gif' border='0' alt='这是个随机链接条，看看今天去哪里....'></a>");
+</script>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

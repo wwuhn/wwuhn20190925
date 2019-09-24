@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>首页最大化</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="window,autoresize,resize,fullscreen,browser,浏览器,最大化,最大,窗口,窗口最大化">
+<meta name="description" content="浏览器窗口最大化脚本">
+</head>
+
+<body bgcolor="#FFFFFF">
+<center>
+  <form>
+    <div align="center"></div>
+  </form>
+  <p> <font size="3" color="#FF0033"> 首页窗口自动最大化</font></p>
+  <table width="75%" border="0">
+    <tr bgcolor="#F3F3F3"> 
+      <td>
+        <p>首页的全屏化，这个问题与许多人交流过，目前为止没有找到更的方法，因为页面只显示标题栏，其余的都去掉。这对于弹出窗口非常容易实现，用window.opwn即可（本站教学有详细论述，不在此废话）。</p>
+        <p> 其实如果非得实现首页的最大化，也可以作到，用js 写一个语句作为过度，实际上还是弹出一个新的窗口。<br>
+        </p>
+        <p>代码如下：<br>
+          <font face="Arial, Helvetica, sans-serif">&lt;body onload=window.open('123.htm','mywindow','width='+screen.width+',height='+screen.height<br>
+          +',top=0,left=0')&gt;&lt;/body&gt; </font></p>
+        <p>当然会产生2个窗口，一个是真正打开的123.htm。另一个是过度页面，如果遇到稍微聪明一点的人，只要看看空页面的源代码，就知道打开的是什么页面了？</p>
+        <p>用一个小技巧，可以不让它们看到。再用一个<font face="Arial, Helvetica, sans-serif">document.write</font>语句随便写一点东西到空页面中。这样做：<br>
+          <font face="Arial, Helvetica, sans-serif">&lt;body onload=window.open('123.htm','mywindow','width='+screen.width+',height='+screen.height<br>
+          +',top=0,left=0');document.write('he..he..he')&gt;&lt;/body&gt;</font><br>
+          即可，看到的仅仅是he...he...he...（假的页面）</p>
+        <p>注意：要写在一行。</p>
+        <p align="center">&nbsp;</p>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp; </p>
+  <p>&nbsp;</p>
+  <p>&nbsp; </p>
+</center>
+</body>
+</html>

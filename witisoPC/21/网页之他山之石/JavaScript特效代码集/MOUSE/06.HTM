@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>链接注释</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18"> 
+      <div id="tooltip2" style="position:absolute;clip:rect(0 150 50 0);width:150px;background-color:#99FF99; top: 31px; left: 103px; visibility: hidden; height: 13px"> 
+      </div>
+      <script>
+if (!document.layers&&!document.all)
+event="test"
+function showtip2(current,e,text){
+
+if (document.all&&document.readyState=="complete"){
+document.all.tooltip2.innerHTML='<marquee style="border:1px solid black">'+text+'</marquee>'
+document.all.tooltip2.style.pixelLeft=event.clientX+document.body.scrollLeft+10
+document.all.tooltip2.style.pixelTop=event.clientY+document.body.scrollTop+10
+document.all.tooltip2.style.visibility="visible"
+}
+
+else if (document.layers){
+document.tooltip2.document.nstip.document.write('<b>'+text+'</b>')
+document.tooltip2.document.nstip.document.close()
+document.tooltip2.document.nstip.left=0
+currentscroll=setInterval("scrolltip()",100)
+document.tooltip2.left=e.pageX+10
+document.tooltip2.top=e.pageY+10
+document.tooltip2.visibility="show"
+}
+}
+function hidetip2(){
+if (document.all)
+document.all.tooltip2.style.visibility="hidden"
+else if (document.layers){
+clearInterval(currentscroll)
+document.tooltip2.visibility="hidden"
+}
+}
+
+function scrolltip(){
+if (document.tooltip2.document.nstip.left>=-document.tooltip2.document.nstip.document.width)
+document.tooltip2.document.nstip.left-=5
+else
+document.tooltip2.document.nstip.left=150
+}
+
+</script>
+    </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="06.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="06c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><br>
+            <b>链接注释</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="40" valign="top">提示：</td>
+                <td>把你的鼠标放在下面的链接上，便会出现一个游动信息。<br>
+                  <br>
+                  <a href="http://www.sohu.com" onMouseOver="showtip2(this,event,'好多东东等着你！')" onMouseOut="hidetip2()"><font color="#0000FF"> 
+                  搜虎</font></a><br>
+                  <br>
+                  <a href="http://freemail.263.net/" onMouseOver="showtip2(this,event,'263免费电子邮局是一个老牌的提供免费服务的网站。')" onMouseOut="hidetip2()"><font color="#0000FF">263电子邮局</font></a> 
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr bgcolor="#336699"> 
+    <td></td>
+    <td align="center" height="35">&nbsp; </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

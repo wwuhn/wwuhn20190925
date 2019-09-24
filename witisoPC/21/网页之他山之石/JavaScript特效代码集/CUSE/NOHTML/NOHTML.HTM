@@ -1,0 +1,100 @@
+<HTML>
+<HEAD>
+<TITLE>No HTML </TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function Del(Word) {
+a = Word.indexOf("<");
+b = Word.indexOf(">");
+len = Word.length;
+c = Word.substring(0, a);
+if(b == -1)
+b = a;
+d = Word.substring((b + 1), len);
+Word = c + d;
+tagCheck = Word.indexOf("<");
+if(tagCheck != -1)
+Word = Del(Word);
+return Word;
+}
+function Check() {
+ToCheck = document.form.text.value;
+Checked = Del(ToCheck);
+document.form.text.value = Checked;
+alert("这仅仅是一个例子，仔细看看按下按钮后文本区的内容，显然是经过了\"过滤\"的!\n在实际使用时要与表单配合使用才行。仔细看注释说明！");
+return false;
+}
+// End -->
+</SCRIPT>
+<style type="text/css">
+<!--
+.yk9 {  font: 9pt "宋体"; text-decoration: none}
+a { font: 9pt "宋体"; text-decoration: none }
+body { font: 9pt "宋体"; text-decoration: none }
+td { font: 11pt "宋体"; text-decoration: none }
+-->
+</style></HEAD>
+
+<BODY background="../../../images/bg012.gif">
+<form>
+  <div align="center"> <font size="5">No HTML-HTML屏蔽脚本</font></div>
+</form>
+<form action="../../../_private/next/js2/nohtml/some-script.cgi" name=form onSubmit="return Check()">
+  <div align="center">
+    <textarea cols="50" rows="6" name="text" class="yk9">&lt;a href=&quot;http://java2000.126.com&quot;&gt;JAVA2000&lt;/A&gt;</textarea>
+    <br>
+    <input type="submit" value="按此测试,上面的HTML会经过过滤" class="yk9">
+  </div>
+</form>
+<P>
+<table width="77%" border="0" align="center">
+  <tr>
+    <td>
+      <p>以下代码用于清除文本输入区的HTML语句，放在HTML的&lt;HEAD&gt;区：<br>
+        <br>
+        &lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;<br>
+        &lt;!-- Begin<br>
+        function Del(Word) {<br>
+        a = Word.indexOf(&quot;&lt;&quot;);<br>
+        b = Word.indexOf(&quot;&gt;&quot;);<br>
+        len = Word.length;<br>
+        c = Word.substring(0, a);<br>
+        if(b == -1)<br>
+        b = a;<br>
+        d = Word.substring((b + 1), len);<br>
+        Word = c + d;<br>
+        tagCheck = Word.indexOf(&quot;&lt;&quot;);<br>
+        if(tagCheck != -1)<br>
+        Word = Del(Word);<br>
+        return Word;<br>
+        }<br>
+        function Check() {<br>
+        ToCheck = document.<font color="#FF0000">form</font>.<font color="#FF0000">text</font>.value;<br>
+        Checked = Del(ToCheck);<br>
+        document.<font color="#FF0000">form</font>.<font color="#FF0000">text</font>.value 
+        = Checked;<br>
+        return false;<br>
+        }<br>
+        // End --&gt;<br>
+        &lt;/SCRIPT&gt;</p>
+      <p>下面是递交的表单，<br>
+        <br>
+        &lt;form action=&quot;<font color="#FF0000">mailto:yourmail@mailhost.com</font>&quot; 
+        name=<font color="#FF0000">form</font> onSubmit=&quot;return Check()&quot;&gt;<br>
+        &lt;textarea cols=&quot;50&quot; rows=&quot;6&quot; name=&quot;<font color="#FF0000">text</font>&quot;&gt;&lt;/textarea&gt;<br>
+        &lt;br&gt;<br>
+        &lt;input type=&quot;submit&quot; value=&quot;递交&quot;&gt;<br>
+        &lt;/form&gt;</p>
+      <p>注释说明：<font size="5" color="#FF0000">为什么</font>要过滤表单中TEXT区的内容呢？这完全是出于安全的考虑。许多的留言板或者表单递交时都允许使用HTML语言，这就为安全带来了隐患。懂得一些javascript的人很容易用一小段JS脚本的留言，就能使你的系统崩溃。<br>
+        例如，使你查看留言时，打开无数的窗口直至系统资源耗尽，或者使你陷入死循环，除非你“RESET”。所以用这个脚本可以有效地屏蔽文本区输入的内容不得包含HTML语句。</p>
+      <p>最前面的一段代码应该与你使用的表单相配合使用才可以，其中的action=&quot;...&quot;可以使用action=&quot;mailto:yourmail@mailhost.com&quot;来实现。 
+        只要前后调用的name名一致即可(红色部分)。 </p>
+      </td>
+  </tr>
+</table>
+<P>&nbsp; 
+<p>
+
+
+</body></html>

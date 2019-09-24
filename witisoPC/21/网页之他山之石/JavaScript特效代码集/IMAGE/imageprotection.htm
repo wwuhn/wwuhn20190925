@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<TITLE>image protect 图片保护</TITLE>
+<META HTTP-EQUIV="The JavaScript Source" CONTENT = "no-cache">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function protect(e) {
+alert("无权限下载图片，但是有权限下载代码！");
+return false;
+}
+
+function no() {
+if(document.images)
+for(i=0;i<document.images.length;i++)
+document.images[i].onmousedown = protect;
+}
+// End -->
+</SCRIPT>
+<meta name="keywords" content="image prect prection 图片保护 禁止右键 noright">
+<meta name="description" content="禁止将页面上的图片保存的脚本。">
+<style type="text/css">
+<!--
+body {  font-family: "宋体"; font-size: 9pt; margin-top: 0px}
+.pt9 { font-family: "宋体"; font-size: 9pt}
+-->
+</style></HEAD>
+
+<BODY OnLoad="no()" bgcolor="#000000" text="#FFFFFF" link="#FFFFCC" vlink="#CCFFCC" alink="#CCCCFF">
+<center>
+  <form>
+    <div align="center"> <font size="3">保护页面上的图片</font>-禁止右键保存功能的脚本</div>
+  </form>
+  <p><br>
+    <img src="bond.gif" width="120" height="127"><br>
+    <br>
+    [ 以上的图片你无法用右键保存 ] </p>
+  <form method="post" action="">
+    <textarea name="textfield" cols="50" rows="10" class="pt9">如下代码加入HTML的&lt;head&gt;区：
+&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;
+&lt;!-- Begin
+function protect(e) {
+alert(&quot;无权限下载！&quot;);
+return false;
+}
+
+function no() {
+if(document.images)
+for(i=0;i&lt;document.images.length;i++)
+document.images[i].onmousedown = protect;
+}
+// End --&gt;
+&lt;/SCRIPT&gt;
+最后，用如下代码替换原有的&lt;body&gt;：
+&lt;BODY OnLoad=&quot;no()&quot;&gt;</textarea>
+  </form>
+  <p>&nbsp;</p>
+</center>
+</body></html>
+

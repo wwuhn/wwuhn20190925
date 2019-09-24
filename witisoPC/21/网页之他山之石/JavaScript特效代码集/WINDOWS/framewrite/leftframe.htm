@@ -1,0 +1,28 @@
+<html>
+<head>
+<link rel="stylesheet" href="../style.css">
+<title>与帧有关的文本的写法</title></head>
+<body bgcolor="#FFFFFF" text="#FFFFFF">
+<font size="3" color="#000000"> 这里提供了一种与帧有关的文本的写法，即在帧页面任意一侧文本框内输入的内容写在另一侧页面的特定位置。</font><font face="Arial, Helvetica, sans-serif" size="5" color="#000000"><br>
+left frame page</font> 
+<form name="leftForm">
+  <p><font color="#000000">随便输入一些信息在里面：<br>
+    <input type="text" size="20" name="textField">
+    <br>
+    <input type="button" value="写到右侧的Frame"
+  onclick="parent.rightFrame.document.rightForm.textField.value=leftForm.textField.value" class="pt9">
+    </font></p>
+  <p><font color="#000000">这里写入的信息来自右侧的文本框：<br>
+    <input type="text" name="newMagicWord" onclick="this.blur()" size="20">
+    </font></p>
+</form>
+<font color="#000000"><br>
+<br>
+</font>
+</body>
+</html>
+
+
+
+
+

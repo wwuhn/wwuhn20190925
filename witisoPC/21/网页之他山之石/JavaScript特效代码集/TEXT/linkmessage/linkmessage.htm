@@ -1,0 +1,189 @@
+<HTML>
+<HEAD>
+<TITLE>连接说明浮动条脚本</TITLE>
+<style type="text/css">
+<!--
+a {  font-family: "宋体"; font-size: 9pt; text-decoration: none}
+br { font-family: "宋体"; font-size: 9pt; text-decoration: none }
+body { font-family: "宋体"; font-size: 9pt; text-decoration: none }
+-->
+</style></HEAD>
+<Script Language="Javascript">
+<!-- Hiding
+bname=navigator.appName;
+bversion=parseInt(navigator.appVersion)
+if (bname=="Netscape")
+brows=true
+else
+brows=false
+var x=0;
+var link=new Array();
+
+function dspl(msg,bgcolor,dtop,delft){
+this.msg=msg;
+this.bgcolor=bgcolor;
+this.dtop=dtop;
+this.dleft=delft;
+}
+
+
+link[0]=new dspl('［宗旨］<BR>内容','bisque',150,430)
+
+link[1]=new dspl('［论坛］<BR>内容','bisque',175,430)
+
+link[2]=new dspl('［栏目］<BR>内容','bisque',200,430)
+
+link[3]=new dspl('［关于］<BR>内容','bisque',225,430)
+
+// Do not edit anything else in the script !!!!
+
+function don(x){
+if ((bname=="Netscape" && bversion>=4) || (bname=="Microsoft Internet Explorer" && bversion>=4)){
+if (brows){
+with(link[x]){
+document.layers['linkex'].bgColor=bgcolor;
+document.layers['linkex'].document.writeln(msg);
+document.layers['linkex'].document.close();
+document.layers['linkex'].top=dtop;
+document.layers['linkex'].left=dleft;
+}
+document.layers['linkex'].visibility="show";
+}
+else{
+with(link[x]){
+linkex.innerHTML=msg;
+linkex.style.top=dtop;
+linkex.style.left=dleft;
+linkex.style.background=bgcolor;
+}
+linkex.style.visibility="visible";
+}
+}
+}
+
+function doff(){
+if ((bname=="Netscape" && bversion>=4) || (bname=="Microsoft Internet Explorer" && bversion>=4)){
+if (brows)
+document.layers['linkex'].visibility="hide";
+else
+linkex.style.visibility="hidden";
+}
+}
+
+
+// done hiding -->
+</Script>
+<BODY BGCOLOR="#FFFFFF" LINK="#FF0000" VLINK="#FF0080" ALINK="#FFFF00" TEXT="#000000">
+<Div id="linkex" style="position: absolute; visibility: hidden; width=20%">
+</Div>
+<Layer name="linkex" visibility="hide" width=20%>
+</Layer>
+<div align="center">
+  <center>
+  </center>
+</div>
+<form>
+  <div align="center"> <font size="5">连接说明浮动条脚本</font></div>
+</form>
+<p align="center"> <a href="../../../index.htm" onmouseover="don(0)" onmouseout="doff()" target="_top">［宗旨］</a><BR>
+  <BR>
+  <a href="../../../index.htm" onmouseover="don(1)" onmouseout="doff()" target="_top">［论坛］</a><BR>
+  <br>
+  <a href="../../../index.htm" onmouseover="don(2)" onmouseout="doff()" target="_top">［栏目］</a><BR>
+  <BR>
+  <a href="../../../index.htm" onmouseover="don(3)" onmouseout="doff()" target="_top">［关于］</a> 
+</p>
+<p align="center"> <br>
+  将鼠标放在连接上看看，所有连接都通向首页。 </p>
+<hr noshade width="75%">
+<br>
+<table width="79%" border="0" align="center">
+  <tr>
+    <td>
+      <p>将如下代码加入HTML的&lt;BODY&gt;区：</p>
+      <p>&lt;Script Language=&quot;Javascript&quot;&gt;<br>
+        &lt;!-- Hiding<br>
+        bname=navigator.appName;<br>
+        bversion=parseInt(navigator.appVersion)<br>
+        if (bname==&quot;Netscape&quot;)<br>
+        brows=true<br>
+        else<br>
+        brows=false<br>
+        var x=0;<br>
+        var link=new Array(); </p>
+      <p>function dspl(msg,bgcolor,dtop,delft){<br>
+        this.msg=msg;<br>
+        this.bgcolor=bgcolor;<br>
+        this.dtop=dtop;<br>
+        this.dleft=delft;<br>
+        }</p>
+      <p><br>
+        link[0]=new dspl('［宗旨］&lt;BR&gt;内容','<font color="#0000CC">bisque</font>',<font color="#FF0000">150,430</font>)</p>
+      <p>link[1]=new dspl('［论坛］&lt;BR&gt;内容','<font color="#0000FF">bisque</font>',<font color="#FF0000">175,430</font>)</p>
+      <p>link[2]=new dspl('［栏目］&lt;BR&gt;内容','<font color="#0000FF">bisque</font>',<font color="#FF0033">200,430</font>)</p>
+      <p>link[3]=new dspl('［关于］&lt;BR&gt;内容','<font color="#0000FF">bisque</font>',<font color="#FF0000">225,430</font>)</p>
+      <p>//兰色部分是浮动条的背景色，红色部分是浮动条的绝对位置，前面是Y轴，后面的是X轴。根据连接的具体位置设置这个位置，如果你用DW2，可以打开Ruler（坐标线），坐标位置非常容易找到。</p>
+      <p>// 不要改动下面的代码</p>
+      <p>function don(x){<br>
+        if ((bname==&quot;Netscape&quot; &amp;&amp; bversion&gt;=4) || (bname==&quot;Microsoft 
+        Internet Explorer&quot; &amp;&amp; bversion&gt;=4)){<br>
+        if (brows){<br>
+        with(link[x]){<br>
+        document.layers['linkex'].bgColor=bgcolor;<br>
+        document.layers['linkex'].document.writeln(msg);<br>
+        document.layers['linkex'].document.close();<br>
+        document.layers['linkex'].top=dtop;<br>
+        document.layers['linkex'].left=dleft;<br>
+        }<br>
+        document.layers['linkex'].visibility=&quot;show&quot;;<br>
+        }<br>
+        else{<br>
+        with(link[x]){<br>
+        linkex.innerHTML=msg;<br>
+        linkex.style.top=dtop;<br>
+        linkex.style.left=dleft;<br>
+        linkex.style.background=bgcolor;<br>
+        }<br>
+        linkex.style.visibility=&quot;visible&quot;;<br>
+        }<br>
+        }<br>
+        }</p>
+      <p>function doff(){<br>
+        if ((bname==&quot;Netscape&quot; &amp;&amp; bversion&gt;=4) || (bname==&quot;Microsoft 
+        Internet Explorer&quot; &amp;&amp; bversion&gt;=4)){<br>
+        if (brows)<br>
+        document.layers['linkex'].visibility=&quot;hide&quot;;<br>
+        else<br>
+        linkex.style.visibility=&quot;hidden&quot;;<br>
+        }<br>
+        }</p>
+      <p> // done hiding --&gt;<br>
+        &lt;/Script&gt;</p>
+      <p>//以下红色表示浮动条的宽度，IE和NS分别用&lt;div&gt;标签和&lt;layer&gt;标签。</p>
+      <p>&lt;Div id=&quot;linkex&quot; style=&quot;position: absolute; visibility: 
+        hidden; width=<font color="#FF0033">19%</font>&quot;&gt;<br>
+        &lt;/Div&gt;<br>
+        &lt;Layer name=&quot;linkex&quot; visibility=&quot;hide&quot; width=<font color="#FF0000">19%</font>&gt;<br>
+        &lt;/Layer&gt;</p>
+      <p>//下面是每个连接的URL及打开的窗口方式(_top,_blank等)</p>
+      <p>&lt;a href=&quot;index1.html&quot; onmouseover=&quot;don(0)&quot; onmouseout=&quot;doff()&quot; 
+        target=&quot;_top &gt;［宗旨］&lt;/a&gt;<br>
+        &lt;BR&gt;<br>
+        &lt;a href=&quot;index2.html&quot; onmouseover=&quot;don(1)&quot; onmouseout=&quot;doff()&quot; 
+        target=&quot;_top &gt;［论坛］&lt;/a&gt;<br>
+        &lt;br&gt;<br>
+        &lt;a href=&quot;index3.html&quot; onmouseover=&quot;don(2)&quot; onmouseout=&quot;doff()&quot; 
+        target=&quot;_top &gt;［栏目］&lt;/a&gt;<br>
+        &lt;BR&gt;<br>
+        &lt;a href=&quot;index4.html&quot; onmouseover=&quot;don(3)&quot; onmouseout=&quot;doff()&quot; 
+        target=&quot;_top&quot;&gt;［关于］&lt;/a&gt; </p>
+    </td>
+  </tr>
+</table>
+<p align="center">&nbsp; </p>
+<p>&nbsp; </p>
+</BODY>
+</HTML>
+
+
+

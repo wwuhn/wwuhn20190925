@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>表单递交-拒绝HTML语法</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="keywords" content="nohtml 屏蔽 html 表单保护">
+<meta name="description" content="可以将表单递交内容中的HTML转换一下，拒绝有危险的HTML语句。">
+<link rel="stylesheet" href="style.css"></head>
+
+<body bgcolor="#FFFFFF">
+<p></p>
+  <div align="center"> 
+    <font size="3" color="#FF0033">表单递交HTML语句屏蔽脚本</font></div>
+<form name="myform" method="post" enctype="text/plain" onsubmit="htmlOut()" action="mailto:mail@mail.com"> 
+<DIV ALIGN=CENTER> 
+            
+    <textarea name="html" cols="50" rows="6" wrap="VIRTUAL" class="pt9">&lt;html&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;a href=&quot;http://java2000.wol.com.cn&quot;&gt;java2000&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+            <BR>
+            
+    <INPUT TYPE="submit" NAME="html1" VALUE="递交测试" >
+          </DIV>
+</form>
+<table width="85%" border="0" align="center">
+  <tr> 
+    <td width="79%"> 
+      <p>代码加入HTML的&lt;BODY&gt;区：</p>
+      <p><font face="Arial, Helvetica, sans-serif">&lt;script language=&quot;javascript&quot;&gt;<br>
+        function htmlOut(){<br>
+        txt=document.<font color="#FF3333">myform</font>.<font color="#FF0033">html</font>.value;<br>
+        ctr=0;<br>
+        while ((txt.indexOf(&quot;&lt;&quot;)&gt;-1)&amp;&amp;(ctr&lt;4)){<br>
+        pos=txt.indexOf(&quot;&lt;&quot;);<br>
+        txt=txt.substring(0,pos)+&quot;&amp;lt;&quot;+txt.substring(pos+1,txt.length);<br>
+        ctr++;<br>
+        }<br>
+        while (txt.indexOf(&quot;&gt;&quot;)&gt;-1){<br>
+        pos=txt.indexOf(&quot;&gt;&quot;);<br>
+        txt=txt.substring(0,pos)+&quot;&amp;gt;&quot;+txt.substring(pos+1,txt.length);<br>
+        }<br>
+        document.<font color="#FF6666">myform</font>.<font color="#FF0033">html</font>.value=txt;<br>
+        }<br>
+        &lt;/script&gt;<br>
+        &lt;form name=&quot;<font color="#FF6666">myform</font>&quot; method=&quot;post&quot; 
+        enctype=&quot;text/plain&quot; onsubmit=&quot;htmlOut()&quot; action=&quot;mailto:mail@mail.com&quot;&gt; 
+        <br>
+        &lt;DIV ALIGN=CENTER&gt; <br>
+        <br>
+        &lt;textarea name=&quot;<font color="#FF0033">html</font>&quot; cols=&quot;60&quot; 
+        rows=&quot;15&quot;&gt;&lt;/textarea&gt;<br>
+        &lt;BR&gt;<br>
+        &lt;INPUT TYPE=&quot;submit&quot; NAME=&quot;submit&quot; VALUE=&quot; 
+        Submit &quot; &gt;<br>
+        &lt;/DIV&gt;<br>
+        &lt;/form&gt;</font></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

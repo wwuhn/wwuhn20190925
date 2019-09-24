@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>表单检测 -自动填充默认货币符号</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script>
+<!--//
+
+var prefix="￥"
+var wd
+function parseelement(thisone){
+if (thisone.value.charAt(0)=="￥")
+return
+wd="w"
+var tempnum=thisone.value
+for (i=0;i<tempnum.length;i++){
+if (tempnum.charAt(i)=="."){
+wd="d"
+break
+}
+}
+if (wd=="w")
+thisone.value=prefix+tempnum+".00"
+else{
+if (tempnum.charAt(tempnum.length-2)=="."){
+thisone.value=prefix+tempnum+"0"
+}
+else{
+tempnum=Math.round(tempnum*100)/100
+thisone.value=prefix+tempnum
+}
+}
+}
+//-->
+</script>
+<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="表单, 货币, 符号, 货币符号, 递交, 合法性, 合法, 检测, form ,submit, currency, format">
+<meta name="description" content="在客户端方便客户按照规定格式填写金额的脚本，不管用户是否按照规定格式输入金额，只要在的文本框输入任意数字，鼠标点击其它位置，自动加默认货币符号。
+ 
+">
+</head>
+
+<body bgcolor="#FFFFFF">
+<br>
+<form>
+  <div align="center"></div>
+</form>
+<div align="center">
+  <table width="81%" border="0">
+    <tr> 
+      <td valign="top" width="45%" bgcolor="#FF9999"><font color="#003366" face="Arial, Helvetica, sans-serif">&lt;script&gt;<br>
+        &lt;!--// </font> 
+        <p><font color="#003366" face="Arial, Helvetica, sans-serif">var prefix=&quot;￥&quot;</font><font color="#003366"> 
+          //可以修改这里的默认金额格式 </font><font color="#003366" face="Arial, Helvetica, sans-serif"><br>
+          var wd<br>
+          function parseelement(thisone){<br>
+          if (thisone.value.charAt(0)==&quot;￥&quot;)<br>
+          return<br>
+          wd=&quot;w&quot;<br>
+          var tempnum=thisone.value<br>
+          for (i=0;i&lt;tempnum.length;i++){<br>
+          if (tempnum.charAt(i)==&quot;.&quot;){<br>
+          wd=&quot;d&quot;<br>
+          break<br>
+          }<br>
+          }<br>
+          if (wd==&quot;w&quot;)<br>
+          thisone.value=prefix+tempnum+&quot;.00&quot;<br>
+          else{<br>
+          if (tempnum.charAt(tempnum.length-2)==&quot;.&quot;){<br>
+          thisone.value=prefix+tempnum+&quot;0&quot;<br>
+          }<br>
+          else{<br>
+          tempnum=Math.round(tempnum*100)/100<br>
+          thisone.value=prefix+tempnum<br>
+          }<br>
+          }<br>
+          }<br>
+          //--&gt;<br>
+          &lt;/script&gt;</font></p>
+      </td>
+      <td valign="top" width="55%"> 
+        <form method="post" action="">
+          <div align="center"> 
+            <p>输入金额： 
+              <input type="text" name="textfield" onBlur="parseelement(this)">
+            </p>
+            <p>输入单价： 
+              <input type="text" name="textfield2" onBlur="parseelement(this)">
+            </p>
+          </div>
+        </form>
+        <p>表单递交中我们经常要检测一些内容是否按照规定的格式填写了，这是一个在<font color="#FF3333" size="3">客户端方便客户按照规定格式填写金额</font>的脚本。</p>
+        <p> 首先，将左侧的javascript代码加入&lt;HEAD&gt;区，你可以修改默认的金额是￥还是$等货币。<font face="Times New Roman, Times, serif">今后在凡是需要此种金额格式的文本框内加入<font color="#FF0033"><br>
+          onBlur=&quot;parseelement(this)&quot;</font>即可。</font> 即：<br>
+          <font face="Times New Roman, Times, serif">&lt;input type=&quot;text&quot; 
+          name=&quot;textfield&quot;<font color="#FF0033"> onBlur=&quot;parseelement(this)&quot;</font>&gt;</font></p>
+        <p>测试：<font size="3" color="#0000CC">不管用户是否按照规定格式输入金额，在上面的文本框输入任意数字，只要鼠标点击其它位置，自动加默认货币符号。</font></p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p>&nbsp;</p>
+</body>
+</html>

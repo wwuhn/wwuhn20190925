@@ -1,0 +1,181 @@
+<html>
+<head>
+<title>固定的logo</title>
+<meta name="keywords" content="logo, static, mylogo， 固定, 图标">
+<meta name="description" content="LOGO始终固定在屏幕的右下角。">
+</head>
+<style>
+.logo
+{
+position:absolute;
+}
+td {  font-size: 9pt}
+body {  font-size: 9pt; margin-top: 0px}
+.pt9 {  font-family: "宋体"; font-size: 9pt}
+</style>
+</head>
+
+<script Language="Javascript">
+
+xySpace = 200;
+
+function start()
+{
+	// The navigator is detected to make the right initializations
+	if (navigator.appName == "Netscape")
+	{
+		style_logo = "document.logo";	// Access to the style logo
+		yOffset = "self.innerHeight + self.pageYOffset - xySpace ";	// The position of the logo
+		xOffset = "self.innerWidth - xySpace ";
+		setMAJ();	// For Netscape, the timer must be started
+	}
+	else
+	{
+		style_logo = "document.all.logo.style";	// Access to the style logo
+		onscroll = MAJLogo;	// For IE, trapping the 'onscroll' is enough
+		yOffset = "document.body.offsetHeight + document.body.scrollTop - xySpace "; // The position of the logo
+		xOffset = "document.body.offsetWidth - xySpace ";
+		MAJLogo();	// To place the logo at the correct position
+	}
+}
+function MAJLogo()
+{	
+	eval(style_logo + ".top = " + yOffset);	// Update the position of the logo
+	eval(style_logo + ".left = " + xOffset);
+}
+
+function setMAJ(evt)
+{
+	setInterval('MAJLogo()',10);	// Update the position of the logo every 10ms
+}
+</script>
+
+
+<body bgcolor="#FFFFFF" onLoad="start()">
+<div class="logo" id="logo" style=""> <img src="bond.gif" width="120" height="127"></div>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="3" color="#FF0033">MyLogo 
+  </font><font size="3" color="#FF0033">固定的<font face="Arial, Helvetica, sans-serif">LOGO</font>脚本</font></p>
+<form>
+  <div align="center"> </div>
+</form>
+<div align="center"> 
+  <table width="77%" border="0">
+    <tr> 
+      <td><font face="Arial, Helvetica, sans-serif"><b>&lt;html&gt;<br>
+        &lt;head&gt;<br>
+        &lt;title&gt;&lt;/title&gt;<br>
+        &lt;/head&gt;<br>
+        <font color="#FF0033">&lt;style&gt;<br>
+        .logo<br>
+        {<br>
+        position:absolute;<br>
+        }<br>
+        &lt;/style&gt;</font><br>
+        &lt;/head&gt; </b></font> 
+        <p><b><font face="Arial, Helvetica, sans-serif">&lt;script Language=&quot;Javascript&quot;&gt;</font></b></p>
+        <p><b><font face="Arial, Helvetica, sans-serif">xySpace = 200;</font></b></p>
+        <p><b><font face="Arial, Helvetica, sans-serif">function start()<br>
+          {<br>
+          <br>
+          if (navigator.appName == &quot;Netscape&quot;)<br>
+          {<br>
+          style_logo = &quot;document.logo&quot;;<br>
+          yOffset = &quot;self.innerHeight + self.pageYOffset - xySpace &quot;;	
+          <br>
+          xOffset = &quot;self.innerWidth - xySpace &quot;;<br>
+          setMAJ();<br>
+          }<br>
+          else<br>
+          {<br>
+          style_logo = &quot;document.all.logo.style&quot;;<br>
+          onscroll = MAJLogo; <br>
+          yOffset = &quot;document.body.offsetHeight + document.body.scrollTop 
+          - xySpace &quot;; <br>
+          xOffset = &quot;document.body.offsetWidth - xySpace &quot;;<br>
+          MAJLogo(); <br>
+          }<br>
+          }<br>
+          function MAJLogo()<br>
+          { <br>
+          eval(style_logo + &quot;.top = &quot; + yOffset); <br>
+          eval(style_logo + &quot;.left = &quot; + xOffset);<br>
+          }</font></b></p>
+        <p><b><font face="Arial, Helvetica, sans-serif">function setMAJ(evt)<br>
+          {<br>
+          setInterval('MAJLogo()',10);<br>
+          }<br>
+          &lt;/script&gt;</font></b></p>
+        <p><b><font face="Arial, Helvetica, sans-serif"><br>
+          &lt;body bgcolor=&quot;#FFFFFF&quot;<font color="#FF0033"> onLoad=&quot;start()&quot;</font>&gt;<br>
+          <font color="#FF0033">&lt;div class=&quot;logo&quot; id=&quot;logo&quot;&gt; 
+          &lt;img src=&quot;bond.gif&quot; width=&quot;120&quot; height=&quot;127&quot;&gt;&lt;/div&gt;<br>
+          </font></font><font color="#FF0033">&lt;!--你只要改变图片的名字即可 --&gt; </font></b></p>
+        <p><b><font face="Arial, Helvetica, sans-serif">&lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;p&gt;&amp;nbsp;&lt;/p&gt;<br>
+          &lt;/body&gt;<br>
+          &lt;/html&gt;</font></b></p>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>使光标聚焦于指定的输入框内</title>
+<meta name="keywords" content="focus 聚焦 光标">
+<meta name="description" content="将光标聚焦在特定输入框内的脚本。">
+<link rel="stylesheet" href="../style.css">
+<script language="JavaScript">
+
+function setfocus() {
+     document.selectForm.b.focus();
+   }
+</script>
+</head>
+<body bgcolor=ffffff onLoad="setfocus()">
+<br>
+<center>
+  <p><font size="3" color="#FF0033">在一个表单中将光标聚焦在一个指定的框内 </font></p>
+</center>
+<form name=selectForm>
+  <div align="center">Field "A": 
+    <input type="text" name="a" value="" class="pt9" size="30">
+    <br>
+    Field "B": 
+    <input type="text" name="b" class="pt9" value="看到没有？光标指定在这里闪烁。" size="30">
+    <br>
+    Field "C": 
+    <input type="text" name="c" value="" class="pt9" size="30">
+    <br>
+  </div>
+</form>
+</body>
+</html>

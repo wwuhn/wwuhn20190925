@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>新窗口打开链接</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+a:active {font-style:normal;text-decoration:none;color:yellow;}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="#009900" topmargin="0" leftmargin="0">
+<form name="form">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr bgcolor="#009900"> 
+      <td colspan="3" height="18">&nbsp; </td>
+    </tr>
+    <tr> 
+      <td bgcolor="#009900" width="18"></td>
+      <td align="center" bgcolor="#FFFFFF" valign="top"> <br>
+        <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+          <tr> 
+            <td rowspan="2" width="16" valign="top"> 
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+                <tr bgcolor="#336699" bordercolor="#336699"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="05.htm">演<br>
+                    <br>
+                    示</a></strong></td>
+                </tr>
+                <tr bordercolor="#009900" bgcolor="#009900"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="05c.htm">源<br>
+                    代<br>
+                    码</a></strong></td>
+                </tr>
+              </table>
+            </td>
+            <td rowspan="2" width="8" bgcolor="#009900">&nbsp;</td>
+            <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#009900" valign="top"> 
+              <b> </b><br>
+              <b>新窗口打开链接</b> 
+              <hr width="92%" size="1" align="center">
+              <table  cellspacing="0" cellpadding="0" width="81%">
+                <tr> 
+                  <td height="25" colspan="2">注释：放在&lt;body&gt;与&lt;/body&gt;之间</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <textarea name="Code" onFocus="this.select()" onMouseOver="this.focus()" cols="50" wrap="VIRTUAL" style="BACKGROUND-COLOR: #009900;" class="pt9" rows="16">&lt;script language=JavaScript&gt;
+&lt;!-- Hide
+function surfto(form) {
+	var myindex=form.dest.selectedIndex
+	window.open(form.dest.options[myindex].value, &quot;&quot;, &quot;toolbar=no,location=yes,directories=no,status=no,menubar=yes,scrollbars=yes, resizable=no,copyhistory=yes,width=600,height=260&quot;);
+}
+// --&gt;
+&lt;/script&gt;
+&lt;form name=myform&gt;
+                    &lt;select name=dest size=1&gt;
+                      &lt;option selected 
+  value=&quot;&quot;&gt;选项 
+                      &lt;option value=&quot;http://www.netscape.com&quot;&gt;去网景主页 &lt;/option&gt;
+                      &lt;option value=&quot;http://www.microsoft.com&quot;&gt;去微软主页 &lt;/option&gt;
+                      &lt;option value=&quot;http://www.163.net&quot; selected&gt;去163主页 &lt;/option&gt;
+                    &lt;/select&gt;
+                    &lt;input onClick=surfto(this.form) type=button value=&quot;确认&quot; name=&quot;button&quot;&gt;
+                  &lt;/form&gt;</textarea>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr> 
+            <td height="20" class="white" bgcolor="#009900">&nbsp;</td>
+          </tr>
+        </table>
+        <br>
+      </td>
+      <td bgcolor="#009900" width="18"></td>
+    </tr>
+    <tr bgcolor="#009900"> 
+      <td width="18"></td>
+      <td align="center" height="35">&nbsp; </td>
+      <td width="18">&nbsp;</td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

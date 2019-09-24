@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript">
+var count = 0;
+function fib(num) {
+count++;
+switch (num){
+case 0 :
+return(0);
+break;
+case 1 :
+return(1);
+break;
+default:
+return(fib(num-1) + fib ( num -2));
+break;
+}}
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>斐波那契数列</title>
+</head>
+
+<body>
+<div style="margin:auto;">
+<table border="1">
+<tr>
+<script type="text/javascript">
+for (n=0; n < 28; n++){
+value =fib(n);
+document.write("<td>" + value + "</td>");
+}
+
+</script>
+</tr>
+</table>
+
+<script type="text/javascript">
+document.write("function called itself " + count +  "times!!");
+
+</script>
+</div>
+</body>
+</html>

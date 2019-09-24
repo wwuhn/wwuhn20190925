@@ -1,0 +1,131 @@
+<html>
+<head>
+<title>随时间变化提示</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="22.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="22c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><br>
+            <b>随时间变化提示</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="40" valign="top">提示：</td>
+                <td valign="top">此特效随着时间的不同，提示不同的信息。<br>
+                  <br>
+                  <script language="JavaScript">
+<!-----------
+   var enabled = 0;   today = new Date();
+   var day;   var date;
+   if(today.getDay()==0)     day = "星期日"
+   if(today.getDay()==1)     day = "星期一"
+   if(today.getDay()==2)     day = "星期二"
+   if(today.getDay()==3)     day = "星期三"
+   if(today.getDay()==4)     day = "星期四"
+   if(today.getDay()==5)     day = "星期五"
+   if(today.getDay()==6)     day = "星期六"
+   document.fgColor = " FF0072";
+   date1 = "<font size=2 color=red>" + (today.getYear())  + "年" + (today.getMonth() + 1 ) + "月" + today.getDate() + "日  " + "</font>";
+   date2 = "<font size=2 color=red>" +  day + "</font>";
+   document.write("<center>" + date1.fontsize(3) + date2.fontsize(3) + "</center>");
+   
+//----->
+</script>
+                  <script language="JavaScript">
+
+<!--
+document.write("<center><font color=#0066ff size=+1> ")
+day = new Date()
+hr = day.getHours()
+if (hr ==1)
+document.write("凌晨一点已过，别忘了休息喔！")
+if (hr ==2)
+document.write("该休息了，身体可是革命的本钱啊！")
+if (hr ==3)
+document.write("夜深人静，只有你敲击鼠标的声音...")
+if (hr ==4)
+document.write("四点过了，你明天不上班？？？")
+if (hr ==5)
+document.write("该去晨运了！！！")
+if (hr ==6)
+document.write("你知道吗，此时是国内网络速度最快的时候！")
+if (hr ==7)
+document.write("新的一天又开始了，祝你过得快乐！")
+if ((hr ==8) || (hr == 9) || (hr ==10))
+document.write("上午好！今天你看上去好精神哦！")
+if (hr ==11)
+document.write("十一点过了，快下班了吧？")
+if (hr ==12)
+document.write("十二点过了，还不下班？")
+if ((hr==13) || (hr==14))
+document.write("你不睡午觉？")
+if ((hr==15) || (hr==16) || (hr==17))
+document.write("下午好！")
+if ((hr==18) || (hr==19))
+document.write("吃晚饭了吧？")
+if ((hr==20) || (hr==21) || (hr==22))
+document.write("今晚又在这玩电脑了，没节目？")
+if (hr==23)
+document.write("真是越玩越精神，不打算睡了？")
+if (hr==0)
+document.write("凌晨了，还不睡？")
+document.write("</font></center>")
+//--->
+
+</script>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

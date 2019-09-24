@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<TITLE>禁止鼠标右键（增强）</TITLE>
+<script language="JavaScript">
+
+if (navigator.appName.indexOf("Internet Explorer") != -1)	
+	document.onmousedown = noright;
+	
+function noright()
+{
+	if (event.button == 2 | event.button == 3)
+	{
+		alert("页面代码不能随便看啊!");
+//		location.replace("http://url");
+		history.go(0);
+	}
+}
+</script>
+<meta name="keywords" content="noright 禁止右键 屏蔽右键 mouse">
+<meta name="description" content="这个脚本可以屏蔽鼠标右键的使用，并刷新当前页或者导向指定的页面。">
+<style type="text/css">
+<!--
+.pt9 {  font-family: "宋体"; font-size: 9pt}
+body { font-family: "宋体"; font-size: 9pt ; margin-top: 0px}
+-->
+</style></HEAD>
+<BODY bgcolor="#ffffff" text="#000000">
+<div align="center"> </div>
+        <form>
+  <div align="center"> 
+    <p> 
+      <font size="3">在原有的no-right（禁止鼠标右键）基础上作了增强</font><br>
+      <font color="red" size="3">单击右键看看</font> </p>
+  </div>
+</form>
+<form method="post" action="">
+  <div align="center">
+    <textarea name="textfield" cols="65" rows="14" class="pt9" wrap="VIRTUAL">类似的右键屏蔽脚本在本站已经有了，这个脚本对原脚本进行了作了如下的增强：
+（1）如果使用右键则刷新该页。
+（2）或者导向指定的URL。
+
+将如下代码加入HTML的&lt;head&gt;区：
+&lt;script language=&quot;JavaScript&quot;&gt;
+if (navigator.appName.indexOf(&quot;Internet Explorer&quot;) != -1)	
+document.onmousedown = noright;
+function noright()
+{
+if (event.button == 2 | event.button == 3)
+{
+	alert(&quot;页面代码不能随便看啊!&quot;);
+	history.go(0); //刷新当前页
+}
+}
+&lt;/script&gt;
+
+如果将 history.go(0); 替换为
+ location.replace(&quot;http://指定的url&quot;); 则导向一个指定的页面。</textarea>
+  </div>
+</form>
+<p>&nbsp;</p>
+</body></html>

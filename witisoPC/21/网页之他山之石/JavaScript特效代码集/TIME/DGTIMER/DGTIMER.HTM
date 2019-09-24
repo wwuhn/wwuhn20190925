@@ -1,0 +1,245 @@
+<html>
+<head>
+<title>好酷的数字时钟脚本 </title>
+<script language="javascript1.1">
+
+<!--
+
+/*
+
+Live clock script credit: Website Abstraction (www.wsabstract.com). 
+
+Your free JavaScripts archieve, with over 200+ free JavaScripts. 
+
+This script may be freely used as long as credit remains intact.
+
+*/
+
+var dn
+
+c1=new Image(); c1.src="c1.gif"
+
+c2=new Image(); c2.src="c2.gif"
+
+c3=new Image(); c3.src="c3.gif"
+
+c4=new Image(); c4.src="c4.gif"
+
+c5=new Image(); c5.src="c5.gif"
+
+c6=new Image(); c6.src="c6.gif"
+
+c7=new Image(); c7.src="c7.gif"
+
+c8=new Image(); c8.src="c8.gif"
+
+c9=new Image(); c9.src="c9.gif"
+
+c0=new Image(); c0.src="c0.gif"
+
+cb=new Image(); cb.src="cb.gif"
+
+cam=new Image(); cam.src="cam.gif"
+
+cpm=new Image(); cpm.src="cpm.gif"
+
+function extract(h,m,s,type){
+
+if (!document.images)
+
+return
+
+if (h<=9){
+
+document.images.a.src=cb.src
+
+document.images.b.src=eval("c"+h+".src")
+
+}
+
+else {
+
+document.images.a.src=eval("c"+Math.floor(h/10)+".src")
+
+document.images.b.src=eval("c"+(h%10)+".src")
+
+}
+
+if (m<=9){
+
+document.images.d.src=c0.src
+
+document.images.e.src=eval("c"+m+".src")
+
+}
+
+else {
+
+document.images.d.src=eval("c"+Math.floor(m/10)+".src")
+
+document.images.e.src=eval("c"+(m%10)+".src")
+
+}
+
+if (s<=9){
+
+document.g.src=c0.src
+
+document.images.h.src=eval("c"+s+".src")
+
+}
+
+else {
+
+document.images.g.src=eval("c"+Math.floor(s/10)+".src")
+
+document.images.h.src=eval("c"+(s%10)+".src")
+
+}
+
+if (dn=="AM") document.j.src=cam.src
+
+else document.images.j.src=cpm.src
+
+}
+
+function show3(){
+
+if (!document.images)
+
+return
+
+var Digital=new Date()
+
+var hours=Digital.getHours()
+
+var minutes=Digital.getMinutes()
+
+var seconds=Digital.getSeconds()
+
+dn="AM" 
+
+if ((hours>=12)&&(minutes>=1)||(hours>=13)){
+
+dn="PM"
+
+hours=hours-12
+
+}
+
+if (hours==0)
+
+hours=12
+
+extract(hours,minutes,seconds,dn)
+
+setTimeout("show3()",1000)
+
+}
+
+//-->
+
+</script>
+<style type="text/css">
+<!--
+.unnamed1 {  font-family: "宋体"; font-size: 9pt; text-decoration: none}
+td { font-family: "宋体"; font-size: 9pt; text-decoration: none }
+-->
+</style></head>
+
+<body onLoad="show3()" bgcolor="#000000" text="#FFCC33" link="#CCCC33" vlink="#FF9999" alink="#CC00FF">
+<div align="center"> 
+  <div align="center">
+    <center>
+    </center>
+  </div>
+  <p><img src="cb.gif" name="a"><img src="cb.gif" name="b"><img src="colon.gif" name="c"><img src="cb.gif" name="d"><img src="cb.gif" name="e"><img src="colon.gif" name="f"><img src="cb.gif" name="g"><img src="cb.gif" name="h"><img src="cam.gif" name="j"> 
+  </p>
+  <form>
+    <div align="center"> 　<font size="5" color="#CCCCFF">好酷的数字时钟脚本 </font></div>
+  </form>
+  
+</div>
+<table width="75%" border="0" align="center">
+  <tr>
+    <td> 
+      <p>如下代码加入HTML的&lt;HEAD&gt;区： 　　　<a href="dgtimer.zip">这里下载压缩包</a></p>
+      <p>&lt;script language=&quot;javascript1.1&quot;&gt; </p>
+      <p>&lt;!--</p>
+      <p>var dn</p>
+      <p>c1=new Image(); c1.src=&quot;c1.gif&quot;</p>
+      <p>c2=new Image(); c2.src=&quot;c2.gif&quot;</p>
+      <p>c3=new Image(); c3.src=&quot;c3.gif&quot;</p>
+      <p>c4=new Image(); c4.src=&quot;c4.gif&quot;</p>
+      <p>c5=new Image(); c5.src=&quot;c5.gif&quot;</p>
+      <p>c6=new Image(); c6.src=&quot;c6.gif&quot;</p>
+      <p>c7=new Image(); c7.src=&quot;c7.gif&quot;</p>
+      <p>c8=new Image(); c8.src=&quot;c8.gif&quot;</p>
+      <p>c9=new Image(); c9.src=&quot;c9.gif&quot;</p>
+      <p>c0=new Image(); c0.src=&quot;c0.gif&quot;</p>
+      <p>cb=new Image(); cb.src=&quot;cb.gif&quot;</p>
+      <p>cam=new Image(); cam.src=&quot;cam.gif&quot;</p>
+      <p>cpm=new Image(); cpm.src=&quot;cpm.gif&quot;</p>
+      <p>function extract(h,m,s,type){</p>
+      <p>if (!document.images)</p>
+      <p>return</p>
+      <p>if (h&lt;=9){</p>
+      <p>document.images.a.src=cb.src</p>
+      <p>document.images.b.src=eval(&quot;c&quot;+h+&quot;.src&quot;)</p>
+      <p>}</p>
+      <p>else {</p>
+      <p>document.images.a.src=eval(&quot;c&quot;+Math.floor(h/10)+&quot;.src&quot;)</p>
+      <p>document.images.b.src=eval(&quot;c&quot;+(h%10)+&quot;.src&quot;)</p>
+      <p>}</p>
+      <p>if (m&lt;=9){</p>
+      <p>document.images.d.src=c0.src</p>
+      <p>document.images.e.src=eval(&quot;c&quot;+m+&quot;.src&quot;)</p>
+      <p>}</p>
+      <p>else {</p>
+      <p>document.images.d.src=eval(&quot;c&quot;+Math.floor(m/10)+&quot;.src&quot;)</p>
+      <p>document.images.e.src=eval(&quot;c&quot;+(m%10)+&quot;.src&quot;)</p>
+      <p>}</p>
+      <p>if (s&lt;=9){</p>
+      <p>document.g.src=c0.src</p>
+      <p>document.images.h.src=eval(&quot;c&quot;+s+&quot;.src&quot;)</p>
+      <p>}</p>
+      <p>else {</p>
+      <p>document.images.g.src=eval(&quot;c&quot;+Math.floor(s/10)+&quot;.src&quot;)</p>
+      <p>document.images.h.src=eval(&quot;c&quot;+(s%10)+&quot;.src&quot;)</p>
+      <p>}</p>
+      <p>if (dn==&quot;AM&quot;) document.j.src=cam.src</p>
+      <p>else document.images.j.src=cpm.src</p>
+      <p>}</p>
+      <p>function show3(){</p>
+      <p>if (!document.images)</p>
+      <p>return</p>
+      <p>var Digital=new Date()</p>
+      <p>var hours=Digital.getHours()</p>
+      <p>var minutes=Digital.getMinutes()</p>
+      <p>var seconds=Digital.getSeconds()</p>
+      <p>dn=&quot;AM&quot; </p>
+      <p>if ((hours&gt;=12)&amp;&amp;(minutes&gt;=1)||(hours&gt;=13)){</p>
+      <p>dn=&quot;PM&quot;</p>
+      <p>hours=hours-12</p>
+      <p>}</p>
+      <p>if (hours==0)</p>
+      <p>hours=12</p>
+      <p>extract(hours,minutes,seconds,dn)</p>
+      <p>setTimeout(&quot;show3()&quot;,1000)</p>
+      <p>}</p>
+      <p>//--&gt;</p>
+      <p>&lt;/script&gt;</p>
+      <p>如下代码加入HTML的&lt;body&gt;区，去掉原来的&lt;body&gt;：</p>
+      <p> &lt;body onLoad=&quot;show3()&quot; bgcolor=&quot;#000000&quot;&gt;<br>
+        &lt;img src=&quot;cb.gif&quot; name=&quot;a&quot;&gt;&lt;img src=&quot;cb.gif&quot; 
+        name=&quot;b&quot;&gt;&lt;img src=&quot;colon.gif&quot; name=&quot;c&quot;&gt;&lt;img 
+        src=&quot;cb.gif&quot; name=&quot;d&quot;&gt;&lt;img src=&quot;cb.gif&quot; 
+        name=&quot;e&quot;&gt;&lt;img src=&quot;colon.gif&quot; name=&quot;f&quot;&gt;&lt;img 
+        src=&quot;cb.gif&quot; name=&quot;g&quot;&gt;&lt;img src=&quot;cb.gif&quot; 
+        name=&quot;h&quot;&gt;&lt;img src=&quot;cam.gif&quot; name=&quot;j&quot;&gt;</p>
+      </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

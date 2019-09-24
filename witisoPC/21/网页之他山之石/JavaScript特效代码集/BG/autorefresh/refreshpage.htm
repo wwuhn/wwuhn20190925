@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>自动刷新页面</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script>
+<!--
+
+var limit="0:15"
+
+if (document.images){
+var parselimit=limit.split(":")
+parselimit=parselimit[0]*60+parselimit[1]*1
+}
+function beginrefresh(){
+if (!document.images)
+return
+if (parselimit==1)
+window.location.reload()
+else{ 
+parselimit-=1
+curmin=Math.floor(parselimit/60)
+cursec=parselimit%60
+if (curmin!=0)
+curtime=curmin+"分"+cursec+"秒后重刷本页！"
+else
+curtime=cursec+"秒后重刷本页！"
+window.status=curtime
+setTimeout("beginrefresh()",1000)
+}
+}
+
+window.onload=beginrefresh
+//-->
+</script>
+<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="auto refresh, refresh, limit time, 刷新">
+<meta name="description" content="页面的自动刷新，在状态显示剩余时间。">
+</head>
+
+<body bgcolor="#000066" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+<div align="center">
+<form>
+    <div align="center"></div>
+  </form>
+  <p><font size="3">自动刷新页面</font></p>
+  <table width="67%" border="0">
+    <tr> 
+      <td>&lt;script&gt;<br>
+        &lt;!-- 
+        <p>var limit=&quot;0:15&quot;</p>
+        <p>if (document.images){<br>
+          var parselimit=limit.split(&quot;:&quot;)<br>
+          parselimit=parselimit[0]*60+parselimit[1]*1<br>
+          }<br>
+          function beginrefresh(){<br>
+          if (!document.images)<br>
+          return<br>
+          if (parselimit==1)<br>
+          window.location.reload()<br>
+          else{ <br>
+          parselimit-=1<br>
+          curmin=Math.floor(parselimit/60)<br>
+          cursec=parselimit%60<br>
+          if (curmin!=0)<br>
+          curtime=curmin+&quot;分&quot;+cursec+&quot;秒后重刷本页！&quot;<br>
+          else<br>
+          curtime=cursec+&quot;秒后重刷本页！&quot;<br>
+          window.status=curtime<br>
+          setTimeout(&quot;beginrefresh()&quot;,1000)<br>
+          }<br>
+          }</p>
+        <p>window.onload=beginrefresh<br>
+          //--&gt;<br>
+          &lt;/script&gt;</p>
+        <p>以上代码加入HEAD区即可。</p>
+        <p>说明：有人说，我可以使用&lt;meta http-equiv=&quot;refresh&quot;&gt;来刷新当前页面，为什么要用这个脚本呢？是的，的确是这样。但是这个脚本可以在状态栏显示<font color="#FFFF33">剩余的时间</font>。不管怎样，随您的便。其实这个脚本可以作出其它许多花样的。如果将window.location.reload()改成window.location.href=&quot;http://www.yahoo.com&quot;等地址，可以在规定时间到来后指向任意的页面。</p>
+      </td>
+    </tr>
+  </table>
+<p>&nbsp;</p></div>
+</body>
+</html>

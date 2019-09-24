@@ -1,0 +1,127 @@
+<html>
+<head>
+<title>文字特效-决非图片的效果</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style>
+body { background:silver; font-family:Arrus BT,Garamond,Times New Roman; }
+div { position:absolute; }
+</style>
+</head>
+
+<body>
+<CENTER>
+</CENTER> 
+<p>
+<center>
+    <font size="5" color="#FF0033">文字特效--本例决非图片 </font> 
+  </center>
+
+<p> 　　原理非常简单，依靠“层”产生特效，本例的效果的关键：合理搭配背景色、前景色，层的相对位置和风格<b><font face="Arial, Helvetica, sans-serif" size="3">(style)</font></b>的设置。好的效果需要仔细调试才行。仔细看代码吧！文字的层是相对的，层与页面是绝对的。(见layer的设置)<br>
+  <style>
+a { text-decoration: none; color:maroon; vlink:maroon; alink:red;}
+a:hover {color: red }
+.info { font-family:Times New Roman; positon:relative;}
+.light { top:-1; left:-1; color:white;}
+.shade { top:+1; left:+1; color:pink; }
+.fill { top:0; left:0; color:red; }
+ </style>
+</p>
+<br>
+<br>
+<br>
+<br>
+<!--- Example #1 ---> 
+<style>
+.shade1 { top:+5; left:+5; color:black; }
+.fill1 { top:0; left:0; color:red; }
+</style>
+<div class=Example1> 
+  <div class="shade1"> 
+    <center>
+      <h1>Shadow</h1>
+    </center>
+  </div>
+  <div class="fill1"> 
+    <center>
+      <h1>Shadow</h1>
+    </center>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<!--- Example #2 ---> 
+<style>
+.light2 { top:-1; left:-2; color:white; }
+.shade2 { top:+1; left:+2; color:black; }
+.fill2 { top:0; left:0; color:silver; } </style>
+<div class=Example2> 
+  <div class="light2"> 
+    <center>
+      <h1>Emboss Background Example</h1>
+    </center>
+  </div>
+  <div class="shade2"> 
+    <center>
+      <h1>Emboss Background Example</h1>
+    </center>
+  </div>
+  <div class="fill2"> 
+    <center>
+      <h1>Emboss Background Example</h1>
+    </center>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<!--- Example #3 ---> 
+<style>
+.light3 { top:-2; left:-2; color:white; }
+.shade3 { top:+2; left:+2; color:lightblue; }
+.fill3 { top:0; left:0; color:blue; } </style>
+<div class=Example3> 
+  <div class="light3"> 
+    <center>
+      <h1>Emboss Color Example</h1>
+    </center>
+  </div>
+  <div class="shade3"> 
+    <center>
+      <h1>Emboss Color Example</h1>
+    </center>
+  </div>
+  <div class="fill3"> 
+    <center>
+      <h1>Emboss Color Example</h1>
+    </center>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<!--- Example #4 ---> 
+<style>
+.light4 { top:-2; left:-2; color:yellow; }
+.shade4 { top:+2; left:+2; color:yellow; }
+.fill4 { top:0; left:0; color:darkgreen; } </style>
+<div class=Example4> 
+  <div class="light4"> 
+    <center>
+      <h1>Color Highlight Example</h1>
+    </center>
+  </div>
+  <div class="shade4"> 
+    <center>
+      <h1>Color Highlight Example</h1>
+    </center>
+  </div>
+  <div class="fill4"> 
+    <center>
+      <h1>Color Highlight Example</h1>
+    </center>
+  </div>
+</div>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<html>
+<head>
+<title>状态栏跑马灯</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="keywords" content="状态栏 跑马灯 scroll marquee status">
+<meta name="description" content="状态栏显示任何文字的跑马灯脚本。">
+<meta name="keywords" content="scroll scroller 状态栏 跑马灯">
+<meta name="description" content="一个比较不错的状态栏跑马灯的例子.">
+<style type="text/css">
+<!--
+.pt9 {  font-family: "宋体"; font-size: 9pt}
+body { font-family: "宋体"; font-size: 9pt ; margin-top: 0px}
+-->
+</style>
+<script>
+<!--
+function scrollit(seed) {
+var m1 = "一千个经典网页特效   ";
+var m2 = "javascripts源代码    ";
+var m3 = "Flash源代码等     ";
+var m4 = "希望这里有你需要的      ";
+var msg=m1+m2+m3+m4;
+var out = " ";
+var c = 1;
+if (seed > 100) {
+seed--;
+cmd="scrollit("+seed+")";
+timerTwo=window.setTimeout(cmd,100);
+}
+else if (seed <= 100 && seed > 0) {
+for (c=0 ; c < seed ; c++) {
+out+=" ";
+}
+out+=msg;
+seed--;
+window.status=out;
+cmd="scrollit("+seed+")";
+timerTwo=window.setTimeout(cmd,100);
+}
+else if (seed <= 0) {
+if (-seed < msg.length) {
+out+=msg.substring(-seed,msg.length);
+seed--;
+window.status=out;
+cmd="scrollit("+seed+")";
+timerTwo=window.setTimeout(cmd,100);
+}
+else {
+window.status=" ";
+timerTwo=window.setTimeout("scrollit(100)",75);
+}
+}
+}
+//-->
+</script>
+
+</head>
+
+<body bgcolor="#FFFFFF" onLoad="scrollit(100)">
+<p align="center">&nbsp; </p>
+<form>
+  <div align="center">
+    <center>
+      <p> <font size="3" color="#FF0033">一个比较不错的状态栏跑马灯脚本</font></p>
+    </center>
+  </div>
+</form>
+<form method="post" action="">
+  <div align="center">
+    <textarea name="textfield" cols="65" rows="8" class="pt9" wrap="VIRTUAL">&lt;script&gt;
+&lt;!--
+function scrollit(seed) {
+var m1 = &quot;你想说的话       &quot;;
+var m2 = &quot;你想说的话       &quot;;
+var m3 = &quot;你想说的话       &quot;;
+var m4 = &quot;你想说的话       &quot;;
+var m5 = &quot;你想说的话       &quot;;
+var msg=m1+m2+m3+m4+m5;
+var out = &quot; &quot;;
+var c = 1;
+if (seed &gt; 100) {
+seed--;
+cmd=&quot;scrollit(&quot;+seed+&quot;)&quot;;
+timerTwo=window.setTimeout(cmd,100);
+}
+else if (seed &lt;= 100 &amp;&amp; seed &gt; 0) {
+for (c=0 ; c &lt; seed ; c++) {
+out+=&quot; &quot;;
+}
+out+=msg;
+seed--;
+window.status=out;
+cmd=&quot;scrollit(&quot;+seed+&quot;)&quot;;
+timerTwo=window.setTimeout(cmd,100);
+}
+else if (seed &lt;= 0) {
+if (-seed &lt; msg.length) {
+out+=msg.substring(-seed,msg.length);
+seed--;
+window.status=out;
+cmd=&quot;scrollit(&quot;+seed+&quot;)&quot;;
+timerTwo=window.setTimeout(cmd,100);
+}
+else {
+window.status=&quot; &quot;;
+timerTwo=window.setTimeout(&quot;scrollit(100)&quot;,75);
+}
+}
+}
+//--&gt;
+&lt;/script&gt;
+最后，不要忘记&lt;body  onLoad=&quot;scrollit(100)&quot;&gt;
+</textarea>
+  </div>
+</form>
+<p>&nbsp;</p>
+</body>
+</html>

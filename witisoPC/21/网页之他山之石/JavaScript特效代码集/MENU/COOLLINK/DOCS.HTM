@@ -1,0 +1,84 @@
+<!--java2000最酷的javascripts脚本资源站 一克整理 http://java2000.126.com/-->
+<HTML>
+<HEAD>
+<TITLE>cool link style-酷毙的浮动菜单</TITLE>
+<meta name="description" content="一个非常酷的浮动菜单脚本，任意选择样式，是否显示标题。">
+<meta name="keywords" content="cool link,coollink,menu,navigation,navigator,window,pop,pop window,浮动菜单,连接,菜单,导航,菜单导航">
+</HEAD>
+<LINK REL="stylesheet" HREF="overlib.css" TYPE="text/css">
+
+<BODY BGCOLOR="#FFFFFF" topmargin="0">
+<!--以下必须要有-->
+<DIV ID="overDiv" STYLE="position:absolute; visibility:hide; z-index: 1;"></DIV>
+<SCRIPT LANGUAGE="JavaScript" SRC="overlib.js"></SCRIPT>
+
+<CENTER>
+
+  <p><BR>
+    <font size="5" color="#990099" face="Arial, Helvetica, sans-serif"><b>Cool 
+    Link</b></font><font size="5" color="#990099"> 酷毙的浮动菜单</font></p>
+  <form>
+    <div align="center"> </div>
+  </form>
+  <table width="65%" border="0" cellspacing="0" cellpadding="5" bgcolor="#CCCCFF">
+    <tr valign="top"> 
+      <td height="684"> 
+        <p><font face="宋体"> </font><br>
+          <a href="docs.htm" onMouseOver="drs('没有标题栏的连接'); return true;" onMouseOut="nd(); return true;">风格1：没有标题栏</a></p>
+        <p> <a href="docs.htm" onMouseOver="drc('显示标题栏的连接','连接标题'); return true;" onMouseOut="nd(); return true;">风格2：显示标题栏</a> 
+        </p>
+        <a href="docs.htm" onClick="src('点击连接后显示标题栏...','标题栏'); return false;" onMouseOver="drs('点击显示标题栏!'); return true;" onMouseOut="nd(); return true;">风格3：点击显示标题栏</a> 
+        <p><a href="docs.htm" onClick="slc('点击连接后标题栏显示在左侧','左侧显示标题栏'); return false;" onMouseOver="dls('点击显示标题栏!'); return true;" onMouseOut="nd(); return true;">风格4：点击左侧显示标题栏</a> 
+        </p>
+        <p>风格5：<a href="#" onMouseOver="dcc('居中显示浮动窗口','Java2000 HomePage'); return true;" onMouseOut="nd(); return true;">居中显示浮动窗口</a></p>
+        <p> <a href="#" onMouseOver="drc('what is NEW ','What is New'); return true;" onMouseOut="nd(); return true;">What's 
+          NEW ?</a><br>
+          <br>
+          <input type="button" name="Button" value="下载文件" onclick="javascript:location='zip.zip'">
+        </p>
+        <p>下载文件包内有overlib.css，overlib.js,docs.htm文件。你需要主要修改这三个文件，前者是CSS（层叠式样单）文件，后者是javascripts脚本文件，docs.htm就是本文件。用任意的文本编辑器编辑。其实overlib.css不用再修改了，我已经作成了宋体的9pt大小，如果你需要用英文字体，将宋体修改成任意的英文字体即可。在js文件中，绝大部分不必修改，你只要改一下显示的字体的大小即可。主要修改docs.htm页面，因为弹出的浮动窗口的显示内容全部由它控制。看看源代码，非常容易看得懂。<br>
+        </p>
+        <p>参数含义：(caption--标题) </p>
+        <p>onMouseOver 用以下函数控制：</p>
+        <blockquote> <b>Center</b>（居中） <br>
+          dcs(text)<br>
+          dcc(text, caption)<br>
+          <b>Right</b><br>
+          drs(text)<br>
+          drc(text, caption)<br>
+          <b>Left</b><br>
+          dls(text)<br>
+          dlc(text, caption)<br>
+        </blockquote>
+        onMouseOut 用以下函数控制：<br>
+        <blockquote> nd()<br>
+        </blockquote>
+        onClick 用以下函数控制：<br>
+        <blockquote> scc(text, caption)<br>
+          src(text, caption)<br>
+          slc(text, caption)<br>
+        </blockquote>
+        其余注意的要点：<br>
+        <br>
+        在&lt;BODY&gt;&lt/BODY&gt;标签内必须有下面的2行：<br>
+        <code> <font face="Times New Roman, Times, serif">&lt;DIV ID="overDiv" 
+        STYLE="position:absolute; visibility:hide; z-index:1;"&gt;&lt;/DIV&gt;<br>
+        &lt;SCRIPT LANGUAGE="JavaScript" SRC="overlib.js"&gt;&lt;/SCRIPT&gt;<br>
+        </font></code> <font face="Times New Roman, Times, serif"><br>
+        CSS</font>用下面的一行控制，放在<font face="Times New Roman, Times, serif">&lt;head&gt;&lt;/head&gt;</font><font face="Times New Roman, Times, serif">之间。<br>
+        &lt;LINK REL="stylesheet" HREF="overlib.css" TYPE="text/css"&gt;</font> 
+        <p align="center"> <br>
+        </p>
+        </td>
+    </tr>
+  </table>
+  <p>&nbsp; </p>
+  <form method="POST" action="http://server.com/WebApps/mail-list-subscribe.cgi" name="">
+  </form>
+  <form method="post" action="http://mclub.bodachina.com/cgi/door">
+  </form>
+</CENTER>
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,242 @@
+<html>
+<head>
+<title>纯JavaScript时钟</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+a:active {font-style:normal;text-decoration:none;color:yellow;}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="#009900" topmargin="0" leftmargin="0">
+<form name="form">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr bgcolor="#009900"> 
+      <td colspan="3" height="18">&nbsp; </td>
+    </tr>
+    <tr> 
+      <td bgcolor="#009900" width="18"></td>
+      <td align="center" bgcolor="#FFFFFF"> <br>
+        <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+          <tr> 
+            <td rowspan="2" width="16" valign="top"> 
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+                <tr bgcolor="#336699" bordercolor="#336699"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="21.htm">演<br>
+                    <br>
+                    示</a></strong></td>
+                </tr>
+                <tr bordercolor="#009900" bgcolor="#009900"> 
+                  <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="21c.htm">源<br>
+                    代<br>
+                    码</a></strong></td>
+                </tr>
+              </table>
+            </td>
+            <td rowspan="2" width="8" bgcolor="#009900">&nbsp;</td>
+            <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#009900" valign="top"> 
+              <script language="JavaScript">
+<!--hide
+
+function view(form){
+msg=open("","DisplayWindow","status=1,left=0,top=0,height=320,width=790,");msg.document.write(form.code2.value);
+}
+function CodeOut(form){
+var     
+txt1="<html><title>效果演示</title><head></head><body onblur=window.close()  onmouseover=javascript:close()><font color=red>提醒：按F5刷新本页看下面效果。</font><br><br>";
+txt=""+form.a.value+""+form.b.value+""+form.c.value+"";
+txt+=""+form.d.value+""+form.e.value+""+form.f.value+"";
+txt+=""+form.g.value+""+form.h.value+""+form.i.value+"";
+txt2="</body></html>";
+	
+form.Code.value=txt;
+form.code2.value=txt1 + txt + txt2;
+}
+
+<!-->
+</script>
+              <input type="hidden" name="code2">
+              <div id="Layer1" style="position:absolute; width:207px; height:173px; z-index:1; visibility: hidden"> 
+                <textarea name="a" cols="40" rows="0" wrap="VIRTUAL"></textarea>
+                <textarea name="c" cols="40" rows="0" wrap="VIRTUAL"></textarea>
+                <textarea name="e" cols="40" rows="0" wrap="VIRTUAL"></textarea>
+                <textarea name="g" cols="40" rows="0" wrap="VIRTUAL"></textarea>
+                <textarea name="i" cols="40" rows="0" wrap="VIRTUAL"></textarea>
+              </div>
+              <br>
+              <b>纯JavaScript时钟</b> 
+              <hr width="92%" size="1" align="center">
+              <table  cellspacing="0" cellpadding="0" width="81%">
+                <tr> 
+                  <td colspan="2" height="20">注释：放在&lt;head&gt;与&lt;/head&gt;之间</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <p> 
+                      <textarea name="Code" onFocus="this.select()" onMouseOver="this.focus()" cols="50" style="BACKGROUND-COLOR: #009900;" wrap="VIRTUAL" rows="6" class="pt9">&lt;script language=javascript&gt;
+&lt;!--
+pX=400;pY=200
+obs = new Array(13)
+function ob () {
+for (i=0; i&lt;13; i++) {
+	if (document.all) obs[i]=new Array (eval('ob'+i).style,-100,-100)
+	else obs[i] = new Array (eval('document.ob'+i),-100,-100)
+	}
+}
+function cl(a,b,c){
+	if (document.all) {
+		if (a!=0) b+=-1
+		eval('c'+a+'.style.pixelTop='+(pY+(c)))
+		eval('c'+a+'.style.pixelLeft='+(pX+(b)))
+		}
+else{
+	if (a!=0) b+=10
+	eval('document.c'+a+'.top='+(pY+(c)))
+	eval('document.c'+a+'.left='+(pX+(b)))
+}
+if (document.all) c0.style.pixelLeft=26
+}
+
+function runClock() {
+	for (i=0; i&lt;13; i++) {
+		obs[i][0].left=obs[i][1]+pX
+		obs[i][0].top=obs[i][2]+pY
+	}
+}
+
+var lastsec
+function timer() {
+	time = new Date ()
+	sec = time.getSeconds()
+	if (sec!=lastsec) {
+
+		lastsec = sec
+		sec=Math.PI*sec/30
+		min=Math.PI*time.getMinutes()/30
+		hr =Math.PI*((time.getHours()*60)+time.getMinutes())/360
+		for (i=1;i&lt;6;i++) {
+			obs[i][1] = Math.sin(sec) * (44 - (i-1)*11)-16;
+			if (document.layers)obs[i][1]+=10;
+			obs[i][2] = -Math.cos(sec) * (44 - (i-1)*11)-27;
+		}
+		for (i=6;i&lt;10;i++) {
+			obs[i][1] = Math.sin(min) * (40 - (i-6)*10)-16;
+			if (document.layers)obs[i][1]+=10;
+			obs[i][2] = -Math.cos(min) * (40 - (i-6)*10)-27;
+		}
+		for (i=10;i&lt;13;i++) {
+			obs[i][1] = Math.sin(hr) * (37 - (i-10)*11)-16;
+			if (document.layers)obs[i][1]+=10;
+			obs[i][2] = -Math.cos(hr) * (37 - (i-10)*11)-27;
+		}
+	}
+
+}
+function setNum(){
+
+cl (0,-67,-65);
+cl (1,10,-51);
+cl (2,28,-33);
+cl (3,35,-8);
+cl (4,28,17);
+cl (5,10,35);
+cl (6,-15,42);
+cl (7,-40,35);
+cl (8,-58,17);
+cl (9,-65,-8);
+cl (10,-58,-33);
+cl (11,-40,-51);
+cl (12,-16,-56);
+
+}
+
+//--&gt;
+
+
+&lt;/script&gt;</textarea>
+                    
+                  </td>
+                </tr>
+                <tr> 
+                  <td colspan="2" height="20">注释：放在＜body****＞里 </td>
+                </tr>
+                <tr> 
+                  <td colspan="2" height="20"> 
+                    <input type="text" name="body" onFocus="this.select()" onMouseOver="this.focus()" size="50" style="BACKGROUND-COLOR: #009900;" class="pt9" value="onLoad=&quot;ob(),setNum(),setInterval('timer()',100);setInterval('runClock()',100)&quot;">
+                  </td>
+                </tr>
+                <tr> 
+                  <td colspan="2" height="20">注释：放在&lt;body&gt;与&lt;/body&gt;之间</td>
+                </tr>
+                <tr> 
+                  <td colspan="2"> 
+                    <p> 
+                      <textarea name="Code" onFocus="this.select()" onMouseOver="this.focus()" cols="50" style="BACKGROUND-COLOR: #009900;" wrap="VIRTUAL" rows="6" class="pt9">                  &lt;div id=&quot;c0&quot; style=&quot;position:absolute;right:6;top:6; z-index:2;&quot;&gt; 
+                  &lt;/div&gt;
+                  &lt;div id=&quot;c1&quot; style=&quot;position:absolute;left:20;top:-20; z-index:5;font-size:11px;&quot;&gt;&lt;b&gt;1&lt;/b&gt;&lt;/div&gt;
+                  &lt;div id=&quot;c2&quot; style=&quot;position:absolute;left:20;top:-20; z-index:5;font-size:11px;&quot;&gt;&lt;b&gt;2&lt;/b&gt;&lt;/div&gt;
+                  &lt;div id=&quot;c3&quot; style=&quot;position:absolute;left:20;top:-20; z-index:5;font-size:11px;&quot;&gt;&lt;b&gt;3&lt;/b&gt;&lt;/div&gt;
+                  &lt;div id=&quot;c4&quot; style=&quot;position:absolute;left:20;top:-20; z-index:5;font-size:11px;&quot;&gt;&lt;b&gt;4&lt;/b&gt;&lt;/div&gt;
+                  &lt;div id=&quot;c5&quot; style=&quot;position:absolute;left:20;top:-20; z-index:5;font-size:11px;&quot;&gt;&lt;b&gt;5&lt;/b&gt;&lt;/div&gt;
+                  &lt;div id=&quot;c6&quot; style=&quot;position:absolute;left:20;top:-20; z-index:5;font-size:11px;&quot;&gt;&lt;b&gt;6&lt;/b&gt;&lt;/div&gt;
+                  &lt;div id=&quot;c7&quot; style=&quot;position:absolute;left:20;top:-20; z-index:5;font-size:11px;&quot;&gt;&lt;b&gt;7&lt;/b&gt;&lt;/div&gt;
+                  &lt;div id=&quot;c8&quot; style=&quot;position:absolute;left:20;top:-20; z-index:5;font-size:11px;&quot;&gt;&lt;b&gt;8&lt;/b&gt;&lt;/div&gt;
+                  &lt;div id=&quot;c9&quot; style=&quot;position:absolute;left:20;top:-20; z-index:5;font-size:11px;&quot;&gt;&lt;b&gt;9&lt;/b&gt;&lt;/div&gt;
+                  &lt;div id=&quot;c10&quot; style=&quot;position:absolute;left:20;top:-20; z-index:5;font-size:11px;&quot;&gt;&lt;b&gt;10&lt;/b&gt;&lt;/div&gt;
+                  &lt;div id=&quot;c11&quot; style=&quot;position:absolute;left:20;top:-20; z-index:5;font-size:11px;&quot;&gt;&lt;b&gt;11&lt;/b&gt;&lt;/div&gt;
+                  &lt;div id=&quot;c12&quot; style=&quot;position:absolute;left:20;top:-20; z-index:5;font-size:11px;&quot;&gt;&lt;b&gt;12&lt;/b&gt;&lt;/div&gt;
+                  &lt;div id=&quot;ob0&quot; style=&quot;position:absolute;left:-20;top:-20;z-index:1&quot;&gt; 
+                  &lt;/div&gt;
+                  &lt;div id=&quot;ob1&quot; style=&quot;position:absolute;left:-20;top:-20;z-index:8&quot;&gt; 
+                    &lt;font size=&quot;+3&quot; color=&quot;#0000FF&quot;&gt;&lt;b&gt;.&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;
+                  &lt;div id=&quot;ob2&quot; style=&quot;position:absolute;left:-20;top:-20;z-index:8&quot;&gt; 
+                    &lt;font size=&quot;+3&quot; color=&quot;#0000FF&quot;&gt;&lt;b&gt;.&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;
+                  &lt;div id=&quot;ob3&quot; style=&quot;position:absolute;left:-20;top:-20;z-index:8&quot;&gt; 
+                    &lt;font size=&quot;+3&quot; color=&quot;#0000FF&quot;&gt;&lt;b&gt;.&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;
+                  &lt;div id=&quot;ob4&quot; style=&quot;position:absolute;left:-20;top:-20;z-index:8&quot;&gt; 
+                    &lt;font size=&quot;+3&quot; color=&quot;#0000FF&quot;&gt;&lt;b&gt;.&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;
+                  &lt;div id=&quot;ob5&quot; style=&quot;position:absolute;left:-20;top:-20;z-index:8&quot;&gt; 
+                    &lt;font size=&quot;+3&quot; color=&quot;#0000FF&quot;&gt;&lt;b&gt;.&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;
+                  &lt;div id=&quot;ob6&quot; style=&quot;position:absolute;left:-20;top:-20;z-index:7&quot;&gt; 
+                    &lt;font size=&quot;+3&quot; color=&quot;#00FFFF&quot;&gt;&lt;b&gt;.&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;
+                  &lt;div id=&quot;ob7&quot; style=&quot;position:absolute;left:-20;top:-20;z-index:7&quot;&gt; 
+                    &lt;font size=&quot;+3&quot; color=&quot;#00FFFF&quot;&gt;&lt;b&gt;.&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;
+                  &lt;div id=&quot;ob8&quot; style=&quot;position:absolute;left:-20;top:-20;z-index:7&quot;&gt; 
+                    &lt;font size=&quot;+3&quot; color=&quot;#00FFFF&quot;&gt;&lt;b&gt;.&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;
+                  &lt;div id=&quot;ob9&quot; style=&quot;position:absolute;left:-20;top:-20;z-index:7&quot;&gt; 
+                    &lt;font size=&quot;+3&quot; color=&quot;#00FFFF&quot;&gt;&lt;b&gt;.&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;
+                  &lt;div id=&quot;ob10&quot; style=&quot;position:absolute;left:-20;top:-20;z-index:6&quot;&gt; 
+                    &lt;font size=&quot;+3&quot; color=&quot;#F30000&quot;&gt;&lt;b&gt;.&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;
+                  &lt;div id=&quot;ob11&quot; style=&quot;position:absolute;left:-20;top:-20;z-index:6&quot;&gt; 
+                    &lt;font size=&quot;+3&quot; color=&quot;#F30000&quot;&gt;&lt;b&gt;.&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;
+                  &lt;div id=&quot;ob12&quot; style=&quot;position:absolute;left:-20;top:-20;z-index:6&quot;&gt; 
+                    &lt;font size=&quot;+3&quot; color=&quot;#F30000&quot;&gt;&lt;b&gt;.&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;</textarea>
+                    
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr> 
+            <td height="20" class="white" bgcolor="#009900">&nbsp;</td>
+          </tr>
+        </table>
+        <br>
+      </td>
+      <td bgcolor="#009900" width="18"></td>
+    </tr>
+    <tr bgcolor="#009900"> 
+      <td></td>
+      <td align="center" height="35">&nbsp; </td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<HTML>
+<HEAD>
+<TITLE>COOKIES</TITLE>
+</HEAD>
+<BODY>
+<form>
+  <div align="center"> <font size="5" color="#FF0000">Cookies脚本-记录来客姓名和访问次数</font> 
+  </div>
+</form>
+<hr noshade width="35%">
+<p align="center">
+  <SCRIPT LANGUAGE="JavaScript">
+function getCookieVal(offset) {  
+var endstr=document.cookie.indexOf(";", offset);  
+if (endstr==-1) endstr=document.cookie.length;
+return unescape(document.cookie.substring(offset, endstr));
+}
+
+function getCookie(name) {
+var arg=name+"=";
+var alen=arg.length;
+var clen=document.cookie.length;
+var i=0;
+while (i<clen) {
+var j=i+alen;
+if (document.cookie.substring(i, j)==arg)
+return getCookieVal(j);
+i=document.cookie.indexOf(" ", i) + 1;
+if (i == 0) break;
+}
+return null;
+}
+
+function setCookie(name,value) {
+document.cookie=name+'='+escape(value)+';expires='+exp.toGMTString()+';';
+}
+
+var exp=new Date();
+exp.setTime(exp.getTime()+(365*24*60*60*1000));
+var username=getCookie('CrumbleName');
+var count=getCookie('CrumbleCount');
+if (count==null) {
+count=0;
+var username='';
+while ((username=='') || (username==null)) 
+var username=prompt("来客留名:");
+setCookie('CrumbleName',username);
+}
+count=parseInt(count);
+count++;
+setCookie('CrumbleCount',count);
+document.write('Hi,'+username+'你好!这是你第'+count+'次光临。');
+</SCRIPT>
+</p>
+<hr noshade width="35%">
+<table width="75%" border="0" align="center">
+  <tr>
+    <td>
+      <p>如下代码加入HTML的&lt;BODY&gt;区即可：</p>
+      <p>&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;<br>
+        function getCookieVal(offset) { <br>
+        var endstr=document.cookie.indexOf(&quot;;&quot;, offset); <br>
+        if (endstr==-1) endstr=document.cookie.length;<br>
+        return unescape(document.cookie.substring(offset, endstr));<br>
+        } </p>
+      <p>function getCookie(name) {<br>
+        var arg=name+&quot;=&quot;;<br>
+        var alen=arg.length;<br>
+        var clen=document.cookie.length;<br>
+        var i=0;<br>
+        while (i&lt;clen) {<br>
+        var j=i+alen;<br>
+        if (document.cookie.substring(i, j)==arg)<br>
+        return getCookieVal(j);<br>
+        i=document.cookie.indexOf(&quot; &quot;, i) + 1;<br>
+        if (i == 0) break;<br>
+        }<br>
+        return null;<br>
+        }</p>
+      <p>function setCookie(name,value) {<br>
+        document.cookie=name+'='+escape(value)+';expires='+exp.toGMTString()+';';<br>
+        }</p>
+      <p>var exp=new Date();<br>
+        exp.setTime(exp.getTime()+(365*24*60*60*1000));<br>
+        var username=getCookie('CrumbleName');<br>
+        var count=getCookie('CrumbleCount');<br>
+        if (count==null) {<br>
+        count=0;<br>
+        var username='';<br>
+        while ((username=='') || (username==null)) <br>
+        var username=prompt(&quot;来客留名:&quot;);<br>
+        setCookie('CrumbleName',username);<br>
+        }<br>
+        count=parseInt(count);<br>
+        count++;<br>
+        setCookie('CrumbleCount',count);<br>
+        document.write('Hi,'+username+'你好!这是你第'+count+'次光临。');<br>
+        &lt;/SCRIPT&gt;</p>
+    </td>
+  </tr>
+</table>
+<p align="center">&nbsp;</p>
+</BODY>
+</HTML>
+
+

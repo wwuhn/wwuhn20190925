@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>下拉菜单</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.yk9 {  font-family: "宋体"; font-size: 9pt; text-decoration: none}
+body { font-family: "宋体"; font-size: 9pt; text-decoration: none ; margin-top: 0px}
+a { font-family: "宋体"; font-size: 9pt; text-decoration: none }
+-->
+</style>
+<meta name="keywords" content="下拉 菜单 dropdown menu">
+<meta name="description" content="两种下拉菜单，有GO按钮和没有GO按钮。">
+</head>
+
+<body bgcolor="#FFFFFF">
+<form>
+  <div align="center"> <font color="#FF0000" size="5">下拉式菜单脚本（1、2） </font> </div>
+</form>
+<form name="guideform">
+  <hr noshade>
+  演示1： 
+  <select name="guidelinks" class="yk9">
+    <option value="#">项目1</option>
+    <option value="#">项目2</option>
+    <option value="#">项目3</option>
+    <option value="#">项目4</option>
+    <option value="#">项目5</option>
+  </select>
+  &nbsp;&nbsp; 
+  <input type="button" name="go" value="Go!" onClick="window.location=document.guideform.guidelinks.options
+[document.guideform.guidelinks.selectedIndex].value" class="yk9">
+  <a href="../../js5/pulldownframe/index.htm"> 类似主题（在Frame中打开的问题）看这里</a> 
+  <hr noshade>
+</form>
+<table width="75%" border="0" align="center">
+  <tr>
+    <td>
+      <p>以下代码加入HTML的&lt;BODY&gt;区即可：</p>
+      <p>&lt;FORM name=&quot;guideform&quot;&gt; <br>
+        &lt;SELECT name=&quot;guidelinks&quot;&gt; <br>
+        &lt;OPTION SELECTED value=&quot;<font color="#FF0000">http://place.com/page1.htm</font>&quot;&gt;Page 
+        1 <br>
+        &lt;OPTION value=&quot;<font color="#FF0000">http://place.com/page2.htm</font>&quot;&gt;Page2<br>
+        &lt;OPTION value=&quot;<font color="#FF0000">http://place.com/page3.htm</font>&quot;&gt;Page3<br>
+        &lt;OPTION value=&quot;<font color="#FF0000">http://place.com/page4.htm</font>&quot;&gt;Page4 
+        <br>
+        &lt;/SELECT&gt; <br>
+        <br>
+        &lt;INPUT type=&quot;button&quot; name=&quot;go&quot; value=&quot;Go!&quot; 
+        onClick=&quot;window.location=document.guideform.guidelinks.options[document.guideform.guidelinks.selectedIndex].value&quot;&gt; 
+        &lt;/FORM&gt; </p>
+      <p></p>
+      <p></p>
+      
+      <p>说明：菜单中的内容多少不限，按照格式写即可。连接URL使用绝对URL（http://）和相对路径都可以。</p>
+    </td>
+  </tr>
+</table>
+<hr noshade>
+<form name="guideform2">
+  演示2： 
+  <select name="select2" onChange="window.location=document.guideform2.select2.options[document.guideform2.select2.selectedIndex].value" class="yk9">
+    <option value="javascript:void(0)" selected>请选择一个项目</option>
+    <option value="#">项目1</option>
+    <option value="#">项目2</option>
+    <option value="#">项目3</option>
+  </select>
+</form>
+<hr noshade>
+<table width="75%" border="0" align="center">
+  <tr>
+    <td> 
+      <p>以下代码加入HTML的&lt;BODY&gt;区即可：</p>
+      <p>&lt;FORM name=&quot;<font color="#0000FF">guideform</font>&quot;&gt;<br>
+        &lt;SELECT name=&quot;<font color="#FF0000">guidelinks</font>&quot; onChange=&quot;window.location=document.<font color="#0000FF">guideform</font>.<font color="#FF0000">guidelinks</font>.options[document.<font color="#0000FF">guideform</font>.<font color="#FF0000">guidelinks</font>.selectedIndex].value&quot;&gt;<br>
+        &lt;OPTION SELECTED value=&quot;javascript:void(0)&quot;&gt;选择一个项目<br>
+        &lt;OPTION value=&quot;http://place.com/page1.htm&quot;&gt;Page 1<br>
+        &lt;OPTION value=&quot;http://place.com/page2.htm&quot;&gt;Page 2<br>
+        &lt;/SELECT&gt;<br>
+        &lt;/FORM&gt;</p>
+      <p>说明：注意我用不同颜色表示的name，它们应该保持一致，其实它们并不在乎叫什么名字。所以，在同一页面上不要同时使用上面2个脚本的代码，当然要使用完全没有问题。只是2个FORM和SELECT的名字（Name）应该不能重复，总不能都叫做“<font color="#0000FF">guideform</font>”吧？</p>
+      <p>我想，你应该明白我的意思了。</p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>

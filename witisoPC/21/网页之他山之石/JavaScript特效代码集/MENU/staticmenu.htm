@@ -1,0 +1,102 @@
+<html>
+<head>
+<title>Static Menu--静态菜单</title>
+<link rel="stylesheet" href="../style.css">
+<meta name="keywords" content="static,menu,static menu,navigation,navigator,静态菜单,静态,菜单,导航,固定位置">
+<meta name="description" content="静态菜单-当你的页面很长时，这个脚本控制的菜单始终显示在页面的固定固定位置。">
+<script language="javascript">
+<!--
+function stat(){
+var a = pageYOffset+window.innerHeight-document.bar.document.height-15
+document.bar.top = a
+setTimeout('stat()',2)
+}
+function fix(){
+nome=navigator.appName
+if(nome=='Netscape'){
+stat()
+}
+else{
+var a=document.body.scrollTop+document.body.clientHeight-document.all.bar.offsetHeight+15
+bar.style.top = a
+}}
+//-->
+</script>
+
+</head>
+
+<body onLoad='fix()' onScroll="fix()" onResize="fix()" bgcolor="#FFFFFF" text="#000000">
+<span id="bar" style="position:absolute; left:68px; top:455px; width:614px; height:45px; z-index:9" > 
+<table border="1" hspace="1" cellpadding="1" bordercolor="#000000" bgcolor="#FFFFFF">
+  <tr align="center" bgcolor="f1f1f1"> 
+    <td width="190"> <a href="../../../index.htm">回到首页 </a></td>
+    <td width="147"> <a href="#">怎么样<font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b><font color="000000"></font></b></font></a></td>
+    <td width="96"> <font face="Arial, Helvetica, sans-serif"><a href="%BA%D9%BA%D9">Java 
+      Applet<font color="000000"> </font><font size="2"><b><font color="000000"></font></b></font></a></font></td>
+    <td width="158"> 哈哈</td>
+  </tr>
+</table>
+</span> 
+<div align="center">
+  <p>&nbsp;</p>
+  <form>
+    <div align="center"> <font size="3" color="#FF0033">静态的菜单导航-页面再长也不用担心</font></div>
+  </form>
+  <br>
+  <table width="75%" border="0">
+    <tr bgcolor="#F4F3F2"> 
+      <td>如下脚本放在HTML的&lt;HEAD&gt;区：<font face="Arial, Helvetica, sans-serif"><br>
+        &lt;script language=&quot;javascript&quot;&gt;<br>
+        &lt;!--<br>
+        function stat(){<br>
+        var a = pageYOffset+window.innerHeight-document.bar.document.height-15<br>
+        document.bar.top = a<br>
+        setTimeout('stat()',2)<br>
+        }<br>
+        function fix(){<br>
+        nome=navigator.appName<br>
+        if(nome=='Netscape'){<br>
+        stat()<br>
+        }<br>
+        else{<br>
+        var a=document.body.scrollTop+document.body.clientHeight-document.all.bar.offsetHeight+15<br>
+        bar.style.top = a<br>
+        }}<br>
+        //--&gt;<br>
+        &lt;/script&gt;</font></td>
+    </tr>
+  </table>
+  <table width="75%" border="0">
+    <tr bgcolor="#F4F3F2"> 
+      <td> 以下代码放在HTML的&lt;BODY&gt;区：<br>
+        <font face="Arial, Helvetica, sans-serif">&lt;body onLoad='fix()' onScroll=&quot;fix()&quot; 
+        onResize=&quot;fix()&quot;&gt; //</font>这一行不要忘记写<br>
+        /*span标签内放入一个TABLE，里面就是你的站点连接菜单，用TABLE的目的是比较容易控制布局。你<br>
+        可以自由修改下一行的代码，修正菜单出现的绝对位置。<font face="Arial, Helvetica, sans-serif"> */<br>
+        &lt;span id=&quot;bar&quot; style=&quot;position:absolute; left:68px; 
+        top:455px; width:614px; height:45px; z-index:9&quot; &gt; <br>
+        &lt;table border=&quot;1&quot; hspace=&quot;1&quot; cellpadding=&quot;1&quot; 
+        bordercolor=&quot;#000000&quot; bgcolor=&quot;#FFFFFF&quot;&gt;<br>
+        &lt;tr align=&quot;center&quot;&gt; <br>
+        &lt;td width=&quot;190&quot;&gt; &lt;a href=&quot;index.html&quot;&gt;</font>回到首页<font face="Arial, Helvetica, sans-serif"> 
+        &lt;/a&gt;&lt;/td&gt;<br>
+        &lt;td width=&quot;147&quot;&gt; &lt;a href=&quot;newscript.htm&quot;&gt;</font>最新更新页<font face="Arial, Helvetica, sans-serif">&lt;/a&gt;&lt;/td&gt;<br>
+        &lt;td width=&quot;96&quot;&gt; &lt;a href=&quot;applet/appletindex.htm&quot;&gt;Java 
+        Applet&lt;/a&gt;&lt;/td&gt;<br>
+        &lt;td width=&quot;158&quot;&gt; &lt;a href=&quot;http://server.com/WebApps/mail-list-subscribe.cgi?id=16066&quot; 
+        target=&quot;_blank&quot;&gt;</font>订阅邮件<font face="Arial, Helvetica, sans-serif">&lt;/a&gt; 
+        <br>
+        &lt;/td&gt;<br>
+        &lt;/tr&gt;<br>
+        &lt;/table&gt;<br>
+        &lt;/span&gt; </font></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>
+
+
+

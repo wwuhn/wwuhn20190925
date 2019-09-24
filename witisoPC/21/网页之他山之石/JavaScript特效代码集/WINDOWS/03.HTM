@@ -1,0 +1,163 @@
+<html>
+<head>
+<title>按指定格式打开网址</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="57%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="03.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="03c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"> 
+            <script language="JAVASCRIPT">
+<!--  hide        
+
+function customize(form) {    
+        var address = document.form1.url.value;   
+        var op_tool  = (document.form1.tool.checked== true)  ? 1 : 0;    
+        var op_loc_box  = (document.form1.loc_box.checked == true)  ? 1 : 0;    
+        var op_dir  = (document.form1.dir.checked == true)  ? 1 : 0;    
+        var op_stat  = (document.form1.stat.checked == true)  ? 1 : 0;    
+        var op_menu  = (document.form1.menu.checked == true)  ? 1 : 0;    
+        var op_scroll  = (document.form1.scroll.checked == true)  ? 1 : 0;    
+        var op_resize  = (document.form1.resize.checked == true)  ? 1 : 0;    
+        var op_wid  = document.form1.wid.value;   
+        var op_heigh = document.form1.heigh.value;                 
+        var option = "toolbar="      + op_tool +                ",location="    + op_loc_box +                ",directories=" 
+        + op_dir +                ",status="      + op_stat 
+        +                ",menubar="     + op_menu +                ",scrollbars="  
+
+        + op_scroll +                ",resizeable="  + op_resize 
+        +                ",width="       
+        + op_wid +                ",height="      + op_heigh;
+        var win3 = window.open("", "what_I_want", option);  
+        var win4 = window.open(address, "what_I_want");
+}
+function clear(form){ 
+        document.form1.wid.value=""; 
+        document.form1.heigh.value="";
+}
+// done hiding -->
+</script>
+            <br>
+            <b>按指定格式打开网址</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="40" valign="top">提示：</td>
+                <td width="290">只要在下面填上网址，选定打开格式，按确认键就可以按指定格式打开某网址。</td>
+              </tr>
+              <tr> 
+                <td colspan="2" valign="top"> <br>
+                  <br>
+                  <form name="form1" action="javascript:" method="POST">
+                    <div align="left"> 
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr align="center"> 
+                          <td colspan="4" height="35"> URL： 
+                            <input type="text" size="40" name="url" value="http://">
+                          </td>
+                        </tr>
+                        <tr align="center"> 
+                          <td width="25%" height="25"> 
+                            <input
+type="checkbox" name="tool" value="ON">
+                            : 快捷键</td>
+                          <td width="25%" height="25"> 
+                            <input type="checkbox" name="loc_box" value="ON">
+                            : 地址栏 </td>
+                          <td width="25%" height="25"> 
+                            <input
+type="checkbox" name="dir" value="ON">
+                            : 链 接 </td>
+                          <td width="25%" height="25"> 
+                            <input type="checkbox" name="stat" value="ON">
+                            : 状态栏</td>
+                        </tr>
+                        <tr align="center"> 
+                          <td width="25%" height="25"> 
+                            <input
+type="checkbox" name="resize" value="ON">
+                            : 调大小 </td>
+                          <td width="25%" height="25"> 
+                            <input type="checkbox" name="scroll" value="ON">
+                            : 滚动条</td>
+                          <td width="25%" height="25"> 
+                            <input
+type="checkbox" name="menu" value="ON">
+                            : 菜 单 </td>
+                          <td width="25%" height="25">&nbsp;</td>
+                        </tr>
+                        <tr align="center"> 
+                          <td colspan="2" height="35"> 
+                            <input type="text" name="wid"
+size="14">
+                            : 宽</td>
+                          <td colspan="2" height="25"> 
+                            <input type="text" name="heigh" size="14">
+                            : 高</td>
+                        </tr>
+                        <tr align="center"> 
+                          <td colspan="4" height="25"> 
+                            <input
+type="button" size="10" value="确认" onClick="customize(this.form)" name="button">
+                            <input type="reset"
+size="10" value="重填" onClick="clear(this.form)" name="reset">
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </form>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<html>
+<head>
+<script language="JavaScript">
+var id,pause=0,position=0,revol=9;
+function banner() 
+{
+  var i,k;
+  var msg="                   跑马灯的代码比较简单，只要将如下的代码稍微修改一下即可!     ";
+  var speed=10;
+  document.thisform.thisbanner.value=msg.substring(position,position+50);
+
+  if(position++==msg.length) 
+  {
+      if (revol-- < 2) return;
+      position=0;
+  }
+
+  id=setTimeout("banner()",1000/speed);
+}
+
+</script>
+
+<style type="text/css">
+<!--
+.pt9 {  font-family: "宋体"; font-size: 9pt; text-decoration: none}
+-->
+</style><title>跑马灯脚本 </title></head>
+<body bgcolor="ffffff" onload="banner()" >
+<CENTER>
+  <div align="center"></div>
+  <form>
+    <div align="center"> <font size="5" color="#FF0033">文本栏跑马灯脚本</font></div>
+  </form>
+  <form name="thisform">
+
+    <input type="text" name="thisbanner" size="50" class="pt9">
+</FORM>
+  <p>&nbsp;</p>
+  <p> 
+    <textarea name="textfield" cols="60" rows="10" class="pt9">如下代码加入&lt;BODY&gt;区：
+&lt;script language=&quot;JavaScript&quot;&gt;
+var id,pause=0,position=0,revol=9;
+function banner() 
+{
+  var i,k;
+  var msg=&quot跑马灯的代码比较简单，只要将如下的代码稍微修改一下即可! &quot;                   
+  var speed=10;
+  document.thisform.thisbanner.value=msg.substring(position,position+50);
+
+  if(position++==msg.length) 
+  {
+      if (revol-- &lt; 2) return;
+      position=0;
+  }
+
+  id=setTimeout(&quot;banner()&quot;,1000/speed);
+}
+
+&lt;/script&gt;
+
+
+&lt;body onload=&quot;banner()&quot;&gt;
+&lt;CENTER&gt;&lt;form name=&quot;thisform&quot;&gt;
+&lt;input type=&quot;text&quot; name=&quot;thisbanner&quot; size=&quot;50&quot; class=&quot;pt9&quot;&gt;
+&lt;/FORM&gt;
+&lt;/CENTER&gt;</textarea>
+  </p>
+</CENTER>

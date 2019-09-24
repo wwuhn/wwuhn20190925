@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<TITLE>层的显示和隐藏及浏览器检测</TITLE>
+<script language="javascript">
+<!--
+//if explorer (4.x)
+if (document.all) {
+		layerRef='document.all'
+		styleRef='.style.'
+}
+//else if netscape (4.x)
+else if (document.layers) {
+		layerRef='document.layers'
+		styleRef='.'
+	} 
+else{
+	alert("你使用的浏览器可能看不到效果。")
+}
+function show(){
+    eval(layerRef+'["divTest"]'+styleRef+'visibility="visible"') 
+}
+function hide(){
+    eval(layerRef+'["divTest"]'+styleRef+'visibility="hidden"') 
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+body {  font-family: "宋体"; font-size: 9pt; margin-top: 0px}
+.pt9 { font-family: "宋体"; font-size: 9pt}
+-->
+</style>
+<meta name="keywords" content="层 显示 隐藏 浏览器检测 layer browser check">
+<meta name="description" content="层的显示和隐藏及不同浏览器的显示兼容">
+</HEAD>
+
+<BODY bgcolor="#000000" text="#FFFFFF" link="#FFFFCC" vlink="#CCFFCC" alink="#CCCCFF">
+<div align="center"></div>
+<form>
+  <div align="center"> <font size="3">层的显示和隐藏及不同浏览器的兼容</font></div>
+</form>
+<p align="center"><br>
+  <a href="javascript:hide('divText')">隐藏代码</a> <a href="javascript:show('divText')">显示代码</a> 
+<p align="center">&nbsp;
+<div id="divTest" style="position:absolute; left:238px; width:340px; height:32px; top:190px; visibility: hidden"> 
+  <p align="center">本例是显示和隐藏层的例子。<a href="layercode.htm" target="_blank">获取完整代码解释。</a></p>
+</div>
+</BODY>
+</HTML>

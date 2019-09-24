@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>howmanyLink</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+body {  font-family: "宋体"; font-size: 9pt; text-decoration: none; margin-top: 0px}
+a {  font-family: "宋体"; font-size: 9pt; text-decoration: none}
+a:hover { font-family: "宋体"; font-size: 9pt; text-decoration: underline; color: #FF0000}
+.unnamed1 { font-family: "宋体"; font-size: 9pt; text-decoration: none }
+-->
+</style>
+<meta name="keywords" content="连接 按钮 link howmanylink">
+<meta name="description" content="该脚本用于显示页面内的所有的联接列表">
+</head>
+
+<body bgcolor="#FFFFFF">
+<form>
+  <div align="center"> <font color="#FF0033" size="3">按下按钮就知道一个复杂的页面中到底有哪些连接了！</font></div>
+</form>
+<p>&nbsp;</p>
+<p align="center"><a href="#">首页</a> <a href="#">项目1</a> <a href="#">项目2 </a><a href="#">项目3</a> 
+  <a href="#">项目4</a> <a href="#">项目5</a> <a href="#">项目6</a> </p>
+<p align="center"> 
+  <script language="JavaScript1.2">
+<!--
+
+function extractlinks(){
+var links=document.all.tags("A")
+var total=links.length
+var win2=window.open("","","menubar,scrollbars,toolbar")
+win2.document.write("<font size='2'>一共有"+total+"个连接</font><br>")
+for (i=0;i<total-1;i++){
+win2.document.write("<font size='2'>"+links[i].outerHTML+"</font><br>")
+}
+}
+//-->
+</script>
+  <input type="button" onClick="extractlinks()" value="显示本页所有的连接" class="unnamed1" name="button2">
+  <br>
+</p>
+<form method="post" action="">
+  <div align="center">
+    <textarea name="textfield" cols="60" rows="12" class="unnamed1">如下代码加入HTML的&lt;BODY&gt;区：
+
+&lt;script language=&quot;JavaScript1.2&quot;&gt;
+&lt;!--
+function extractlinks(){
+var links=document.all.tags(&quot;A&quot;)
+var total=links.length
+var win2=window.open(&quot;&quot;,&quot;&quot;,&quot;menubar,scrollbars,toolbar&quot;)
+win2.document.write(&quot;&lt;font size='2'&gt;一共有&quot;+total+&quot;个连接&lt;/font&gt;&lt;br&gt;&quot;)
+for (i=0;i&lt;total-1;i++){
+win2.document.write(&quot;&lt;font size='2'&gt;&quot;+links[i].outerHTML+&quot;&lt;/font&gt;&lt;br&gt;&quot;)
+}
+}
+//--&gt;
+&lt;/script&gt;
+&lt;input type=&quot;button&quot; onClick=&quot;extractlinks()&quot; value=&quot;显示所有的连接&quot;&gt;</textarea>
+  </div>
+</form>
+<p align="center">&nbsp; </p>
+</body>
+</html>

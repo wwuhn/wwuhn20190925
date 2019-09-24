@@ -1,0 +1,67 @@
+
+<HTML>
+<HEAD>
+<TITLE>根据你的要求打开的窗口 </TITLE>
+<style type="text/css">
+<!--
+.yk9 {  font: 9pt "宋体"; text-decoration: none}
+-->
+</style></HEAD>
+
+<BODY bgcolor="#006699" text="#FFFFFF" link="#CCCCCC" vlink="#CCFFCC" alink="#FFCC66">
+<TD VALIGN="TOP" width="360" bgcolor="#FFFFFF"> 
+  <form>
+    <div align="center"> <font size="5"> <font size="3">根据你的要求打开的窗口 </font></font></div>
+  </form>
+  <table width="62%" border="0" align="center">
+    <tr> 
+      <td width="38%" class="yk9"> 
+        <form name="winfrm">
+          窗口宽度: 
+          <input type="text" name="wid" maxlength="3">
+          <br>
+          窗口高度: 
+          <input type="text" name="hig" maxlength="3">
+          <br>
+          <input type="button" name="s" value="开始测试" onClick="win()" class="yk9">
+        </form>
+      </td>
+      <td width="62%" valign="top" class="yk9"><font size="3">测试：输入宽度：200 高度：200</font></td>
+    </tr>
+  </table>
+  <table width="69%" border="0" align="center">
+    <tr> 
+      <td height="16" class="yk9">如下脚本加入HTML的&lt;BODY&gt;区：<br>
+        &lt;script language=&quot;JavaScript&quot;&gt; <br>
+        &lt;!-- 
+        <p>function win() {<br>
+          var h= document.winfrm.hig.value<br>
+          var w= document.winfrm.wid.value<br>
+          testWindow=window.open(&quot;about:blank&quot;,'testwin','toolbar=no,location=no,<br>
+          directories=no,menubar=no,scrollbars=no,resizable=no,width=' + w + ',height=' 
+          + h +'');<br>
+          testWindow.document.writeln(&quot;&lt;head&gt;&lt;title&gt;测试窗口&lt;/title&gt;&lt;/head&gt;&quot;);<br>
+          testWindow.document.writeln(&quot;&lt;body bgcolor=#ffffcc&gt;&quot;);<br>
+          testWindow.document.writeln(&quot;该窗口已经按照你要求的大小打开了！&lt;p&gt;&quot;);<br>
+          testWindow.document.writeln(&quot;如何使用关键在于创意！&lt;p&gt;欢迎光临 Java2000&lt;/body&gt;&quot;);<br>
+          testWindow.document.writeln('');<br>
+          }<br>
+          // --&gt; &lt;/script&gt;</p>
+        <p>&lt;form name=&quot;winfrm&quot;&gt;<br>
+          窗口宽度: <br>
+          &lt;input type=&quot;text&quot; name=&quot;wid&quot; maxlength=&quot;3&quot;&gt;<br>
+          &lt;br&gt;<br>
+          窗口高度: <br>
+          &lt;input type=&quot;text&quot; name=&quot;hig&quot; maxlength=&quot;3&quot;&gt;<br>
+          &lt;br&gt;<br>
+          &lt;input type=&quot;button&quot; name=&quot;s&quot; value=&quot;开始测试&quot; 
+          onClick=&quot;win()&quot; class=&quot;yk9&quot;&gt;<br>
+          &lt;/form&gt;</p>
+        <p>说明：你完全可以控制弹出的窗口的风格，例如背景、显示的文字、连接等，按照HTML语句格式写即可。</p>
+      </td>
+    </tr>
+  </table>
+  <P> 
+</BODY>
+</HTML>
+

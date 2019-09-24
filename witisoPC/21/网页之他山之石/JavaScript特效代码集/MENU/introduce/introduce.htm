@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>introduse menu 介绍说明菜单</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="description" content="一个可以用于连接说明，站点栏目介绍或者产品介绍的脚本。">
+<meta name="keywords" content="introduce, menu, drop down, form, 介绍, 菜单, 下拉菜单, 产品说明, 产品介绍, 表单">
+<SCRIPT LANGUAGE="JavaScript">
+<!--//
+var messages = new Array(6); 
+messages[0] = "";
+messages[1] = "做梦被一个极丑的小姐Kiss了一下。";
+messages[2] = "老母身体不好。";	   
+messages[3] = "无";
+messages[4] = "当10万瓦的电灯泡。";
+messages[5] = "已经被证实患上了互联网焦躁症";
+
+function message() {
+var messageindex = document.messageForm.messagePick.selectedIndex
+document.messageForm.messageField.value = messages[messageindex];
+}
+//-->
+</SCRIPT>
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body bgcolor="#004080" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+<form>
+  <div align="center"></div>
+</form>
+<p> 
+<form name="messageForm">
+  <div align="center">
+    <select name="messagePick" OnChange="message()">
+      <option value="0">我最...的事情 
+      <option>最可怕的事情 
+      <option>最担心的事情 
+      <option>最高兴的事情 
+      <option>最无聊的事情 
+      <option>最无奈的事情 
+    </select>
+    <br>
+  </div>
+  <p align="center"> 
+    <textarea name="messageField" rows=6 cols=50 wrap=virtual></textarea>
+</form>
+
+<div align="center">
+  <table width="63%" border="0">
+    <tr> 
+      <td>
+        <p>以下代码加入HTML的&lt;head&gt;区：</p>
+        <p>&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;<br>
+          &lt;!--//<br>
+          var messages = new Array(6); //菜单条总数与下面保持一致；<br>
+          messages[0] = &quot;&quot;;<br>
+          messages[1] = &quot;做梦被一个极丑的小姐Kiss了一下。&quot;;<br>
+          messages[2] = &quot;老母身体不好&quot;; <br>
+          messages[3] = &quot;无&quot;;<br>
+          messages[4] = &quot;当10万瓦的电灯泡。&quot;;<br>
+          messages[5] = &quot;已经被证实患上了互联网焦躁症&quot;; </p>
+        <p>function <font color="#33FF33">message()</font> {<br>
+          var messageindex = document.<font color="#FFFF00">messageForm</font>.<font color="#99FFFF">messagePick</font>.selectedIndex<br>
+          document.<font color="#FFFF00">messageForm</font>.<font color="#CCCCFF">messageField</font>.value 
+          = messages[messageindex];<br>
+          }<br>
+          //--&gt;<br>
+          &lt;/SCRIPT&gt;</p>
+        <p>以下代码加入HTML的&lt;body&gt;区：</p>
+        <p>&lt;form name=&quot;<font color="#FFFF00">messageForm</font>&quot;&gt;<br>
+          &lt;div align=&quot;center&quot;&gt;<br>
+          &lt;select name=&quot;<font color="#66FFFF">messagePick</font>&quot; 
+          OnChange=&quot;<font color="#33FF33">message()</font>&quot;&gt;<br>
+          &lt;option value=&quot;0&quot;&gt;我最...的事情 <br>
+          &lt;option&gt;最可怕的事情 <br>
+          &lt;option&gt;最担心的事情 <br>
+          &lt;option&gt;最高兴的事情 <br>
+          &lt;option&gt;最无聊的事情 <br>
+          &lt;option&gt;最无奈的事情 <br>
+          &lt;/select&gt;<br>
+          &lt;br&gt;<br>
+          &lt;textarea name=&quot;<font color="#CCCCFF">messageField</font>&quot; 
+          rows=6 cols=50 wrap=virtual&gt;&lt;/textarea&gt;<br>
+          &lt;/div&gt; <br>
+          &lt;/form&gt;</p>
+        <p>注意几点：相同颜色部分的名字要一致；</p>
+      </td>
+    </tr>
+  </table>
+<p>&nbsp;</p></div>
+<p>&nbsp;</p>
+</body>
+</html>

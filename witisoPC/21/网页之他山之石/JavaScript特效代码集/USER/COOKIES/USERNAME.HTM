@@ -1,0 +1,120 @@
+<HTML> 
+<title>User Name Detection Script</title>
+<style type="text/css">
+<!--
+.unnamed1 {  font-family: "宋体"; font-size: 9pt; text-decoration: none}
+-->
+</style><BODY bgcolor="white">
+<form>
+  <div align="center"> <font color="#FF0000" size="5">Cookies之访问者姓名</font></div>
+</form>
+<table width="75%" border="0" align="center">
+  <tr bgcolor="bisque"> 
+    <td> 
+      <script language="JavaScript">
+<!--
+var never = new Date()
+never.setTime(never.getTime() + 2000*24*60*60*1000);
+
+// name is a string of the name of your cookie
+// value is the value corresponding to name
+function SetCookie(name, value) {
+ var expString = "; expires=" + never.toGMTString();
+ document.cookie = name + "=" + escape(value) + expString;
+}
+
+// returns value of cookie or null if cookie does not exist
+function GetCookie(name) {
+ var result = null;
+ var myCookie = " " + document.cookie + ";";
+ var searchName = " " + name + "=";
+ var startOfCookie = myCookie.indexOf(searchName);
+ var endOfCookie;
+ if (startOfCookie != -1) {
+  startOfCookie += searchName.length; // skip past name of cookie
+  endOfCookie = myCookie.indexOf(";", startOfCookie);
+  result = unescape(myCookie.substring(startOfCookie, endOfCookie));
+ }
+ return result;
+}
+
+var defaultString = " ";
+var user_name = GetCookie("user_name");
+if (user_name == null) {
+ repeat = true;
+ while (repeat) {
+  if ((user_name == null) || (user_name == defaultString))
+   user_name = prompt("\r\n您的网上昵称", defaultString);
+  if ((user_name != null) && (user_name != defaultString))
+   SetCookie('user_name', user_name);
+  repeat = false;
+  if (GetCookie("user_name") == null)
+   repeat = confirm("您每次光临此页都会被询问! "
+    + "除非输入您的名字或网上昵称。"
+    + "再试一试吗?");
+ }
+}
+if ((user_name != null) && (user_name != defaultString)) {
+ document.write("您好"+user_name+"!欢迎光临本站！");
+} else {
+ document.write("欢迎光临！");
+}
+// -->
+</script>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>如下代码加入HTML的&lt;BODY&gt;区：</p>
+      <p>&lt;SCRIPT language=&quot;JavaScript&quot;&gt;<br>
+        &lt;!--<br>
+        var never = new Date()<br>
+        never.setTime(never.getTime() + 2000*24*60*60*1000); </p>
+      <p>function SetCookie(name, value) {<br>
+        var expString = &quot;; expires=&quot; + never.toGMTString();<br>
+        document.cookie = name + &quot;=&quot; + escape(value) + expString;<br>
+        }</p>
+      <p>// returns value of cookie or null if cookie does not exist<br>
+        function GetCookie(name) {<br>
+        var result = null;<br>
+        var myCookie = &quot; &quot; + document.cookie + &quot;;&quot;;<br>
+        var searchName = &quot; &quot; + name + &quot;=&quot;;<br>
+        var startOfCookie = myCookie.indexOf(searchName);<br>
+        var endOfCookie;<br>
+        if (startOfCookie != -1) {<br>
+        startOfCookie += searchName.length; // skip past name of cookie<br>
+        endOfCookie = myCookie.indexOf(&quot;;&quot;, startOfCookie);<br>
+        result = unescape(myCookie.substring(startOfCookie, endOfCookie));<br>
+        }<br>
+        return result;<br>
+        }</p>
+      <p>var defaultString = &quot;<font color="#FF0000">&lt;神秘客&gt;</font>&quot;;//实际使用请设置默认名或取消。<br>
+        var user_name = GetCookie(&quot;user_name&quot;);<br>
+        if (user_name == null) {<br>
+        repeat = true;<br>
+        while (repeat) {<br>
+        if ((user_name == null) || (user_name == defaultString))<br>
+        user_name = prompt(&quot;\r\n您的网上昵称&quot;, defaultString);<br>
+        if ((user_name != null) &amp;&amp; (user_name != defaultString))<br>
+        SetCookie('user_name', user_name);<br>
+        repeat = false;<br>
+        if (GetCookie(&quot;user_name&quot;) == null)<br>
+        repeat = confirm(&quot;您每次光临此页都会被询问! &quot;<br>
+        + &quot;除非输入您的名字或网上昵称。&quot;<br>
+        + &quot;再试一试吗?&quot;);<br>
+        }<br>
+        }<br>
+        if ((user_name != null) &amp;&amp; (user_name != defaultString)) {<br>
+        document.write(&quot;您好&quot; + user_name + &quot;!欢迎光临本站！&quot;);<br>
+        } else {<br>
+        document.write(&quot;欢迎光临！&quot;);<br>
+        }<br>
+        // --&gt;<br>
+        &lt;/SCRIPT&gt;</p>
+      <p>问候语及显示的话随便写点什么！</p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp; </p>
+</body>
+</html>

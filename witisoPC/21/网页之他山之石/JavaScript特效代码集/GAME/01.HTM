@@ -1,0 +1,247 @@
+<html>
+<head>
+<title>涂格子</title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+<script>
+function ShowMenu(bMenu) {
+document.all.idFinder.style.display = (bMenu) ? "none" : "block" 
+document.all.idMenu.style.display = (bMenu) ? "block" : "none"
+idML.className = (bMenu) ? "cOn" : "cOff"
+idRL.className = (bMenu) ? "cOff" : "cOn"
+return false
+}
+</script>
+<style>
+<!--
+A.cOn {text-decoration:none;font-weight:bolder}
+#article {font: 12pt Verdana, geneva, arial, sans-serif;  background: white; color: black; padding: 10pt 15pt 0 5pt}
+#article P.start {text-indent: 0pt}
+#article P {margin-top:0pt;font-size:10pt;text-indent:12pt}
+#article #author {margin-bottom:5pt;text-indent:0pt;font-style: italic}
+#pageList P {padding-top:10pt}
+#article H3 {font-weight:bold}
+#article DL, UL, OL {font-size: 10pt}
+-->
+</style>
+<script>
+<!--
+function addList(url,desc) {
+if ((navigator.appName=="Netscape") || (parseInt(navigator.appVersion)>=4)) {
+var w=window.open("","_IDHTML_LIST_","top=0,left=0,width=475,height=150,history=no,menubar=no,status=no,resizable=no")
+var d=w.document
+if (!w._init) {
+d.open()
+d.write("<TITLE>Loading...</TITLE><EM>Loading...</EM>")
+d.close()
+d.location.replace("../../assist/listing.html縰rl=.html"+escape(url)+"&desc="+escape(desc))  
+w.opener=self    
+window.status="Personal Assistant (Adding): " + desc
+} else {
+window.status=w.addOption(url,desc)    
+w.focus()
+}
+}
+else
+alert("Your browser does not support the personal assistant.")
+return false
+}
+// -->
+</script>
+<style>
+    #board {cursor: default}    
+    #board TD {width: 25px; height: 25px; }
+  </style>
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="75%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="01.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="01c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"><br>
+            <b>涂格子</b> 
+            <hr width="92%" size="1" align="center">
+            <table border="1" width="90%">
+              <tr> 
+                <td width="50%" height="27"> 
+                  <div align="right"> 
+                    <table id="score" border="0" width="250">
+                      <tr> 
+                        <td width="45" align="center">移动: </td>
+                        <td id="moves" width="37">0</td>
+                        <td width="45" align="center">灯灭:</td>
+                        <td id="off" width="37">100</td>
+                        <td width="45" align="center">灯亮:</td>
+                        <td id="on" width="37">0</td>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+                <td width="50%" height="27"> 
+                  <div align="left"> 
+                    <table width="185">
+                      <tr> 
+                        <td width="54">大小: </td>
+                        <td width="31"> 
+                          <input id="gameSize" type="text" value="10" size="2" name="text">
+                        </td>
+                        <td width="97"> 
+                          <input onClick="newGame()" type="button" value="开始游戏" name="button">
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+              <tr> 
+                <td colspan="2" height="27" align="center">
+                  <script>
+    var size=10
+    var moves = 0
+    var off = size*2
+    var on = 0
+    var current = null
+    function doOver() {
+      if ((event.srcElement.tagName=="TD") && (current!=event.srcElement)) {
+        if (current!=null)
+          current.style.backgroundColor = current._background
+        event.srcElement._background = event.srcElement.style.backgroundColor
+        event.srcElement.style.backgroundColor = "lightgrey"
+        current = event.srcElement
+      }
+    }
+
+    function setColor(el) {
+      if ((el._background=="") || (el._background==null)) {
+        el.style.backgroundColor = "yellow"
+        el._background = "yellow" 
+      } else {
+        el.style.backgroundColor = ""
+        el._background = "" 
+      }
+    }
+
+    function countLights() {
+      off = 0; on = 0
+      for (var x=0; x < size; x++) 
+        for (var y=0; y < size; y++) {
+          var p = board.rows[x].cells[y]
+          if (p._background=="yellow")
+            on++
+          else
+            off ++
+        }
+        document.all.on.innerText = on
+      if (off!=0)     
+        document.all.off.innerText = off
+      else
+        document.all.off.innerText = "You Win!"
+      return (off==0)
+    }
+
+    function doClick() {
+      setColor(current)     
+      var cellIdx = current.cellIndex
+      var rowIdx = current.parentElement.rowIndex
+      if (rowIdx>0) 
+        setColor(board.rows[rowIdx-1].cells[cellIdx])
+      if (rowIdx<size-1)
+        setColor(board.rows[rowIdx+1].cells[cellIdx])
+      if (cellIdx>0) 
+        setColor(board.rows[rowIdx].cells[cellIdx-1])
+      if (cellIdx<size-1)
+        setColor(board.rows[rowIdx].cells[cellIdx+1])
+      moves++
+      document.all.moves.innerText = moves
+      win = countLights()
+      if (win) {
+        board.onclick = null
+        board.onmouseover = null
+        current.style.background = "yellow"
+      }
+    }
+
+    function buildBoard() {
+      var str = "<TABLE ID=board ONSELECTSTART=\"return false\" ONCLICK=\"doClick()\" ONMOUSEOVER=\"doOver()\" cellspacing=0 cellpadding=0 border=5>"
+      for (var x=0; x < size; x++) {
+        str+="<TR>"
+        for (var y=0; y < size; y++) {
+          str+="<TD>&nbsp;</TD>"
+        } 
+        str+="</TR>"
+      }
+      str+="</TABLE>"
+      return str
+    }
+
+    function newGame() {
+      size = document.all.gameSize.value
+      if (size<3)
+        size=3
+      if (size>15)
+        size=15
+      document.all.gameSize.value = size
+      document.all.board.outerHTML = buildBoard()
+      moves=0
+      document.all.moves.innerText = moves
+      countLights()
+ 
+    }
+    
+  </script>
+<script>
+    document.write(buildBoard())
+  </script>
+                 </td>
+              </tr>
+              <tr> 
+                <td colspan="2" height="27">游戏提示：你能将方格全部填成绿色吗？？开动脑筋，看看有什么规律和技巧吧。</td>
+              </tr>
+            </table>
+        
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

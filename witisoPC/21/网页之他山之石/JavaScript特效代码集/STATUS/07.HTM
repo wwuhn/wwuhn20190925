@@ -1,0 +1,122 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="目录类型" content="文本/html; 字符集=gb2312">
+<style type="text/css">
+<!--
+a{font-style:normal;text-decoration:none;color:white}
+a:hover {BACKGROUND:red;font-style:normal;text-decoration:none;color:yellow}
+.white {  color: #FFFFFF}
+table {  font-size: 9pt}
+-->
+</style>
+<script language="JavaScript">
+<!-- Hide me
+
+//"index_count" is subtracted from "title_length" to get the first # of the substring method
+var index_count = 0; 
+
+// What you want to scroll in the title bar
+var title_string = "欢迎你来到一千个经典网页特效！！";
+
+// length of title string
+var title_length = title_string.length;
+
+// Variable for setTimeout()
+var cmon;
+
+// Counter for clearTimeout()
+var kill_length = 0;
+
+function loopTheScroll()
+{
+scrollTheTitle();
+
+// If greater than length of string then stop calling itself
+if(kill_length > title_length)
+ {
+ clearTimeout(cmon);
+ }
+
+kill_length++;
+
+// Calls itself 10x per second - change the value to speed up or slow down the scroll (in 1/1000th of a second)
+cmon = setTimeout("loopTheScroll();",100)
+}
+
+
+function scrollTheTitle()
+{
+
+// Difficult to explain, must be familiar w/ the substring method
+var doc_title = title_string.substring((title_length - index_count - 1),title_length);
+
+// put doc_title in the title bar
+document.title = doc_title;
+
+index_count++;
+}
+
+
+loopTheScroll();
+
+//-->
+</script>
+</head>
+
+<body bgcolor="#336699" topmargin="0" leftmargin="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 9pt;">
+  <tr bgcolor="#336699"> 
+    <td colspan="3" height="18">&nbsp; </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699" width="18"></td>
+    <td align="center" bgcolor="#FFFFFF"> <br>
+      <table width="56%" border="0" cellspacing="0" cellpadding="0" height="355">
+        <tr> 
+          <td rowspan="2" width="16" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="white" style="FONT-SIZE: 11pt;">
+              <tr bgcolor="#336699" bordercolor="#336699"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double;  BORDER-LEFT: double; BORDER-BOTTOM: double;" height="70"><strong><a href="07.htm">演<br>
+                  <br>
+                  示</a></strong></td>
+              </tr>
+              <tr bordercolor="#009900" bgcolor="#009900"> 
+                <td style="BORDER-RIGHT: double; BORDER-TOP: double; BORDER-LEFT: double; BORDER-BOTTOM: double" height="70"><strong><a href="07c.htm">源<br>
+                  代<br>
+                  码</a></strong></td>
+              </tr>
+            </table>
+          </td>
+          <td rowspan="2" width="8" bgcolor="#336699">&nbsp;</td>
+          <td align="center" style="BORDER-RIGHT: double; BORDER-TOP: double; FONT-SIZE: 12pt; BORDER-LEFT: double; BORDER-BOTTOM: double" bordercolor="#336699" valign="top" height="335"> 
+            <br>
+            <b>Title状态栏</b> 
+            <hr width="92%" size="1" align="center">
+            <table width="90%" border="0" cellspacing="0" cellpadding="0" style="FONT-SIZE: 9pt;">
+              <tr> 
+                <td colspan="2" height="8"></td>
+              </tr>
+              <tr> 
+                <td width="40" valign="top">提示：</td>
+                <td>请看上面的Title栏，假如没有看清楚可以刷新一下。</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr> 
+          <td height="20" class="white" bgcolor="#336699">&nbsp;</td>
+        </tr>
+      </table>
+      <br>
+    </td>
+    <td bgcolor="#336699" width="18"></td>
+  </tr>
+  <tr> 
+    <td bgcolor="#336699"></td>
+    <td align="center" bgcolor="#336699" height="35">&nbsp; </td>
+    <td bgcolor="#336699">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

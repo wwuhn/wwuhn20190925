@@ -1,0 +1,106 @@
+<HTML>
+<HEAD>
+   
+<TITLE>状态栏跑马灯</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+function scroll_status (seed)
+{
+    <!-- 跑马灯显示内容-->
+    var msg = "欢迎光临JAVA2000，本站最佳分辨率800*600，请使用IE浏览器。";
+    var out = " ";
+    var c = 1;
+    if (150 < seed) {
+            seed--;
+            var cmd="scroll_status(" + seed + ")";
+            timerTwo = window.setTimeout(cmd, 25);
+    }
+    else if (seed <= 150 && 0 < seed) {
+            for (c=0 ; c < seed ; c++) {
+                    out+=" ";
+            }
+            out+=msg;
+            seed--;
+            var cmd="scroll_status(" + seed + ")";
+                window.status=out;
+            timerTwo=window.setTimeout(cmd,25);
+    }
+    else if (seed <= 0) {
+            if (-seed < msg.length) {
+                    out+=msg.substring(-seed,msg.length);
+                    seed--;
+            var cmd="scroll_status(" + seed + ")";
+                    window.status=out;
+                    timerTwo=window.setTimeout(cmd,25);
+            }
+            else {
+                    window.status=" ";
+                    timerTwo=window.setTimeout("scroll_status(150)",25);
+            }
+    }
+}
+// -- End of JavaScript code -------------- -->
+
+</SCRIPT>
+<style type="text/css">
+<!--
+.unnamed1 {  font-family: "宋体"; font-size: 9pt; text-decoration: none}
+-->
+</style></HEAD>
+<BODY onLoad="timerONE=window.setTimeout('scroll_status(100)',50);">
+<form>
+      
+  <div align="center"> <font size="5">状态栏跑马灯脚本</font> 
+    <hr noshade width="75%">
+      </div>
+    </form>
+    
+<p align="center"> 
+  <textarea name="textfield" cols="60" rows="10" class="unnamed1">如下代码加入&lt;HEAD&gt;区：
+&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;
+function scroll_status (seed)
+{
+    &lt;!-- 跑马灯显示内容--&gt;
+    var msg = &quot;跑马灯显示的内容&quot;;
+    var out = &quot; &quot;;
+    var c = 1;
+    if (150 &lt; seed) {
+            seed--;
+            var cmd=&quot;scroll_status(&quot; + seed + &quot;)&quot;;
+            timerTwo = window.setTimeout(cmd, 25);
+    }
+    else if (seed &lt;= 150 &amp;&amp; 0 &lt; seed) {
+            for (c=0 ; c &lt; seed ; c++) {
+                    out+=&quot; &quot;;
+            }
+            out+=msg;
+            seed--;
+            var cmd=&quot;scroll_status(&quot; + seed + &quot;)&quot;;
+                window.status=out;
+            timerTwo=window.setTimeout(cmd,25);
+    }
+    else if (seed &lt;= 0) {
+            if (-seed &lt; msg.length) {
+                    out+=msg.substring(-seed,msg.length);
+                    seed--;
+            var cmd=&quot;scroll_status(&quot; + seed + &quot;)&quot;;
+                    window.status=out;
+                    timerTwo=window.setTimeout(cmd,25);
+            }
+            else {
+                    window.status=&quot; &quot;;
+                    timerTwo=window.setTimeout(&quot;scroll_status(150)&quot;,25);
+            }
+    }
+}
+// -- End of JavaScript code -------------- --&gt;
+
+&lt;/SCRIPT&gt;
+然后，在&lt;BODY&gt;区加入：
+&lt;BODY onLoad=&quot;timerONE=window.setTimeout('scroll_status(100)',50);&quot;&gt;</textarea>
+</p>
+<p>&nbsp;</p>
+  </BODY>
+</HTML>
+
+
+
